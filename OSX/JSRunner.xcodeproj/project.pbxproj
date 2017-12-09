@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		052464D51FDBE849005EE473 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052464D41FDBE849005EE473 /* JRMain.swift */; };
+		052464D71FDC0963005EE473 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052464D61FDC0963005EE473 /* JRConfig.swift */; };
+		052464D91FDC1624005EE473 /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 052464D81FDC1624005EE473 /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		057D5DAD1FDB9FFC005A796F /* Canary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 057D5DAC1FDB9FFB005A796F /* Canary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		057D5DAE1FDBA173005A796F /* Canary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057D5DAC1FDB9FFB005A796F /* Canary.framework */; };
+		05DBE3791FDAE2C400A720B7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DBE3781FDAE2C400A720B7 /* main.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		057D5DB41FDBD142005A796F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05DBE36D1FDAE2C400A720B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05DBE3741FDAE2C400A720B7;
+			remoteInfo = JSRunner;
+		};
+		05DBE38B1FDAE39100A720B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05DBE36D1FDAE2C400A720B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05DBE3841FDAE38400A720B7;
+			remoteInfo = JSRunnerBundle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0596BBB91FDAE95200365ED4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				052464D91FDC1624005EE473 /* Cobalt.framework in CopyFiles */,
+				057D5DAD1FDB9FFC005A796F /* Canary.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05DBE3731FDAE2C400A720B7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		052464D41FDBE849005EE473 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
+		052464D61FDC0963005EE473 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
+		052464D81FDC1624005EE473 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cobalt.framework; sourceTree = "<group>"; };
+		057C931F1FDBD20A00109122 /* install_osx.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = install_osx.mk; sourceTree = "<group>"; };
+		057D5DAC1FDB9FFB005A796F /* Canary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Canary.framework; sourceTree = "<group>"; };
+		05DBE3751FDAE2C400A720B7 /* jsrunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrunner; sourceTree = BUILT_PRODUCTS_DIR; };
+		05DBE3781FDAE2C400A720B7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		05DBE3851FDAE38400A720B7 /* JSRunner.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSRunner.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05DBE3721FDAE2C400A720B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				057D5DAE1FDBA173005A796F /* Canary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05DBE3821FDAE38400A720B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		057D5DAF1FDBA18F005A796F /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				052464D81FDC1624005EE473 /* Cobalt.framework */,
+				057D5DAC1FDB9FFB005A796F /* Canary.framework */,
+			);
+			name = Bundle;
+			sourceTree = "<group>";
+		};
+		057D5DB61FDBD163005A796F /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				057C931F1FDBD20A00109122 /* install_osx.mk */,
+			);
+			name = Script;
+			path = ../Script;
+			sourceTree = "<group>";
+		};
+		05DBE36C1FDAE2C400A720B7 = {
+			isa = PBXGroup;
+			children = (
+				05DBE3801FDAE2F500A720B7 /* Source */,
+				057D5DB61FDBD163005A796F /* Script */,
+				05DBE3761FDAE2C400A720B7 /* Products */,
+				057D5DAF1FDBA18F005A796F /* Bundle */,
+			);
+			sourceTree = "<group>";
+		};
+		05DBE3761FDAE2C400A720B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05DBE3751FDAE2C400A720B7 /* jsrunner */,
+				05DBE3851FDAE38400A720B7 /* JSRunner.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05DBE3801FDAE2F500A720B7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				05DBE3781FDAE2C400A720B7 /* main.swift */,
+				052464D41FDBE849005EE473 /* JRMain.swift */,
+				052464D61FDC0963005EE473 /* JRConfig.swift */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		057D5DB01FDBD138005A796F /* Install */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Script/install_osx.mk";
+			buildConfigurationList = 057D5DB11FDBD138005A796F /* Build configuration list for PBXLegacyTarget "Install" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				057D5DB51FDBD142005A796F /* PBXTargetDependency */,
+			);
+			name = Install;
+			passBuildSettingsInEnvironment = 1;
+			productName = Install;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		05DBE3741FDAE2C400A720B7 /* JSRunner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05DBE37C1FDAE2C400A720B7 /* Build configuration list for PBXNativeTarget "JSRunner" */;
+			buildPhases = (
+				05DBE3711FDAE2C400A720B7 /* Sources */,
+				05DBE3721FDAE2C400A720B7 /* Frameworks */,
+				05DBE3731FDAE2C400A720B7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05DBE38C1FDAE39100A720B7 /* PBXTargetDependency */,
+			);
+			name = JSRunner;
+			productName = JSRunner;
+			productReference = 05DBE3751FDAE2C400A720B7 /* jsrunner */;
+			productType = "com.apple.product-type.tool";
+		};
+		05DBE3841FDAE38400A720B7 /* JSRunnerBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05DBE3881FDAE38500A720B7 /* Build configuration list for PBXNativeTarget "JSRunnerBundle" */;
+			buildPhases = (
+				05DBE3811FDAE38400A720B7 /* Sources */,
+				05DBE3821FDAE38400A720B7 /* Frameworks */,
+				05DBE3831FDAE38400A720B7 /* Resources */,
+				0596BBB91FDAE95200365ED4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSRunnerBundle;
+			productName = JSRunnerBundle;
+			productReference = 05DBE3851FDAE38400A720B7 /* JSRunner.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05DBE36D1FDAE2C400A720B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Tomoo Hamada";
+				TargetAttributes = {
+					057D5DB01FDBD138005A796F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					05DBE3741FDAE2C400A720B7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					05DBE3841FDAE38400A720B7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 05DBE3701FDAE2C400A720B7 /* Build configuration list for PBXProject "JSRunner" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 05DBE36C1FDAE2C400A720B7;
+			productRefGroup = 05DBE3761FDAE2C400A720B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05DBE3841FDAE38400A720B7 /* JSRunnerBundle */,
+				05DBE3741FDAE2C400A720B7 /* JSRunner */,
+				057D5DB01FDBD138005A796F /* Install */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05DBE3831FDAE38400A720B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05DBE3711FDAE2C400A720B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				052464D71FDC0963005EE473 /* JRConfig.swift in Sources */,
+				05DBE3791FDAE2C400A720B7 /* main.swift in Sources */,
+				052464D51FDBE849005EE473 /* JRMain.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05DBE3811FDAE38400A720B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		057D5DB51FDBD142005A796F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05DBE3741FDAE2C400A720B7 /* JSRunner */;
+			targetProxy = 057D5DB41FDBD142005A796F /* PBXContainerItemProxy */;
+		};
+		05DBE38C1FDAE39100A720B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05DBE3841FDAE38400A720B7 /* JSRunnerBundle */;
+			targetProxy = 05DBE38B1FDAE39100A720B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		057D5DB21FDBD138005A796F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		057D5DB31FDBD138005A796F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		05DBE37A1FDAE2C400A720B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		05DBE37B1FDAE2C400A720B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		05DBE37D1FDAE2C400A720B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				GCC_OPTIMIZATION_LEVEL = 1;
+				INSTALL_PATH = "$(HOME)/tools/JSRunner";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/$(PRODUCT_NAME).bundle/Contents/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/JSRunner.bundle/Contents/Frameworks";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				PRODUCT_NAME = jsrunner;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		05DBE37E1FDAE2C400A720B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
+				GCC_OPTIMIZATION_LEVEL = 2;
+				INSTALL_PATH = "$(HOME)/tools/JSRunner";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/$(PRODUCT_NAME).bundle/Contents/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/JSRunner.bundle/Contents/Frameworks";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				PRODUCT_NAME = jsrunner;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		05DBE3891FDAE38500A720B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = JSRunnerBundle.plist;
+				INSTALL_PATH = "$(HOME)/tools/JSRunner/JSRunner.bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSRunnerBundle;
+				PRODUCT_NAME = JSRunner;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		05DBE38A1FDAE38500A720B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = JSRunnerBundle.plist;
+				INSTALL_PATH = "$(HOME)/tools/JSRunner/JSRunner.bundle";
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSRunnerBundle;
+				PRODUCT_NAME = JSRunner;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		057D5DB11FDBD138005A796F /* Build configuration list for PBXLegacyTarget "Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				057D5DB21FDBD138005A796F /* Debug */,
+				057D5DB31FDBD138005A796F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05DBE3701FDAE2C400A720B7 /* Build configuration list for PBXProject "JSRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05DBE37A1FDAE2C400A720B7 /* Debug */,
+				05DBE37B1FDAE2C400A720B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05DBE37C1FDAE2C400A720B7 /* Build configuration list for PBXNativeTarget "JSRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05DBE37D1FDAE2C400A720B7 /* Debug */,
+				05DBE37E1FDAE2C400A720B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05DBE3881FDAE38500A720B7 /* Build configuration list for PBXNativeTarget "JSRunnerBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05DBE3891FDAE38500A720B7 /* Debug */,
+				05DBE38A1FDAE38500A720B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05DBE36D1FDAE2C400A720B7 /* Project object */;
+}
