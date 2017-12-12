@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052464D51FDBE849005EE473 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052464D41FDBE849005EE473 /* JRMain.swift */; };
-		052464D71FDC0963005EE473 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052464D61FDC0963005EE473 /* JRConfig.swift */; };
-		052464D91FDC1624005EE473 /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 052464D81FDC1624005EE473 /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		057D5DAD1FDB9FFC005A796F /* Canary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 057D5DAC1FDB9FFB005A796F /* Canary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		057D5DAE1FDBA173005A796F /* Canary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057D5DAC1FDB9FFB005A796F /* Canary.framework */; };
+		056E589C1FDD457000F2F030 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052464D41FDBE849005EE473 /* JRMain.swift */; };
+		056E589D1FDD457400F2F030 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052464D61FDC0963005EE473 /* JRConfig.swift */; };
 		05DBE3791FDAE2C400A720B7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DBE3781FDAE2C400A720B7 /* main.swift */; };
+		05E0613D1FE0110200E0A2A9 /* Canary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E0613C1FE0110200E0A2A9 /* Canary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05E0613F1FE0112900E0A2A9 /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E0613E1FE0112900E0A2A9 /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +38,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				052464D91FDC1624005EE473 /* Cobalt.framework in CopyFiles */,
-				057D5DAD1FDB9FFC005A796F /* Canary.framework in CopyFiles */,
+				05E0613F1FE0112900E0A2A9 /* Cobalt.framework in CopyFiles */,
+				05E0613D1FE0110200E0A2A9 /* Canary.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +57,12 @@
 /* Begin PBXFileReference section */
 		052464D41FDBE849005EE473 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		052464D61FDC0963005EE473 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
-		052464D81FDC1624005EE473 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cobalt.framework; sourceTree = "<group>"; };
 		057C931F1FDBD20A00109122 /* install_osx.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = install_osx.mk; sourceTree = "<group>"; };
-		057D5DAC1FDB9FFB005A796F /* Canary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Canary.framework; sourceTree = "<group>"; };
 		05DBE3751FDAE2C400A720B7 /* jsrunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrunner; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DBE3781FDAE2C400A720B7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05DBE3851FDAE38400A720B7 /* JSRunner.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSRunner.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		05E0613C1FE0110200E0A2A9 /* Canary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Canary.framework; path = ../../../Library/Frameworks/Canary.framework; sourceTree = "<group>"; };
+		05E0613E1FE0112900E0A2A9 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				057D5DAE1FDBA173005A796F /* Canary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,15 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		057D5DAF1FDBA18F005A796F /* Bundle */ = {
-			isa = PBXGroup;
-			children = (
-				052464D81FDC1624005EE473 /* Cobalt.framework */,
-				057D5DAC1FDB9FFB005A796F /* Canary.framework */,
-			);
-			name = Bundle;
-			sourceTree = "<group>";
-		};
 		057D5DB61FDBD163005A796F /* Script */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +98,8 @@
 				05DBE3801FDAE2F500A720B7 /* Source */,
 				057D5DB61FDBD163005A796F /* Script */,
 				05DBE3761FDAE2C400A720B7 /* Products */,
-				057D5DAF1FDBA18F005A796F /* Bundle */,
+				05E0613E1FE0112900E0A2A9 /* Cobalt.framework */,
+				05E0613C1FE0110200E0A2A9 /* Canary.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,7 +128,7 @@
 /* Begin PBXLegacyTarget section */
 		057D5DB01FDBD138005A796F /* Install */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "-f ../Script/install_osx.mk";
+			buildArgumentsString = "-f ../Script/install_osx.mk bundle main";
 			buildConfigurationList = 057D5DB11FDBD138005A796F /* Build configuration list for PBXLegacyTarget "Install" */;
 			buildPhases = (
 			);
@@ -248,9 +238,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				052464D71FDC0963005EE473 /* JRConfig.swift in Sources */,
+				056E589D1FDD457400F2F030 /* JRConfig.swift in Sources */,
+				056E589C1FDD457000F2F030 /* JRMain.swift in Sources */,
 				05DBE3791FDAE2C400A720B7 /* main.swift in Sources */,
-				052464D51FDBE849005EE473 /* JRMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,16 +405,21 @@
 		05DBE37D1FDAE2C400A720B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
-				GCC_OPTIMIZATION_LEVEL = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(TARGET_BUILD_DIR)/JSRunner.bundle/Contents/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				GCC_OPTIMIZATION_LEVEL = 2;
 				INSTALL_PATH = "$(HOME)/tools/JSRunner";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/$(PRODUCT_NAME).bundle/Contents/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/JSRunner.bundle/Contents/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks @executable_path";
+				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/JSRunner.bundle/Contents/Frameworks";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PRODUCT_NAME = jsrunner;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -432,17 +427,21 @@
 		05DBE37E1FDAE2C400A720B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(TARGET_BUILD_DIR)/JSRunner.bundle/Contents/Frameworks",
+					"$(PROJECT_DIR)",
+				);
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INSTALL_PATH = "$(HOME)/tools/JSRunner";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/$(PRODUCT_NAME).bundle/Contents/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/JSRunner.bundle/Contents/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks @executable_path";
+				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/JSRunner.bundle/Contents/Frameworks";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PRODUCT_NAME = jsrunner;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -454,8 +453,8 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = JSRunnerBundle.plist;
-				INSTALL_PATH = "$(HOME)/tools/JSRunner/JSRunner.bundle";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/tools/JSRunner/";
 				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSRunnerBundle;
 				PRODUCT_NAME = JSRunner;
 				SKIP_INSTALL = NO;
@@ -470,8 +469,8 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = JSRunnerBundle.plist;
-				INSTALL_PATH = "$(HOME)/tools/JSRunner/JSRunner.bundle";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/tools/JSRunner/";
 				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSRunnerBundle;
 				PRODUCT_NAME = JSRunner;
 				SKIP_INSTALL = NO;

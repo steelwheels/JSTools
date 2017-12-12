@@ -20,6 +20,7 @@ public class JRCommandLineParser
 
 	private enum OptionId: Int {
 		case Help	= 0
+		case Version	= 1
 	}
 
 	public init(console cons: CNConsole){
@@ -31,14 +32,29 @@ public class JRCommandLineParser
 			CBOptionType(optionId: OptionId.Help.rawValue,
 				     shortName: "h", longName: "help",
 				     parameterNum: 0, parameterType: .VoidType,
-				     helpInfo: "Print help message and exit program")
+				     helpInfo: "Print help message and exit program"),
+			CBOptionType(optionId: OptionId.Version.rawValue,
+				     shortName: nil, longName: "version",
+				     parameterNum: 0, parameterType: .VoidType,
+				     helpInfo: "Print version information")
 		]
 	}
 
 	private func printHelpMessage() {
 		mConsole.print(string: "usage: jsrunner [options] script-file1 script-file2 ...\n")
 	}
-	
+
+	private func printVersionMessage() {
+		let plist = CNPropertyList(bundleDirectoryName: "JSRunner.bundle")
+		let version: String
+		if let v = plist.version {
+			version = v
+		} else {
+			version = "<Unknown>"
+		}
+		mConsole.print(string: "version: \(version)\n")
+	}
+
 	public func parseArguments(arguments args: Array<String>) -> JRConfig? {
 		var config : JRConfig? = nil
 		let (err, rets) = CBParseArguments(optionTypes: optionTypes(), arguments: args)
@@ -60,6 +76,9 @@ public class JRCommandLineParser
 					switch optid {
 					case .Help:
 						printHelpMessage()
+						return nil
+					case .Version:
+						printVersionMessage()
 						return nil
 					}
 				} else {

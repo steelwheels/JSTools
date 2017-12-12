@@ -14,7 +14,7 @@ public func main(arguments args: Array<String>) -> Int
 
 	/* Parse command line arguments */
 	let parser = JRCommandLineParser(console: console)
-	guard let config = parser.parseArguments(arguments: args) else {
+	guard let _ = parser.parseArguments(arguments: args) else {
 		return 1
 	}
 

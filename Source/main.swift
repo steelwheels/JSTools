@@ -5,12 +5,13 @@
  *   Copyright (C) 2017 Steel Wheels Project
  */
 
-import Canary
+import Foundation
 
-if main(arguments: CommandLine.arguments) == 0 {
+if  main(arguments: CommandLine.arguments) == 0 {
 	exit(0)
 } else {
 	exit(1)
 }
+
 
 
