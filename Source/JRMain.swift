@@ -6,6 +6,8 @@
  */
 
 import Canary
+import KiwiEngine
+import JavaScriptCore
 import Foundation
 
 public func main(arguments args: Array<String>) -> Int
@@ -14,7 +16,21 @@ public func main(arguments args: Array<String>) -> Int
 
 	/* Parse command line arguments */
 	let parser = JRCommandLineParser(console: console)
-	guard let _ = parser.parseArguments(arguments: args) else {
+	guard let config = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
+		return 1
+	}
+
+	/* allocate context */
+	let context = KEContext(virtualMachine: JSVirtualMachine())
+
+	/* Compile scripts */
+	let compiler = JRCompiler(context: context, config: config)
+	let error    = compiler.compile()
+	switch error {
+	case .NoError:
+		break
+	default:
+		error.dump(to: console)
 		return 1
 	}
 

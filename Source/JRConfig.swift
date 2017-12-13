@@ -52,7 +52,7 @@ public class JRCommandLineParser
 		} else {
 			version = "<Unknown>"
 		}
-		mConsole.print(string: "version: \(version)\n")
+		mConsole.print(string: "\(version)\n")
 	}
 
 	public func parseArguments(arguments args: Array<String>) -> JRConfig? {
@@ -62,7 +62,6 @@ public class JRCommandLineParser
 			mConsole.print(string: "Error: \(e.description)\n")
 		} else {
 			config = parseOptions(arguments: rets)
-
 		}
 		return config
 	}

@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		056E589C1FDD457000F2F030 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052464D41FDBE849005EE473 /* JRMain.swift */; };
 		056E589D1FDD457400F2F030 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052464D61FDC0963005EE473 /* JRConfig.swift */; };
+		059E1BB81FE15F1D00A926FF /* JRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059E1BB71FE15F1D00A926FF /* JRError.swift */; };
 		05DBE3791FDAE2C400A720B7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DBE3781FDAE2C400A720B7 /* main.swift */; };
 		05E0613D1FE0110200E0A2A9 /* Canary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E0613C1FE0110200E0A2A9 /* Canary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05E0613F1FE0112900E0A2A9 /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E0613E1FE0112900E0A2A9 /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05E061411FE02A8400E0A2A9 /* JRCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E061401FE02A8400E0A2A9 /* JRCompiler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +60,13 @@
 		052464D41FDBE849005EE473 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		052464D61FDC0963005EE473 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		057C931F1FDBD20A00109122 /* install_osx.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = install_osx.mk; sourceTree = "<group>"; };
+		059E1BB71FE15F1D00A926FF /* JRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRError.swift; sourceTree = "<group>"; };
 		05DBE3751FDAE2C400A720B7 /* jsrunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrunner; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DBE3781FDAE2C400A720B7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05DBE3851FDAE38400A720B7 /* JSRunner.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSRunner.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E0613C1FE0110200E0A2A9 /* Canary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Canary.framework; path = ../../../Library/Frameworks/Canary.framework; sourceTree = "<group>"; };
 		05E0613E1FE0112900E0A2A9 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
+		05E061401FE02A8400E0A2A9 /* JRCompiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRCompiler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				05DBE3781FDAE2C400A720B7 /* main.swift */,
 				052464D41FDBE849005EE473 /* JRMain.swift */,
 				052464D61FDC0963005EE473 /* JRConfig.swift */,
+				05E061401FE02A8400E0A2A9 /* JRCompiler.swift */,
+				059E1BB71FE15F1D00A926FF /* JRError.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -241,6 +247,8 @@
 				056E589D1FDD457400F2F030 /* JRConfig.swift in Sources */,
 				056E589C1FDD457000F2F030 /* JRMain.swift in Sources */,
 				05DBE3791FDAE2C400A720B7 /* main.swift in Sources */,
+				059E1BB81FE15F1D00A926FF /* JRError.swift in Sources */,
+				05E061411FE02A8400E0A2A9 /* JRCompiler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
