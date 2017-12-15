@@ -31,7 +31,7 @@ public func main(arguments args: Array<String>) -> Int
 		break
 	default:
 		error.dump(to: console)
-		return 1
+		return 2
 	}
 
 	console.print(string: "Hello, world !!\n")

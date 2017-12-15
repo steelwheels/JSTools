@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05D6F35A1FE3FDAF0070DF5B /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */; };
+		05D6F35B1FE3FDAF0070DF5B /* JRCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */; };
+		05D6F35C1FE3FDAF0070DF5B /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3571FE3FDAF0070DF5B /* JRMain.swift */; };
+		05D6F35D1FE3FDAF0070DF5B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3581FE3FDAF0070DF5B /* main.swift */; };
+		05D6F35E1FE3FDAF0070DF5B /* JRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3591FE3FDAF0070DF5B /* JRError.swift */; };
+		05D6F36D1FE3FFC90070DF5B /* Canary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F36C1FE3FFC90070DF5B /* Canary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05D6F3691FE3FE280070DF5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05D6F3621FE3FE1C0070DF5B;
+			remoteInfo = JSToolsBundle;
+		};
+		05D6F3741FE406EB0070DF5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05A42E421FE3FD5600321C93;
+			remoteInfo = jsrun;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		05A42E411FE3FD5600321C93 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		05D6F36B1FE3FF620070DF5B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */,
+				05D6F36D1FE3FFC90070DF5B /* Canary.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSTools-Bridging-Header.h"; sourceTree = "<group>"; };
+		05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
+		05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRCompiler.swift; sourceTree = "<group>"; };
+		05D6F3571FE3FDAF0070DF5B /* JRMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
+		05D6F3581FE3FDAF0070DF5B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		05D6F3591FE3FDAF0070DF5B /* JRError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRError.swift; sourceTree = "<group>"; };
+		05D6F3631FE3FE1C0070DF5B /* jstools.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jstools.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D6F3651FE3FE1C0070DF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		05D6F36C1FE3FFC90070DF5B /* Canary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Canary.framework; path = ../../../Library/Frameworks/Canary.framework; sourceTree = "<group>"; };
+		05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05A42E401FE3FD5600321C93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05D6F3601FE3FE1C0070DF5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05A42E3A1FE3FD5600321C93 = {
+			isa = PBXGroup;
+			children = (
+				05D6F3531FE3FD880070DF5B /* Source */,
+				05D6F3641FE3FE1C0070DF5B /* JSToolsBundle */,
+				05A42E441FE3FD5600321C93 /* Products */,
+				05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */,
+				05D6F36C1FE3FFC90070DF5B /* Canary.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		05A42E441FE3FD5600321C93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05A42E431FE3FD5600321C93 /* jsrun */,
+				05D6F3631FE3FE1C0070DF5B /* jstools.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05D6F3531FE3FD880070DF5B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */,
+				05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */,
+				05D6F3591FE3FDAF0070DF5B /* JRError.swift */,
+				05D6F3571FE3FDAF0070DF5B /* JRMain.swift */,
+				05D6F3581FE3FDAF0070DF5B /* main.swift */,
+				05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		05D6F3641FE3FE1C0070DF5B /* JSToolsBundle */ = {
+			isa = PBXGroup;
+			children = (
+				05D6F3651FE3FE1C0070DF5B /* Info.plist */,
+			);
+			path = JSToolsBundle;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		05D6F3701FE406CD0070DF5B /* Install */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Script/install_osx.mk";
+			buildConfigurationList = 05D6F3711FE406CD0070DF5B /* Build configuration list for PBXLegacyTarget "Install" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				05D6F3751FE406EB0070DF5B /* PBXTargetDependency */,
+			);
+			name = Install;
+			passBuildSettingsInEnvironment = 1;
+			productName = Install;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		05A42E421FE3FD5600321C93 /* jsrun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05A42E4A1FE3FD5600321C93 /* Build configuration list for PBXNativeTarget "jsrun" */;
+			buildPhases = (
+				05A42E3F1FE3FD5600321C93 /* Sources */,
+				05A42E401FE3FD5600321C93 /* Frameworks */,
+				05A42E411FE3FD5600321C93 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05D6F36A1FE3FE280070DF5B /* PBXTargetDependency */,
+			);
+			name = jsrun;
+			productName = JSTools;
+			productReference = 05A42E431FE3FD5600321C93 /* jsrun */;
+			productType = "com.apple.product-type.tool";
+		};
+		05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05D6F3661FE3FE1C0070DF5B /* Build configuration list for PBXNativeTarget "JSToolsBundle" */;
+			buildPhases = (
+				05D6F35F1FE3FE1C0070DF5B /* Sources */,
+				05D6F3601FE3FE1C0070DF5B /* Frameworks */,
+				05D6F3611FE3FE1C0070DF5B /* Resources */,
+				05D6F36B1FE3FF620070DF5B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSToolsBundle;
+			productName = JSToolsBundle;
+			productReference = 05D6F3631FE3FE1C0070DF5B /* jstools.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05A42E3B1FE3FD5600321C93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Tomoo Hamada";
+				TargetAttributes = {
+					05A42E421FE3FD5600321C93 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					05D6F3621FE3FE1C0070DF5B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					05D6F3701FE406CD0070DF5B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 05A42E3E1FE3FD5600321C93 /* Build configuration list for PBXProject "JSTools" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 05A42E3A1FE3FD5600321C93;
+			productRefGroup = 05A42E441FE3FD5600321C93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */,
+				05A42E421FE3FD5600321C93 /* jsrun */,
+				05D6F3701FE406CD0070DF5B /* Install */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05D6F3611FE3FE1C0070DF5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05A42E3F1FE3FD5600321C93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05D6F35C1FE3FDAF0070DF5B /* JRMain.swift in Sources */,
+				05D6F35B1FE3FDAF0070DF5B /* JRCompiler.swift in Sources */,
+				05D6F35D1FE3FDAF0070DF5B /* main.swift in Sources */,
+				05D6F35E1FE3FDAF0070DF5B /* JRError.swift in Sources */,
+				05D6F35A1FE3FDAF0070DF5B /* JRConfig.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05D6F35F1FE3FE1C0070DF5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05D6F36A1FE3FE280070DF5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
+			targetProxy = 05D6F3691FE3FE280070DF5B /* PBXContainerItemProxy */;
+		};
+		05D6F3751FE406EB0070DF5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05A42E421FE3FD5600321C93 /* jsrun */;
+			targetProxy = 05D6F3741FE406EB0070DF5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		05A42E481FE3FD5600321C93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		05A42E491FE3FD5600321C93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		05A42E4B1FE3FD5600321C93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
+					"$(HOME)/Library/Frameworks",
+				);
+				GCC_OPTIMIZATION_LEVEL = 2;
+				INSTALL_PATH = "$(HOME)/tools";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/jstools.bundle/Contents/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		05A42E4C1FE3FD5600321C93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
+					"$(HOME)/Library/Frameworks",
+				);
+				GCC_OPTIMIZATION_LEVEL = 2;
+				INSTALL_PATH = "$(HOME)/tools";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/jstools.bundle/Contents/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		05D6F3671FE3FE1C0070DF5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/tools/";
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSToolsBundle;
+				PRODUCT_NAME = jstools;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		05D6F3681FE3FE1C0070DF5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/tools/";
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSToolsBundle;
+				PRODUCT_NAME = jstools;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		05D6F3721FE406CD0070DF5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05D6F3731FE406CD0070DF5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05A42E3E1FE3FD5600321C93 /* Build configuration list for PBXProject "JSTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05A42E481FE3FD5600321C93 /* Debug */,
+				05A42E491FE3FD5600321C93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05A42E4A1FE3FD5600321C93 /* Build configuration list for PBXNativeTarget "jsrun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05A42E4B1FE3FD5600321C93 /* Debug */,
+				05A42E4C1FE3FD5600321C93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05D6F3661FE3FE1C0070DF5B /* Build configuration list for PBXNativeTarget "JSToolsBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05D6F3671FE3FE1C0070DF5B /* Debug */,
+				05D6F3681FE3FE1C0070DF5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05D6F3711FE406CD0070DF5B /* Build configuration list for PBXLegacyTarget "Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05D6F3721FE406CD0070DF5B /* Debug */,
+				05D6F3731FE406CD0070DF5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05A42E3B1FE3FD5600321C93 /* Project object */;
+}

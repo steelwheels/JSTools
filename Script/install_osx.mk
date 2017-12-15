@@ -4,11 +4,10 @@
 
 INSTALL_PATH ?= $(HOME)/Tools
 
-BUNDLE_NAME  	= $(PROJECT_NAME)Bundle
-MAIN_NAME     	= $(PROJECT_NAME)
+BUNDLE_NAME  	= JSToolsBundle
+APP_NAME     	= jsrun
 
-all: dummy
-	echo "Select target"
+all: bundle application
 
 bundle: dummy
 	xcodebuild build -target $(BUNDLE_NAME) \
@@ -18,11 +17,11 @@ bundle: dummy
 	  -project $(PROJECT_NAME).xcodeproj \
 	  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO
 
-main: dummy
-	xcodebuild build -target $(MAIN_NAME) \
+application: dummy
+	xcodebuild build -target $(APP_NAME) \
 	  -project $(PROJECT_NAME).xcodeproj \
 	  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO
-	xcodebuild install -target $(MAIN_NAME) \
+	xcodebuild install -target $(APP_NAME) \
 	  -project $(PROJECT_NAME).xcodeproj \
 	  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO
 
