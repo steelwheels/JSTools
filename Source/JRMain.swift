@@ -7,6 +7,7 @@
 
 import Canary
 import KiwiEngine
+import KiwiLibrary
 import JavaScriptCore
 import Foundation
 
@@ -23,6 +24,9 @@ public func main(arguments args: Array<String>) -> Int
 	/* allocate context */
 	let context = KEContext(virtualMachine: JSVirtualMachine())
 
+	/* setup built-in library */
+	KLSetupLibrary(context: context, console: console, config: config.libraryConfig)
+	
 	/* Compile scripts */
 	let compiler = JRCompiler(context: context, config: config)
 	let error    = compiler.compile()

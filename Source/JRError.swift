@@ -21,7 +21,7 @@ public enum CompileError: Error {
 			console.error(string: "Error: Can not read file: \(name)\n")
 		case .CompileError(let errors, let file):
 			for error in errors {
-				console.error(string: "\(error) in file \(file)\n")
+				console.error(string: "\(error) in file \"\(file)\"\n")
 			}
 		}
 	}

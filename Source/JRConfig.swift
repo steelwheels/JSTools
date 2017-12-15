@@ -7,11 +7,13 @@
 
 import Canary
 import Cobalt
+import KiwiLibrary
 import Foundation
 
 public class JRConfig
 {
-	public var scriptFiles:	Array<String> = []
+	public var scriptFiles:		Array<String> = []
+	public var libraryConfig:	KLConfig      = KLConfig()
 }
 
 public class JRCommandLineParser
@@ -45,7 +47,7 @@ public class JRCommandLineParser
 	}
 
 	private func printVersionMessage() {
-		let plist = CNPropertyList(bundleDirectoryName: "JSRunner.bundle")
+		let plist = CNPropertyList(bundleDirectoryName: "jstools.bundle")
 		let version: String
 		if let v = plist.version {
 			version = v
@@ -59,7 +61,7 @@ public class JRCommandLineParser
 		var config : JRConfig? = nil
 		let (err, rets) = CBParseArguments(optionTypes: optionTypes(), arguments: args)
 		if let e = err {
-			mConsole.print(string: "Error: \(e.description)\n")
+			mConsole.error(string: "Error: \(e.description)\n")
 		} else {
 			config = parseOptions(arguments: rets)
 		}
@@ -81,7 +83,7 @@ public class JRCommandLineParser
 						return nil
 					}
 				} else {
-
+					NSLog("[Internal error] Unknown option id")
 				}
 			} else if let param = arg as? CBNormalArgument {
 				config.scriptFiles.append(param.argument)
@@ -90,6 +92,11 @@ public class JRCommandLineParser
 				return nil
 			}
 		}
-		return config
+		if config.scriptFiles.count > 0 {
+			return config
+		} else {
+			mConsole.error(string: "No script files are given\n")
+			return nil
+		}
 	}
 }

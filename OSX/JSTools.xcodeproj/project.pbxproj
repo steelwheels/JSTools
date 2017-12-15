@@ -14,6 +14,8 @@
 		05D6F35E1FE3FDAF0070DF5B /* JRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3591FE3FDAF0070DF5B /* JRError.swift */; };
 		05D6F36D1FE3FFC90070DF5B /* Canary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F36C1FE3FFC90070DF5B /* Canary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05D6F3791FE42D6B0070DF5B /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				05D6F3791FE42D6B0070DF5B /* KiwiLibrary.framework in CopyFiles */,
+				05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */,
 				05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */,
 				05D6F36D1FE3FFC90070DF5B /* Canary.framework in CopyFiles */,
 			);
@@ -68,6 +72,8 @@
 		05D6F3651FE3FE1C0070DF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		05D6F36C1FE3FFC90070DF5B /* Canary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Canary.framework; path = ../../../Library/Frameworks/Canary.framework; sourceTree = "<group>"; };
 		05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
+		05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiEngine.framework; path = ../../../Library/Frameworks/KiwiEngine.framework; sourceTree = "<group>"; };
+		05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiLibrary.framework; path = ../../../Library/Frameworks/KiwiLibrary.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 				05D6F3531FE3FD880070DF5B /* Source */,
 				05D6F3641FE3FE1C0070DF5B /* JSToolsBundle */,
 				05A42E441FE3FD5600321C93 /* Products */,
+				05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */,
+				05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */,
 				05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */,
 				05D6F36C1FE3FFC90070DF5B /* Canary.framework */,
 			);
@@ -111,10 +119,10 @@
 		05D6F3531FE3FD880070DF5B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				05D6F3571FE3FDAF0070DF5B /* JRMain.swift */,
 				05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */,
 				05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */,
 				05D6F3591FE3FDAF0070DF5B /* JRError.swift */,
-				05D6F3571FE3FDAF0070DF5B /* JRMain.swift */,
 				05D6F3581FE3FDAF0070DF5B /* main.swift */,
 				05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */,
 			);
@@ -309,6 +317,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -366,6 +375,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -394,7 +404,7 @@
 					"$(HOME)/Library/Frameworks",
 				);
 				GCC_OPTIMIZATION_LEVEL = 2;
-				INSTALL_PATH = "$(HOME)/tools";
+				INSTALL_PATH = "$(HOME)/tools/jstools";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/jstools.bundle/Contents/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,7 +425,7 @@
 					"$(HOME)/Library/Frameworks",
 				);
 				GCC_OPTIMIZATION_LEVEL = 2;
-				INSTALL_PATH = "$(HOME)/tools";
+				INSTALL_PATH = "$(HOME)/tools/jstools";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/jstools.bundle/Contents/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -433,7 +443,7 @@
 				DEVELOPMENT_TEAM = TR2DNF3P93;
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/tools/";
+				INSTALL_PATH = "$(HOME)/tools/jstools";
 				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSToolsBundle;
 				PRODUCT_NAME = jstools;
 				SKIP_INSTALL = NO;
@@ -450,7 +460,7 @@
 				DEVELOPMENT_TEAM = TR2DNF3P93;
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/tools/";
+				INSTALL_PATH = "$(HOME)/tools/jstools";
 				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSToolsBundle;
 				PRODUCT_NAME = jstools;
 				SKIP_INSTALL = NO;
