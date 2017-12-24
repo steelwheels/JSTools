@@ -38,8 +38,6 @@ public func main(arguments args: Array<String>) -> Int
 		return 2
 	}
 
-	console.print(string: "Hello, world !!\n")
-
 	return 0
 }
 

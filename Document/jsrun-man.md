@@ -2,7 +2,7 @@
 *jsrun* - Execute JavaScript program on shell
 
 # Synopsys
-````jsrunner [options] script1 script2 ... scriptN````
+````jsrun [options] script1 script2 ... scriptN````
 
 # Description
 The *jsrun* is command line application to execute JavaScript program.

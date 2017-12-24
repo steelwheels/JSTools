@@ -9,11 +9,33 @@ The `console` object has some methods to display text into standard output or st
 <table width="80%">
 <tr>
   <th>Method</th>
-  <td><code>console.log(obj1 [, obj2, ..., objN])</code></td>
+  <td><code>log(obj1 [, obj2, ..., objN])</code></td>
 </tr>
 <tr>
   <th>Descriptions</th>
-  <td>Convert all argument (obj1, obj2. ...) into string and print them at given order.</td>
+  <td>Convert all argument (obj1, obj2. ...) to string and print it into standard output.</td>
+</tr>
+</table>
+
+<table width="80%">
+<tr>
+  <th>Method</th>
+  <td><code>print(obj1 [, obj2, ..., objN])</code></td>
+</tr>
+<tr>
+  <th>Descriptions</th>
+  <td>Same with `log` method. Convert all argument (obj1, obj2. ...) to string and print it into standard output.</td>
+</tr>
+</table>
+
+<table width="80%">
+<tr>
+  <th>Method</th>
+  <td><code>error(obj1 [, obj2, ..., objN])</code></td>
+</tr>
+<tr>
+  <th>Descriptions</th>
+  <td>Convert all argument (obj1, obj2. ...) to string and print it into standard error.</td>
 </tr>
 </table>
 

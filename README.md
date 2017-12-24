@@ -18,6 +18,6 @@ This software is produced by [Steel Wheels Project](http://steelwheels.github.io
 
 ## Related documents
 * Users manual:
-  - `jsrun`
+  - [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md): Execute JavaScript
 * Reference manual
-  - Built-in library reference
+  - [library reference](https://github.com/steelwheels/JSTools/blob/master/Document/builtin-lib.md) for `jsrun` command

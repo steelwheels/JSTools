@@ -19,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0510E6751FE560FD00B2C718 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05D6F3701FE406CD0070DF5B;
+			remoteInfo = Install;
+		};
 		05D6F3691FE3FE280070DF5B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
@@ -61,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSTools-Bridging-Header.h"; sourceTree = "<group>"; };
 		05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 				05D6F3531FE3FD880070DF5B /* Source */,
 				05D6F3641FE3FE1C0070DF5B /* JSToolsBundle */,
 				05A42E441FE3FD5600321C93 /* Products */,
+				0510E6701FE55E9500B2C718 /* install_osx.mk */,
 				05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */,
 				05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */,
 				05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */,
@@ -141,6 +150,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
+		0510E6711FE560F300B2C718 /* Test */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Test/unit_test.mk";
+			buildConfigurationList = 0510E6721FE560F300B2C718 /* Build configuration list for PBXLegacyTarget "Test" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				0510E6761FE560FD00B2C718 /* PBXTargetDependency */,
+			);
+			name = Test;
+			passBuildSettingsInEnvironment = 1;
+			productName = Test;
+		};
 		05D6F3701FE406CD0070DF5B /* Install */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "-f ../Script/install_osx.mk";
@@ -205,6 +229,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Tomoo Hamada";
 				TargetAttributes = {
+					0510E6711FE560F300B2C718 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					05A42E421FE3FD5600321C93 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
@@ -235,6 +263,7 @@
 				05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */,
 				05A42E421FE3FD5600321C93 /* jsrun */,
 				05D6F3701FE406CD0070DF5B /* Install */,
+				0510E6711FE560F300B2C718 /* Test */,
 			);
 		};
 /* End PBXProject section */
@@ -272,6 +301,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0510E6761FE560FD00B2C718 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05D6F3701FE406CD0070DF5B /* Install */;
+			targetProxy = 0510E6751FE560FD00B2C718 /* PBXContainerItemProxy */;
+		};
 		05D6F36A1FE3FE280070DF5B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
@@ -285,6 +319,33 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0510E6731FE560F300B2C718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0510E6741FE560F300B2C718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		05A42E481FE3FD5600321C93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -498,6 +559,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0510E6721FE560F300B2C718 /* Build configuration list for PBXLegacyTarget "Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0510E6731FE560F300B2C718 /* Debug */,
+				0510E6741FE560F300B2C718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		05A42E3E1FE3FD5600321C93 /* Build configuration list for PBXProject "JSTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

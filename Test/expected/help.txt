@@ -1,0 +1,3 @@
+usage: jsrunner [options] script-file1 script-file2 ...
+  [options] --help, -h : Print this message
+            --version  : Print version
