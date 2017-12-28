@@ -2,8 +2,9 @@
 
 ## Introduction
 *JSTools* contains command line applications to execute JavaScript on the shell. This has following features:
-* Designed to execute JavaScript on the shell. You can use JavaScript program as the shell script. The program can be written bases on the [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy).
-* The built-in library for command line interface, and for pipeline. You can add built-in libraries by yourself because this is open source product.
+* Designed to execute JavaScript on the shell. You can use JavaScript program in the shell script. The program can be written bases on the [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy).
+* The built-in library for command line interface, and for pipeline.
+* This is open source product. You can add/improve libraries by yourself.
 
 This tool uses *JavaScriptCore* in the [WebKit](https://en.wikipedia.org/wiki/WebKit) for macOS.
 
@@ -13,11 +14,13 @@ This software is produced by [Steel Wheels Project](http://steelwheels.github.io
 
 ## Target
 * OS: macOS High Sierra (10.13.2) or later
+
+## Development environment
 * Tool: Xcode 9 or later
 * Programming language: Swift
 
-## Related documents
-* Users manual:
-  - [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md): Execute JavaScript
-* Reference manual
-  - [library reference](https://github.com/steelwheels/JSTools/blob/master/Document/builtin-lib.md) for `jsrun` command
+## User's manual
+* [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md): Execute JavaScript
+
+## Reference manual
+* [KiwiLibrary Framework](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/README.md): Library reference
