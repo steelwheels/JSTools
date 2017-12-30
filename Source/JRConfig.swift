@@ -77,7 +77,6 @@ public class JRCommandLineParser
 
 	private func parseOptions(arguments args: Array<CBArgument>) -> JRConfig? {
 		let config = JRConfig()
-		config.libraryConfig.hasConsole = true
 		config.libraryConfig.hasFile    = true
 		let stream = CNArrayStream(source: args)
 		while let arg = stream.get() {
