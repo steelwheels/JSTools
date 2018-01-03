@@ -23,6 +23,7 @@ public class JRCommandLineParser
 	private enum OptionId: Int {
 		case Help	= 0
 		case Version	= 1
+		case Library	= 2
 	}
 
 	public init(console cons: CNConsole){
@@ -38,7 +39,11 @@ public class JRCommandLineParser
 			CBOptionType(optionId: OptionId.Version.rawValue,
 				     shortName: nil, longName: "version",
 				     parameterNum: 0, parameterType: .VoidType,
-				     helpInfo: "Print version information")
+				     helpInfo: "Print version information"),
+			CBOptionType(optionId: OptionId.Library.rawValue,
+				     shortName: nil, longName: "lib",
+				     parameterNum: 1, parameterType: .StringType,
+				     helpInfo: "Import built-in library")
 		]
 	}
 
@@ -77,7 +82,8 @@ public class JRCommandLineParser
 
 	private func parseOptions(arguments args: Array<CBArgument>) -> JRConfig? {
 		let config = JRConfig()
-		config.libraryConfig.hasFile    = true
+		config.libraryConfig.hasFileLib = true
+		config.libraryConfig.hasJSONLib = false
 		let stream = CNArrayStream(source: args)
 		while let arg = stream.get() {
 			if let opt = arg as? CBOptionArgument {
@@ -89,6 +95,10 @@ public class JRCommandLineParser
 					case .Version:
 						printVersionMessage()
 						return nil
+					case .Library:
+						if !parseLibraryOption(config: config, parameters: opt.parameters){
+							return nil
+						}
 					}
 				} else {
 					NSLog("[Internal error] Unknown option id")
@@ -107,5 +117,43 @@ public class JRCommandLineParser
 			printUsage()
 			return nil
 		}
+	}
+
+	private func parseLibraryOption(config conf: JRConfig, parameters params: Array<CNValue>) -> Bool
+	{
+		var result: Bool = false
+		switch params.count {
+		case 0:
+			mConsole.error(string: "A library name is required to select library\n")
+		case 1:
+			let param = params[0]
+			switch param.type {
+			case .StringType:
+				if let pstr = param.stringValue {
+					result = parseLibraryOption(config: conf, withName: pstr)
+				} else {
+					assert(false)
+				}
+			default:
+				let desc = param.description
+				mConsole.error(string: "The parameter \"\(desc)\" is NOT suitable as a library name\n")
+			}
+		default:
+			mConsole.error(string: "Too many parameters to select library\n")
+		}
+		return result
+	}
+
+	private func parseLibraryOption(config conf: JRConfig, withName name: String) -> Bool
+	{
+		var result: Bool = false
+		switch name {
+		case "JSON":
+			conf.libraryConfig.hasJSONLib = true
+			result = true
+		default:
+			mConsole.error(string: "Unknown library name: \"\(name)\"\n")
+		}
+		return result
 	}
 }

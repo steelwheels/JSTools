@@ -1,4 +1,4 @@
-/* exit(0) */
+/* exit(1) */
 console.log("Before exit\n") ;
-Process.exit(0) ;
+Process.exit(1) ;
 console.log("After exit\n") ;
