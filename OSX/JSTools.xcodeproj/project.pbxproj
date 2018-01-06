@@ -167,7 +167,7 @@
 		};
 		05D6F3701FE406CD0070DF5B /* Install */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "-f ../Script/install_osx.mk";
+			buildArgumentsString = "-f ../Script/install_osx.mk install make_dmg";
 			buildConfigurationList = 05D6F3711FE406CD0070DF5B /* Build configuration list for PBXLegacyTarget "Install" */;
 			buildPhases = (
 			);
@@ -375,10 +375,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = TR2DNF3P93;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -433,10 +433,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = TR2DNF3P93;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -459,9 +459,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
 					"$(HOME)/Library/Frameworks",
@@ -471,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/jstools.bundle/Contents/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
@@ -481,9 +482,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
 					"$(HOME)/Library/Frameworks",
@@ -493,6 +494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/jstools.bundle/Contents/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
@@ -502,10 +504,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/tools/jstools";
@@ -520,10 +522,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/tools/jstools";

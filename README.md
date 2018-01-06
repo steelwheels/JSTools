@@ -19,6 +19,13 @@ This software is produced by [Steel Wheels Project](http://steelwheels.github.io
 * Tool: Xcode 9 or later
 * Programming language: Swift
 
+## Download and Install
+### Binary file
+The binary package can be downloaded from [Open Source Developer Network](https://osdn.net) (OSDN). Visit [download page](https://osdn.net/projects/jstools/releases/).
+
+### Build from the source
+See [required software](https://github.com/steelwheels/JSTools/blob/master/Document/software.md) page.
+
 ## User's manual
 * [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md): Execute JavaScript
 
