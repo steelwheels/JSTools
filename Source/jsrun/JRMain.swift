@@ -11,7 +11,7 @@ import KiwiLibrary
 import JavaScriptCore
 import Foundation
 
-public func main(arguments args: Array<String>) -> Int
+public func main(arguments args: Array<String>) -> Int32
 {
 	let console = CNFileConsole()
 

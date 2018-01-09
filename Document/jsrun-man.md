@@ -1,7 +1,7 @@
 # Name
 *jsrun* - Execute JavaScript program on shell
 
-# Synopsys
+# Synopsis
 ````jsrun [options] script1 script2 ... scriptN````
 
 # Description

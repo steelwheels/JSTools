@@ -3,11 +3,17 @@
 #
 
 jsrun 		= $(HOME)/tools/jstools/jsrun
+jscat 		= $(HOME)/tools/jstools/jscat
 test_dir	= ../Test
 sample_dir	= ../Sample
 build_dir	= $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 
-all: help hello cat0 cat1 exit0 json0
+all: all_jsrun all_jscat
+
+#
+# jsrun
+#
+all_jsrun: help hello cat0 cat1 exit0 json0
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -44,6 +50,20 @@ json0: dummy
 	$(jsrun) --lib JSON $(sample_dir)/json0.js | tee $(build_dir)/json0.txt
 	mv data0-out.json $(build_dir)
 	diff $(build_dir)/data0-out.json $(test_dir)/expected/data0-out.json
+
+#
+# jscat
+#
+all_jscat: jscat0 jscat1
+
+jscat0: dummy
+	$(jscat) < ../Test/data/json-empty.json > $(build_dir)/json-empty.json.out
+	diff  $(build_dir)/json-empty.json.out ../Test/expected/json-empty.json.OK
+
+jscat1: dummy
+	$(jscat) ../Test/data/json-1data-0.json ../Test/data/json-1data-1.json \
+	  > $(build_dir)/json-1data-0_1.json
+	diff $(build_dir)/json-1data-0_1.json ../Test/expected/json-1data-0_1.json.OK
 
 dummy:
 

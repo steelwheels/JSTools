@@ -1,10 +1,14 @@
 # JSTools
 
 ## Introduction
-*JSTools* contains command line applications to execute JavaScript on the shell. This has following features:
-* Designed to execute JavaScript on the shell. You can use JavaScript program in the shell script. The program can be written bases on the [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy).
-* The built-in library for command line interface, and for pipeline.
-* This is open source product. You can add/improve libraries by yourself.
+*JSTools* contains command line applications to execute JavaScript on the shell.
+These applications are designed based on [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy), but JSON data stream is used instead of raw text stream.
+
+There are 2 kind of applications in this tools:
+1. The command to execute JavaScript on the shell. The built-in library supports pipeline programming with the standard-input and standard-output.
+2. The command to generate, expand and edit the JSON data stream. The usual data conversion can be done by these command without coding custom script.
+
+The most important thing: This is open source product. You can add/improve libraries by yourself.
 
 This tool uses *JavaScriptCore* in the [WebKit](https://en.wikipedia.org/wiki/WebKit) for macOS.
 
@@ -28,6 +32,7 @@ See [required software](https://github.com/steelwheels/JSTools/blob/master/Docum
 
 ## User's manual
 * [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md): Execute JavaScript
+* [`jscat`](https://github.com/steelwheels/JSTools/blob/master/Document/jscat-man.md): JSON file operation: Concatenate JSON files.
 
 ## Reference manual
 * [KiwiLibrary Framework](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/README.md): Library reference
