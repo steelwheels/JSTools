@@ -82,8 +82,9 @@ public class JRCommandLineParser
 
 	private func parseOptions(arguments args: Array<CBArgument>) -> JRConfig? {
 		let config = JRConfig()
-		config.libraryConfig.hasFileLib = true
-		config.libraryConfig.hasJSONLib = false
+		config.libraryConfig.hasFileLib		= true
+		config.libraryConfig.hasCursesLib	= false
+		config.libraryConfig.hasJSONLib		= false
 		let stream = CNArrayStream(source: args)
 		while let arg = stream.get() {
 			if let opt = arg as? CBOptionArgument {
@@ -148,6 +149,9 @@ public class JRCommandLineParser
 	{
 		var result: Bool = false
 		switch name {
+		case "curses":
+			conf.libraryConfig.hasCursesLib = true
+			result = true
 		case "JSON":
 			conf.libraryConfig.hasJSONLib = true
 			result = true

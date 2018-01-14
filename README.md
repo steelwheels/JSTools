@@ -2,7 +2,7 @@
 
 ## Introduction
 *JSTools* contains command line applications to execute JavaScript on the shell.
-These applications are designed based on [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy), but JSON data stream is used instead of raw text stream.
+These applications are designed based on [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy).
 
 There are 2 kind of applications in this tools:
 1. The command to execute JavaScript on the shell. The built-in library supports pipeline programming with the standard-input and standard-output.
