@@ -13,7 +13,8 @@ import Foundation
 
 public func main(arguments args: Array<String>) -> Int32
 {
-	let console = CNFileConsole()
+	let filecons = CNFileConsole()
+	let console  = CNCursesConsole(defaultConsole: filecons)
 
 	/* Parse command line arguments */
 	let parser = JRCommandLineParser(console: console)
@@ -37,6 +38,9 @@ public func main(arguments args: Array<String>) -> Int32
 		error.dump(to: console)
 		return 2
 	}
+
+	/* Finalize */
+	JRFinalize.finalize(console: console)
 
 	return 0
 }

@@ -83,7 +83,6 @@ public class JRCommandLineParser
 	private func parseOptions(arguments args: Array<CBArgument>) -> JRConfig? {
 		let config = JRConfig()
 		config.libraryConfig.hasFileLib		= true
-		config.libraryConfig.hasCursesLib	= false
 		config.libraryConfig.hasJSONLib		= false
 		let stream = CNArrayStream(source: args)
 		while let arg = stream.get() {
@@ -147,16 +146,13 @@ public class JRCommandLineParser
 
 	private func parseLibraryOption(config conf: JRConfig, withName name: String) -> Bool
 	{
-		var result: Bool = false
+		var result: Bool = true
 		switch name {
-		case "curses":
-			conf.libraryConfig.hasCursesLib = true
-			result = true
 		case "JSON":
 			conf.libraryConfig.hasJSONLib = true
-			result = true
 		default:
 			mConsole.error(string: "Unknown library name: \"\(name)\"\n")
+			result = false
 		}
 		return result
 	}
