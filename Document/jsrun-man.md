@@ -28,6 +28,7 @@ Supported built-in library. They are imported by `--lib` command line option.
 |Name       |Manual |Description    |
 |:---       |:---     |:---         |
 |(default)  |[Process control](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/ProcessClass.md) | Get process information |
+|(default)  |[Console Operation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/ConsoleClass.md) |Support shell mode and screen mode (based on editline and ncurses)|
 |(default)  |[File Operation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/FileClass.md) | Open, close, read and write text file |
 |JSON   |[JSON File Operation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/JSONClass.md) | Read, write JSON file, serialize, unserialize JSON string |
 
