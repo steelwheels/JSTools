@@ -20,6 +20,8 @@
 		05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05D6F3791FE42D6B0070DF5B /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05E02FC42014C41800A26A63 /* hanoi_main.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E02FBD2014C24F00A26A63 /* hanoi_main.js */; };
+		05E02FC52014C41E00A26A63 /* hanoi_tower.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E02FBE2014C24F00A26A63 /* hanoi_tower.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05E02FC12014C27000A26A63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Game/Hanoi;
+			dstSubfolderSpec = 7;
+			files = (
+				05E02FC52014C41E00A26A63 /* hanoi_tower.js in CopyFiles */,
+				05E02FC42014C41800A26A63 /* hanoi_main.js in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +127,8 @@
 		05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
 		05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiEngine.framework; path = ../../../Library/Frameworks/KiwiEngine.framework; sourceTree = "<group>"; };
 		05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiLibrary.framework; path = ../../../Library/Frameworks/KiwiLibrary.framework; sourceTree = "<group>"; };
+		05E02FBD2014C24F00A26A63 /* hanoi_main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hanoi_main.js; sourceTree = "<group>"; };
+		05E02FBE2014C24F00A26A63 /* hanoi_tower.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hanoi_tower.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,11 +156,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		057D2B9520149A780027A52A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				05E02FBB2014C21500A26A63 /* Game */,
+			);
+			name = Resources;
+			path = ../Resource;
+			sourceTree = SOURCE_ROOT;
+		};
 		05A42E3A1FE3FD5600321C93 = {
 			isa = PBXGroup;
 			children = (
 				05D6F3531FE3FD880070DF5B /* Source */,
 				05D6F3641FE3FE1C0070DF5B /* OSX */,
+				057D2B9520149A780027A52A /* Resources */,
 				05A42E441FE3FD5600321C93 /* Products */,
 				0510E6701FE55E9500B2C718 /* install_osx.mk */,
 				05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */,
@@ -205,6 +230,23 @@
 				05D6F3651FE3FE1C0070DF5B /* Info.plist */,
 			);
 			name = OSX;
+			sourceTree = SOURCE_ROOT;
+		};
+		05E02FBB2014C21500A26A63 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				05E02FBC2014C22F00A26A63 /* Hanoi */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		05E02FBC2014C22F00A26A63 /* Hanoi */ = {
+			isa = PBXGroup;
+			children = (
+				05E02FBD2014C24F00A26A63 /* hanoi_main.js */,
+				05E02FBE2014C24F00A26A63 /* hanoi_tower.js */,
+			);
+			path = Hanoi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +330,7 @@
 				05D6F3601FE3FE1C0070DF5B /* Frameworks */,
 				05D6F3611FE3FE1C0070DF5B /* Resources */,
 				05D6F36B1FE3FF620070DF5B /* CopyFiles */,
+				05E02FC12014C27000A26A63 /* CopyFiles */,
 			);
 			buildRules = (
 			);

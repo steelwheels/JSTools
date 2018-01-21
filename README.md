@@ -36,5 +36,10 @@ See [required software](https://github.com/steelwheels/JSTools/blob/master/Docum
 * [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md): Execute JavaScript
 * [`jscat`](https://github.com/steelwheels/JSTools/blob/master/Document/jscat-man.md): JSON file operation: Concatenate JSON files.
 
+## Programming manual
+* [Require statement](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/RequireFunc.md): Require: JavaScript module manager
+* [Built-in Modules](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/BuiltinModules.md): The list of built-in JavaScript modules which is embedded in `jsrun` command.
+
 ## Reference manual
 * [KiwiLibrary Framework](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/README.md): Library reference
+* [Steel Wheels Project Web Page](http://steelwheels.github.io): Steel Wheels Project: Main Web Page

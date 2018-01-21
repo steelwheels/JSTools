@@ -14,6 +14,7 @@ install: dummy
 	  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO
 
 make_dmg: dummy
+	mkdir -p $(DMG_PATH)
 	(cd $(DMG_PATH) && rm -rf jstools JSTools.dmg && mkdir jstools)
 	(cd $(HOME)/tools ; tar cf - jstools) | (cd $(DMG_PATH)/jstools ; tar xfv -)
 	cp ../Document/README.html $(DMG_PATH)/jstools
