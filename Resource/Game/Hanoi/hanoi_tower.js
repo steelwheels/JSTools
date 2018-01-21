@@ -12,32 +12,32 @@ class HanoiTower
     }
 
     push_disk(disk) {
-      this.disks.unshift(disk) ;
+      this.disks.push(disk) ;
     }
 
     pop_disk(){
-      return this.disks.shift() ;
+      return this.disks.pop() ;
     }
 
     draw(){
-      for(let v=0 ; v<this.max_height ; v++){
+      for(let v=this.max_height-1 ; v>=0 ; v--){
         this.moveTo(0, v) ;
 
         let size  = (v < this.disks.length) ? this.disks[v] : 0 ;
-        let color = this.selectColor(v) ;
+        let color = this.selectColor(v, size) ;
         this.drawDisk(size, color) ;
       }
     }
 
-    selectColor(v){
+    selectColor(v, size){
       if(v < this.disks.length){
         let result = Color.White
-        switch(v){
-          case 0: result = Color.Red ;    break ;
-          case 1: result = Color.Blue ;   break ;
-          case 2: result = Color.Yellow ; break ;
-          case 3: result = Color.Green ;  break ;
-          case 4: result = Color.Cyan ;   break ;
+        switch(size){
+          case 1: result = Color.Red ;    break ;
+          case 3: result = Color.Blue ;   break ;
+          case 5: result = Color.Yellow ; break ;
+          case 7: result = Color.Green ;  break ;
+          case 9: result = Color.Cyan ;   break ;
         }
         return result ;
       } else {
@@ -46,8 +46,9 @@ class HanoiTower
     }
 
     moveTo(x, y){
-      let newy = y + 5 ;
-      console.moveTo(x, newy) ;
+      let newx = x + this.tower_id * this.max_width ;
+      let newy = this.max_height - y ;
+      console.moveTo(newx, newy) ;
     }
 
     drawDisk(size, color){

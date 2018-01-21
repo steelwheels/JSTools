@@ -28,6 +28,8 @@ public func main(arguments args: Array<String>) -> Int32
 	/* terminate handler */
 	let termhdl: (_ code: Int32) -> Int32 = {
 		(_ code: Int32) -> Int32 in
+		/* Finalize */
+		JRFinalize.finalize(console: console)
 		return code
 	}
 

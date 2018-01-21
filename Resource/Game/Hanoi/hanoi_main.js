@@ -14,6 +14,12 @@
    tower0.push_disk(1) ;
    tower0.draw() ;
 
+   let tower1 = new HanoiTower(1, maxheight) ;
+   tower1.push_disk(5) ;
+   tower1.push_disk(3) ;
+   tower1.push_disk(1) ;
+   tower1.draw() ;
+
    //console.moveTo(0, 20) ;
    console.log("Press any key")
    let key = "a" ;

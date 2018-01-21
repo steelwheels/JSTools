@@ -40,6 +40,13 @@ See [required software](https://github.com/steelwheels/JSTools/blob/master/Docum
 * [Require statement](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/RequireFunc.md): Require: JavaScript module manager
 * [Built-in Modules](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/BuiltinModules.md): The list of built-in JavaScript modules which is embedded in `jsrun` command.
 
+## Sample scripts
+Some sample scripts are contained in the JSTool distribution package (and source core repository).
+The file location is: `jstools.bundle/Contents/Resources/`.
+There are some directories to categorize the software.
+### Game
+* [Game/Hanoi](https://github.com/steelwheels/JSTools/tree/master/Resource/Game/Hanoi): Source code to emulate Hanoi-Tower game.
+
 ## Reference manual
 * [KiwiLibrary Framework](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/README.md): Library reference
 * [Steel Wheels Project Web Page](http://steelwheels.github.io): Steel Wheels Project: Main Web Page
