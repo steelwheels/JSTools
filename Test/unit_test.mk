@@ -5,7 +5,7 @@
 jsrun 		= $(HOME)/tools/jstools/jsrun
 jscat 		= $(HOME)/tools/jstools/jscat
 test_dir	= ../Test
-sample_dir	= ../Sample
+script_dir	= ../Test/Script
 build_dir	= $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 
 all: all_jsrun all_jscat
@@ -23,23 +23,23 @@ help: dummy
 
 hello: dummy
 	@echo "*** test: hello ***"
-	$(jsrun) $(sample_dir)/hello.js | tee $(build_dir)/hello.txt
+	$(jsrun) $(script_dir)/hello.js | tee $(build_dir)/hello.txt
 	diff $(build_dir)/hello.txt $(test_dir)/expected/hello.txt
 
 cat0: dummy
 	@echo "*** test: cat0 ***"
-	echo "Good morning" | $(jsrun) $(sample_dir)/cat0.js | \
+	echo "Good morning" | $(jsrun) $(script_dir)/cat0.js | \
 	  tee $(build_dir)/cat0.txt
 	diff $(build_dir)/cat0.txt $(test_dir)/expected/cat0.txt
 
 cat1: dummy
 	@echo "*** test: cat1 ***"
-	$(jsrun) $(sample_dir)/cat1.js | tee $(build_dir)/cat1.txt
+	$(jsrun) $(script_dir)/cat1.js | tee $(build_dir)/cat1.txt
 	diff $(build_dir)/cat1.txt $(test_dir)/expected/cat1.txt
 
 exit0: dummy
 	@echo "*** test: exit0 ***"
-	(if $(jsrun) $(sample_dir)/exit0.js ; then \
+	(if $(jsrun) $(script_dir)/exit0.js ; then \
 		exit 1 ; \
 	 else \
 		exit 0 ; \
@@ -47,7 +47,7 @@ exit0: dummy
 
 json0: dummy
 	@echo "*** test: json0 ***"
-	$(jsrun) $(sample_dir)/json0.js | tee $(build_dir)/json0.txt
+	$(jsrun) $(script_dir)/json0.js | tee $(build_dir)/json0.txt
 	mv data0-out.json $(build_dir)
 	diff $(build_dir)/data0-out.json $(test_dir)/expected/data0-out.json
 
