@@ -47,7 +47,7 @@ exit0: dummy
 
 json0: dummy
 	@echo "*** test: json0 ***"
-	$(jsrun) --lib JSON $(sample_dir)/json0.js | tee $(build_dir)/json0.txt
+	$(jsrun) $(sample_dir)/json0.js | tee $(build_dir)/json0.txt
 	mv data0-out.json $(build_dir)
 	diff $(build_dir)/data0-out.json $(test_dir)/expected/data0-out.json
 
@@ -66,4 +66,3 @@ jscat1: dummy
 	diff $(build_dir)/json-1data-0_1.json ../Test/expected/json-1data-0_1.json.OK
 
 dummy:
-

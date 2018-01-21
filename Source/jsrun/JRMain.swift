@@ -25,8 +25,14 @@ public func main(arguments args: Array<String>) -> Int32
 	/* allocate context */
 	let context = KEContext(virtualMachine: JSVirtualMachine())
 
+	/* terminate handler */
+	let termhdl: (_ code: Int32) -> Int32 = {
+		(_ code: Int32) -> Int32 in
+		return code
+	}
+
 	/* setup built-in library */
-	KLSetupLibrary(context: context, console: console, config: config.libraryConfig)
+	KLSetupLibrary(context: context, console: console, terminateHandler: termhdl, config: config.libraryConfig)
 	
 	/* Compile scripts */
 	let compiler = JRCompiler(context: context, config: config)

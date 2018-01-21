@@ -6,17 +6,23 @@ function main()
 
 	console.setScreenMode(true) ; 
 
-	let pos = 0 ;
+	let vpos = (console.screenHeight - 8) / 2 ;
+	let hpos = (console.screenWidth  - maxlen*8) / 2 ;
 	for(let fcol=Color.Min ; fcol<=Color.Max ; fcol++){
-		console.moveTo(0, pos) ;
+		console.moveTo(hpos, vpos) ;
 		let label = makeLabel(Color.description(fcol), maxlen) ;
 		for(let bcol=Color.Min ; bcol<=Color.Max ; bcol++){
 			console.foregroundColor = fcol ;
 			console.backgroundColor = bcol ;
 			console.log(label) ;
 		}
-		pos += 1 ;
+		vpos += 1 ;
 	}
+
+	console.foregroundColor = Color.Black ;
+	console.backgroundColor = Color.White ;
+	centering( 2, "J S T o o l s") ;
+	centering(22, "Press any key to quit") ;
 
 	/* Wait key press */
 	while(console.getKey() == null){
@@ -43,6 +49,13 @@ function makeLabel(name, maxlen)
 		name += " " ;
 	}
 	return name ;
+}
+
+function centering(vpos, label)
+{
+	let hpos = (console.screenWidth - label.length) / 2 ;
+	console.moveTo(hpos, vpos) ;
+	console.log(label) ;
 }
 
 main()

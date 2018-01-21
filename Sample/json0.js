@@ -1,3 +1,4 @@
+var JSON = require('JSON') ;
 
 function json0(){
  	var data = JSON.read("../Sample/data0.json") ;
@@ -14,4 +15,3 @@ function json0(){
 }
 
 json0()
-
