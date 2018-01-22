@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		055D34F8200B0EBD00BD840A /* JRFinalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D34F7200B0EBD00BD840A /* JRFinalize.swift */; };
+		056C672820162C0D003E9485 /* Primitives.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 056C6724201627D2003E9485 /* Primitives.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
 		05D4377F20035C4500320CA4 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4377E20035C4500320CA4 /* JRMain.swift */; };
 		05D437812003713000320CA4 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D437802003713000320CA4 /* JRConfig.swift */; };
@@ -63,6 +64,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		056C6725201627FC003E9485 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Library/Graphics;
+			dstSubfolderSpec = 7;
+			files = (
+				056C672820162C0D003E9485 /* Primitives.js in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05A42E411FE3FD5600321C93 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,6 +121,7 @@
 /* Begin PBXFileReference section */
 		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
 		055D34F7200B0EBD00BD840A /* JRFinalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRFinalize.swift; sourceTree = "<group>"; };
+		056C6724201627D2003E9485 /* Primitives.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Primitives.js; sourceTree = "<group>"; };
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856D920035B2900DB5E75 /* jscat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jscat; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856DB20035B2A00DB5E75 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -156,9 +168,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		056C6723201626F4003E9485 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				056C67272016282D003E9485 /* Graphics */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		056C67272016282D003E9485 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				056C6724201627D2003E9485 /* Primitives.js */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 		057D2B9520149A780027A52A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				056C6723201626F4003E9485 /* Library */,
 				05E02FBB2014C21500A26A63 /* Game */,
 			);
 			name = Resources;
@@ -331,6 +360,7 @@
 				05D6F3611FE3FE1C0070DF5B /* Resources */,
 				05D6F36B1FE3FF620070DF5B /* CopyFiles */,
 				05E02FC12014C27000A26A63 /* CopyFiles */,
+				056C6725201627FC003E9485 /* CopyFiles */,
 			);
 			buildRules = (
 			);
