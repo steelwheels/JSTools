@@ -38,7 +38,7 @@ See [required software](https://github.com/steelwheels/JSTools/blob/master/Docum
 
 ## Programming manual
 * [Require statement](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/RequireFunc.md): Require: JavaScript module manager
-* [Built-in Modules](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/BuiltinModules.md): The list of built-in JavaScript modules which is embedded in `jsrun` command.
+* [Built-in Modules](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The list of built-in JavaScript modules which is embedded in `jsrun` command.
 
 ## Sample scripts
 Some sample scripts are contained in the JSTool distribution package (and source core repository).
