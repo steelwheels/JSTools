@@ -21,6 +21,8 @@
 		05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05D6F3791FE42D6B0070DF5B /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05DDA5F5201C18870041D841 /* Console.js in Resources */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
+		05DDA5F6201C18970041D841 /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
 		05E02FC42014C41800A26A63 /* hanoi_main.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E02FBD2014C24F00A26A63 /* hanoi_main.js */; };
 		05E02FC52014C41E00A26A63 /* hanoi_tower.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E02FBE2014C24F00A26A63 /* hanoi_tower.js */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,7 @@
 			dstPath = Library/Graphics;
 			dstSubfolderSpec = 7;
 			files = (
+				05DDA5F6201C18970041D841 /* Console.js in CopyFiles */,
 				056C672820162C0D003E9485 /* Primitives.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +142,7 @@
 		05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
 		05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiEngine.framework; path = ../../../Library/Frameworks/KiwiEngine.framework; sourceTree = "<group>"; };
 		05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiLibrary.framework; path = ../../../Library/Frameworks/KiwiLibrary.framework; sourceTree = "<group>"; };
+		05DDA5F4201C18870041D841 /* Console.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Console.js; sourceTree = "<group>"; };
 		05E02FBD2014C24F00A26A63 /* hanoi_main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hanoi_main.js; sourceTree = "<group>"; };
 		05E02FBE2014C24F00A26A63 /* hanoi_tower.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hanoi_tower.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +183,7 @@
 		056C67272016282D003E9485 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				05DDA5F4201C18870041D841 /* Console.js */,
 				056C6724201627D2003E9485 /* Primitives.js */,
 			);
 			path = Graphics;
@@ -430,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05DDA5F5201C18870041D841 /* Console.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

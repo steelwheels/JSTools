@@ -66,6 +66,86 @@ module.exports = {
 			newobj.frame = this.frame.clone() ;
 			return newobj ;
 		}
+
+		alignStringToLeft(width, label){
+			var result = "" ;
+			if(label != null){
+				result = label ;
+				const len = label.length ;
+				if(len < width){
+					let right = width - len ;
+					for(let i=0 ; i<right ; i++){
+						result = result + " " ;
+					}
+				}
+			} else {
+				for(let i=0 ; i<width ; i++){
+					result = result + " " ;
+				}
+			}
+			return result ;
+		}
+
+		alignStringToRight(width, label){
+			var result = "" ;
+			if(label != null){
+				result = label ;
+				const len = label.length ;
+				if(len < width){
+					let left = width - len ;
+					for(let i=0 ; i<left ; i++){
+						result = " " + result ;
+					}
+				}
+			} else {
+				for(let i=0 ; i<width ; i++){
+					result = result + " " ;
+				}
+			}
+			return result ;
+		}
+
+		alignStringToCenter(width, label){
+			var result = "" ;
+			if(label != null){
+				result = label ;
+				const len = label.length ;
+				if(len < width){
+					const left  = Math.floor((width - len) / 2) ;
+					const right = width - len - left ;
+					for(let i=0 ; i<left ; i++){
+						result = " " + result ;
+					}
+					for(let i=0 ; i<right ; i++){
+						result = result + " " ;
+					}
+				}
+			} else {
+				for(let i=0 ; i<width ; i++){
+					result = result + " " ;
+				}
+			}
+			return result ;
+		}
+
+		alignString(width, label, align){
+			var result = "" ;
+			switch(align){
+				case Align.Center:
+					result = alignStringCenter(width, label) ;
+				break ;
+				case Align.Left:
+					result = alignStringLeft(width, label) ;
+				break ;
+				case Align.Right:
+					result = alignStringLeft(width, label) ;
+				break ;
+			}
+			return result
+		}
+
+		drawLine(x, y, width, align, label){
+			console.moveTo(x, y) ;
+		}
 	}
 } ;
-

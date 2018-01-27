@@ -23,3 +23,7 @@ if(rct0.size.width==14 && rct0.size.height==15 && rct1.size.width==13 && rct1.si
 } else {
   console.log("Clone rect ... NG\n") ;
 }
+
+/* End of this script */
+console.log("Bye\n") ;
+

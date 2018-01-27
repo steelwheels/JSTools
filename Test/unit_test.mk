@@ -13,7 +13,7 @@ all: all_jsrun all_jscat
 #
 # jsrun
 #
-all_jsrun: help hello cat0 cat1 exit0 json0 gr_primitive0
+all_jsrun: help hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -52,11 +52,18 @@ json0: dummy
 	diff $(build_dir)/data0-out.json $(test_dir)/expected/data0-out.json
 
 gr_primitive0 : dummy
-	@echo "*** test: graphics_primitive0 ***"
+	@echo "*** test: gr_primitive0 ***"
 	$(jsrun) $(script_dir)/gr_primitive0.js | \
 					tee $(build_dir)/gr_primitive0.txt
 	diff $(build_dir)/gr_primitive0.txt \
 					$(test_dir)/expected/gr_primitive0.txt
+
+gr_view0 : dummy
+	@echo "*** test: gr_view0 ***"
+	$(jsrun) $(script_dir)/gr_view0.js | \
+					tee $(build_dir)/gr_view0.txt
+	diff $(build_dir)/gr_view0.txt \
+					$(test_dir)/expected/gr_view0.txt
 
 #
 # jscat
