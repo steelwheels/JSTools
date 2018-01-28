@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		055528D8201D57CC00397D3C /* hello0.js in Resources */ = {isa = PBXBuildFile; fileRef = 055528D7201D57CC00397D3C /* hello0.js */; };
+		055528DA201D580300397D3C /* hello0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528D7201D57CC00397D3C /* hello0.js */; };
+		055528DC201D59EC00397D3C /* color_table.js in Resources */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
+		055528DD201D59FE00397D3C /* color_table.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
 		055D34F8200B0EBD00BD840A /* JRFinalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D34F7200B0EBD00BD840A /* JRFinalize.swift */; };
 		056C672820162C0D003E9485 /* Primitives.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 056C6724201627D2003E9485 /* Primitives.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
@@ -66,6 +70,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		055528D9201D57ED00397D3C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Sample;
+			dstSubfolderSpec = 7;
+			files = (
+				055528DD201D59FE00397D3C /* color_table.js in CopyFiles */,
+				055528DA201D580300397D3C /* hello0.js in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		056C6725201627FC003E9485 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,6 +138,8 @@
 
 /* Begin PBXFileReference section */
 		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
+		055528D7201D57CC00397D3C /* hello0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello0.js; sourceTree = "<group>"; };
+		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
 		055D34F7200B0EBD00BD840A /* JRFinalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRFinalize.swift; sourceTree = "<group>"; };
 		056C6724201627D2003E9485 /* Primitives.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Primitives.js; sourceTree = "<group>"; };
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +189,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		055528D6201D578500397D3C /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				055528DB201D59EC00397D3C /* color_table.js */,
+				055528D7201D57CC00397D3C /* hello0.js */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
 		056C6723201626F4003E9485 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				056C6723201626F4003E9485 /* Library */,
+				055528D6201D578500397D3C /* Sample */,
 				05E02FBB2014C21500A26A63 /* Game */,
 			);
 			name = Resources;
@@ -366,6 +393,7 @@
 				05D6F36B1FE3FF620070DF5B /* CopyFiles */,
 				05E02FC12014C27000A26A63 /* CopyFiles */,
 				056C6725201627FC003E9485 /* CopyFiles */,
+				055528D9201D57ED00397D3C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -435,7 +463,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055528D8201D57CC00397D3C /* hello0.js in Resources */,
 				05DDA5F5201C18870041D841 /* Console.js in Resources */,
+				055528DC201D59EC00397D3C /* color_table.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

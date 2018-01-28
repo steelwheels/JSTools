@@ -1,0 +1,8 @@
+* Test Graphics/Primitive Library
+alignLeft:   "hello     "
+alignRight:  "     hello"
+alignCenter: "  hello   "
+alignLeft:   "hello, wor"
+alignRight:  "hello, wor"
+alignCenter: "hello, wor"
+Bye

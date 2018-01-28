@@ -12,15 +12,13 @@ function main()
 		console.moveTo(hpos, vpos) ;
 		let label = makeLabel(Color.description(fcol), maxlen) ;
 		for(let bcol=Color.Min ; bcol<=Color.Max ; bcol++){
-			console.foregroundColor = fcol ;
-			console.backgroundColor = bcol ;
+			console.setColor(fcol, bcol) ;
 			console.log(label) ;
 		}
 		vpos += 1 ;
 	}
 
-	console.foregroundColor = Color.Black ;
-	console.backgroundColor = Color.White ;
+	console.setColor(Color.Black, Color.White) ;
 	centering( 2, "J S T o o l s") ;
 	centering(22, "Press any key to quit") ;
 

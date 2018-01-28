@@ -16,6 +16,13 @@ console.log("alignLeft:   \"" + astr0 + "\"\n") ;
 console.log("alignRight:  \"" + astr1 + "\"\n") ;
 console.log("alignCenter: \"" + astr2 + "\"\n") ;
 
+const astr10 = view0.alignStringToLeft(10,   "hello, world !!!") ;
+const astr11 = view0.alignStringToRight(10,  "hello, world !!!") ;
+const astr12 = view0.alignStringToCenter(10, "hello, world !!!") ;
+console.log("alignLeft:   \"" + astr10 + "\"\n") ;
+console.log("alignRight:  \"" + astr11 + "\"\n") ;
+console.log("alignCenter: \"" + astr12 + "\"\n") ;
+
 /* End of this script */
 console.log("Bye") ;
 

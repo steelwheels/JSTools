@@ -4,9 +4,7 @@ console.visiblePrompt = false ;
 console.doBuffering   = false ;
 console.doEcho	      = false ;
 console.setScreenMode(true) ;
-
-console.foregroundColor = Color.Yellow ;
-console.backgroundColor = Color.Blue ;
+console.setColor(Color.Yellow, Color.Blue) ;
 
 console.log("Press \"q\" to quit\n") ;
 

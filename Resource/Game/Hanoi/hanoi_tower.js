@@ -55,15 +55,12 @@ class HanoiTower
       let leftnum  = (this.max_width - size) / 2 ;
       let rightnum = this.max_width - size - leftnum ;
       for(let h=0 ; h<leftnum ; h++){
-        console.foregroundColor = Color.Black ;
         console.log(" ") ;
       }
       for(let h=0 ; h<size ; h++){
-        console.foregroundColor = color ;
         console.log("#") ;
       }
       for(let h=0 ; h<rightnum ; h++){
-        console.foregroundColor = Color.Black ;
         console.log(" ") ;
       }
     }
