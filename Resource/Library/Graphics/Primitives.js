@@ -138,13 +138,13 @@ module.exports = {
 			var result = "" ;
 			switch(align){
 				case Align.Center:
-					result = alignStringCenter(width, label) ;
+					result = this.alignStringToCenter(width, label) ;
 				break ;
 				case Align.Left:
-					result = alignStringLeft(width, label) ;
+					result = this.alignStringToLeft(width, label) ;
 				break ;
 				case Align.Right:
-					result = alignStringLeft(width, label) ;
+					result = this.alignStringToLeft(width, label) ;
 				break ;
 			}
 			return result
@@ -156,7 +156,7 @@ module.exports = {
 			const maxwidth = console.screenWidth ;
 			if(xabs < maxwidth){
 				const xdiff = maxwidth - xabs ;
-				width       = min(width, xdiff) ;
+				width       = Math.min(width, xdiff) ;
 			} else {
 				return ; // can not draw
 			}
@@ -171,8 +171,19 @@ module.exports = {
 			/* draw label */
 			console.moveTo(xabs, yabs) ;
 			console.setColor(this.foregroundColor, this.backgroundColor) ;
-			const labstr = alignStringCenter(width, label) ;
+			const labstr = this.alignString(width, label, align) ;
 			console.log(labstr) ;
+		}
+
+		drawRect(x, y, width, height, label, align){
+			const middle = Math.floor(height / 2) ;
+			for(let h=0 ; h<middle ; h++){
+				this.drawLine(x, y+h, width, null, align) ;
+			}
+			this.drawLine(x, y+middle, width, label, align) ;
+			for(let h=middle+1 ; h<height ; h++){
+				this.drawLine(x, y+h, width, null, align) ;
+			}
 		}
 	}
 } ;
