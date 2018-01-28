@@ -25,20 +25,29 @@ public func main(arguments args: Array<String>) -> Int32
 	/* allocate context */
 	let context = KEContext(virtualMachine: JSVirtualMachine())
 
-	/* terminate handler */
-	let termhdl: (_ code: Int32) -> Int32 = {
-		(_ code: Int32) -> Int32 in
+	/* set exception handler */
+	let ehandler = {
+		(_ exception: KLException) -> Void in
 		/* Finalize */
 		JRFinalize.finalize(console: console)
-		return code
+		/* Exit */
+		let code: Int32
+		switch exception {
+		case .CompileError(let message):
+			console.error(string: message + "\n")
+			code = 2
+		case .Exit(let c):
+			code = c
+		}
+		Darwin.exit(code)
 	}
 
 	/* setup built-in library */
-	KLSetupLibrary(context: context, console: console, terminateHandler: termhdl, config: config.libraryConfig)
+	KLSetupLibrary(context: context, console: console, config: config.libraryConfig, exceptionHandler: ehandler)
 	
 	/* Compile scripts */
 	let compiler = JRCompiler(context: context, config: config)
-	let error    = compiler.compile()
+	let error    = compiler.compile(exceptionHandler: ehandler)
 	switch error {
 	case .NoError:
 		break

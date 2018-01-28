@@ -6,6 +6,7 @@
  */
 
 import KiwiEngine
+import KiwiLibrary
 import Foundation
 
 public class JRCompiler
@@ -18,12 +19,28 @@ public class JRCompiler
 		mConfig  = cfg
 	}
 
-	public func compile() -> CompileError {
+	public func compile(exceptionHandler ehandler: @escaping (_ exception: KLException) -> Void) -> CompileError {
 		do {
 			/* compile user script */
 			for file in mConfig.scriptFiles {
 				let script = try readScript(scriptFile: file)
-				try compileScript(scriptText: script, scriptFile: file)
+				mContext.runScript(script: script, exceptionHandler: {
+					(_ result: KEExecutionResult) -> Void in
+					let excep: KLException
+					switch result {
+					case .Exception(_, let message):
+						excep = .CompileError(message)
+					case .Finished(_, let value):
+						var code: Int32 = 2
+						if let v = value {
+							if v.isNumber {
+								code = v.toNumber().int32Value
+							}
+						}
+						excep = .Exit(code)
+					}
+					ehandler(excep)
+				})
 			}
 			return .NoError
 		} catch let error {
@@ -41,13 +58,6 @@ public class JRCompiler
 			return try String(contentsOf: url, encoding: .utf8)
 		} catch _ {
 			throw CompileError.CanNotRead(fileName: file)
-		}
-	}
-
-	private func compileScript(scriptText script: String, scriptFile file: String) throws {
-		let (_, errors) = KEEngine.runScript(context: mContext, script: script)
-		if let errors = errors {
-			throw CompileError.CompileError(errors: errors, scriptFile: file)
 		}
 	}
 }
