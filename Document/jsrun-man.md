@@ -13,8 +13,9 @@ The following options are available:
 
 |Short  |Long       |Parameter  |Description            |
 |:---   |:---       |:---       |:---                   |
-|-h     |--help     |           |Print help message     |
-|       |--version  |           |Print version information |
+|-h     |--help     |-          |Print help message     |
+|       |--version  |-          |Print version information |
+|       |--no-strict |-         |Do not use `strict` mode (If you don't give this option, the mode is set before compiling any scripts.)|
 
 # Exit status
 |Value  |Description      |

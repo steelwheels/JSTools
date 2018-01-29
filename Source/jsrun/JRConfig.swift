@@ -21,8 +21,9 @@ public class JRCommandLineParser
 	private var mConsole:	CNConsole
 
 	private enum OptionId: Int {
-		case Help	= 0
-		case Version	= 1
+		case Help		= 0
+		case Version		= 1
+		case NoStrictMode	= 2
 	}
 
 	public init(console cons: CNConsole){
@@ -39,6 +40,10 @@ public class JRCommandLineParser
 				     shortName: nil, longName: "version",
 				     parameterNum: 0, parameterType: .VoidType,
 				     helpInfo: "Print version information"),
+			CBOptionType(optionId: OptionId.NoStrictMode.rawValue,
+				     shortName: nil, longName: "no-strict",
+				     parameterNum: 0, parameterType: .VoidType,
+				     helpInfo: "Do not use strict mode"),
 		]
 	}
 
@@ -48,8 +53,10 @@ public class JRCommandLineParser
 
 	private func printHelpMessage() {
 		mConsole.print(string: "usage: jsrunner [options] script-file1 script-file2 ...\n" +
-		"  [options] --help, -h : Print this message\n" +
-		"            --version  : Print version\n"
+		"  [options]\n" +
+		"    --help, -h  : Print this message\n" +
+		"    --version   : Print version\n" +
+		"    --no-strict : Do not use strict mode (default: use strict)\n"
 		)
 	}
 
@@ -88,6 +95,8 @@ public class JRCommandLineParser
 					case .Version:
 						printVersionMessage()
 						return nil
+					case .NoStrictMode:
+						config.libraryConfig.useStrictMode = false
 					}
 				} else {
 					NSLog("[Internal error] Unknown option id")

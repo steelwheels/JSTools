@@ -13,13 +13,19 @@ all: all_jsrun all_jscat
 #
 # jsrun
 #
-all_jsrun: help hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0
+all_jsrun: help nostrict hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0
 	@echo "*** test: Done ***"
 
 help: dummy
 	@echo "*** test: help ***"
 	$(jsrun) --help 2>&1 | tee $(build_dir)/help.txt
 	diff $(build_dir)/help.txt $(test_dir)/expected/help.txt
+
+nostrict: dummy
+	@echo "*** test: --no-strict ***"
+	$(jsrun) --no-strict $(script_dir)/hello.js | \
+		tee $(build_dir)/hello-no-strict.txt
+	diff $(build_dir)/hello-no-strict.txt $(test_dir)/expected/hello.txt
 
 hello: dummy
 	@echo "*** test: hello ***"
