@@ -12,6 +12,9 @@ install: dummy
 	xcodebuild install -target jscat \
 	  -project $(PROJECT_NAME).xcodeproj \
 	  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO
+	xcodebuild install -target jsadb \
+	  -project $(PROJECT_NAME).xcodeproj \
+	  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO
 
 make_dmg: dummy
 	mkdir -p $(DMG_PATH)

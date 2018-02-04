@@ -30,8 +30,8 @@ public class JRCommandLineParser
 		mConsole = cons
 	}
 
-	private func optionTypes() -> Array<CBOptionType> {
-		return [
+	private func parserConfig() -> CBParserConfig {
+		let opttypes: Array<CBOptionType> = [
 			CBOptionType(optionId: OptionId.Help.rawValue,
 				     shortName: "h", longName: "help",
 				     parameterNum: 0, parameterType: .VoidType,
@@ -45,6 +45,9 @@ public class JRCommandLineParser
 				     parameterNum: 0, parameterType: .VoidType,
 				     helpInfo: "Do not use strict mode"),
 		]
+		let config = CBParserConfig(hasSubCommand: false)
+		config.setDefaultOptions(optionTypes: opttypes)
+		return config
 	}
 
 	private func printUsage() {
@@ -73,7 +76,7 @@ public class JRCommandLineParser
 
 	public func parseArguments(arguments args: Array<String>) -> JRConfig? {
 		var config : JRConfig? = nil
-		let (err, rets) = CBParseArguments(optionTypes: optionTypes(), arguments: args)
+		let (err, _, rets) = CBParseArguments(parserConfig: parserConfig(), arguments: args)
 		if let e = err {
 			mConsole.error(string: "Error: \(e.description)\n")
 		} else {

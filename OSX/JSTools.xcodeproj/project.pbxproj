@@ -14,6 +14,7 @@
 		055D34F8200B0EBD00BD840A /* JRFinalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D34F7200B0EBD00BD840A /* JRFinalize.swift */; };
 		056C672820162C0D003E9485 /* Primitives.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 056C6724201627D2003E9485 /* Primitives.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
+		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
 		05D4377F20035C4500320CA4 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4377E20035C4500320CA4 /* JRMain.swift */; };
 		05D437812003713000320CA4 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D437802003713000320CA4 /* JRConfig.swift */; };
 		05D6F35A1FE3FDAF0070DF5B /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */; };
@@ -25,6 +26,8 @@
 		05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05D6F3791FE42D6B0070DF5B /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E62026A70C00EAAE8C /* JRMain.swift */; };
+		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
 		05DDA5F5201C18870041D841 /* Console.js in Resources */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
 		05DDA5F6201C18970041D841 /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
 		05E02FC42014C41800A26A63 /* hanoi_main.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E02FBD2014C24F00A26A63 /* hanoi_main.js */; };
@@ -53,6 +56,13 @@
 			remoteGlobalIDString = 05A856D820035B2900DB5E75;
 			remoteInfo = jscat;
 		};
+		05AC80D620268F0100165368 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05AC80CE20268EF700165368;
+			remoteInfo = jsadb;
+		};
 		05D6F3691FE3FE280070DF5B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
@@ -66,6 +76,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 05A42E421FE3FD5600321C93;
 			remoteInfo = jsrun;
+		};
+		05DACDA420274E87001C4283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05D6F3621FE3FE1C0070DF5B;
+			remoteInfo = JSToolsBundle;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -110,6 +127,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		05AC80CD20268EF700165368 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		05D6F36B1FE3FF620070DF5B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -145,6 +171,8 @@
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856D920035B2900DB5E75 /* jscat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jscat; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856DB20035B2A00DB5E75 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		05AC80CF20268EF700165368 /* jsadb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsadb; sourceTree = BUILT_PRODUCTS_DIR; };
+		05AC80D120268EF700165368 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05D4377E20035C4500320CA4 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		05D437802003713000320CA4 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSTools-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -159,6 +187,8 @@
 		05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
 		05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiEngine.framework; path = ../../../Library/Frameworks/KiwiEngine.framework; sourceTree = "<group>"; };
 		05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiLibrary.framework; path = ../../../Library/Frameworks/KiwiLibrary.framework; sourceTree = "<group>"; };
+		05DAD1E62026A70C00EAAE8C /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
+		05DAD1E82026A7C500EAAE8C /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05DDA5F4201C18870041D841 /* Console.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Console.js; sourceTree = "<group>"; };
 		05E02FBD2014C24F00A26A63 /* hanoi_main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hanoi_main.js; sourceTree = "<group>"; };
 		05E02FBE2014C24F00A26A63 /* hanoi_tower.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hanoi_tower.js; sourceTree = "<group>"; };
@@ -173,6 +203,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		05A856D620035B2900DB5E75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05AC80CC20268EF700165368 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -247,6 +284,7 @@
 				05A42E431FE3FD5600321C93 /* jsrun */,
 				05D6F3631FE3FE1C0070DF5B /* jstools.bundle */,
 				05A856D920035B2900DB5E75 /* jscat */,
+				05AC80CF20268EF700165368 /* jsadb */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +297,16 @@
 				05A856DB20035B2A00DB5E75 /* main.swift */,
 			);
 			path = jscat;
+			sourceTree = "<group>";
+		};
+		05AC80D020268EF700165368 /* jsadb */ = {
+			isa = PBXGroup;
+			children = (
+				05DAD1E62026A70C00EAAE8C /* JRMain.swift */,
+				05DAD1E82026A7C500EAAE8C /* JRConfig.swift */,
+				05AC80D120268EF700165368 /* main.swift */,
+			);
+			path = jsadb;
 			sourceTree = "<group>";
 		};
 		05B8182B2002630A00290480 /* jsrun */ = {
@@ -280,6 +328,7 @@
 				05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */,
 				05B8182B2002630A00290480 /* jsrun */,
 				05A856DA20035B2A00DB5E75 /* jscat */,
+				05AC80D020268EF700165368 /* jsadb */,
 			);
 			name = Source;
 			path = ../Source;
@@ -337,6 +386,7 @@
 			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = "";
 			dependencies = (
+				05AC80D720268F0100165368 /* PBXTargetDependency */,
 				05A856E320035B4600DB5E75 /* PBXTargetDependency */,
 				05D6F3751FE406EB0070DF5B /* PBXTargetDependency */,
 			);
@@ -383,6 +433,24 @@
 			productReference = 05A856D920035B2900DB5E75 /* jscat */;
 			productType = "com.apple.product-type.tool";
 		};
+		05AC80CE20268EF700165368 /* jsadb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05AC80D520268EF700165368 /* Build configuration list for PBXNativeTarget "jsadb" */;
+			buildPhases = (
+				05AC80CB20268EF700165368 /* Sources */,
+				05AC80CC20268EF700165368 /* Frameworks */,
+				05AC80CD20268EF700165368 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05DACDA520274E87001C4283 /* PBXTargetDependency */,
+			);
+			name = jsadb;
+			productName = jsadb;
+			productReference = 05AC80CF20268EF700165368 /* jsadb */;
+			productType = "com.apple.product-type.tool";
+		};
 		05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05D6F3661FE3FE1C0070DF5B /* Build configuration list for PBXNativeTarget "JSToolsBundle" */;
@@ -427,6 +495,10 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					05AC80CE20268EF700165368 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					05D6F3621FE3FE1C0070DF5B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -452,6 +524,7 @@
 				05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */,
 				05A42E421FE3FD5600321C93 /* jsrun */,
 				05A856D820035B2900DB5E75 /* jscat */,
+				05AC80CE20268EF700165368 /* jsadb */,
 				05D6F3701FE406CD0070DF5B /* Install */,
 				0510E6711FE560F300B2C718 /* Test */,
 			);
@@ -495,6 +568,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05AC80CB20268EF700165368 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */,
+				05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */,
+				05AC80D220268EF700165368 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05D6F35F1FE3FE1C0070DF5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,6 +603,11 @@
 			target = 05A856D820035B2900DB5E75 /* jscat */;
 			targetProxy = 05A856E220035B4600DB5E75 /* PBXContainerItemProxy */;
 		};
+		05AC80D720268F0100165368 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05AC80CE20268EF700165368 /* jsadb */;
+			targetProxy = 05AC80D620268F0100165368 /* PBXContainerItemProxy */;
+		};
 		05D6F36A1FE3FE280070DF5B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
@@ -529,6 +617,11 @@
 			isa = PBXTargetDependency;
 			target = 05A42E421FE3FD5600321C93 /* jsrun */;
 			targetProxy = 05D6F3741FE406EB0070DF5B /* PBXContainerItemProxy */;
+		};
+		05DACDA520274E87001C4283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
+			targetProxy = 05DACDA420274E87001C4283 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -700,10 +793,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
-					"$(HOME)/Library/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(HOME)/tools/jstools";
@@ -731,12 +821,31 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		05A856DE20035B2A00DB5E75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				GCC_OPTIMIZATION_LEVEL = 2;
+				INSTALL_PATH = "$(HOME)/tools/jstools";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		05AC80D320268EF700165368 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -751,7 +860,26 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		05AC80D420268EF700165368 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				INSTALL_PATH = "$(HOME)/tools/jstools";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -854,6 +982,15 @@
 			buildConfigurations = (
 				05A856DD20035B2A00DB5E75 /* Debug */,
 				05A856DE20035B2A00DB5E75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05AC80D520268EF700165368 /* Build configuration list for PBXNativeTarget "jsadb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05AC80D320268EF700165368 /* Debug */,
+				05AC80D420268EF700165368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -35,6 +35,7 @@ See [required software](https://github.com/steelwheels/JSTools/blob/master/Docum
 ## User's manual
 * [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md): Execute JavaScript
 * [`jscat`](https://github.com/steelwheels/JSTools/blob/master/Document/jscat-man.md): JSON file operation: Concatenate JSON files.
+* [`jsadb`](https://github.com/steelwheels/JSTools/blob/master/Document/jsadb-man.md): Read, write and update AddressBook database.
 
 ## Programming manual
 * [Require statement](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/RequireFunc.md): Require: JavaScript module manager
