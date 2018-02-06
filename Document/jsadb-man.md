@@ -14,6 +14,15 @@ Following sub commands are supported:
 |:---     |:---                             |
 |dump     |Dump contents of database by the JSON file format|
 
+These options works without sub command.
+They called as default options.
+
+|Short  |Long       |Parameter  |Description            |
+|:---   |:---       |:---       |:---                   |
+|-h     |--help     |-          |Print help message     |
+|       |--version  |-          |Print version information |
+
+
 # Sub commands
 ## `dump` command
 Dump the content of AddressBook database.

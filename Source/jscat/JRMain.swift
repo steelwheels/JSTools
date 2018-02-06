@@ -19,7 +19,7 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* Open first file */
-	var firstinfo: Dictionary<String, AnyObject>
+	var firstinfo: Dictionary<String, Any>
 	if let firstfile = openFirstFile(config: config, console: console) {
 		if let info = unserializeString(file: firstfile, console: console){
 			firstinfo = info
@@ -88,9 +88,9 @@ private func openFile(fileName name: String, console cons: CNConsole) -> CNFile?
 	return result
 }
 
-private func unserializeString(file f: CNFile, console cons: CNConsole) -> Dictionary<String, AnyObject>?
+private func unserializeString(file f: CNFile, console cons: CNConsole) -> Dictionary<String, Any>?
 {
-	var result: Dictionary<String, AnyObject>? = nil
+	var result: Dictionary<String, Any>? = nil
 	if let content = f.getAll() {
 		let (jdata, err) = CNJSONFile.unserialize(string: content)
 		if let d = jdata {

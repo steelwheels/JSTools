@@ -1,12 +1,12 @@
-//
-//  main.swift
-//  jsadb
-//
-//  Created by Tomoo Hamada on 2018/02/04.
-//  Copyright © 2018年 Tomoo Hamada. All rights reserved.
-//
+/**
+* @file	main.swift
+* @brief	Call Main function
+* @par Copyright
+*   Copyright (C) 2017 Steel Wheels Project
+*/
 
 import Foundation
 
-print("Hello, World!")
+let result = main(arguments: CommandLine.arguments)
+exit(result)
 

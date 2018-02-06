@@ -53,7 +53,8 @@ public class JRCommandLineParser
 	}
 
 	private func printHelpMessage() {
-		mConsole.print(string: "usage: jscat [options] [file ...]\n" +
+		mConsole.print(string: "usage: jsadb [command] [options]\n" +
+			"  [command] dump       : Dump content of AddressBook\n" +
 			"  [options] --help, -h : Print this message\n" +
 			"            --version  : Print version\n"
 		)
