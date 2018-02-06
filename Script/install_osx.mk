@@ -5,16 +5,19 @@
 INSTALL_PATH ?= $(HOME)/Library/Frameworks
 DMG_PATH     ?= $(HOME)/tools/archive
 
+TARGET_LIST  = jsrun jscat jsadb
+
 install: dummy
-	xcodebuild install -target jsrun \
-	  -project $(PROJECT_NAME).xcodeproj \
-	  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO
-	xcodebuild install -target jscat \
-	  -project $(PROJECT_NAME).xcodeproj \
-	  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO
-	xcodebuild install -target jsadb \
-	  -project $(PROJECT_NAME).xcodeproj \
-	  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO
+	for targ in $(TARGET_LIST) ; do \
+		if xcodebuild install -target $$targ \
+		  -project $(PROJECT_NAME).xcodeproj \
+		  -configuration Release DSTROOT=/ ONLY_ACTIVE_ARCH=NO ; then \
+			echo "done" ; \
+		else \
+			echo "*** Failed" ; \
+			exit 1; \
+		fi ; \
+	done
 
 make_dmg: dummy
 	mkdir -p $(DMG_PATH)
