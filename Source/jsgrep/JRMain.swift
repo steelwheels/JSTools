@@ -21,7 +21,7 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* Read input file */
-	var srcinfo: NSDictionary
+	var srcinfo: CNJSONObject
 	if let infile = openInputFile(config: config, console: console) {
 		if let info = unserializeString(file: infile, console: console){
 			srcinfo = info
@@ -42,7 +42,7 @@ public func main(arguments args: Array<String>) -> Int32
 		case .Property(let kexp, let vexp):	keyexp = kexp ; valexp = vexp
 		}
 		let grep = CNJSONGrep(keyExpression: keyexp, valueExpression: valexp)
-		if let newdict = grep.execute(dictionary: srcinfo) {
+		if let newdict = grep.execute(JSONObject: srcinfo) {
 			srcinfo = newdict
 		} else {
 			return 0 // output is empty
@@ -50,7 +50,7 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* write results */
-	let (text, err) = CNJSONFile.serialize(dictionary: srcinfo)
+	let (text, err) = CNJSONFile.serialize(JSONObject: srcinfo)
 	if let t = text {
 		let out = CNStandardFile(type: .output)
 		let _ = out.put(string: t)
@@ -88,9 +88,9 @@ private func openFile(fileName name: String, console cons: CNConsole) -> CNFile?
 	return result
 }
 
-private func unserializeString(file f: CNFile, console cons: CNConsole) -> NSDictionary?
+private func unserializeString(file f: CNFile, console cons: CNConsole) -> CNJSONObject?
 {
-	var result: NSDictionary? = nil
+	var result: CNJSONObject? = nil
 	if let content = f.getAll() {
 		let (jdata, err) = CNJSONFile.unserialize(string: content)
 		if let d = jdata {

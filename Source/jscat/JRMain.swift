@@ -19,10 +19,10 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* Open first file */
-	var firstinfo: NSMutableDictionary
+	var firstinfo: CNJSONObject
 	if let firstfile = openFirstFile(config: config, console: console) {
 		if let info = unserializeString(file: firstfile, console: console){
-			firstinfo = NSMutableDictionary(dictionary: info)
+			firstinfo = info
 		} else {
 			return 2
 		}
@@ -48,7 +48,7 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* output merged file */
-	let (text, err) = CNJSONFile.serialize(dictionary: firstinfo)
+	let (text, err) = CNJSONFile.serialize(JSONObject: firstinfo)
 	if let t = text {
 		let out = CNStandardFile(type: .output)
 		let _ = out.put(string: t)
@@ -88,9 +88,9 @@ private func openFile(fileName name: String, console cons: CNConsole) -> CNFile?
 	return result
 }
 
-private func unserializeString(file f: CNFile, console cons: CNConsole) -> NSDictionary?
+private func unserializeString(file f: CNFile, console cons: CNConsole) -> CNJSONObject?
 {
-	var result: NSDictionary? = nil
+	var result: CNJSONObject? = nil
 	if let content = f.getAll() {
 		let (jdata, err) = CNJSONFile.unserialize(string: content)
 		if let d = jdata {
