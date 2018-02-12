@@ -32,7 +32,35 @@ public func main(arguments args: Array<String>) -> Int32
 		return 2
 	}
 
-	return 0
+	/* grep operation */
+	for pat in config.patterns {
+		var keyexp:	NSRegularExpression? = nil
+		var valexp:	NSRegularExpression? = nil
+		switch pat {
+		case .Key(let kexp):			keyexp = kexp
+		case .Value(let vexp):			valexp = vexp
+		case .Property(let kexp, let vexp):	keyexp = kexp ; valexp = vexp
+		}
+		let grep = CNJSONGrep(keyExpression: keyexp, valueExpression: valexp)
+		if let newdict = grep.execute(dictionary: srcinfo) {
+			srcinfo = newdict
+		} else {
+			return 0 // output is empty
+		}
+	}
+
+	/* write results */
+	let (text, err) = CNJSONFile.serialize(dictionary: srcinfo)
+	if let t = text {
+		let out = CNStandardFile(type: .output)
+		let _ = out.put(string: t)
+		let _ = out.put(string: "\n")	// Add last new line
+		return 0
+	} else {
+		let errstr = err!.toString()
+		console.error(string: "[Error] \(errstr)\n")
+		return 2
+	}
 }
 
 private func openInputFile(config conf: JRConfig, console cons: CNConsole) -> CNFile?

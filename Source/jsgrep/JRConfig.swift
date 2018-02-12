@@ -121,7 +121,7 @@ public class JRCommandLineParser
 				if config.inputFileName == nil {
 					config.inputFileName = param.argument
 				} else {
-					mConsole.error(string: "Too many input file names")
+					mConsole.error(string: "Too many input file names\n")
 					return nil
 				}
 			} else {
@@ -141,18 +141,18 @@ public class JRCommandLineParser
 						let exp = try NSRegularExpression(pattern: valstr, options: [])
 						result.append(exp)
 					} catch {
-						mConsole.error(string: "Can not make regular expression from \"\(valstr)\"")
+						mConsole.error(string: "Can not make regular expression from \"\(valstr)\"\n")
 						return nil
 					}
 				} else {
-					mConsole.error(string: "Invalid type for regular expression")
+					mConsole.error(string: "Invalid type for regular expression\n")
 					return nil
 				}
 			}
 			return result
 		} else {
 			let vcnt = vals.count
-			mConsole.error(string: "Unexpected number of parameters (\(cnt) is required but \(vcnt) is given")
+			mConsole.error(string: "Unexpected number of parameters (\(cnt) is required but \(vcnt) is given\n")
 			return nil
 		}
 	}
@@ -180,7 +180,7 @@ public class JRCommandLineParser
 				     parameterNum: 2, parameterType: .StringType,
 				     helpInfo: "Regular expression to select property key and value")
 			]
-		let config = CBParserConfig(hasSubCommand: true)
+		let config = CBParserConfig(hasSubCommand: false)
 		config.setDefaultOptions(optionTypes: deftypes)
 		return config
 	}
