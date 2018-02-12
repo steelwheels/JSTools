@@ -19,10 +19,10 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* Open first file */
-	var firstinfo: Dictionary<String, Any>
+	var firstinfo: NSMutableDictionary
 	if let firstfile = openFirstFile(config: config, console: console) {
 		if let info = unserializeString(file: firstfile, console: console){
-			firstinfo = info
+			firstinfo = NSMutableDictionary(dictionary: info)
 		} else {
 			return 2
 		}
@@ -88,9 +88,9 @@ private func openFile(fileName name: String, console cons: CNConsole) -> CNFile?
 	return result
 }
 
-private func unserializeString(file f: CNFile, console cons: CNConsole) -> Dictionary<String, Any>?
+private func unserializeString(file f: CNFile, console cons: CNConsole) -> NSDictionary?
 {
-	var result: Dictionary<String, Any>? = nil
+	var result: NSDictionary? = nil
 	if let content = f.getAll() {
 		let (jdata, err) = CNJSONFile.unserialize(string: content)
 		if let d = jdata {
