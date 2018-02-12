@@ -37,7 +37,7 @@ public func main(arguments args: Array<String>) -> Int32
 			if let file = openFile(fileName: infiles[i], console: console) {
 				if let info = unserializeString(file: file, console: console){
 					/* Merge file */
-					CNJSON.merge(destination: &firstinfo, source: info)
+					CNJSONUtil.merge(destination: &firstinfo, source: info)
 				} else {
 					return 2
 				}
