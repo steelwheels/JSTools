@@ -17,12 +17,10 @@ The object which has matched property key and/or property value will be outputte
 |       |--version  |-          |Print version information |
 |-k     |--key      |RegExp     |Select the object whose property key matches with the regular expression|
 |-v     |--value    |RegExp     |Select the object whose property value matches with the regular expression|
-|-p     |--property |RegExp RegExp| Select the object whose property matches with the regular expressions for key and value|
-|       |--and      |           |The object will be selected when the all regular expressions are matched  (This is *default* setting)|
-|       |--or      |           |The object will be selected when at least one regular expressions is matched  |
+|-p     |--property |Exp0 Exp1| Select the object whose property matches with the regular expressions for key and value|
 
-The `--key` option is used to choose objects which has the matched property key with the given regular expression.
-The `--value` option is used to choose objects which has the matched property value with the given regular expression.
+The `--key` option is used to choose objects which has the matched property key.
+The `--value` option is used to choose objects which has the matched property value.
 
 # Exit status
 |Value  |Description                          |
@@ -33,10 +31,10 @@ The `--value` option is used to choose objects which has the matched property va
 
 # Examples
 ````
-jsgrep --and --key "key0" --value "val1"  ... ex1
-jsgrep --property "key0" "val1"           ... ex2
+jsgrep --key "key0" --value "val1"    ... example1
+jsgrep --property "key0" "val1"       ... example2
 ````
-The following object matches pattern of ex1. But does not match pattern of ex2.
+The following object matches pattern of *example1*. But does not match pattern of *example2*.
 ````
 {
     key0 : val0,

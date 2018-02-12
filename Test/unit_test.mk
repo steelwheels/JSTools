@@ -4,11 +4,12 @@
 
 jsrun 		= $(HOME)/tools/jstools/jsrun
 jscat 		= $(HOME)/tools/jstools/jscat
+jsgrep 		= $(HOME)/tools/jstools/jsgrep
 test_dir	= ../Test
 script_dir	= ../Test/Script
 build_dir	= $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 
-all: all_jsrun all_jscat
+all: all_jsrun all_jscat all_jsgrep
 
 #
 # jsrun
@@ -85,4 +86,14 @@ jscat1: dummy
 	  > $(build_dir)/json-1data-0_1.json
 	diff $(build_dir)/json-1data-0_1.json ../Test/expected/json-1data-0_1.json.OK
 
+#
+# jsgrep
+#
+all_jsgrep: jsgrep0
+
+jsgrep0: dummy
+	$(jsgrep) --help 2>&1 | tee $(build_dir)/jsgrep-help.txt
+	diff $(build_dir)/jsgrep-help.txt ../Test/expected/jsgrep-help.txt.OK
+
 dummy:
+

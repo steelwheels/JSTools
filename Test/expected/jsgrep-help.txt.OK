@@ -1,0 +1,7 @@
+usage: jsgrep [options] [file]
+  [options] --help, -h                   : Print this message
+            --version                    : Print version
+            --key,      -k regexp        : Pattern to match property key
+            --value,    -v regexp        : Pattern to match property value
+            --property, -p regexp regexp : Pattern to match property key
+                                           and value

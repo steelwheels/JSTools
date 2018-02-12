@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05230417202C8FF7003B1CB9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05230416202C8FF7003B1CB9 /* main.swift */; };
+		0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041D202C90E0003B1CB9 /* JRMain.swift */; };
+		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
 		055528D8201D57CC00397D3C /* hello0.js in Resources */ = {isa = PBXBuildFile; fileRef = 055528D7201D57CC00397D3C /* hello0.js */; };
 		055528DA201D580300397D3C /* hello0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528D7201D57CC00397D3C /* hello0.js */; };
 		055528DC201D59EC00397D3C /* color_table.js in Resources */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
@@ -41,6 +44,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 05D6F3701FE406CD0070DF5B;
 			remoteInfo = Install;
+		};
+		0523041B202C9067003B1CB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05230413202C8FF7003B1CB9;
+			remoteInfo = jsgrep;
 		};
 		05A856E020035B3D00DB5E75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -87,6 +97,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		05230412202C8FF7003B1CB9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		055528D9201D57ED00397D3C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -164,6 +183,10 @@
 
 /* Begin PBXFileReference section */
 		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
+		05230414202C8FF7003B1CB9 /* jsgrep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsgrep; sourceTree = BUILT_PRODUCTS_DIR; };
+		05230416202C8FF7003B1CB9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0523041D202C90E0003B1CB9 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
+		0523041F202C930C003B1CB9 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		055528D7201D57CC00397D3C /* hello0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello0.js; sourceTree = "<group>"; };
 		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
 		055D34F7200B0EBD00BD840A /* JRFinalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRFinalize.swift; sourceTree = "<group>"; };
@@ -195,6 +218,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		05230411202C8FF7003B1CB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05A42E401FE3FD5600321C93 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +256,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05230415202C8FF7003B1CB9 /* jsgrep */ = {
+			isa = PBXGroup;
+			children = (
+				0523041D202C90E0003B1CB9 /* JRMain.swift */,
+				0523041F202C930C003B1CB9 /* JRConfig.swift */,
+				05230416202C8FF7003B1CB9 /* main.swift */,
+			);
+			path = jsgrep;
+			sourceTree = "<group>";
+		};
 		055528D6201D578500397D3C /* Sample */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +325,7 @@
 				05D6F3631FE3FE1C0070DF5B /* jstools.bundle */,
 				05A856D920035B2900DB5E75 /* jscat */,
 				05AC80CF20268EF700165368 /* jsadb */,
+				05230414202C8FF7003B1CB9 /* jsgrep */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -329,6 +370,7 @@
 				05B8182B2002630A00290480 /* jsrun */,
 				05A856DA20035B2A00DB5E75 /* jscat */,
 				05AC80D020268EF700165368 /* jsadb */,
+				05230415202C8FF7003B1CB9 /* jsgrep */,
 			);
 			name = Source;
 			path = ../Source;
@@ -386,6 +428,7 @@
 			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = "";
 			dependencies = (
+				0523041C202C9067003B1CB9 /* PBXTargetDependency */,
 				05AC80D720268F0100165368 /* PBXTargetDependency */,
 				05A856E320035B4600DB5E75 /* PBXTargetDependency */,
 				05D6F3751FE406EB0070DF5B /* PBXTargetDependency */,
@@ -397,6 +440,23 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
+		05230413202C8FF7003B1CB9 /* jsgrep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0523041A202C8FF7003B1CB9 /* Build configuration list for PBXNativeTarget "jsgrep" */;
+			buildPhases = (
+				05230410202C8FF7003B1CB9 /* Sources */,
+				05230411202C8FF7003B1CB9 /* Frameworks */,
+				05230412202C8FF7003B1CB9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jsgrep;
+			productName = jsgrep;
+			productReference = 05230414202C8FF7003B1CB9 /* jsgrep */;
+			productType = "com.apple.product-type.tool";
+		};
 		05A42E421FE3FD5600321C93 /* jsrun */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05A42E4A1FE3FD5600321C93 /* Build configuration list for PBXNativeTarget "jsrun" */;
@@ -486,6 +546,10 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					05230413202C8FF7003B1CB9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					05A42E421FE3FD5600321C93 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
@@ -525,6 +589,7 @@
 				05A42E421FE3FD5600321C93 /* jsrun */,
 				05A856D820035B2900DB5E75 /* jscat */,
 				05AC80CE20268EF700165368 /* jsadb */,
+				05230413202C8FF7003B1CB9 /* jsgrep */,
 				05D6F3701FE406CD0070DF5B /* Install */,
 				0510E6711FE560F300B2C718 /* Test */,
 			);
@@ -545,6 +610,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		05230410202C8FF7003B1CB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05230420202C930C003B1CB9 /* JRConfig.swift in Sources */,
+				0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */,
+				05230417202C8FF7003B1CB9 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05A42E3F1FE3FD5600321C93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -592,6 +667,11 @@
 			isa = PBXTargetDependency;
 			target = 05D6F3701FE406CD0070DF5B /* Install */;
 			targetProxy = 0510E6751FE560FD00B2C718 /* PBXContainerItemProxy */;
+		};
+		0523041C202C9067003B1CB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05230413202C8FF7003B1CB9 /* jsgrep */;
+			targetProxy = 0523041B202C9067003B1CB9 /* PBXContainerItemProxy */;
 		};
 		05A856E120035B3D00DB5E75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -650,6 +730,41 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		05230418202C8FF7003B1CB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
+					"$(HOME)/Library/Frameworks",
+				);
+				GCC_OPTIMIZATION_LEVEL = 2;
+				INSTALL_PATH = "$(HOME)/tools/jstools";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks ${inherited}";
+				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		05230419202C8FF7003B1CB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				INSTALL_PATH = "$(HOME)/tools/jstools";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks ${inherited}";
+				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -955,6 +1070,15 @@
 			buildConfigurations = (
 				0510E6731FE560F300B2C718 /* Debug */,
 				0510E6741FE560F300B2C718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0523041A202C8FF7003B1CB9 /* Build configuration list for PBXNativeTarget "jsgrep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05230418202C8FF7003B1CB9 /* Debug */,
+				05230419202C8FF7003B1CB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

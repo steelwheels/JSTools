@@ -5,7 +5,7 @@
 INSTALL_PATH ?= $(HOME)/Library/Frameworks
 DMG_PATH     ?= $(HOME)/tools/archive
 
-TARGET_LIST  = jsrun jscat jsadb
+TARGET_LIST  = jsrun jscat jsadb jsgrep
 
 install: dummy
 	for targ in $(TARGET_LIST) ; do \
