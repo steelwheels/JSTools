@@ -16,7 +16,8 @@ all: all_jsrun all_jscat all_jsgrep
 #
 # jsrun
 #
-all_jsrun: help nostrict hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0
+all_jsrun: help nostrict hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0 \
+	   math0
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -71,6 +72,9 @@ gr_view0 : dummy
 	$(jsrun) $(script_dir)/gr_view0.js | \
 					tee $(build_dir)/gr_view0.txt
 	diff $(build_dir)/gr_view0.txt $(expected_dir)/gr_view0.txt
+
+math0: dummy
+	$(jsrun) $(script_dir)/math0.js
 
 #
 # jscat
