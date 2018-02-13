@@ -7,7 +7,10 @@ jsadb sub-command [options] [file]
 ````
 
 # Description
-The *jsadb* command has sub commands to decide the operation.
+The AddressBook data base operates [Contact Object](https://github.com/steelwheels/Canary/blob/master/Document/contact-object.md).
+The *jsadb* command read, write and update the database.
+
+The command has sub commands to decide the operation.
 Following sub commands are supported:
 
 |Command  |Description                      |

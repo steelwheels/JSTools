@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051032602033343F00C9B866 /* Math.js in Resources */ = {isa = PBXBuildFile; fileRef = 0510325F2033343F00C9B866 /* Math.js */; };
+		051032612033344C00C9B866 /* Math.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0510325F2033343F00C9B866 /* Math.js */; };
 		05230417202C8FF7003B1CB9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05230416202C8FF7003B1CB9 /* main.swift */; };
 		0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041D202C90E0003B1CB9 /* JRMain.swift */; };
 		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
@@ -33,8 +35,6 @@
 		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
 		05DDA5F5201C18870041D841 /* Console.js in Resources */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
 		05DDA5F6201C18970041D841 /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
-		05E02FC42014C41800A26A63 /* hanoi_main.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E02FBD2014C24F00A26A63 /* hanoi_main.js */; };
-		05E02FC52014C41E00A26A63 /* hanoi_tower.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E02FBE2014C24F00A26A63 /* hanoi_tower.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,17 +171,17 @@
 		05E02FC12014C27000A26A63 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = Game/Hanoi;
+			dstPath = Library/Math;
 			dstSubfolderSpec = 7;
 			files = (
-				05E02FC52014C41E00A26A63 /* hanoi_tower.js in CopyFiles */,
-				05E02FC42014C41800A26A63 /* hanoi_main.js in CopyFiles */,
+				051032612033344C00C9B866 /* Math.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0510325F2033343F00C9B866 /* Math.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Math.js; sourceTree = "<group>"; };
 		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
 		05230414202C8FF7003B1CB9 /* jsgrep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsgrep; sourceTree = BUILT_PRODUCTS_DIR; };
 		05230416202C8FF7003B1CB9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -213,8 +213,6 @@
 		05DAD1E62026A70C00EAAE8C /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		05DAD1E82026A7C500EAAE8C /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05DDA5F4201C18870041D841 /* Console.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Console.js; sourceTree = "<group>"; };
-		05E02FBD2014C24F00A26A63 /* hanoi_main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hanoi_main.js; sourceTree = "<group>"; };
-		05E02FBE2014C24F00A26A63 /* hanoi_tower.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hanoi_tower.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +254,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0510325E2033342400C9B866 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				0510325F2033343F00C9B866 /* Math.js */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
 		05230415202C8FF7003B1CB9 /* jsgrep */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +284,7 @@
 		056C6723201626F4003E9485 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				0510325E2033342400C9B866 /* Math */,
 				056C67272016282D003E9485 /* Graphics */,
 			);
 			path = Library;
@@ -387,18 +394,8 @@
 		05E02FBB2014C21500A26A63 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				05E02FBC2014C22F00A26A63 /* Hanoi */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		05E02FBC2014C22F00A26A63 /* Hanoi */ = {
-			isa = PBXGroup;
-			children = (
-				05E02FBD2014C24F00A26A63 /* hanoi_main.js */,
-				05E02FBE2014C24F00A26A63 /* hanoi_tower.js */,
-			);
-			path = Hanoi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,6 +598,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051032602033343F00C9B866 /* Math.js in Resources */,
 				055528D8201D57CC00397D3C /* hello0.js in Resources */,
 				05DDA5F5201C18870041D841 /* Console.js in Resources */,
 				055528DC201D59EC00397D3C /* color_table.js in Resources */,
