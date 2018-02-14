@@ -27,19 +27,23 @@ public func main(arguments args: Array<String>) -> Int32
 
 	/* set exception handler */
 	let ehandler = {
-		(_ exception: KLException) -> Void in
+		(_ exception: KEException) -> Void in
 		/* Finalize */
 		JRFinalize.finalize(console: console)
 		/* Exit */
-		let code: Int32
 		switch exception {
 		case .CompileError(let message):
 			console.error(string: message + "\n")
-			code = 2
-		case .Exit(let c):
-			code = c
+			Darwin.exit(1)
+		case .Evaluated(_, _):
+			//NSLog("\(exception.description)")
+			break
+		case .Exit(let code):
+			Darwin.exit(code)
+		case .Terminated(_, let message):
+			console.error(string: message + "\n")
+			Darwin.exit(1)
 		}
-		Darwin.exit(code)
 	}
 
 	/* setup built-in library */

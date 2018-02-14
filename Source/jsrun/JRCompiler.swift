@@ -19,27 +19,14 @@ public class JRCompiler
 		mConfig  = cfg
 	}
 
-	public func compile(exceptionHandler ehandler: @escaping (_ exception: KLException) -> Void) -> CompileError {
+	public func compile(exceptionHandler ehandler: @escaping (_ exception: KEException) -> Void) -> CompileError {
 		do {
 			/* compile user script */
 			for file in mConfig.scriptFiles {
 				let script = try readScript(scriptFile: file)
 				mContext.runScript(script: script, exceptionHandler: {
-					(_ result: KEExecutionResult) -> Void in
-					let excep: KLException
-					switch result {
-					case .Exception(_, let message):
-						excep = .CompileError(message)
-					case .Finished(_, let value):
-						var code: Int32 = 2
-						if let v = value {
-							if v.isNumber {
-								code = v.toNumber().int32Value
-							}
-						}
-						excep = .Exit(code)
-					}
-					ehandler(excep)
+					(_ result: KEException) -> Void in
+					ehandler(result)
 				})
 			}
 			return .NoError
