@@ -7,6 +7,7 @@
 
 import Canary
 import KiwiEngine
+import KiwiShell
 import KiwiLibrary
 import JavaScriptCore
 import Foundation
@@ -14,10 +15,10 @@ import Foundation
 public func main(arguments args: Array<String>) -> Int32
 {
 	let filecons = CNFileConsole()
-	let console  = CNCursesConsole(defaultConsole: filecons)
+	let curscons = CNCursesConsole(defaultConsole: filecons)
 
 	/* Parse command line arguments */
-	let parser = JRCommandLineParser(console: console)
+	let parser = JRCommandLineParser(console: filecons)
 	guard let config = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
 		return 1
 	}
@@ -29,11 +30,11 @@ public func main(arguments args: Array<String>) -> Int32
 	let ehandler = {
 		(_ exception: KEException) -> Void in
 		/* Finalize */
-		JRFinalize.finalize(console: console)
+		JRFinalize.finalize(console: curscons)
 		/* Exit */
 		switch exception {
 		case .CompileError(let message):
-			console.error(string: message + "\n")
+			curscons.error(string: message + "\n")
 			Darwin.exit(1)
 		case .Evaluated(_, _):
 			//NSLog("\(exception.description)")
@@ -41,28 +42,37 @@ public func main(arguments args: Array<String>) -> Int32
 		case .Exit(let code):
 			Darwin.exit(code)
 		case .Terminated(_, let message):
-			console.error(string: message + "\n")
+			curscons.error(string: message + "\n")
 			Darwin.exit(1)
 		}
 	}
 
 	/* setup built-in library */
-	KLSetupLibrary(context: context, console: console, config: config.libraryConfig, exceptionHandler: ehandler)
+	KLSetupLibrary(context: context, console: curscons, config: config.libraryConfig, exceptionHandler: ehandler)
 	
 	/* Compile scripts */
 	let compiler = JRCompiler(context: context, config: config)
 	let error    = compiler.compile(exceptionHandler: ehandler)
+
+	/* Finalize */
+	JRFinalize.finalize(console: curscons)
 	switch error {
 	case .NoError:
 		break
 	default:
-		error.dump(to: console)
+		error.dump(to: curscons)
 		return 2
 	}
 
-	/* Finalize */
-	JRFinalize.finalize(console: console)
+	/* Enter interative mode */
+	var exitcode: Int32 = 0
+	if config.isInteractiveMode {
+		/* Execute shell mode */
+		let appname = args[0]
+		let shell   = KHShellConsole(applicationName: appname, context: context, console: filecons)
+		exitcode = shell.repl()
+	}
 
-	return 0
+	return exitcode
 }
 

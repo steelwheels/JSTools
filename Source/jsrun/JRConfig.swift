@@ -14,6 +14,7 @@ public class JRConfig
 {
 	public var scriptFiles:		Array<String> = []
 	public var libraryConfig:	KLConfig      = KLConfig()
+	public var isInteractiveMode:	Bool	      = false
 }
 
 public class JRCommandLineParser
@@ -24,6 +25,7 @@ public class JRCommandLineParser
 		case Help		= 0
 		case Version		= 1
 		case NoStrictMode	= 2
+		case InteractiveMode	= 3
 	}
 
 	public init(console cons: CNConsole){
@@ -44,6 +46,10 @@ public class JRCommandLineParser
 				     shortName: nil, longName: "no-strict",
 				     parameterNum: 0, parameterType: .VoidType,
 				     helpInfo: "Do not use strict mode"),
+			CBOptionType(optionId: OptionId.InteractiveMode.rawValue,
+				     shortName: "i", longName: "interactive",
+				     parameterNum: 0, parameterType: .VoidType,
+				     helpInfo: "Activate interactive mode")
 		]
 		let config = CBParserConfig(hasSubCommand: false)
 		config.setDefaultOptions(optionTypes: opttypes)
@@ -57,9 +63,10 @@ public class JRCommandLineParser
 	private func printHelpMessage() {
 		mConsole.print(string: "usage: jsrunner [options] script-file1 script-file2 ...\n" +
 		"  [options]\n" +
-		"    --help, -h  : Print this message\n" +
-		"    --version   : Print version\n" +
-		"    --no-strict : Do not use strict mode (default: use strict)\n"
+		"    --help, -h        : Print this message\n" +
+		"    --version         : Print version\n" +
+		"    --no-strict       : Do not use strict mode (default: use strict)\n" +
+		"    --interactive, -i : Activate interactive mode\n"
 		)
 	}
 
@@ -100,6 +107,8 @@ public class JRCommandLineParser
 						return nil
 					case .NoStrictMode:
 						config.libraryConfig.useStrictMode = false
+					case .InteractiveMode:
+						config.isInteractiveMode = true
 					}
 				} else {
 					NSLog("[Internal error] Unknown option id")
@@ -111,7 +120,7 @@ public class JRCommandLineParser
 				return nil
 			}
 		}
-		if config.scriptFiles.count > 0 {
+		if config.isInteractiveMode || config.scriptFiles.count > 0 {
 			return config
 		} else {
 			mConsole.error(string: "No script files are given\n")

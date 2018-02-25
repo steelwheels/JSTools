@@ -35,6 +35,7 @@
 		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
 		05DDA5F5201C18870041D841 /* Console.js in Resources */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
 		05DDA5F6201C18970041D841 /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
+		05E0BA142042E7FB00B59F5C /* KiwiShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E0BA132042E7FB00B59F5C /* KiwiShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				05E0BA142042E7FB00B59F5C /* KiwiShell.framework in CopyFiles */,
 				05456C36203F199E00942254 /* KiwiLibrary.framework in CopyFiles */,
 				05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */,
 				05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */,
@@ -214,6 +216,7 @@
 		05DAD1E62026A70C00EAAE8C /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		05DAD1E82026A7C500EAAE8C /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05DDA5F4201C18870041D841 /* Console.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Console.js; sourceTree = "<group>"; };
+		05E0BA132042E7FB00B59F5C /* KiwiShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiShell.framework; path = ../../../Library/Frameworks/KiwiShell.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +317,7 @@
 		05A42E3A1FE3FD5600321C93 = {
 			isa = PBXGroup;
 			children = (
+				05E0BA132042E7FB00B59F5C /* KiwiShell.framework */,
 				05456C35203F199E00942254 /* KiwiLibrary.framework */,
 				05D6F3531FE3FD880070DF5B /* Source */,
 				05D6F3641FE3FE1C0070DF5B /* OSX */,
