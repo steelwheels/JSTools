@@ -12,6 +12,7 @@
 		05230417202C8FF7003B1CB9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05230416202C8FF7003B1CB9 /* main.swift */; };
 		0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041D202C90E0003B1CB9 /* JRMain.swift */; };
 		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
+		05456C36203F199E00942254 /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05456C35203F199E00942254 /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		055528D8201D57CC00397D3C /* hello0.js in Resources */ = {isa = PBXBuildFile; fileRef = 055528D7201D57CC00397D3C /* hello0.js */; };
 		055528DA201D580300397D3C /* hello0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528D7201D57CC00397D3C /* hello0.js */; };
 		055528DC201D59EC00397D3C /* color_table.js in Resources */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
@@ -30,7 +31,6 @@
 		05D6F36D1FE3FFC90070DF5B /* Canary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F36C1FE3FFC90070DF5B /* Canary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F36E1FE3FFE40070DF5B /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05D6F3791FE42D6B0070DF5B /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3781FE42D6B0070DF5B /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E62026A70C00EAAE8C /* JRMain.swift */; };
 		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
 		05DDA5F5201C18870041D841 /* Console.js in Resources */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
@@ -161,7 +161,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				05D6F3791FE42D6B0070DF5B /* KiwiLibrary.framework in CopyFiles */,
+				05456C36203F199E00942254 /* KiwiLibrary.framework in CopyFiles */,
 				05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */,
 				05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */,
 				05D6F36D1FE3FFC90070DF5B /* Canary.framework in CopyFiles */,
@@ -187,6 +187,7 @@
 		05230416202C8FF7003B1CB9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0523041D202C90E0003B1CB9 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		0523041F202C930C003B1CB9 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
+		05456C35203F199E00942254 /* KiwiLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiLibrary.framework; path = ../../../Library/Frameworks/KiwiLibrary.framework; sourceTree = "<group>"; };
 		055528D7201D57CC00397D3C /* hello0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello0.js; sourceTree = "<group>"; };
 		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
 		055D34F7200B0EBD00BD840A /* JRFinalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRFinalize.swift; sourceTree = "<group>"; };
@@ -313,6 +314,7 @@
 		05A42E3A1FE3FD5600321C93 = {
 			isa = PBXGroup;
 			children = (
+				05456C35203F199E00942254 /* KiwiLibrary.framework */,
 				05D6F3531FE3FD880070DF5B /* Source */,
 				05D6F3641FE3FE1C0070DF5B /* OSX */,
 				057D2B9520149A780027A52A /* Resources */,
