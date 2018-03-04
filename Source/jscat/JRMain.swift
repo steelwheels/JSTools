@@ -61,9 +61,9 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 }
 
-private func openFirstFile(config conf: JRConfig, console cons: CNConsole) -> CNFile?
+private func openFirstFile(config conf: JRConfig, console cons: CNConsole) -> CNTextFile?
 {
-	var result: CNFile?
+	var result: CNTextFile?
 	let infiles = conf.inputFiles
 	if infiles.count >= 1 {
 		result = openFile(fileName: infiles[0], console: cons)
@@ -74,9 +74,9 @@ private func openFirstFile(config conf: JRConfig, console cons: CNConsole) -> CN
 	return result
 }
 
-private func openFile(fileName name: String, console cons: CNConsole) -> CNFile?
+private func openFile(fileName name: String, console cons: CNConsole) -> CNTextFile?
 {
-	var result: CNFile?
+	var result: CNTextFile?
 	let (file, err) = CNOpenFile(filePath: name, accessType: .ReadAccess)
 	if  let f = file {
 		result = f
@@ -88,7 +88,7 @@ private func openFile(fileName name: String, console cons: CNConsole) -> CNFile?
 	return result
 }
 
-private func unserializeString(file f: CNFile, console cons: CNConsole) -> CNJSONObject?
+private func unserializeString(file f: CNTextFile, console cons: CNConsole) -> CNJSONObject?
 {
 	var result: CNJSONObject? = nil
 	if let content = f.getAll() {

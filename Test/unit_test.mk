@@ -17,7 +17,7 @@ all: all_jsrun all_jscat all_jsgrep
 # jsrun
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0 \
-	   math0 shell0
+	   math0 shell0 shell1
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -78,6 +78,9 @@ math0: dummy
 
 shell0: dummy
 	$(jsrun) -i < $(script_dir)/shell0.js
+
+shell1: dummy
+	$(jsrun) $(script_dir)/shell1.js
 
 #
 # jscat
