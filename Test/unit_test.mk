@@ -17,7 +17,7 @@ all: all_jsrun all_jscat all_jsgrep
 # jsrun
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0 \
-	   math0 shell0 shell1
+	   math0 shell0 shell1 args
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -54,7 +54,6 @@ exit0: dummy
 	 else \
 		exit 0 ; \
 	 fi)
-
 json0: dummy
 	@echo "*** test: json0 ***"
 	$(jsrun) $(script_dir)/json0.js | tee $(build_dir)/json0.txt
@@ -81,6 +80,12 @@ shell0: dummy
 
 shell1: dummy
 	$(jsrun) $(script_dir)/shell1.js
+
+args: dummy
+	@echo "*** test: Process.arguments ***"
+	$(jsrun) --argument "a b c" $(script_dir)/args.js | \
+					tee $(build_dir)/args.txt
+	diff $(build_dir)/args.txt $(expected_dir)/args.txt
 
 #
 # jscat

@@ -15,6 +15,7 @@ public class JRConfig
 	public var scriptFiles:		Array<String> = []
 	public var libraryConfig:	KLConfig      = KLConfig()
 	public var isInteractiveMode:	Bool	      = false
+	public var arguments:		Array<String> = []
 }
 
 public class JRCommandLineParser
@@ -26,6 +27,7 @@ public class JRCommandLineParser
 		case Version		= 1
 		case NoStrictMode	= 2
 		case InteractiveMode	= 3
+		case Argument		= 4
 	}
 
 	public init(console cons: CNConsole){
@@ -49,7 +51,11 @@ public class JRCommandLineParser
 			CBOptionType(optionId: OptionId.InteractiveMode.rawValue,
 				     shortName: "i", longName: "interactive",
 				     parameterNum: 0, parameterType: .VoidType,
-				     helpInfo: "Activate interactive mode")
+				     helpInfo: "Activate interactive mode"),
+			CBOptionType(optionId: OptionId.Argument.rawValue,
+				     shortName: "a", longName: "argument",
+				     parameterNum: 1, parameterType: .StringType,
+				     helpInfo: "Argument(s) passed to JavaScript code")
 		]
 		let config = CBParserConfig(hasSubCommand: false)
 		config.setDefaultOptions(optionTypes: opttypes)
@@ -63,10 +69,11 @@ public class JRCommandLineParser
 	private func printHelpMessage() {
 		mConsole.print(string: "usage: jsrunner [options] script-file1 script-file2 ...\n" +
 		"  [options]\n" +
-		"    --help, -h        : Print this message\n" +
-		"    --version         : Print version\n" +
-		"    --no-strict       : Do not use strict mode (default: use strict)\n" +
-		"    --interactive, -i : Activate interactive mode\n"
+		"    --help, -h             : Print this message\n" +
+		"    --version              : Print version\n" +
+		"    --no-strict            : Do not use strict mode (default: use strict)\n" +
+		"    --interactive, -i      : Activate interactive mode\n" +
+		"    --argument -a <string> : String to be passed as an argument\n"
 		)
 	}
 
@@ -93,8 +100,9 @@ public class JRCommandLineParser
 	}
 
 	private func parseOptions(arguments args: Array<CBArgument>) -> JRConfig? {
-		let config = JRConfig()
-		let stream = CNArrayStream(source: args)
+		let config   = JRConfig()
+		var argstr = ""
+		let stream   = CNArrayStream(source: args)
 		while let arg = stream.get() {
 			if let opt = arg as? CBOptionArgument {
 				if let optid = OptionId(rawValue: opt.optionType.optionId) {
@@ -109,6 +117,15 @@ public class JRCommandLineParser
 						config.libraryConfig.useStrictMode = false
 					case .InteractiveMode:
 						config.isInteractiveMode = true
+					case .Argument:
+						for param in opt.parameters {
+							if let str = param.stringValue {
+								argstr += str + " "
+							} else {
+								NSLog("Invalid value: \(param.description)")
+								return nil
+							}
+						}
 					}
 				} else {
 					NSLog("[Internal error] Unknown option id")
@@ -120,6 +137,9 @@ public class JRCommandLineParser
 				return nil
 			}
 		}
+		/* Get arguments */
+		config.arguments = CNStringUtil.divideByQuote(sourceString: argstr, quote: "\"")
+
 		if config.isInteractiveMode || config.scriptFiles.count > 0 {
 			return config
 		} else {

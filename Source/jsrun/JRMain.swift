@@ -48,8 +48,10 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* setup built-in library */
-	KLSetupLibrary(context: context, console: curscons, config: config.libraryConfig, exceptionHandler: ehandler)
-	
+	let jsargs  = config.arguments
+	let libconf = config.libraryConfig
+	KLSetupLibrary(context: context, arguments: jsargs, console: curscons, config: libconf, exceptionHandler: ehandler)
+
 	/* Compile scripts */
 	let compiler = JRCompiler(context: context, config: config)
 	let error    = compiler.compile(exceptionHandler: ehandler)
