@@ -15,6 +15,7 @@ public class JRConfig
 	public var scriptFiles:		Array<String> = []
 	public var libraryConfig:	KLConfig      = KLConfig()
 	public var isInteractiveMode:	Bool	      = false
+	public var doUseMain:		Bool	      = false
 	public var arguments:		Array<String> = []
 }
 
@@ -27,7 +28,8 @@ public class JRCommandLineParser
 		case Version		= 1
 		case NoStrictMode	= 2
 		case InteractiveMode	= 3
-		case Argument		= 4
+		case UseMain		= 4
+		case Argument		= 5
 	}
 
 	public init(console cons: CNConsole){
@@ -52,6 +54,10 @@ public class JRCommandLineParser
 				     shortName: "i", longName: "interactive",
 				     parameterNum: 0, parameterType: .VoidType,
 				     helpInfo: "Activate interactive mode"),
+			CBOptionType(optionId: OptionId.UseMain.rawValue,
+				     shortName: nil, longName: "use-main",
+				     parameterNum: 0, parameterType: .VoidType,
+				     helpInfo: "Use \"main\" function"),
 			CBOptionType(optionId: OptionId.Argument.rawValue,
 				     shortName: "a", longName: "argument",
 				     parameterNum: 1, parameterType: .StringType,
@@ -72,6 +78,7 @@ public class JRCommandLineParser
 		"    --help, -h             : Print this message\n" +
 		"    --version              : Print version\n" +
 		"    --no-strict            : Do not use strict mode (default: use strict)\n" +
+		"    --use-main             : Call \"main\" function after compilation\n" +
 		"    --interactive, -i      : Activate interactive mode\n" +
 		"    --argument -a <string> : String to be passed as an argument\n"
 		)
@@ -117,6 +124,8 @@ public class JRCommandLineParser
 						config.libraryConfig.useStrictMode = false
 					case .InteractiveMode:
 						config.isInteractiveMode = true
+					case .UseMain:
+						config.doUseMain = true
 					case .Argument:
 						for param in opt.parameters {
 							if let str = param.stringValue {

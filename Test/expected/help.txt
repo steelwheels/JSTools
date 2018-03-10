@@ -3,5 +3,6 @@ usage: jsrunner [options] script-file1 script-file2 ...
     --help, -h             : Print this message
     --version              : Print version
     --no-strict            : Do not use strict mode (default: use strict)
+    --use-main             : Call "main" function after compilation
     --interactive, -i      : Activate interactive mode
     --argument -a <string> : String to be passed as an argument

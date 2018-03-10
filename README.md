@@ -36,10 +36,16 @@ The binary package can be downloaded from [Open Source Developer Network](https:
 See [required software](https://github.com/steelwheels/JSTools/blob/master/Document/software.md) page.
 
 ## User's manual
+### Command line applications
 * [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md): Execute JavaScript
 * [`jscat`](https://github.com/steelwheels/JSTools/blob/master/Document/jscat-man.md): JSON file operation: Concatenate JSON files.
 * [`jsgrep`](https://github.com/steelwheels/JSTools/blob/master/Document/jsgrep-man.md): Select part of object from input JSON file by matching of regular expression.
 * [`jsadb`](https://github.com/steelwheels/JSTools/blob/master/Document/jsadb-man.md): Read, write and update AddressBook database.
+
+### Tools written by JavaScript
+These tools are written by JavaScript and executed by `jsrun` command.
+* `rsync.js`: The wrapper of [rsync command](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/rsync.1.html)
+
 
 ## Reference manual
 * [KiwiLibrary Framework](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/README.md): Library reference

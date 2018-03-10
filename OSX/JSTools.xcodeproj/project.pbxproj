@@ -7,20 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		051032602033343F00C9B866 /* Math.js in Resources */ = {isa = PBXBuildFile; fileRef = 0510325F2033343F00C9B866 /* Math.js */; };
-		051032612033344C00C9B866 /* Math.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0510325F2033343F00C9B866 /* Math.js */; };
 		05230417202C8FF7003B1CB9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05230416202C8FF7003B1CB9 /* main.swift */; };
 		0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041D202C90E0003B1CB9 /* JRMain.swift */; };
 		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
 		05456C36203F199E00942254 /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05456C35203F199E00942254 /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		055528D8201D57CC00397D3C /* hello0.js in Resources */ = {isa = PBXBuildFile; fileRef = 055528D7201D57CC00397D3C /* hello0.js */; };
-		055528DA201D580300397D3C /* hello0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528D7201D57CC00397D3C /* hello0.js */; };
-		055528DC201D59EC00397D3C /* color_table.js in Resources */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
-		055528DD201D59FE00397D3C /* color_table.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
 		055D34F8200B0EBD00BD840A /* JRFinalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D34F7200B0EBD00BD840A /* JRFinalize.swift */; };
-		056C672820162C0D003E9485 /* Primitives.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 056C6724201627D2003E9485 /* Primitives.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
 		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
+		05C94B822052DAA200C0624A /* Math.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0510325F2033343F00C9B866 /* Math.js */; };
+		05C94B832052DABF00C0624A /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
+		05C94B842052DABF00C0624A /* Primitives.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 056C6724201627D2003E9485 /* Primitives.js */; };
+		05C94B852052DACB00C0624A /* color_table.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
+		05C94B862052DACB00C0624A /* hello0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528D7201D57CC00397D3C /* hello0.js */; };
+		05C94B872052DAD600C0624A /* rsync.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05C94B7E2052D93800C0624A /* rsync.js */; };
 		05D4377F20035C4500320CA4 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4377E20035C4500320CA4 /* JRMain.swift */; };
 		05D437812003713000320CA4 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D437802003713000320CA4 /* JRConfig.swift */; };
 		05D6F35A1FE3FDAF0070DF5B /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */; };
@@ -33,8 +32,6 @@
 		05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05D6F3761FE42CA70070DF5B /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E62026A70C00EAAE8C /* JRMain.swift */; };
 		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
-		05DDA5F5201C18870041D841 /* Console.js in Resources */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
-		05DDA5F6201C18970041D841 /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
 		05E0BA142042E7FB00B59F5C /* KiwiShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05E0BA132042E7FB00B59F5C /* KiwiShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -113,8 +110,8 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
-				055528DD201D59FE00397D3C /* color_table.js in CopyFiles */,
-				055528DA201D580300397D3C /* hello0.js in CopyFiles */,
+				05C94B852052DACB00C0624A /* color_table.js in CopyFiles */,
+				05C94B862052DACB00C0624A /* hello0.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,8 +121,8 @@
 			dstPath = Library/Graphics;
 			dstSubfolderSpec = 7;
 			files = (
-				05DDA5F6201C18970041D841 /* Console.js in CopyFiles */,
-				056C672820162C0D003E9485 /* Primitives.js in CopyFiles */,
+				05C94B832052DABF00C0624A /* Console.js in CopyFiles */,
+				05C94B842052DABF00C0624A /* Primitives.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +153,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		05C94B802052D95300C0624A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Tools;
+			dstSubfolderSpec = 7;
+			files = (
+				05C94B872052DAD600C0624A /* rsync.js in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05D6F36B1FE3FF620070DF5B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -176,7 +183,7 @@
 			dstPath = Library/Math;
 			dstSubfolderSpec = 7;
 			files = (
-				051032612033344C00C9B866 /* Math.js in CopyFiles */,
+				05C94B822052DAA200C0624A /* Math.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +206,7 @@
 		05A856DB20035B2A00DB5E75 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05AC80CF20268EF700165368 /* jsadb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsadb; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AC80D120268EF700165368 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		05C94B7E2052D93800C0624A /* rsync.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = rsync.js; sourceTree = "<group>"; };
 		05D4377E20035C4500320CA4 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		05D437802003713000320CA4 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSTools-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -308,6 +316,7 @@
 			children = (
 				056C6723201626F4003E9485 /* Library */,
 				055528D6201D578500397D3C /* Sample */,
+				05C94B7D2052D63900C0624A /* Tools */,
 				05E02FBB2014C21500A26A63 /* Game */,
 			);
 			name = Resources;
@@ -375,6 +384,15 @@
 			);
 			path = jsrun;
 			sourceTree = "<group>";
+		};
+		05C94B7D2052D63900C0624A /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				05C94B7E2052D93800C0624A /* rsync.js */,
+			);
+			name = Tools;
+			path = ../Resource/Tools;
+			sourceTree = SOURCE_ROOT;
 		};
 		05D6F3531FE3FD880070DF5B /* Source */ = {
 			isa = PBXGroup;
@@ -525,6 +543,7 @@
 				05E02FC12014C27000A26A63 /* CopyFiles */,
 				056C6725201627FC003E9485 /* CopyFiles */,
 				055528D9201D57ED00397D3C /* CopyFiles */,
+				05C94B802052D95300C0624A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -604,10 +623,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				051032602033343F00C9B866 /* Math.js in Resources */,
-				055528D8201D57CC00397D3C /* hello0.js in Resources */,
-				05DDA5F5201C18870041D841 /* Console.js in Resources */,
-				055528DC201D59EC00397D3C /* color_table.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,26 +7,27 @@
 
 import KiwiEngine
 import KiwiLibrary
+import JavaScriptCore
 import Foundation
 
 public class JRCompiler
 {
-	private var mContext:	KEContext
-	private var mConfig:	JRConfig
+	private var mContext:		KEContext
+	private var mExceptionHandler:	(_ exception: KEException) -> Void
 
-	public init(context ctxt: KEContext, config cfg: JRConfig){
-		mContext = ctxt
-		mConfig  = cfg
+	public init(context ctxt: KEContext, exceptionHandler ehandler: @escaping (_ exception: KEException) -> Void){
+		mContext 		= ctxt
+		mExceptionHandler	= ehandler
 	}
 
-	public func compile(exceptionHandler ehandler: @escaping (_ exception: KEException) -> Void) -> CompileError {
+	public func compile(config cfg: JRConfig) -> CompileError {
 		do {
 			/* compile user script */
-			for file in mConfig.scriptFiles {
+			for file in cfg.scriptFiles {
 				let script = try readScript(scriptFile: file)
 				mContext.runScript(script: script, exceptionHandler: {
 					(_ result: KEException) -> Void in
-					ehandler(result)
+					self.mExceptionHandler(result)
 				})
 			}
 			return .NoError
@@ -46,5 +47,9 @@ public class JRCompiler
 		} catch _ {
 			throw CompileError.CanNotRead(fileName: file)
 		}
+	}
+
+	public func callMainFunction(arguments args: Array<String>) {
+		mContext.callFunction(functionName: "main", arguments: [args], exceptionHandler: mExceptionHandler)
 	}
 }

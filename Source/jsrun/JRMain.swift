@@ -53,9 +53,14 @@ public func main(arguments args: Array<String>) -> Int32
 	KLSetupLibrary(context: context, arguments: jsargs, console: curscons, config: libconf, exceptionHandler: ehandler)
 
 	/* Compile scripts */
-	let compiler = JRCompiler(context: context, config: config)
-	let error    = compiler.compile(exceptionHandler: ehandler)
+	let compiler = JRCompiler(context: context, exceptionHandler: ehandler)
+	let error    = compiler.compile(config: config)
 
+	/* Call main function when "--use-main" option is given */
+	if config.doUseMain {
+		compiler.callMainFunction(arguments: jsargs)
+	}
+	
 	/* Finalize */
 	JRFinalize.finalize(console: curscons)
 	switch error {
