@@ -59,7 +59,7 @@ public class JRCommandLineParser
 				     parameterNum: 0, parameterType: .VoidType,
 				     helpInfo: "Use \"main\" function"),
 			CBOptionType(optionId: OptionId.Argument.rawValue,
-				     shortName: "a", longName: "argument",
+				     shortName: "a", longName: "arguments",
 				     parameterNum: 1, parameterType: .StringType,
 				     helpInfo: "Argument(s) passed to JavaScript code")
 		]

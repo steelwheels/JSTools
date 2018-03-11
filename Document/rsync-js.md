@@ -16,8 +16,9 @@ The JSON  has following properties to control `rsync`:
 
 |Name                   | Type  | Description |
 |:---                   |:---   |:---
-|source_directory       |String |Source directory to be copied|
-|destination_directory  |String |Destination directory to placed copied files|
+|source_directory       |String |Source directory to be copied. This is always required.|
+|destination_directory  |String |Destination directory to placed copied files.  This is always required.|
+|dry_run                |Bool   |The default value is *false*. If this is true, the rsync command with arguments is printed instead of execute it.|
 
 # Examples
 Here is sample JSON description to control `rsync.js`.

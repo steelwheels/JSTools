@@ -1,0 +1,5 @@
+{
+	"source_directory"      : "source-directory-1",
+	"destination_directory" : "destination-directory-1",
+	"dry_run"               : true
+}

@@ -83,7 +83,7 @@ shell1: dummy
 
 args: dummy
 	@echo "*** test: Process.arguments ***"
-	$(jsrun) --argument "a b c" $(script_dir)/args.js | \
+	$(jsrun) --arguments "a b c" $(script_dir)/args.js | \
 					tee $(build_dir)/args.txt
 	diff $(build_dir)/args.txt $(expected_dir)/args.txt
 
@@ -95,7 +95,7 @@ main0: dummy
 
 main1: dummy
 	@echo "*** test: main1 ***"
-	$(jsrun) --use-main --argument "a b c" $(script_dir)/main0.js | \
+	$(jsrun) --use-main --arguments "a b c" $(script_dir)/main0.js | \
 					tee $(build_dir)/main1.txt
 	diff $(build_dir)/main1.txt $(expected_dir)/main1.txt
 
