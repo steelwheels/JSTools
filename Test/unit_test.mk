@@ -17,7 +17,7 @@ all: all_jsrun all_jscat all_jsgrep
 # jsrun
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0 \
-	   math0 shell0 shell1 args main0 main1 errors
+	   math0 shell0 shell1 args main0 main1 files errors
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -98,6 +98,17 @@ main1: dummy
 	$(jsrun) --use-main --arguments "a b c" $(script_dir)/main0.js | \
 					tee $(build_dir)/main1.txt
 	diff $(build_dir)/main1.txt $(expected_dir)/main1.txt
+
+files: filetype
+
+filetype: dummy
+	@echo "*** Check file type 0 ***"
+	touch $(build_dir)/check_file_type0.txt
+	$(jsrun) --use-main \
+		 --arguments $(build_dir)/check_file_type0.txt \
+		 $(script_dir)/check_file_type0.js
+	rm -f $(build_dir)/check_file_type0.txt
+
 
 errors:	no_file_error syn_error
 
