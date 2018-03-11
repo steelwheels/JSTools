@@ -28,6 +28,7 @@ The following options are available:
 
 # Programming manual
 * [Require statement](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/RequireFunc.md): Require: JavaScript module manager
+* [Main Function](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/MainFunc.md): How to use/define main function
 * [Built-in Modules](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The built-in JavaScript modules which is embedded in `jsrun` command.
 * [Standard Libraries](https://github.com/steelwheels/JSTools/blob/master/Document/standard-lib.md): The standard libraries which is described by JavaScript. They are distributed with `jsrun` command.
 

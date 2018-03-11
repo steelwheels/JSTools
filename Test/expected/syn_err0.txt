@@ -1,0 +1,1 @@
+SyntaxError: Unexpected identifier 'hoge'. Expected ';' after variable declaration.

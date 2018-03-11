@@ -17,7 +17,7 @@ all: all_jsrun all_jscat all_jsgrep
 # jsrun
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0 \
-	   math0 shell0 shell1 args main0 main1
+	   math0 shell0 shell1 args main0 main1 errors
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -98,6 +98,26 @@ main1: dummy
 	$(jsrun) --use-main --argument "a b c" $(script_dir)/main0.js | \
 					tee $(build_dir)/main1.txt
 	diff $(build_dir)/main1.txt $(expected_dir)/main1.txt
+
+errors:	no_file_error syn_error
+
+no_file_error: dummy
+	if $(jsrun) no_file.js 2>&1 | tee $(build_dir)/no_file_error.txt ; \
+	then \
+		echo "Error expected" >&2 ; \
+	else \
+		echo "Catch expected error" >&2 ; \
+	fi
+	diff $(build_dir)/no_file_error.txt $(expected_dir)/no_file_error.txt
+
+syn_error: dummy
+	if $(jsrun) $(script_dir)/syn_err0.js 2>&1 | tee $(build_dir)/syn_err0.txt ; \
+	then \
+		echo "Error expected" >&2 ; \
+	else \
+		echo "Catch expected error" >&2 ; \
+	fi
+	diff $(build_dir)/syn_err0.txt $(expected_dir)/syn_err0.txt
 
 #
 # jscat

@@ -12,7 +12,6 @@ There are 3 kind of applications in this tools:
 3. The wrapper command to give options and arguments by JSON data instead of command line.
 It generalized the syntax of option and argument for different commands.
 
-
 The most important thing: This is open source product. You can add/improve libraries by yourself.
 
 This tool uses *JavaScriptCore* in the [WebKit](https://en.wikipedia.org/wiki/WebKit) for macOS.
@@ -44,8 +43,8 @@ See [required software](https://github.com/steelwheels/JSTools/blob/master/Docum
 
 ### Tools written by JavaScript
 These tools are written by JavaScript and executed by `jsrun` command.
-* `rsync.js`: The wrapper of [rsync command](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/rsync.1.html)
-
+* [`rsync.js`](https://github.com/steelwheels/JSTools/blob/master/Document/rsync-js.md): The wrapper of [rsync ](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/rsync.1.html) command.
+The JSON is used to control this program.
 
 ## Reference manual
 * [KiwiLibrary Framework](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/README.md): Library reference

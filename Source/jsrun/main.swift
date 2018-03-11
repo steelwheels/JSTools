@@ -8,7 +8,7 @@
 import Foundation
 
 let result = main(arguments: CommandLine.arguments)
-exit(result)
+exit(result.rawValue)
 
 
 
