@@ -27,13 +27,4 @@ public enum CompileError: Error {
 	}
 }
 
-public enum ExitCode: Int32
-{
-	case NoError			= 0
-	case InternalError		= 1
-	case InvalidCommandLineError	= 2
-	case JavaScriptSyntaxError	= 3
-	case JavaScriptExecError	= 4
-	case JavaScriptException	= 5
-}
 

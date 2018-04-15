@@ -12,7 +12,7 @@ import KiwiLibrary
 import JavaScriptCore
 import Foundation
 
-public func main(arguments args: Array<String>) -> ExitCode
+public func main(arguments args: Array<String>) -> CNExitCode
 {
 	let filecons = CNFileConsole()
 	let curscons = CNCursesConsole(defaultConsole: filecons)
@@ -20,7 +20,7 @@ public func main(arguments args: Array<String>) -> ExitCode
 	/* Parse command line arguments */
 	let parser = JRCommandLineParser(console: filecons)
 	guard let config = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
-		return .InvalidCommandLineError
+		return .CommandLineError
 	}
 
 	/* allocate context */
@@ -45,18 +45,18 @@ public func main(arguments args: Array<String>) -> ExitCode
 		switch exception {
 		case .CompileError(let message):
 			curscons.error(string: message + "\n")
-			let exitcode:ExitCode = .JavaScriptSyntaxError
+			let exitcode:CNExitCode = .SyntaxError
 			Darwin.exit(exitcode.rawValue)
 		case .Evaluated(_, _):
 			break // continue processing
 		case .Exit(let code):
 			if code != 0 {
-				let exitcode:ExitCode = .JavaScriptExecError
+				let exitcode:CNExitCode = .ExecError
 				Darwin.exit(exitcode.rawValue)
 			}
 		case .Terminated(_, let message):
 			curscons.error(string: message + "\n")
-			let exitcode:ExitCode = .JavaScriptException
+			let exitcode:CNExitCode = .Exception
 			Darwin.exit(exitcode.rawValue)
 		}
 	}
@@ -80,7 +80,7 @@ public func main(arguments args: Array<String>) -> ExitCode
 		/* Print error */
 		error.dump(to: curscons)
 		/* Exit code */
-		let exitcode:ExitCode = .JavaScriptSyntaxError
+		let exitcode:CNExitCode = .SyntaxError
 		Darwin.exit(exitcode.rawValue)
 	}
 
@@ -88,14 +88,14 @@ public func main(arguments args: Array<String>) -> ExitCode
 	JRFinalize.finalize(console: curscons)
 
 	/* Enter interative mode */
-	var exitcode: ExitCode = .NoError
+	var exitcode: CNExitCode = .NoError
 	if config.isInteractiveMode {
 		/* Execute shell mode */
 		let appname = args[0]
 		let shell   = KHShellConsole(applicationName: appname, context: context, console: filecons)
 		let code = shell.repl()
 		if code != 0 {
-			exitcode = .JavaScriptSyntaxError
+			exitcode = .SyntaxError
 		}
 	}
 
