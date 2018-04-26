@@ -5,7 +5,7 @@
  *   Copyright (C) 2017 Steel Wheels Project
  */
 
-import Canary
+import CoconutData
 import KiwiEngine
 import KiwiShell
 import KiwiLibrary
@@ -15,7 +15,6 @@ import Foundation
 public func main(arguments args: Array<String>) -> CNExitCode
 {
 	let filecons = CNFileConsole()
-	let curscons = CNCursesConsole(defaultConsole: filecons)
 
 	/* Parse command line arguments */
 	let parser = JRCommandLineParser(console: filecons)
@@ -38,13 +37,13 @@ public func main(arguments args: Array<String>) -> CNExitCode
 		     .Exit(_),
 		     .Terminated(_, _):
 			/* Finalize */
-			JRFinalize.finalize(console: curscons)
+			finalize(console: filecons)
 		}
 
 		/* Exit when some error occured */
 		switch exception {
 		case .CompileError(let message):
-			curscons.error(string: message + "\n")
+			filecons.error(string: message + "\n")
 			let exitcode:CNExitCode = .SyntaxError
 			Darwin.exit(exitcode.rawValue)
 		case .Evaluated(_, _):
@@ -55,7 +54,7 @@ public func main(arguments args: Array<String>) -> CNExitCode
 				Darwin.exit(exitcode.rawValue)
 			}
 		case .Terminated(_, let message):
-			curscons.error(string: message + "\n")
+			filecons.error(string: message + "\n")
 			let exitcode:CNExitCode = .Exception
 			Darwin.exit(exitcode.rawValue)
 		}
@@ -64,7 +63,7 @@ public func main(arguments args: Array<String>) -> CNExitCode
 	/* setup built-in library */
 	let jsargs  = config.arguments
 	let libconf = config.libraryConfig
-	KLSetupLibrary(context: context, arguments: jsargs, console: curscons, config: libconf, exceptionHandler: ehandler)
+	KLSetupLibrary(context: context, arguments: jsargs, console: filecons, config: libconf, exceptionHandler: ehandler)
 	
 	/* Compile scripts */
 	let compiler = JRCompiler(context: context, exceptionHandler: ehandler)
@@ -78,14 +77,14 @@ public func main(arguments args: Array<String>) -> CNExitCode
 		}
 	case .CanNotRead(_), .CompileError(_, _):
 		/* Print error */
-		error.dump(to: curscons)
+		error.dump(to: filecons)
 		/* Exit code */
 		let exitcode:CNExitCode = .SyntaxError
 		Darwin.exit(exitcode.rawValue)
 	}
 
 	/* Finalize */
-	JRFinalize.finalize(console: curscons)
+	finalize(console: filecons)
 
 	/* Enter interative mode */
 	var exitcode: CNExitCode = .NoError
@@ -100,5 +99,10 @@ public func main(arguments args: Array<String>) -> CNExitCode
 	}
 
 	return exitcode
+}
+
+private func finalize(console cons: CNConsole)
+{
+	/* do nothing */
 }
 

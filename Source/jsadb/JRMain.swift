@@ -5,7 +5,8 @@
  *   Copyright (C) 2018 Steel Wheels Project
  */
 
-import Canary
+import CoconutData
+import CoconutDatabase
 import Foundation
 
 private let appname = "jsadb"

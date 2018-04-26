@@ -5,7 +5,7 @@
  *   Copyright (C) 2017 Steel Wheels Project
  */
 
-import Canary
+import CoconutData
 import Foundation
 
 public func main(arguments args: Array<String>) -> Int32
