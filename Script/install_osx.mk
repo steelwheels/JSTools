@@ -2,6 +2,7 @@
 # install.mk
 #
 
+PROJECT_NAME ?= JSTools
 INSTALL_PATH ?= $(HOME)/Library/Frameworks
 DMG_PATH     ?= $(HOME)/tools/archive
 
