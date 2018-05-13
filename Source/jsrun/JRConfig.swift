@@ -10,13 +10,13 @@ import Cobalt
 import KiwiLibrary
 import Foundation
 
-public class JRConfig
+public class JRConfig: KLConfig
 {
-	public var scriptFiles:		Array<String> = []
-	public var libraryConfig:	KLConfig      = KLConfig()
-	public var isInteractiveMode:	Bool	      = false
-	public var doUseMain:		Bool	      = false
-	public var arguments:		Array<String> = []
+	public var useStrictMode:	Bool		= true
+	public var scriptFiles:		Array<String>	= []
+	public var isInteractiveMode:	Bool		= false
+	public var doUseMain:		Bool		= false
+	public var arguments:		Array<String>	= []
 }
 
 public class JRCommandLineParser
@@ -121,7 +121,7 @@ public class JRCommandLineParser
 						printVersionMessage()
 						return nil
 					case .NoStrictMode:
-						config.libraryConfig.useStrictMode = false
+						config.useStrictMode = false
 					case .InteractiveMode:
 						config.isInteractiveMode = true
 					case .UseMain:

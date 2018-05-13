@@ -62,8 +62,7 @@ public func main(arguments args: Array<String>) -> CNExitCode
 	
 	/* setup built-in library */
 	let jsargs  = config.arguments
-	let libconf = config.libraryConfig
-	KLSetupLibrary(context: context, arguments: jsargs, console: filecons, config: libconf, exceptionHandler: ehandler)
+	KLSetupLibrary(context: context, arguments: jsargs, console: filecons, config: config, exceptionHandler: ehandler)
 	
 	/* Compile scripts */
 	let compiler = JRCompiler(context: context, exceptionHandler: ehandler)
