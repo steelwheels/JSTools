@@ -1,2 +1,2 @@
-*** Test of Process.arguments
+*** Test of arguments
 args = a,b,c

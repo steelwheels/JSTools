@@ -1,3 +1,6 @@
-console.log("*** Test of Process.arguments\n") ;
-console.log("args = " + Process.arguments + "\n") ;
+function main(arguments)
+{
+	console.log("*** Test of arguments\n") ;
+	console.log("args = " + arguments + "\n") ;
+}
 

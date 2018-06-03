@@ -89,7 +89,6 @@ public func main(arguments args: Array<String>) -> CNExitCode
 	var exitcode: CNExitCode = .NoError
 	if config.isInteractiveMode {
 		/* Execute shell mode */
-		let appname = args[0]
 		let shell   = KHShellConsole(application: application)
 		let code = shell.repl()
 		if code != 0 {

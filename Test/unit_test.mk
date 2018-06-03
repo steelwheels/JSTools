@@ -16,8 +16,10 @@ all: all_jsrun all_jscat all_jsgrep
 #
 # jsrun
 #
-all_jsrun: help nostrict hello cat0 cat1 exit0 json0 gr_primitive0 gr_view0 \
-	   math0 shell0 shell1 args main0 main1 files errors
+all_jsrun: help nostrict hello cat0 cat1 exit0 json0 \
+	   math0 shell0 shell1 args main0 main1 files errors \
+	   # gr_primitive0 gr_view0
+
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -83,7 +85,7 @@ shell1: dummy
 
 args: dummy
 	@echo "*** test: Process.arguments ***"
-	$(jsrun) --arguments "a b c" $(script_dir)/args.js | \
+	$(jsrun) --use-main --arguments "a b c" $(script_dir)/args.js | \
 					tee $(build_dir)/args.txt
 	diff $(build_dir)/args.txt $(expected_dir)/args.txt
 
