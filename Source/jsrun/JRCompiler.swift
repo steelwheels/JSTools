@@ -12,12 +12,10 @@ import Foundation
 
 public class JRCompiler
 {
-	private var mContext:		KEContext
-	private var mExceptionHandler:	(_ exception: KEException) -> Void
+	private var mApplication:		KEApplication
 
-	public init(context ctxt: KEContext, exceptionHandler ehandler: @escaping (_ exception: KEException) -> Void){
-		mContext 		= ctxt
-		mExceptionHandler	= ehandler
+	public init(application app: KEApplication){
+		mApplication = app
 	}
 
 	public func compile(config cfg: JRConfig) -> CompileError {
@@ -25,10 +23,7 @@ public class JRCompiler
 			/* compile user script */
 			for file in cfg.scriptFiles {
 				let script = try readScript(scriptFile: file)
-				mContext.runScript(script: script, exceptionHandler: {
-					(_ result: KEException) -> Void in
-					self.mExceptionHandler(result)
-				})
+				mApplication.context.runScript(script: script)
 			}
 			return .NoError
 		} catch let error {
@@ -50,6 +45,6 @@ public class JRCompiler
 	}
 
 	public func callMainFunction(arguments args: Array<String>) {
-		mContext.callFunction(functionName: "main", arguments: [args], exceptionHandler: mExceptionHandler)
+		mApplication.context.callFunction(functionName: "main", arguments: [args])
 	}
 }

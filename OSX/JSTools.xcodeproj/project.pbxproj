@@ -14,7 +14,6 @@
 		0578DA2A2090BEB300ED852C /* CoconutData.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0578DA292090BEB300ED852C /* CoconutData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
 		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
-		05C94B822052DAA200C0624A /* Math.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0510325F2033343F00C9B866 /* Math.js */; };
 		05C94B832052DABF00C0624A /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
 		05C94B842052DABF00C0624A /* Primitives.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 056C6724201627D2003E9485 /* Primitives.js */; };
 		05C94B852052DACB00C0624A /* color_table.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
@@ -182,16 +181,6 @@
 				05456C36203F199E00942254 /* KiwiLibrary.framework in CopyFiles */,
 				05D6F3771FE42CA70070DF5B /* KiwiEngine.framework in CopyFiles */,
 				05D6F36F1FE3FFE40070DF5B /* Cobalt.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05E02FC12014C27000A26A63 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Library/Math;
-			dstSubfolderSpec = 7;
-			files = (
-				05C94B822052DAA200C0624A /* Math.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +538,6 @@
 				05D6F3601FE3FE1C0070DF5B /* Frameworks */,
 				05D6F3611FE3FE1C0070DF5B /* Resources */,
 				05D6F36B1FE3FF620070DF5B /* CopyFiles */,
-				05E02FC12014C27000A26A63 /* CopyFiles */,
 				056C6725201627FC003E9485 /* CopyFiles */,
 				055528D9201D57ED00397D3C /* CopyFiles */,
 				05C94B802052D95300C0624A /* CopyFiles */,

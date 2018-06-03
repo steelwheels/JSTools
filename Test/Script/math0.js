@@ -2,7 +2,7 @@
  * math0.js
  */
 
-require('Math/Math') ;
+require('Math') ;
 
 console.log("Test: randomInt ... ") ;
 
@@ -21,5 +21,4 @@ if(result){
 	console.log("NG\n") ;
 	Process.exit(1) ;
 }
-
 

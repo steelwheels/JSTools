@@ -12,11 +12,18 @@ import Foundation
 
 public class JRConfig: KLConfig
 {
-	public var useStrictMode:	Bool		= true
-	public var scriptFiles:		Array<String>	= []
-	public var isInteractiveMode:	Bool		= false
-	public var doUseMain:		Bool		= false
-	public var arguments:		Array<String>	= []
+	public var scriptFiles:		Array<String>
+	public var isInteractiveMode:	Bool
+	public var doUseMain:		Bool
+	public var arguments:		Array<String>
+
+	public override init(){
+		scriptFiles		= []
+		isInteractiveMode	= false
+		doUseMain		= false
+		arguments		= []
+		super.init()
+	}
 }
 
 public class JRCommandLineParser
@@ -26,10 +33,11 @@ public class JRCommandLineParser
 	private enum OptionId: Int {
 		case Help		= 0
 		case Version		= 1
-		case NoStrictMode	= 2
-		case InteractiveMode	= 3
-		case UseMain		= 4
-		case Argument		= 5
+		case Verbose		= 2
+		case NoStrictMode	= 3
+		case InteractiveMode	= 4
+		case UseMain		= 5
+		case Argument		= 6
 	}
 
 	public init(console cons: CNConsole){
@@ -46,6 +54,10 @@ public class JRCommandLineParser
 				     shortName: nil, longName: "version",
 				     parameterNum: 0, parameterType: .VoidType,
 				     helpInfo: "Print version information"),
+			CBOptionType(optionId: OptionId.Verbose.rawValue,
+				     shortName: nil, longName: "verbose",
+				     parameterNum: 0, parameterType: .VoidType,
+				     helpInfo: "Print vebose information for debugging"),
 			CBOptionType(optionId: OptionId.NoStrictMode.rawValue,
 				     shortName: nil, longName: "no-strict",
 				     parameterNum: 0, parameterType: .VoidType,
@@ -120,6 +132,8 @@ public class JRCommandLineParser
 					case .Version:
 						printVersionMessage()
 						return nil
+					case .Verbose:
+						config.verboseMode = true
 					case .NoStrictMode:
 						config.useStrictMode = false
 					case .InteractiveMode:

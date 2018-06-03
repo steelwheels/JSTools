@@ -14,22 +14,22 @@ import Foundation
 
 public func main(arguments args: Array<String>) -> CNExitCode
 {
-	let filecons = CNFileConsole()
+	/* allocate application */
+	let application = KEApplication()
+	let console     = application.console
 
 	/* Parse command line arguments */
-	let parser = JRCommandLineParser(console: filecons)
+	let parser = JRCommandLineParser(console: console)
 	guard let config = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
 		return .CommandLineError
 	}
 
-	/* allocate context */
-	let context = KEContext(virtualMachine: JSVirtualMachine())
-
 	/* set exception handler */
-	let ehandler = {
+	application.context.exceptionCallback = {
 		(_ exception: KEException) -> Void in
 
 		/* If some error occured, return to console mode */
+		let console = application.console
 		switch exception {
 		case .Evaluated(_, _):
 			break
@@ -37,60 +37,60 @@ public func main(arguments args: Array<String>) -> CNExitCode
 		     .Exit(_),
 		     .Terminated(_, _):
 			/* Finalize */
-			finalize(console: filecons)
+			finalize(console: console)
 		}
 
 		/* Exit when some error occured */
 		switch exception {
 		case .CompileError(let message):
-			filecons.error(string: message + "\n")
+			console.error(string: message + "\n")
 			let exitcode:CNExitCode = .SyntaxError
 			Darwin.exit(exitcode.rawValue)
 		case .Evaluated(_, _):
-			break // continue processing
+		break // continue processing
 		case .Exit(let code):
 			if code != 0 {
 				let exitcode:CNExitCode = .ExecError
 				Darwin.exit(exitcode.rawValue)
 			}
 		case .Terminated(_, let message):
-			filecons.error(string: message + "\n")
+			console.error(string: message + "\n")
 			let exitcode:CNExitCode = .Exception
 			Darwin.exit(exitcode.rawValue)
 		}
 	}
 	
-	/* setup built-in library */
-	let jsargs  = config.arguments
-	KLSetupLibrary(context: context, arguments: jsargs, console: filecons, config: config, exceptionHandler: ehandler)
+	/* compile library */
+	let libcomp = KLLibraryCompiler(application: application)
+	libcomp.compile(config: config)
 	
 	/* Compile scripts */
-	let compiler = JRCompiler(context: context, exceptionHandler: ehandler)
+	let compiler = JRCompiler(application: application)
 	let error    = compiler.compile(config: config)
 
 	switch error {
 	case .NoError:
 		/* Call main function when "--use-main" option is given */
 		if config.doUseMain {
-			compiler.callMainFunction(arguments: jsargs)
+			compiler.callMainFunction(arguments: config.arguments)
 		}
 	case .CanNotRead(_), .CompileError(_, _):
 		/* Print error */
-		error.dump(to: filecons)
+		error.dump(to: console)
 		/* Exit code */
 		let exitcode:CNExitCode = .SyntaxError
 		Darwin.exit(exitcode.rawValue)
 	}
 
 	/* Finalize */
-	finalize(console: filecons)
+	finalize(console: console)
 
 	/* Enter interative mode */
 	var exitcode: CNExitCode = .NoError
 	if config.isInteractiveMode {
 		/* Execute shell mode */
 		let appname = args[0]
-		let shell   = KHShellConsole(applicationName: appname, context: context, console: filecons)
+		let shell   = KHShellConsole(application: application)
 		let code = shell.repl()
 		if code != 0 {
 			exitcode = .SyntaxError
