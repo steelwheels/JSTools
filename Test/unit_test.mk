@@ -16,7 +16,7 @@ all: all_jsrun all_jscat all_jsgrep
 #
 # jsrun
 #
-all_jsrun: help nostrict hello cat0 cat1 exit0 json0 \
+all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 json0 \
 	   math0 shell0 shell1 args main0 main1 files errors \
 	   # gr_primitive0 gr_view0
 
@@ -52,10 +52,19 @@ cat1: dummy
 exit0: dummy
 	@echo "*** test: exit0 ***"
 	(if $(jsrun) $(script_dir)/exit0.js ; then \
+		exit 0 ; \
+	 else \
+		exit 1 ; \
+	 fi)
+
+exit1: dummy
+	@echo "*** test: exit1 ***"
+	(if $(jsrun) $(script_dir)/exit1.js ; then \
 		exit 1 ; \
 	 else \
 		exit 0 ; \
 	 fi)
+
 json0: dummy
 	@echo "*** test: json0 ***"
 	$(jsrun) $(script_dir)/json0.js | tee $(build_dir)/json0.txt

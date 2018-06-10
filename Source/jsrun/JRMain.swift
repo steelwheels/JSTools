@@ -15,7 +15,7 @@ import Foundation
 public func main(arguments args: Array<String>) -> CNExitCode
 {
 	/* allocate application */
-	let application = KEApplication()
+	let application = KEApplication(kind: .Terminal)
 	let console     = application.console
 
 	/* Parse command line arguments */

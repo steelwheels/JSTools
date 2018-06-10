@@ -187,7 +187,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0510325F2033343F00C9B866 /* Math.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Math.js; sourceTree = "<group>"; };
 		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
 		05230414202C8FF7003B1CB9 /* jsgrep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsgrep; sourceTree = BUILT_PRODUCTS_DIR; };
 		05230416202C8FF7003B1CB9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -263,14 +262,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0510325E2033342400C9B866 /* Math */ = {
-			isa = PBXGroup;
-			children = (
-				0510325F2033343F00C9B866 /* Math.js */,
-			);
-			path = Math;
-			sourceTree = "<group>";
-		};
 		05230415202C8FF7003B1CB9 /* jsgrep */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +284,6 @@
 		056C6723201626F4003E9485 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				0510325E2033342400C9B866 /* Math */,
 				056C67272016282D003E9485 /* Graphics */,
 			);
 			path = Library;
@@ -558,7 +548,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Tomoo Hamada";
 				TargetAttributes = {
 					0510E6711FE560F300B2C718 = {
@@ -802,6 +792,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -809,6 +800,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -860,6 +852,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -867,6 +860,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

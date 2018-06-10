@@ -12,17 +12,15 @@ import Foundation
 
 public class JRConfig: KLConfig
 {
-	public var scriptFiles:		Array<String>
 	public var isInteractiveMode:	Bool
 	public var doUseMain:		Bool
 	public var arguments:		Array<String>
 
-	public override init(){
-		scriptFiles		= []
+	public init(){
 		isInteractiveMode	= false
 		doUseMain		= false
 		arguments		= []
-		super.init()
+		super.init(kind: .Terminal, useStrictMode: false, doVerbose: false, scriptFiles: [])
 	}
 }
 
