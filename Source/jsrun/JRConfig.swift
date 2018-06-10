@@ -131,9 +131,9 @@ public class JRCommandLineParser
 						printVersionMessage()
 						return nil
 					case .Verbose:
-						config.verboseMode = true
+						config.doVerbose = true
 					case .NoStrictMode:
-						config.useStrictMode = false
+						config.doStrict  = false
 					case .InteractiveMode:
 						config.isInteractiveMode = true
 					case .UseMain:
