@@ -1,0 +1,3 @@
+center = 2
+top    = 0
+red    = 2

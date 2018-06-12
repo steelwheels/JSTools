@@ -16,7 +16,7 @@ all: all_jsrun all_jscat all_jsgrep
 #
 # jsrun
 #
-all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 json0 \
+all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
 	   math0 shell0 shell1 args main0 main1 files errors \
 	   # gr_primitive0 gr_view0
 
@@ -64,6 +64,11 @@ exit1: dummy
 	 else \
 		exit 0 ; \
 	 fi)
+
+enum0: dummy
+	@echo "*** test: enum0 ***"
+	$(jsrun) $(script_dir)/enum0.js | tee $(build_dir)/enum0.txt
+	diff $(build_dir)/enum0.txt $(expected_dir)/enum0.txt
 
 json0: dummy
 	@echo "*** test: json0 ***"
