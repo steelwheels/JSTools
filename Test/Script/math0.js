@@ -16,9 +16,9 @@ for(let i=0 ; i<11 ; i++){
 
 if(result){
 	console.log("OK\n") ;
-	Process.exit(0) ;
+	exit(0) ;
 } else {
 	console.log("NG\n") ;
-	Process.exit(1) ;
+	exit(1) ;
 }
 
