@@ -17,7 +17,7 @@ all: all_jsrun all_jscat all_jsgrep
 # jsrun
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
-	   math0 shell0 shell1 args main0 main1 files errors \
+	   math0 shell0 shell1 args main0 main1 files urls errors \
 	   # gr_primitive0 gr_view0
 
 	@echo "*** test: Done ***"
@@ -125,6 +125,11 @@ filetype: dummy
 		 $(script_dir)/check_file_type0.js
 	rm -f $(build_dir)/check_file_type0.txt
 
+
+urls: dummy
+	@echo "*** test: url9 ***"
+	$(jsrun) $(script_dir)/url0.js | tee $(build_dir)/url0.txt
+	diff $(build_dir)/url0.txt $(expected_dir)/url0.txt
 
 errors:	no_file_error syn_error
 
