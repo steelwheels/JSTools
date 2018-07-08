@@ -49,3 +49,10 @@ The JSON is used to control this program.
 ## Reference manual
 * [KiwiLibrary Framework](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/README.md): Library reference
 * [Steel Wheels Project Web Page](http://steelwheels.github.io): Steel Wheels Project: Main Web Page
+
+<hr/>
+This project is managed by [OSDN](https://osdn.net/).
+<a href="https://osdn.net/">
+  <img src="https://osdn.net/sflogo.php?group_id=10809&type=1" width="96" height="29" border="0" alt="OSDN" />
+</a>
+
