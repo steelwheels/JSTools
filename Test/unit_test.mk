@@ -99,7 +99,7 @@ shell1: dummy
 
 args: dummy
 	@echo "*** test: Process.arguments ***"
-	$(jsrun) --use-main --arguments "a b c" $(script_dir)/args.js | \
+	$(jsrun) --use-main $(script_dir)/args.js -- a b c | \
 					tee $(build_dir)/args.txt
 	diff $(build_dir)/args.txt $(expected_dir)/args.txt
 
@@ -111,7 +111,7 @@ main0: dummy
 
 main1: dummy
 	@echo "*** test: main1 ***"
-	$(jsrun) --use-main --arguments "a b c" $(script_dir)/main0.js | \
+	$(jsrun) --use-main $(script_dir)/main0.js -- a b c | \
 					tee $(build_dir)/main1.txt
 	diff $(build_dir)/main1.txt $(expected_dir)/main1.txt
 
@@ -121,10 +121,9 @@ filetype: dummy
 	@echo "*** Check file type 0 ***"
 	touch $(build_dir)/check_file_type0.txt
 	$(jsrun) --use-main \
-		 --arguments $(build_dir)/check_file_type0.txt \
-		 $(script_dir)/check_file_type0.js
+		 $(script_dir)/check_file_type0.js \
+		 -- $(build_dir)/check_file_type0.txt
 	rm -f $(build_dir)/check_file_type0.txt
-
 
 urls: dummy
 	@echo "*** test: url9 ***"

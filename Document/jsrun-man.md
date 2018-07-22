@@ -16,8 +16,19 @@ The following options are available:
 |-h     |--help     |-         |Print help message     |
 |       |--version  |-         |Print version information |
 |       |--no-strict |-        |Do not use `strict` mode (If you don't give this option, the mode is set before compiling any scripts.)|
+|       |--use-main |-         |Call main function in the script after evaluating scripts. |
 |-i     |--interactive |-      | Set interactive mode. The user can input statements step by step. The interactive mode will be activated after reading all input scripts.|
-|-a     |--arguments |string |The string to be passed to JavaScript program.|
+|       |--         |-          |The arguments follows this will be passed as arguments for JavaScript code. |
+
+By using `--` option, you can pass arguments to be referenced by the JavaScript code.
+
+# Main function
+When the `--use-main` option is given, the function named *main* is called (if it exists).
+````
+main(arguments: Array<String>) -> Int32
+````
+
+The `arguments` parameter will have command line argument after '--' option.
 
 # Exit status
 |Value  |Description      |
@@ -32,12 +43,13 @@ The following options are available:
 * [Built-in Modules](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The built-in JavaScript modules which is embedded in `jsrun` command.
 * [Standard Libraries](https://github.com/steelwheels/JSTools/blob/master/Document/standard-lib.md): The standard libraries which is described by JavaScript. They are distributed with `jsrun` command.
 
-# Sample scripts
-Some sample scripts are contained in the JSTool distribution package (and source core repository).
-The file location is: `jstools.bundle/Contents/Resources/`.
-There are some directories to categorize the software.
-## Game
-* Under construction
+# Tools
+Some scripts are distributed with this command.
+These file's locations are: `jstools.bundle/Contents/Resources/`.
+
+|Tool name  |Description    |
+|:---       |:---           |
+|[util.js](https://github.com/steelwheels/JSTools/blob/master/Document/uti-js.md) |Get [UTI Information](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319-CH201-SW1) from file |
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.

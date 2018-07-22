@@ -1,5 +1,5 @@
 
-const url0 = URL("tmp_dir/a") ;
+const url0 = URL("/bin/ls") ;
 if(isNull(url0)){
 	console.print("url0 = <null>\n") ;
 } else if(isUndefined(url0)){

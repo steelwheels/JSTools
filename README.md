@@ -43,6 +43,7 @@ See [required software](https://github.com/steelwheels/JSTools/blob/master/Docum
 
 ### Tools written by JavaScript
 These tools are written by JavaScript and executed by `jsrun` command.
+* [`uti.js`](https://github.com/steelwheels/JSTools/blob/master/Document/uti-js.md): Determine the UTI of the given file.
 * [`rsync.js`](https://github.com/steelwheels/JSTools/blob/master/Document/rsync-js.md): The wrapper of [rsync ](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/rsync.1.html) command.
 The JSON is used to control this program.
 
@@ -55,4 +56,3 @@ This project is managed by [OSDN](https://osdn.net/).
 <a href="https://osdn.net/">
   <img src="https://osdn.net/sflogo.php?group_id=10809&type=1" width="96" height="29" border="0" alt="OSDN" />
 </a>
-

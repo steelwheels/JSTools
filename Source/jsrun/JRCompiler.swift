@@ -18,8 +18,10 @@ public class JRCompiler
 		mApplication = app
 	}
 
-	public func compile(config cfg: JRConfig) -> CompileError {
+	public func compile(config cfg: JRConfig, arguments args: Array<String>) -> CompileError {
 		do {
+			/* Set arguments */
+			mApplication.arguments = args
 			/* compile user script */
 			for file in cfg.scriptFiles {
 				let script = try readScript(scriptFile: file)

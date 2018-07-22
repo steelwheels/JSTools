@@ -66,15 +66,19 @@ public class JRCommandLineParser
 		mConsole.print(string: "\(version)\n")
 	}
 
-	public func parseArguments(arguments args: Array<String>) -> JRConfig? {
+	public func parseArguments(arguments args: Array<String>) -> (JRConfig, Array<String>)? {
 		var config : JRConfig? = nil
-		let (err, _, rets) = CBParseArguments(parserConfig: parserConfig(), arguments: args)
+		let (err, _, rets, subargs) = CBParseArguments(parserConfig: parserConfig(), arguments: args)
 		if let e = err {
 			mConsole.error(string: "Error: \(e.description)\n")
 		} else {
 			config = parseOptions(arguments: rets)
 		}
-		return config
+		if let config = config {
+			return (config, subargs)
+		} else {
+			return nil
+		}
 	}
 
 	private func parseOptions(arguments args: Array<CBArgument>) -> JRConfig? {

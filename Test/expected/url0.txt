@@ -1,1 +1,1 @@
-url0 = file:///Users/tomoo/Project/JSTools/OSX/tmp_dir/a; 
+url0 = /bin/ls; 

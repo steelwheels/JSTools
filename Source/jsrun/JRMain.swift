@@ -20,7 +20,7 @@ public func main(arguments args: Array<String>) -> CNExitCode
 
 	/* Parse command line arguments */
 	let parser = JRCommandLineParser(console: console)
-	guard let config = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
+	guard let (config, subargs) = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
 		return .CommandLineError
 	}
 
@@ -66,13 +66,19 @@ public func main(arguments args: Array<String>) -> CNExitCode
 	
 	/* Compile scripts */
 	let compiler = JRCompiler(application: application)
-	let error    = compiler.compile(config: config)
+	let error    = compiler.compile(config: config, arguments: subargs)
 
 	switch error {
 	case .NoError:
 		/* Call main function when "--use-main" option is given */
 		if config.doUseMain {
-			compiler.callMainFunction(arguments: config.arguments)
+			let args: Array<String>
+			if let a = application.arguments as? Array<String> {
+				args = a
+			} else {
+				args = []
+			}
+			compiler.callMainFunction(arguments: args)
 		}
 	case .CanNotRead(_), .CompileError(_, _):
 		/* Print error */

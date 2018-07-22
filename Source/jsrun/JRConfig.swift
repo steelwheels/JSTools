@@ -14,12 +14,10 @@ public class JRConfig: KLConfig
 {
 	public var isInteractiveMode:	Bool
 	public var doUseMain:		Bool
-	public var arguments:		Array<String>
 
 	public init(){
 		isInteractiveMode	= false
 		doUseMain		= false
-		arguments		= []
 		super.init(kind: .Terminal, useStrictMode: false, doVerbose: false, scriptFiles: [])
 	}
 }
@@ -35,7 +33,6 @@ public class JRCommandLineParser
 		case NoStrictMode	= 3
 		case InteractiveMode	= 4
 		case UseMain		= 5
-		case Argument		= 6
 	}
 
 	public init(console cons: CNConsole){
@@ -68,10 +65,6 @@ public class JRCommandLineParser
 				     shortName: nil, longName: "use-main",
 				     parameterNum: 0, parameterType: .VoidType,
 				     helpInfo: "Use \"main\" function"),
-			CBOptionType(optionId: OptionId.Argument.rawValue,
-				     shortName: "a", longName: "arguments",
-				     parameterNum: 1, parameterType: .StringType,
-				     helpInfo: "Argument(s) passed to JavaScript code")
 		]
 		let config = CBParserConfig(hasSubCommand: false)
 		config.setDefaultOptions(optionTypes: opttypes)
@@ -105,20 +98,23 @@ public class JRCommandLineParser
 		mConsole.print(string: "\(version)\n")
 	}
 
-	public func parseArguments(arguments args: Array<String>) -> JRConfig? {
+	public func parseArguments(arguments args: Array<String>) -> (JRConfig, Array<String>)? {
 		var config : JRConfig? = nil
-		let (err, _, rets) = CBParseArguments(parserConfig: parserConfig(), arguments: args)
+		let (err, _, rets, subargs) = CBParseArguments(parserConfig: parserConfig(), arguments: args)
 		if let e = err {
 			mConsole.error(string: "Error: \(e.description)\n")
 		} else {
 			config = parseOptions(arguments: rets)
 		}
-		return config
+		if let config = config {
+			return (config, subargs)
+		} else {
+			return nil
+		}
 	}
 
 	private func parseOptions(arguments args: Array<CBArgument>) -> JRConfig? {
 		let config   = JRConfig()
-		var argstr = ""
 		let stream   = CNArrayStream(source: args)
 		while let arg = stream.get() {
 			if let opt = arg as? CBOptionArgument {
@@ -138,15 +134,6 @@ public class JRCommandLineParser
 						config.isInteractiveMode = true
 					case .UseMain:
 						config.doUseMain = true
-					case .Argument:
-						for param in opt.parameters {
-							if let str = param.stringValue {
-								argstr += str + " "
-							} else {
-								NSLog("Invalid value: \(param.description)")
-								return nil
-							}
-						}
 					}
 				} else {
 					NSLog("[Internal error] Unknown option id")
@@ -158,8 +145,6 @@ public class JRCommandLineParser
 				return nil
 			}
 		}
-		/* Get arguments */
-		config.arguments = CNStringUtil.divideByQuote(sourceString: argstr, quote: "\"")
 
 		if config.isInteractiveMode || config.scriptFiles.count > 0 {
 			return config
