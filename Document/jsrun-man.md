@@ -3,8 +3,10 @@
 
 # Synopsis
 ````
-jsrun [options] script1 script2 ... scriptN
+jsrun [options] script -- [arguments]
 ````
+* options: command line options for `jsrun` command
+* arguments: Arguments to be passed to JavaScript.
 
 # Description
 The *jsrun* is command line application to execute JavaScript program.
@@ -27,8 +29,7 @@ When the `--use-main` option is given, the function named *main* is called (if i
 ````
 main(arguments: Array<String>) -> Int32
 ````
-
-The `arguments` parameter will have command line argument after '--' option.
+The `arguments` are defined by the command line arguments after `--` option.
 
 # Exit status
 |Value  |Description      |
@@ -39,7 +40,6 @@ The `arguments` parameter will have command line argument after '--' option.
 
 # Programming manual
 * [Require statement](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/RequireFunc.md): Require: JavaScript module manager
-* [Main Function](https://github.com/steelwheels/JSTools/blob/master/Document/MainFunc.md): How to use/define main function
 * [Built-in Modules](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The built-in JavaScript modules which is embedded in `jsrun` command.
 * [Standard Libraries](https://github.com/steelwheels/JSTools/blob/master/Document/standard-lib.md): The standard libraries which is described by JavaScript. They are distributed with `jsrun` command.
 

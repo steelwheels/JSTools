@@ -1,37 +1,42 @@
-/* curses3.js */
+/* color_table.js */
+
+var curses = require("curses") ;
 
 function main()
 {
 	let maxlen = maxNameLength() + 1 ; // +1 for space
 
-	console.setScreenMode(true) ; 
+	curses.mode(true) ; 
 
-	let vpos = (console.screenHeight - 8) / 2 ;
-	let hpos = (console.screenWidth  - maxlen*8) / 2 ;
-	for(let fcol=Color.Min ; fcol<=Color.Max ; fcol++){
-		console.moveTo(hpos, vpos) ;
-		let label = makeLabel(Color.description(fcol), maxlen) ;
-		for(let bcol=Color.Min ; bcol<=Color.Max ; bcol++){
-			console.setColor(fcol, bcol) ;
-			console.log(label) ;
+	let vpos = (curses.screenHeight - 8) / 2 ;
+	let hpos = (curses.screenWidth  - maxlen*8) / 2 ;
+	for(let fcol=Color.min ; fcol<=Color.max ; fcol++){
+		curses.moveTo(hpos, vpos) ;
+		let label = makeLabel(colorName(fcol), maxlen) ;
+		for(let bcol=Color.min ; bcol<=Color.max ; bcol++){
+			curses.setColor(fcol, bcol) ;
+			curses.put(label) ;
 		}
 		vpos += 1 ;
 	}
 
-	console.setColor(Color.Black, Color.White) ;
+	curses.setColor(Color.black, Color.white) ;
 	centering( 2, "J S T o o l s") ;
 	centering(22, "Press any key to quit") ;
 
 	/* Wait key press */
-	while(console.getKey() == null){
+	while(curses.getKey() == null){
 	}
+
+	/* Finish */
+	curses.mode(false) ; 
 }
 
 function maxNameLength()
 {
 	let maxlen = 0 ;
-	for(let col=Color.Min ; col<=Color.Max ; col++){
-		let name    = Color.description(col) ;
+	for(let col=Color.min ; col<=Color.max ; col++){
+		let name    = colorName(col) ;
 		let namelen = name.length ;
 		if(namelen > maxlen){
 			maxlen = namelen ;
@@ -51,9 +56,25 @@ function makeLabel(name, maxlen)
 
 function centering(vpos, label)
 {
-	let hpos = (console.screenWidth - label.length) / 2 ;
-	console.moveTo(hpos, vpos) ;
-	console.log(label) ;
+	let hpos = (curses.screenWidth - label.length) / 2 ;
+	curses.moveTo(hpos, vpos) ;
+	curses.put(label) ;
+}
+
+function colorName(color) {
+	var result = "unknown" ;
+	switch (color) {
+	  case Color.black:	result = "black" ;	break ;
+	  case Color.red:	result = "red" ;	break ;
+	  case Color.green:	result = "green" ;	break ;
+	  case Color.yellow:	result = "yellow" ;	break ;
+	  case Color.blue:	result = "blue" ;	break ;
+	  case Color.magenta:	result = "magenta" ;	break ;
+	  case Color.cyan:	result = "cyan" ;	break ;
+	  case Color.white:	result = "white" ;	break ;
+	  default:		result = "unknown" ;	break ;
+	}
+	return result ;
 }
 
 main()
