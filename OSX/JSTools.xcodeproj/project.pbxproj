@@ -12,6 +12,10 @@
 		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
 		057B5A732103EE3300738F3E /* uti.js in Resources */ = {isa = PBXBuildFile; fileRef = 057B5A722103EE3300738F3E /* uti.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
+		05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; };
+		05AC13A0214FB08A00601301 /* CoconutDatabase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05AC13A1214FB09400601301 /* KiwiShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB2214F73E5005CFF9A /* KiwiShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05AC13A2214FB09900601301 /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
 		05C94B832052DABF00C0624A /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
 		05C94B842052DABF00C0624A /* Primitives.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 056C6724201627D2003E9485 /* Primitives.js */; };
@@ -176,6 +180,9 @@
 			files = (
 				05F29AAC214F72CE005CFF9A /* CoconutData.framework in CopyFiles */,
 				05F29AAF214F738E005CFF9A /* Cobalt.framework in CopyFiles */,
+				05AC13A0214FB08A00601301 /* CoconutDatabase.framework in CopyFiles */,
+				05AC13A1214FB09400601301 /* KiwiShell.framework in CopyFiles */,
+				05AC13A2214FB09900601301 /* KiwiLibrary.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -194,6 +201,7 @@
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856D920035B2900DB5E75 /* jscat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jscat; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856DB20035B2A00DB5E75 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		05AC139E214FB06C00601301 /* CoconutDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutDatabase.framework; path = ../../../Library/Frameworks/CoconutDatabase.framework; sourceTree = "<group>"; };
 		05AC80CF20268EF700165368 /* jsadb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsadb; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AC80D120268EF700165368 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05D4377E20035C4500320CA4 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
@@ -250,6 +258,7 @@
 			files = (
 				05F29AAB214F72C7005CFF9A /* CoconutData.framework in Frameworks */,
 				05F29AB1214F73D1005CFF9A /* KiwiLibrary.framework in Frameworks */,
+				05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */,
 				05F29AAE214F737A005CFF9A /* Cobalt.framework in Frameworks */,
 				05F29AB3214F73E5005CFF9A /* KiwiShell.framework in Frameworks */,
 			);
@@ -402,6 +411,7 @@
 		05F29A92214F6FC1005CFF9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05AC139E214FB06C00601301 /* CoconutDatabase.framework */,
 				05F29AB2214F73E5005CFF9A /* KiwiShell.framework */,
 				05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */,
 				05F29AAD214F737A005CFF9A /* Cobalt.framework */,
