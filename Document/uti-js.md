@@ -3,7 +3,7 @@
 
 # Synopsis
 ````
-  jsrun --use-main util.js -- file1 file2 ...
+  jsrun --use-main uti.js -- file1 file2 ...
 ````
 
 # Descriptions

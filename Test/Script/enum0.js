@@ -1,8 +1,8 @@
 /* enum0.js */
 
-const center = Align.center ;
-const top    = Align.top ;
-const middle = Align.middle ;
+const center = Alignment.center ;
+const top    = Alignment.top ;
+const middle = Alignment.middle ;
 const red    = Color.green ;
 
 console.log("center = " + center + "\n") ;
