@@ -1,10 +1,7 @@
-let shell = require('shell') ;
+let pipe = Pipe.open() ;
 
-let pipe  = Pipe.open() ;
-console.log("pipe input=" + pipe.input + ", output=" + pipe.output + "\n");
-
-let sh = shell.execute("echo \"Hello, world !!\"", null, pipe, stderr);
-let wc = shell.execute("wc -c", pipe, stdout, stderr);
+let sh = Shell.execute("/bin/echo -n \"hello\"", null, pipe, null);
+let wc = Shell.execute("/usr/bin/wc -c", pipe, null, null);
 
 sh.waitUntilExit() ;
 wc.waitUntilExit() ;

@@ -2,3 +2,4 @@ center = 1
 top    = 3
 middle = 4
 red    = 2
+authorized = undefined

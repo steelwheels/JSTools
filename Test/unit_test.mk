@@ -17,7 +17,7 @@ all: all_jsrun all_jscat all_jsgrep
 # jsrun
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
-	   math0 shell0 shell1 args main0 main1 files urls errors \
+	   math0 shell0 shell1 shell2 args main0 main1 files urls errors \
 	   # gr_primitive0 gr_view0
 
 	@echo "*** test: Done ***"
@@ -96,6 +96,9 @@ shell0: dummy
 
 shell1: dummy
 	$(jsrun) $(script_dir)/shell1.js
+
+shell2: dummy
+	$(jsrun) $(script_dir)/shell2.js
 
 args: dummy
 	@echo "*** test: Process.arguments ***"

@@ -1,22 +1,23 @@
 console.log("setup curses start\n") ;
 
-console.setScreenMode(true) ;
+Curses.mode(true) ; // screen mode
 
-console.log("screenWidth  = " + console.screenWidth + "\n") ;
-console.log("screenHeight = " + console.screenHeight + "\n") ;
-console.log("cursorX      = " + console.cursorX + "\n") ;
-console.log("cursorY      = " + console.cursorY + "\n") ;
+const width  = Curses.screenWidth ;
+const height = Curses.screenHeight ;
+const orgx   = Curses.cursorX
+const orgy   = Curses.cursorY
 
-console.log("Press \"q\" to quit\n") ;
+Curses.moveTo(0, 0) ; Curses.put("width  = " + width) ;
+Curses.moveTo(0, 1) ; Curses.put("height = " + height) ;
+Curses.moveTo(0, 2) ; Curses.put("orgx   = " + orgx) ;
+Curses.moveTo(0, 3) ; Curses.put("orgy   = " + orgy) ;
 
-let key = 0 ;
-while((key = console.getKey()) != null){
-	let c = String.fromCharCode(key) ;
-	console.log("Key : " + c + "\n") ;
-	if(c == "q"){
-		break ;
-	}
+//console.log("Press \"q\" to quit\n") ;
+
+while(Curses.getKey() == null){
 }
+
+Curses.mode(false) ; // console mode
 
 console.log("Bye\n") ;
 

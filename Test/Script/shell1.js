@@ -1,9 +1,8 @@
-let shell = require('shell') ;
-let lscmd = shell.searchCommand("ls") ;
+let lscmd = Shell.searchCommand("ls") ;
 console.log("ls command = " + lscmd + "\n") ;
-console.log("exec echo command = ") ;
 
-let process = shell.execute("echo \"Hello, world !!\"", null, null, null) ;
+console.log("exec echo command = ") ;
+let process = Shell.execute("echo \"Hello, world !!\"", null, null, null) ;
 process.waitUntilExit() ;
 
 

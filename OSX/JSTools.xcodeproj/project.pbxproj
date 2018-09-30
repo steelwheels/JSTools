@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0518D42E2152B78B0036E5D5 /* CoconutDatabase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0518D42F2152B78E0036E5D5 /* KiwiShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB2214F73E5005CFF9A /* KiwiShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0518D4302152B7930036E5D5 /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0518D4312152B7970036E5D5 /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AAD214F737A005CFF9A /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0518D4322152B79A0036E5D5 /* CoconutData.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AAA214F72C7005CFF9A /* CoconutData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05230417202C8FF7003B1CB9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05230416202C8FF7003B1CB9 /* main.swift */; };
 		0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041D202C90E0003B1CB9 /* JRMain.swift */; };
 		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
 		057B5A732103EE3300738F3E /* uti.js in Resources */ = {isa = PBXBuildFile; fileRef = 057B5A722103EE3300738F3E /* uti.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
 		05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; };
-		05AC13A0214FB08A00601301 /* CoconutDatabase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05AC13A1214FB09400601301 /* KiwiShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB2214F73E5005CFF9A /* KiwiShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05AC13A2214FB09900601301 /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
 		05C94B832052DABF00C0624A /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
 		05C94B842052DABF00C0624A /* Primitives.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 056C6724201627D2003E9485 /* Primitives.js */; };
@@ -31,9 +33,7 @@
 		05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E62026A70C00EAAE8C /* JRMain.swift */; };
 		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
 		05F29AAB214F72C7005CFF9A /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAA214F72C7005CFF9A /* CoconutData.framework */; };
-		05F29AAC214F72CE005CFF9A /* CoconutData.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AAA214F72C7005CFF9A /* CoconutData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05F29AAE214F737A005CFF9A /* Cobalt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAD214F737A005CFF9A /* Cobalt.framework */; };
-		05F29AAF214F738E005CFF9A /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AAD214F737A005CFF9A /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05F29AB1214F73D1005CFF9A /* KiwiLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */; };
 		05F29AB3214F73E5005CFF9A /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AB2214F73E5005CFF9A /* KiwiShell.framework */; };
 /* End PBXBuildFile section */
@@ -163,28 +163,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
-		05C94B802052D95300C0624A /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Tools;
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		05D6F36B1FE3FF620070DF5B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				05F29AAC214F72CE005CFF9A /* CoconutData.framework in CopyFiles */,
-				05F29AAF214F738E005CFF9A /* Cobalt.framework in CopyFiles */,
-				05AC13A0214FB08A00601301 /* CoconutDatabase.framework in CopyFiles */,
-				05AC13A1214FB09400601301 /* KiwiShell.framework in CopyFiles */,
-				05AC13A2214FB09900601301 /* KiwiLibrary.framework in CopyFiles */,
+				0518D42E2152B78B0036E5D5 /* CoconutDatabase.framework in CopyFiles */,
+				0518D4312152B7970036E5D5 /* Cobalt.framework in CopyFiles */,
+				0518D42F2152B78E0036E5D5 /* KiwiShell.framework in CopyFiles */,
+				0518D4322152B79A0036E5D5 /* CoconutData.framework in CopyFiles */,
+				0518D4302152B7930036E5D5 /* KiwiLibrary.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -541,7 +532,6 @@
 				05D6F36B1FE3FF620070DF5B /* CopyFiles */,
 				056C6725201627FC003E9485 /* CopyFiles */,
 				055528D9201D57ED00397D3C /* CopyFiles */,
-				05C94B802052D95300C0624A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -821,10 +811,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -881,10 +871,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -917,7 +907,7 @@
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks /System/Library/PrivateFrameworks/Swift/ $(inherited)";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
@@ -938,7 +928,7 @@
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks /System/Library/PrivateFrameworks/Swift/ $(inherited)";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
