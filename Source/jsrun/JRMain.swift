@@ -35,6 +35,7 @@ public func main(arguments args: Array<String>) -> CNExitCode
 			break
 		case .CompileError(_),
 		     .Exit(_),
+		     .Runtime(_),
 		     .Terminated(_, _):
 			/* Finalize */
 			finalize(console: console)
@@ -42,8 +43,8 @@ public func main(arguments args: Array<String>) -> CNExitCode
 
 		/* Exit when some error occured */
 		switch exception {
-		case .CompileError(let message):
-			console.error(string: message + "\n")
+		case .CompileError(_):
+			console.error(string: exception.description + "\n")
 			let exitcode:CNExitCode = .SyntaxError
 			Darwin.exit(exitcode.rawValue)
 		case .Evaluated(_, _):
@@ -53,8 +54,9 @@ public func main(arguments args: Array<String>) -> CNExitCode
 				let exitcode:CNExitCode = .ExecError
 				Darwin.exit(exitcode.rawValue)
 			}
-		case .Terminated(_, let message):
-			console.error(string: message + "\n")
+		case .Runtime(_),
+		     .Terminated(_, _):
+			console.error(string: exception.description + "\n")
 			let exitcode:CNExitCode = .Exception
 			Darwin.exit(exitcode.rawValue)
 		}
