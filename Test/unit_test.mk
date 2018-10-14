@@ -7,6 +7,7 @@ jscat 		= $(HOME)/tools/jstools/jscat
 jsgrep 		= $(HOME)/tools/jstools/jsgrep
 test_dir	= ../Test
 script_dir	= ../Test/Script
+resource_dir	= ../Resource/Sample
 data_dir	= $(test_dir)/data
 expected_dir	= $(test_dir)/expected
 build_dir	= $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
@@ -29,14 +30,14 @@ help: dummy
 
 nostrict: dummy
 	@echo "*** test: --no-strict ***"
-	$(jsrun) --no-strict $(script_dir)/hello.js | \
-		tee $(build_dir)/hello-no-strict.txt
-	diff $(build_dir)/hello-no-strict.txt $(expected_dir)/hello.txt
+	$(jsrun) --no-strict $(resource_dir)/hello-0.js | \
+		tee $(build_dir)/hello-0-ns.txt
+	diff $(build_dir)/hello-0-ns.txt $(expected_dir)/hello-0.txt
 
 hello: dummy
 	@echo "*** test: hello ***"
-	$(jsrun) $(script_dir)/hello.js | tee $(build_dir)/hello.txt
-	diff $(build_dir)/hello.txt $(expected_dir)/hello.txt
+	$(jsrun) $(resource_dir)/hello-0.js | tee $(build_dir)/hello-0.txt
+	diff $(build_dir)/hello-0.txt $(expected_dir)/hello-0.txt
 
 cat0: dummy
 	@echo "*** test: cat0 ***"
