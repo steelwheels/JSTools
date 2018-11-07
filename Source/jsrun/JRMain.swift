@@ -42,26 +42,20 @@ public func main(arguments args: Array<String>) -> CNExitCode
 	/* Call main function */
 	if config.doUseMain {
 		if let _ = context.objectForKeyedSubscript("main") {
-			/* Define command line arguments */
-			if let argval = JSValue(object: subargs, in: context) {
-				context.set(name: "_arguments", value: argval)
-			} else {
-				console.error(string: "Can not define command line arguments")
-				return .SyntaxError
-			}
 			/* Call main function */
-			compiler.log(string: "/* Define \"_arguments\" for command line arguments */\n")
-			let callscr = "_exec(function(args){ main(args) ;}, _arguments) ;\n"
-			if let retval = compiler.compile(context: context, statement: callscr) {
-				if retval.isUndefined {
-					/* Do not check return value */
-					return .NoError
-				} else if retval.isNumber {
-
+			if let mainfunc = context.objectForKeyedSubscript("main") {
+				if let retval = mainfunc.call(withArguments: [subargs]) {
+					if retval.isNumber {
+						let ecode = retval.toInt32()
+						exit(ecode)	/* Exit this program */
+					}
+				} else {
+					console.error(string: "[Error] No Return value.\n")
+					return .InternalError
 				}
-				return .InternalError
 			} else {
-				return .ExecError
+				console.error(string: "Can not find main function.\n")
+				return .SyntaxError
 			}
 		}
 	}
