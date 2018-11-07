@@ -1,4 +1,8 @@
-/* exit(0) */
-console.log("Before exit\n") ;
-exit(0) ;
-console.log("After exit\n") ;
+
+function main(args)
+{
+	console.log("Before exit: " + args + "\n") ;
+	Process.exit(1) ;
+	console.log("After exit\n") ;
+}
+

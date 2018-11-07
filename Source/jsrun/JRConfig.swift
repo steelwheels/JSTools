@@ -12,13 +12,18 @@ import Foundation
 
 public class JRConfig: KLConfig
 {
+	public var scriptFiles:		Array<String>
 	public var isInteractiveMode:	Bool
 	public var doUseMain:		Bool
 
 	public init(){
+		scriptFiles		= []
 		isInteractiveMode	= false
 		doUseMain		= false
-		super.init(kind: .Terminal, useStrictMode: false, doVerbose: false, scriptFiles: [])
+		super.init(kind: .Terminal)
+
+		self.doStrict  = true
+		self.doVerbose = false
 	}
 }
 

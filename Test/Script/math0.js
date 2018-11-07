@@ -2,8 +2,6 @@
  * math0.js
  */
 
-require('Math') ;
-
 console.log("Test: randomInt ... ") ;
 
 let result = true ;

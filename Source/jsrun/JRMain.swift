@@ -7,6 +7,7 @@
 
 import CoconutData
 import KiwiEngine
+import KiwiObject
 import KiwiShell
 import KiwiLibrary
 import JavaScriptCore
@@ -14,9 +15,8 @@ import Foundation
 
 public func main(arguments args: Array<String>) -> CNExitCode
 {
-	/* allocate application */
-	let application = KEApplication(kind: .Terminal)
-	let console     = application.console
+	/* Allocate console */
+	let console = CNFileConsole()
 
 	/* Parse command line arguments */
 	let parser = JRCommandLineParser(console: console)
@@ -24,91 +24,49 @@ public func main(arguments args: Array<String>) -> CNExitCode
 		return .CommandLineError
 	}
 
-	/* set exception handler */
-	application.context.exceptionCallback = {
+	/* Allocate context */
+	let context = KEContext(virtualMachine: JSVirtualMachine())
+	context.exceptionCallback = {
 		(_ exception: KEException) -> Void in
-
-		/* If some error occured, return to console mode */
-		let console = application.console
-		switch exception {
-		case .Evaluated(_, _):
-			break
-		case .CompileError(_),
-		     .Exit(_),
-		     .Runtime(_),
-		     .Terminated(_, _):
-			/* Finalize */
-			finalize(console: console)
-		}
-
-		/* Exit when some error occured */
-		switch exception {
-		case .CompileError(_):
-			console.error(string: exception.description + "\n")
-			let exitcode:CNExitCode = .SyntaxError
-			Darwin.exit(exitcode.rawValue)
-		case .Evaluated(_, _):
-		break // continue processing
-		case .Exit(let code):
-			if code != 0 {
-				let exitcode:CNExitCode = .ExecError
-				Darwin.exit(exitcode.rawValue)
-			}
-		case .Runtime(_),
-		     .Terminated(_, _):
-			console.error(string: exception.description + "\n")
-			let exitcode:CNExitCode = .Exception
-			Darwin.exit(exitcode.rawValue)
-		}
+		console.error(string: "\(exception.description)\n")
+		let exitcode:CNExitCode = .Exception
+		exit(exitcode.rawValue) // exit the application
 	}
-	
-	/* compile library */
-	let libcomp = KLLibraryCompiler(application: application)
-	libcomp.compile(config: config)
-	
-	/* Compile scripts */
-	let compiler = JRCompiler(application: application)
-	let error    = compiler.compile(config: config, arguments: subargs)
 
-	switch error {
-	case .NoError:
-		/* Call main function when "--use-main" option is given */
-		if config.doUseMain {
-			let args: Array<String>
-			if let a = application.arguments as? Array<String> {
-				args = a
+	/* Compile */
+	let compiler = JRCompiler(console: console, config: config)
+	guard compiler.compile(context: context) else {
+		return .SyntaxError
+	}
+
+	/* Call main function */
+	if config.doUseMain {
+		if let _ = context.objectForKeyedSubscript("main") {
+			/* Define command line arguments */
+			if let argval = JSValue(object: subargs, in: context) {
+				context.set(name: "_arguments", value: argval)
 			} else {
-				args = []
+				console.error(string: "Can not define command line arguments")
+				return .SyntaxError
 			}
-			compiler.callMainFunction(arguments: args)
-		}
-	case .CanNotRead(_), .CompileError(_, _):
-		/* Print error */
-		error.dump(to: console)
-		/* Exit code */
-		let exitcode:CNExitCode = .SyntaxError
-		Darwin.exit(exitcode.rawValue)
-	}
+			/* Call main function */
+			compiler.log(string: "/* Define \"_arguments\" for command line arguments */\n")
+			let callscr = "_exec(function(args){ main(args) ;}, _arguments) ;\n"
+			if let retval = compiler.compile(context: context, statement: callscr) {
+				if retval.isUndefined {
+					/* Do not check return value */
+					return .NoError
+				} else if retval.isNumber {
 
-	/* Finalize */
-	finalize(console: console)
-
-	/* Enter interative mode */
-	var exitcode: CNExitCode = .NoError
-	if config.isInteractiveMode {
-		/* Execute shell mode */
-		let shell   = KHShellConsole(application: application)
-		let code = shell.repl()
-		if code != 0 {
-			exitcode = .SyntaxError
+				}
+				return .InternalError
+			} else {
+				return .ExecError
+			}
 		}
 	}
 
-	return exitcode
+	return .NoError
 }
 
-private func finalize(console cons: CNConsole)
-{
-	/* do nothing */
-}
 

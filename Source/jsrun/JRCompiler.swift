@@ -6,34 +6,39 @@
  */
 
 import KiwiEngine
+import KiwiObject
 import KiwiLibrary
+import CoconutData
 import JavaScriptCore
 import Foundation
 
-public class JRCompiler
+public class JRCompiler: KLCompiler
 {
-	private var mApplication:		KEApplication
+	private var mConfig:	JRConfig
 
-	public init(application app: KEApplication){
-		mApplication = app
+	public init(console cons: CNConsole, config conf: JRConfig) {
+		mConfig = conf
+		super.init(console: cons, config: conf)
 	}
 
-	public func compile(config cfg: JRConfig, arguments args: Array<String>) -> CompileError {
+	public override func compile(context ctxt: KEContext) -> Bool {
+		/* Compile library */
+		guard super.compile(context: ctxt) else {
+			return false
+		}
+		/* Compile user source */
 		do {
-			/* Set arguments */
-			mApplication.arguments = args
-			/* compile user script */
-			for file in cfg.scriptFiles {
+			for file in mConfig.scriptFiles {
 				let script = try readScript(scriptFile: file)
-				mApplication.context.runScript(script: script)
+				ctxt.evaluateScript(script)
 			}
-			return .NoError
-		} catch let error {
-			if let e = error as? CompileError {
-				return e
-			} else {
-				fatalError("Unknown error object")
-			}
+			return true
+		} catch let err as KEError {
+			self.console.error(string: "\(err.description)\n")
+			return false
+		} catch _ {
+			self.console.error(string: "Internal error")
+			return false
 		}
 	}
 
@@ -42,11 +47,8 @@ public class JRCompiler
 			let url  = URL(fileURLWithPath: file)
 			return try String(contentsOf: url, encoding: .utf8)
 		} catch _ {
-			throw CompileError.CanNotRead(fileName: file)
+			throw KEError(canNotReadError: file)
 		}
 	}
-
-	public func callMainFunction(arguments args: Array<String>) {
-		mApplication.context.callFunction(functionName: "main", arguments: [args])
-	}
 }
+

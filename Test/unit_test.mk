@@ -18,8 +18,8 @@ all: all_jsrun all_jscat all_jsgrep
 # jsrun
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
-	   math0 shell0 shell1 shell2 args main0 main1 files urls errors \
-	   # gr_primitive0 gr_view0
+	   shell0 shell1 shell2 args main0 main1 files urls errors \
+	   # math0 gr_primitive0 gr_view0
 
 	@echo "*** test: Done ***"
 
@@ -52,11 +52,13 @@ cat1: dummy
 
 exit0: dummy
 	@echo "*** test: exit0 ***"
-	(if $(jsrun) $(script_dir)/exit0.js ; then \
+	(if $(jsrun) --use-main $(script_dir)/exit0.js | \
+					tee $(build_dir)/exit0.txt ; then \
 		exit 0 ; \
 	 else \
 		exit 1 ; \
 	 fi)
+	diff $(build_dir)/exit0.txt $(expected_dir)/exit0.txt
 
 exit1: dummy
 	@echo "*** test: exit1 ***"

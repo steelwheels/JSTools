@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0514FBD4217F92C700F70A1B /* KiwiObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0514FBD3217F92C600F70A1B /* KiwiObject.framework */; };
 		0518D42E2152B78B0036E5D5 /* CoconutDatabase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0518D42F2152B78E0036E5D5 /* KiwiShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB2214F73E5005CFF9A /* KiwiShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0518D4302152B7930036E5D5 /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -30,7 +31,6 @@
 		05D6F35B1FE3FDAF0070DF5B /* JRCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */; };
 		05D6F35C1FE3FDAF0070DF5B /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3571FE3FDAF0070DF5B /* JRMain.swift */; };
 		05D6F35D1FE3FDAF0070DF5B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3581FE3FDAF0070DF5B /* main.swift */; };
-		05D6F35E1FE3FDAF0070DF5B /* JRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3591FE3FDAF0070DF5B /* JRError.swift */; };
 		05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E62026A70C00EAAE8C /* JRMain.swift */; };
 		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
 		05F29AAB214F72C7005CFF9A /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAA214F72C7005CFF9A /* CoconutData.framework */; };
@@ -182,6 +182,7 @@
 
 /* Begin PBXFileReference section */
 		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
+		0514FBD3217F92C600F70A1B /* KiwiObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiObject.framework; path = ../../../Library/Frameworks/KiwiObject.framework; sourceTree = "<group>"; };
 		05230414202C8FF7003B1CB9 /* jsgrep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsgrep; sourceTree = BUILT_PRODUCTS_DIR; };
 		05230416202C8FF7003B1CB9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0523041D202C90E0003B1CB9 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
@@ -203,7 +204,6 @@
 		05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRCompiler.swift; sourceTree = "<group>"; };
 		05D6F3571FE3FDAF0070DF5B /* JRMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		05D6F3581FE3FDAF0070DF5B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		05D6F3591FE3FDAF0070DF5B /* JRError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRError.swift; sourceTree = "<group>"; };
 		05D6F3631FE3FE1C0070DF5B /* jstools.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jstools.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D6F3651FE3FE1C0070DF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05DAD1E62026A70C00EAAE8C /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
@@ -248,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0514FBD4217F92C700F70A1B /* KiwiObject.framework in Frameworks */,
 				05F29AAB214F72C7005CFF9A /* CoconutData.framework in Frameworks */,
 				05F29AB1214F73D1005CFF9A /* KiwiLibrary.framework in Frameworks */,
 				05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */,
@@ -357,7 +358,6 @@
 				05D6F3571FE3FDAF0070DF5B /* JRMain.swift */,
 				05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */,
 				05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */,
-				05D6F3591FE3FDAF0070DF5B /* JRError.swift */,
 				05D6F3581FE3FDAF0070DF5B /* main.swift */,
 			);
 			path = jsrun;
@@ -403,6 +403,7 @@
 		05F29A92214F6FC1005CFF9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0514FBD3217F92C600F70A1B /* KiwiObject.framework */,
 				05AC139E214FB06C00601301 /* CoconutDatabase.framework */,
 				05F29AB2214F73E5005CFF9A /* KiwiShell.framework */,
 				05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */,
@@ -640,7 +641,6 @@
 				05D6F35C1FE3FDAF0070DF5B /* JRMain.swift in Sources */,
 				05D6F35B1FE3FDAF0070DF5B /* JRCompiler.swift in Sources */,
 				05D6F35D1FE3FDAF0070DF5B /* main.swift in Sources */,
-				05D6F35E1FE3FDAF0070DF5B /* JRError.swift in Sources */,
 				05D6F35A1FE3FDAF0070DF5B /* JRConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -836,7 +836,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -891,7 +891,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
