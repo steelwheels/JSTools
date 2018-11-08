@@ -52,12 +52,8 @@ cat1: dummy
 
 exit0: dummy
 	@echo "*** test: exit0 ***"
-	(if $(jsrun) --use-main $(script_dir)/exit0.js -- a b c | \
-					tee $(build_dir)/exit0.txt ; then \
-		echo "expected error" ; \
-	 else \
-		exit 1 ; \
-	 fi)
+	$(jsrun) --use-main $(script_dir)/exit0.js -- a b c | \
+					tee $(build_dir)/exit0.txt
 	diff $(build_dir)/exit0.txt $(expected_dir)/exit0.txt 
 
 exit1: dummy
