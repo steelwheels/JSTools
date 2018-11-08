@@ -188,7 +188,6 @@
 		0523041F202C930C003B1CB9 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
 		056C6724201627D2003E9485 /* Primitives.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Primitives.js; sourceTree = "<group>"; };
-		057B5A722103EE3300738F3E /* uti.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = uti.js; sourceTree = "<group>"; };
 		0580EB812172ED3F00F018F1 /* hello-0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "hello-0.js"; sourceTree = "<group>"; };
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856D920035B2900DB5E75 /* jscat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jscat; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,7 +299,6 @@
 			children = (
 				056C6723201626F4003E9485 /* Library */,
 				055528D6201D578500397D3C /* Sample */,
-				05C94B7D2052D63900C0624A /* Tools */,
 				05E02FBB2014C21500A26A63 /* Game */,
 			);
 			name = Resources;
@@ -361,15 +359,6 @@
 			);
 			path = jsrun;
 			sourceTree = "<group>";
-		};
-		05C94B7D2052D63900C0624A /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				057B5A722103EE3300738F3E /* uti.js */,
-			);
-			name = Tools;
-			path = ../Resource/Tools;
-			sourceTree = SOURCE_ROOT;
 		};
 		05D6F3531FE3FD880070DF5B /* Source */ = {
 			isa = PBXGroup;
