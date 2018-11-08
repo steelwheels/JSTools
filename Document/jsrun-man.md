@@ -44,9 +44,6 @@ The `arguments` are defined by the command line arguments after `--` option.
 * [Standard Libraries](https://github.com/steelwheels/JSTools/blob/master/Document/standard-lib.md): The standard libraries which is described by JavaScript. They are distributed with `jsrun` command.
 
 # Tools
-Some scripts are distributed with this command.
-These file's locations are: `jstools.bundle/Contents/Resources/`.
-
 |Tool name  |Description    |
 |:---       |:---           |
 |[util.js](https://github.com/steelwheels/JSTools/blob/master/Document/uti-js.md) |Get [UTI Information](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319-CH201-SW1) from file |
@@ -57,4 +54,3 @@ See [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
-

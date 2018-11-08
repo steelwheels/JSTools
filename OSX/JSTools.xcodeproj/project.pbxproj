@@ -16,7 +16,6 @@
 		05230417202C8FF7003B1CB9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05230416202C8FF7003B1CB9 /* main.swift */; };
 		0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041D202C90E0003B1CB9 /* JRMain.swift */; };
 		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
-		057B5A732103EE3300738F3E /* uti.js in Resources */ = {isa = PBXBuildFile; fileRef = 057B5A722103EE3300738F3E /* uti.js */; };
 		0580EB822172ED3F00F018F1 /* hello-0.js in Resources */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		0580EB832172ED4900F018F1 /* hello-0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
@@ -617,7 +616,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0580EB822172ED3F00F018F1 /* hello-0.js in Resources */,
-				057B5A732103EE3300738F3E /* uti.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
