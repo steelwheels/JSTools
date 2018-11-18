@@ -26,6 +26,7 @@ public func main(arguments args: Array<String>) -> CNExitCode
 
 	/* Allocate context */
 	let context = KEContext(virtualMachine: JSVirtualMachine())
+	let process = KEProcess(context: context, config: config)
 	context.exceptionCallback = {
 		(_ exception: KEException) -> Void in
 		console.error(string: "\(exception.description)\n")
@@ -35,7 +36,7 @@ public func main(arguments args: Array<String>) -> CNExitCode
 
 	/* Compile */
 	let compiler = JRCompiler(console: console, config: config)
-	guard compiler.compile(context: context) else {
+	guard compiler.compile(context: context, process: process) else {
 		return .SyntaxError
 	}
 

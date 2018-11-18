@@ -21,9 +21,9 @@ public class JRCompiler: KLCompiler
 		super.init(console: cons, config: conf)
 	}
 
-	public override func compile(context ctxt: KEContext) -> Bool {
+	public override func compile(context ctxt: KEContext, process proc: KEProcess) -> Bool {
 		/* Compile library */
-		guard super.compile(context: ctxt) else {
+		guard super.compile(context: ctxt, process: proc) else {
 			return false
 		}
 		/* Compile user source */

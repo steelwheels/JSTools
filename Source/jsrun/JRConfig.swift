@@ -7,10 +7,11 @@
 
 import CoconutData
 import Cobalt
+import KiwiEngine
 import KiwiLibrary
 import Foundation
 
-public class JRConfig: KLConfig
+public class JRConfig: KEConfig
 {
 	public var scriptFiles:		Array<String>
 	public var isInteractiveMode:	Bool
@@ -20,10 +21,7 @@ public class JRConfig: KLConfig
 		scriptFiles		= []
 		isInteractiveMode	= false
 		doUseMain		= false
-		super.init(kind: .Terminal)
-
-		self.doStrict  = true
-		self.doVerbose = false
+		super.init(kind: .Terminal, doStrict: true, doVerbose: false)
 	}
 }
 

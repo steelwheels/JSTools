@@ -31,13 +31,6 @@ main(arguments: Array<String>) -> Int32
 ````
 The `arguments` are defined by the command line arguments after `--` option.
 
-# Exit status
-|Value  |Description      |
-|:---   |:---             |
-|0      |The script is parsed and executed and finished without any errors |
-|1      |Invalid command line arguments     |
-|2      |Failed to execute JavaScript       |
-
 # Programming manual
 * [Require statement](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/RequireFunc.md): Require: JavaScript module manager
 * [Built-in Modules](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The built-in JavaScript modules which is embedded in `jsrun` command.
