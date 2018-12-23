@@ -1,18 +1,18 @@
 /* enum0.js */
 
-const center = Alignment.center ;
-const top    = Alignment.top ;
-const middle = Alignment.middle ;
+const leading  = Alignment.leading ;
+const trailing = Alignment.trailing ;
+const center   = Alignment.center ;
 
 const red    = Color.green ;
 
 const authorized = Authorize.autorized ;
 
-console.log("center = " + center + "\n") ;
-console.log("top    = " + top + "\n") ;
-console.log("middle = " + middle + "\n") ;
+console.log("leading   = " + leading + "\n") ;
+console.log("trailing  = " + trailing + "\n") ;
+console.log("center    = " + center + "\n") ;
 
 console.log("red    = " + red + "\n") ;
 
-
 console.log("authorized = " + authorized + "\n") ;
+

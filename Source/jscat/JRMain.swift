@@ -19,26 +19,24 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* Open first file */
-	var firstinfo: CNJSONObject
-	if let firstfile = openFirstFile(config: config, console: console) {
-		if let info = unserializeString(file: firstfile, console: console){
-			firstinfo = info
-		} else {
-			return 2
-		}
-	} else {
+	let inname: String? = config.inputFiles.count > 0 ? config.inputFiles[0] : nil
+	guard var firstinfo = readFile(fileName: inname, console: console) else {
 		return 2
 	}
 
 	/* Merge other files */
 	let infiles = config.inputFiles
 	if infiles.count > 1 {
+		let merger = CNNativeValueMerger()
 		for i in 1..<infiles.count {
 			if let file = openFile(fileName: infiles[i], console: console) {
-				if let info = unserializeString(file: file, console: console){
-					/* Merge file */
-					CNJSONUtil.merge(destination: &firstinfo, source: info)
+				let (infop, error) = CNJSONFile.readFile(file: file)
+				if let info = infop {
+					if let resinfo = merger.merge(firstinfo, info) {
+						firstinfo = resinfo
+					}
 				} else {
+					console.error(string: "[Error] \(error!.description)")
 					return 2
 				}
 			} else {
@@ -48,19 +46,49 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* output merged file */
-	let (text, err) = CNJSONFile.serialize(JSONObject: firstinfo)
-	if let t = text {
-		let out = CNStandardFile(type: .output)
-		let _ = out.put(string: t)
-		let _ = out.put(string: "\n")	// Add last new line
-		return 0
-	} else {
-		let errstr = err!.toString()
-		console.error(string: "[Error] \(errstr)\n")
+	let outfile = CNStandardFile(type: .output)
+	if let err = CNJSONFile.writeFile(file: outfile, JSONObject: firstinfo) {
+		console.error(string: "[Error] \(err.description)")
 		return 2
+	} else {
+		return 0
 	}
 }
 
+public func readFile(fileName name: String?, console cons: CNConsole) -> CNNativeValue?
+{
+	if let file = openFile(fileName: name, console: cons) {
+		let (json, error) = CNJSONFile.readFile(file: file)
+		if let val = json {
+			return val
+		} else {
+			cons.error(string: "[Error] \(error!.description)\n")
+			return nil
+		}
+	} else {
+		return nil
+	}
+}
+
+private func openFile(fileName name: String?, console cons: CNConsole) -> CNFile?
+{
+	var result: CNTextFile?
+	if let nm = name {
+		let (file, err) = CNOpenFile(filePath: nm, accessType: .ReadAccess)
+		if  let f = file {
+			result = f
+		} else {
+			let errstr = err!.toString()
+			cons.error(string: "[Error] \(errstr)\n")
+			result = nil
+		}
+	} else {
+		result = CNStandardFile(type: .input)
+	}
+	return result
+}
+
+/*
 private func openFirstFile(config conf: JRConfig, console cons: CNConsole) -> CNTextFile?
 {
 	var result: CNTextFile?
@@ -102,5 +130,6 @@ private func unserializeString(file f: CNTextFile, console cons: CNConsole) -> C
 	}
 	return result
 }
+*/
 
 

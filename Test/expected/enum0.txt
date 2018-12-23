@@ -1,5 +1,5 @@
-center = 1
-top    = 3
-middle = 4
+leading   = 0
+trailing  = 1
+center    = 3
 red    = 2
 authorized = undefined

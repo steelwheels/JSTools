@@ -51,13 +51,9 @@ public func main(arguments args: Array<String>) -> Int32
 private func dump(addressBook adb: CNAddressBook, console cons: CNConsole)
 {
 	if let contacts = adb.contacts() {
-		let arrobj     = NSArray(array: contacts)
-		let jsonobj    = CNJSONObject(array: arrobj)
-		let (str, err) = CNJSONFile.serialize(JSONObject: jsonobj)
-		if let e = err {
-			cons.error(string: "\(appname): \(e.description)\n")
-		} else {
-			cons.print(string: str!)
+		let outfile = CNStandardFile(type: .output)
+		if let err = CNJSONFile.writeFile(file: outfile, JSONObject: contacts) {
+			cons.error(string: "[Error] " + err.toString() + "\n")
 		}
 	}
 }
