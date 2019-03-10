@@ -7,6 +7,7 @@ jscat 		= $(HOME)/tools/jstools/jscat
 jsgrep 		= $(HOME)/tools/jstools/jsgrep
 test_dir	= ../Test
 script_dir	= ../Test/Script
+sample_dir	= ../Sample
 resource_dir	= ../Resource/Sample
 data_dir	= $(test_dir)/data
 expected_dir	= $(test_dir)/expected
@@ -18,7 +19,7 @@ all: all_jsrun all_jscat all_jsgrep
 # jsrun
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
-	   shell0 shell1 shell2 args main0 main1 files urls errors \
+	   shell0 shell1 shell2 args main0 main1 files urls operations errors \
 	   # math0 gr_primitive0 gr_view0
 
 	@echo "*** test: Done ***"
@@ -131,6 +132,26 @@ urls: dummy
 	@echo "*** test: url9 ***"
 	$(jsrun) $(script_dir)/url0.js | tee $(build_dir)/url0.txt
 	diff $(build_dir)/url0.txt $(expected_dir)/url0.txt
+
+operations: operation0 operation1
+
+operation0: dummy
+	if $(jsrun) --use-main $(sample_dir)/operation0.js 2>&1 | tee $(build_dir)/operation0.txt ; \
+	then \
+		echo "Error expected" >&2 ; \
+	else \
+		echo "Catch expected error" >&2 ; \
+	fi
+	diff $(build_dir)/operation0.txt $(expected_dir)/operation0.txt
+
+operation1: dummy
+	if $(jsrun) --use-main $(sample_dir)/operation1.js 2>&1 | tee $(build_dir)/operation1.txt ; \
+	then \
+		echo "Error expected" >&2 ; \
+	else \
+		echo "Catch expected error" >&2 ; \
+	fi
+	diff $(build_dir)/operation1.txt $(expected_dir)/operation1.txt
 
 errors:	no_file_error syn_error
 

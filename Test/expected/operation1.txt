@@ -1,0 +1,8 @@
+[op0] program
+[op1] program
+[op0] start
+[op1] start
+[opX] [begin] wait operations
+[opX] main
+[opX] main
+[opX] [end  ] wait operations

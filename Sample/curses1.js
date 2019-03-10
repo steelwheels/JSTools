@@ -1,12 +1,6 @@
 console.log("setup curses start\n") ;
 
 Curses.mode(true) ;
-//curses.visiblePrompt = false ;
-//curses.doBuffering   = false ;
-//curses.doEcho	     = false ;
-
-//curses.setColor(Color.Yellow, Color.Blue) ;
-
 Curses.put("Press \"q\" to quit\n") ;
 
 
@@ -22,7 +16,7 @@ while(docont){
 		if(c == "q"){
 			break ;
 		} else {
-			x += 1 ;
+			//x += 1 ;
 			y += 1 ;
 		}
 	}
