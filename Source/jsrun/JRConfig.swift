@@ -11,7 +11,7 @@ import KiwiEngine
 import KiwiLibrary
 import Foundation
 
-public class JRConfig: KLConfig
+public class JRConfig: KEConfig
 {
 	public var scriptFiles:		Array<String>
 	public var isInteractiveMode:	Bool

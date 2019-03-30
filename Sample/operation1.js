@@ -4,21 +4,35 @@
 
 function main()
 {
+	const prog =
+	  "class Task extends Operation {\n" +
+		"  constructor(){\n" +
+		"    super() ;\n" +
+		"    console.log(\"* Hello from constructor\\n\"); \n" +
+		"    this.name = \"Unknown\" ;\n" +
+		"  }\n" +
+		"  set(name, value){\n" +
+		"     this.name = value ; \n" +
+		"  }" +
+		"  main(){\n" +
+		"    console.log(\"* Hello from main\\n\"); \n" +
+		"  }\n" +
+		"}\n" +
+		"operation = new Task() ;\n" ;
+
 	let op0   = Operation() ;
-	let prog0 = "console.log(\"[op0] program\\n\") ;" ;
-	let main0 = "function(){ console.log(\"[opX] main\\n\") ; }" ;
-	if(!op0.compile(prog0, main0)){
+	if(!op0.compile(prog)){
 		console.log("[Error] Could not compile op0\n") ;
 		return false ;
 	}
+	op0.set(0, "op0") ;
 
 	let op1   = Operation() ;
-	let prog1 = "console.log(\"[op1] program\\n\") ;" ;
-	let main1 = "function(){ console.log(\"[opX] main\\n\") ; }" ;
-	if(!op1.compile(prog1, main1)){
+	if(!op1.compile(prog)){
 		console.log("[Error] Could not compile op1\n") ;
 		return false ;
 	}
+	op1.set(0, "op1") ;
 
 	let queue = OperationQueue() ;
 	if(queue.execute(op0, null)){

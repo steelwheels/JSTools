@@ -1,2 +1,4 @@
-[op0] program
-[op0] main
+Define operation object
+* Hello from constructor
+End of operation object
+* Hello from main

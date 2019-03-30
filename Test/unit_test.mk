@@ -20,7 +20,7 @@ all: all_jsrun all_jscat all_jsgrep
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
 	   shell0 shell1 shell2 args main0 main1 files urls operations errors \
-	   # math0 gr_primitive0 gr_view0
+	   math0 # gr_primitive0 gr_view0
 
 	@echo "*** test: Done ***"
 
@@ -89,7 +89,8 @@ gr_view0 : dummy
 	diff $(build_dir)/gr_view0.txt $(expected_dir)/gr_view0.txt
 
 math0: dummy
-	$(jsrun) $(script_dir)/math0.js
+	$(jsrun) $(script_dir)/math0.js | tee $(build_dir)/math0.txt
+	diff $(build_dir)/math0.txt $(expected_dir)/math0.txt
 
 shell0: dummy
 	$(jsrun) -i < $(script_dir)/shell0.js
