@@ -55,7 +55,7 @@ exit0: dummy
 	@echo "*** test: exit0 ***"
 	$(jsrun) --use-main $(script_dir)/exit0.js -- a b c | \
 					tee $(build_dir)/exit0.txt
-	diff $(build_dir)/exit0.txt $(expected_dir)/exit0.txt 
+	diff $(build_dir)/exit0.txt $(expected_dir)/exit0.txt
 
 exit1: dummy
 	@echo "*** test: exit1 ***"
@@ -137,7 +137,7 @@ urls: dummy
 operations: operation0 operation1
 
 operation0: dummy
-	if $(jsrun) --use-main $(sample_dir)/operation0.js 2>&1 | tee $(build_dir)/operation0.txt ; \
+	if $(jsrun) --use-main $(script_dir)/operation0.js -- $(script_dir)/Operation/op0.js 2>&1 | tee $(build_dir)/operation0.txt ; \
 	then \
 		echo "Error expected" >&2 ; \
 	else \
@@ -146,7 +146,7 @@ operation0: dummy
 	diff $(build_dir)/operation0.txt $(expected_dir)/operation0.txt
 
 operation1: dummy
-	if $(jsrun) --use-main $(sample_dir)/operation1.js 2>&1 | tee $(build_dir)/operation1.txt ; \
+	if $(jsrun) --use-main $(script_dir)/operation1.js 2>&1 | tee $(build_dir)/operation1.txt ; \
 	then \
 		echo "Error expected" >&2 ; \
 	else \
@@ -218,4 +218,3 @@ jsgrep4: dummy
 	diff -wB $(build_dir)/jsgrep-2data-4.json $(expected_dir)/empty.txt.OK
 
 dummy:
-

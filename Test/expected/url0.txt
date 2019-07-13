@@ -1,1 +1,1 @@
-url0 = /bin/ls; 
+url0 = file:///bin/ls; 

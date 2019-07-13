@@ -19,6 +19,7 @@ The following options are available:
 |       |--version  |-         |Print version information |
 |       |--no-strict |-        |Do not use `strict` mode (If you don't give this option, the mode is set before compiling any scripts.)|
 |       |--use-main |-         |Call main function in the script after evaluating scripts. |
+|-l     |--lib      |libname  |Load built-in library named `libname`. The built-in library is JavaScript files which is distributed with JSTools package. For example, if you give `-l Graphics`, The `Graphics.js` in the package is loaded before parsing user scripts.|
 |-i     |--interactive |-      | Set interactive mode. The user can input statements step by step. The interactive mode will be activated after reading all input scripts.|
 |       |--         |-          |The arguments follows this will be passed as arguments for JavaScript code. |
 
@@ -32,9 +33,7 @@ main(arguments: Array<String>) -> Int32
 The `arguments` are defined by the command line arguments after `--` option.
 
 # Programming manual
-* [Require statement](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/RequireFunc.md): Require: JavaScript module manager
-* [Built-in Modules](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The built-in JavaScript modules which is embedded in `jsrun` command.
-* [Standard Libraries](https://github.com/steelwheels/JSTools/blob/master/Document/standard-lib.md): The standard libraries which is described by JavaScript. They are distributed with `jsrun` command.
+* [The standard library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The built-in JavaScript class, function, data structure. They will be always loaded before executing user scripts.
 
 # Tools
 |Tool name  |Description    |

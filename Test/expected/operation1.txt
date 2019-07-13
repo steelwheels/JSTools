@@ -1,8 +1,2 @@
-* Hello from constructor
-* Hello from constructor
-[op0] start
-[op1] start
-[opX] [begin] wait operations
-* Hello from main
-* Hello from main
-[opX] [end  ] wait operations
+Hello from UTOperation1 ... OK
+Hello from UTOperation1 ... OK

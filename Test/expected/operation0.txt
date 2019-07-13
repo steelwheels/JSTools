@@ -1,4 +1,2 @@
-Define operation object
-* Hello from constructor
-End of operation object
-* Hello from main
+input script: ../Test/Script/Operation/op0.js
+Hello from UTOperation0.

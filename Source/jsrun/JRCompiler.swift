@@ -14,30 +14,28 @@ import Foundation
 
 public class JRCompiler: KLCompiler
 {
-	private var mConfig:	JRConfig
 
-	public init(console cons: CNConsole, config conf: JRConfig) {
-		mConfig = conf
-		super.init(console: cons, config: conf)
+	public override init() {
+		super.init()
 	}
 
-	public override func compile(context ctxt: KEContext) -> Bool {
+	public func compile(context ctxt: KEContext, console cons: CNConsole, config conf: JRConfig) -> Bool {
 		/* Compile library */
-		guard super.compile(context: ctxt) else {
+		guard super.compile(context: ctxt, console: cons, config: conf) else {
 			return false
 		}
 		/* Compile user source */
 		do {
-			for file in mConfig.scriptFiles {
+			for file in conf.scriptFiles {
 				let script = try readScript(scriptFile: file)
 				ctxt.evaluateScript(script)
 			}
 			return true
 		} catch let err as KEError {
-			self.console.error(string: "\(err.description)\n")
+			cons.error(string: "\(err.description)\n")
 			return false
 		} catch _ {
-			self.console.error(string: "Internal error")
+			cons.error(string: "Internal error")
 			return false
 		}
 	}

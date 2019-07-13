@@ -34,29 +34,27 @@ public func main(arguments args: Array<String>) -> CNExitCode
 	}
 
 	/* Compile */
-	let compiler = JRCompiler(console: console, config: config)
-	guard compiler.compile(context: context) else {
+	let compiler = JRCompiler()
+	guard compiler.compile(context: context, console: console, config: config) else {
 		return .SyntaxError
 	}
 
 	/* Call main function */
 	if config.doUseMain {
-		if let _ = context.objectForKeyedSubscript("main") {
-			/* Call main function */
-			if let mainfunc = context.objectForKeyedSubscript("main") {
-				if let retval = mainfunc.call(withArguments: [subargs]) {
-					if retval.isNumber {
-						let ecode = retval.toInt32()
-						exit(ecode)	/* Exit this program */
-					}
-				} else {
-					console.error(string: "[Error] No Return value.\n")
-					return .InternalError
+		/* Call main function */
+		if let mainfunc = context.objectForKeyedSubscript("main") {
+			if let retval = mainfunc.call(withArguments: [subargs]) {
+				if retval.isNumber {
+					let ecode = retval.toInt32()
+					exit(ecode)	/* Exit this program */
 				}
 			} else {
-				console.error(string: "Can not find main function.\n")
-				return .SyntaxError
+				console.error(string: "[Error] No Return value.\n")
+				return .InternalError
 			}
+		} else {
+			console.error(string: "Can not find main function.\n")
+			return .SyntaxError
 		}
 	}
 
