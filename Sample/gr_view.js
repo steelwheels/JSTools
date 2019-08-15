@@ -11,7 +11,7 @@ console.setScreenMode(true) ;
 
 const origin = new prim.Point(1, 1) ;
 const size   = new prim.Size(40, 3) ;
-const frame  = new prim.Rect(origin, size) ;
+const frame  = new prim.Rect(origin.x, origin.y, size.width, size.height) ;
 
 const view   = new prim.View(frame) ;
 view.foregroundColor = Color.Yellow ;

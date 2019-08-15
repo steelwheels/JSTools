@@ -20,7 +20,7 @@ all: all_jsrun all_jscat all_jsgrep
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
 	   shell0 shell1 shell2 args main0 main1 files urls operations errors \
-	   math0 # gr_primitive0 gr_view0
+	   math0 
 
 	@echo "*** test: Done ***"
 
@@ -75,18 +75,6 @@ json0: dummy
 	$(jsrun) $(script_dir)/json0.js | tee $(build_dir)/json0.txt
 	mv data0-out.json $(build_dir)
 	diff $(build_dir)/data0-out.json $(expected_dir)/data0-out.json
-
-gr_primitive0 : dummy
-	@echo "*** test: gr_primitive0 ***"
-	$(jsrun) $(script_dir)/gr_primitive0.js | \
-					tee $(build_dir)/gr_primitive0.txt
-	diff $(build_dir)/gr_primitive0.txt $(expected_dir)/gr_primitive0.txt
-
-gr_view0 : dummy
-	@echo "*** test: gr_view0 ***"
-	$(jsrun) $(script_dir)/gr_view0.js | \
-					tee $(build_dir)/gr_view0.txt
-	diff $(build_dir)/gr_view0.txt $(expected_dir)/gr_view0.txt
 
 math0: dummy
 	$(jsrun) $(script_dir)/math0.js | tee $(build_dir)/math0.txt

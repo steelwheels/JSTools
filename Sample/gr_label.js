@@ -13,7 +13,7 @@ console.log("Press \"q\" to quit\n") ;
 
 let origin = new gr.Point(5, 10) ;
 let size   = new gr.Size(40, 40) ;
-let frame  = new gr.Rect(origin, size) ;
+let frame  = new gr.Rect(origin.x, origin.y, size.width, size.height) ;
 let label  = new gcons.Label(frame) ;
 
 let key = 0 ;

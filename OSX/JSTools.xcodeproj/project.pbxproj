@@ -21,8 +21,6 @@
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
 		05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; };
 		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
-		05C94B832052DABF00C0624A /* Console.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05DDA5F4201C18870041D841 /* Console.js */; };
-		05C94B842052DABF00C0624A /* Primitives.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 056C6724201627D2003E9485 /* Primitives.js */; };
 		05C94B852052DACB00C0624A /* color_table.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
 		05D4377F20035C4500320CA4 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4377E20035C4500320CA4 /* JRMain.swift */; };
 		05D437812003713000320CA4 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D437802003713000320CA4 /* JRConfig.swift */; };
@@ -131,8 +129,6 @@
 			dstPath = Library/Graphics;
 			dstSubfolderSpec = 7;
 			files = (
-				05C94B832052DABF00C0624A /* Console.js in CopyFiles */,
-				05C94B842052DABF00C0624A /* Primitives.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +183,6 @@
 		0523041D202C90E0003B1CB9 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		0523041F202C930C003B1CB9 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
-		056C6724201627D2003E9485 /* Primitives.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Primitives.js; sourceTree = "<group>"; };
 		0580EB812172ED3F00F018F1 /* hello-0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "hello-0.js"; sourceTree = "<group>"; };
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856D920035B2900DB5E75 /* jscat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jscat; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,7 +201,6 @@
 		05D6F3651FE3FE1C0070DF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05DAD1E62026A70C00EAAE8C /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		05DAD1E82026A7C500EAAE8C /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
-		05DDA5F4201C18870041D841 /* Console.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Console.js; sourceTree = "<group>"; };
 		05F29AAA214F72C7005CFF9A /* CoconutData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutData.framework; path = ../../../Library/Frameworks/CoconutData.framework; sourceTree = "<group>"; };
 		05F29AAD214F737A005CFF9A /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
 		05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiLibrary.framework; path = ../../../Library/Frameworks/KiwiLibrary.framework; sourceTree = "<group>"; };
@@ -280,18 +274,8 @@
 		056C6723201626F4003E9485 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				056C67272016282D003E9485 /* Graphics */,
 			);
 			path = Library;
-			sourceTree = "<group>";
-		};
-		056C67272016282D003E9485 /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				05DDA5F4201C18870041D841 /* Console.js */,
-				056C6724201627D2003E9485 /* Primitives.js */,
-			);
-			path = Graphics;
 			sourceTree = "<group>";
 		};
 		057D2B9520149A780027A52A /* Resources */ = {
@@ -299,7 +283,6 @@
 			children = (
 				056C6723201626F4003E9485 /* Library */,
 				055528D6201D578500397D3C /* Sample */,
-				05E02FBB2014C21500A26A63 /* Game */,
 			);
 			name = Resources;
 			path = ../Resource;
@@ -380,13 +363,6 @@
 			);
 			name = OSX;
 			sourceTree = SOURCE_ROOT;
-		};
-		05E02FBB2014C21500A26A63 /* Game */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Game;
-			sourceTree = "<group>";
 		};
 		05F29A92214F6FC1005CFF9A /* Frameworks */ = {
 			isa = PBXGroup;
