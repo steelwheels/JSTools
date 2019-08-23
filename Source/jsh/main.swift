@@ -1,12 +1,13 @@
-//
-//  main.swift
-//  jsh
-//
-//  Created by Tomoo Hamada on 2019/08/24.
-//  Copyright © 2019 Tomoo Hamada. All rights reserved.
-//
+/**
+ * @file	jsh.swift
+ * @brief	Define top function for JSH
+ * @par Copyright
+ *   Copyright (C) 2019 Steel Wheels Project
+ */
 
 import Foundation
 
-print("Hello, World!")
+let result = main(arguments: CommandLine.arguments)
+exit(result)
+
 

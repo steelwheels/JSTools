@@ -17,7 +17,8 @@
 		0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041D202C90E0003B1CB9 /* JRMain.swift */; };
 		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
 		053676EB23109BA6001376B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676EA23109BA6001376B1 /* main.swift */; };
-		053676F423109CDE001376B1 /* CoconutShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 053676F323109CDE001376B1 /* CoconutShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		053676F72310A015001376B1 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676F62310A015001376B1 /* JRMain.swift */; };
+		053676F82310A195001376B1 /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAA214F72C7005CFF9A /* CoconutData.framework */; };
 		0580EB822172ED3F00F018F1 /* hello-0.js in Resources */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		0580EB832172ED4900F018F1 /* hello-0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
@@ -190,7 +191,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				053676F423109CDE001376B1 /* CoconutShell.framework in CopyFiles */,
 				0518D42E2152B78B0036E5D5 /* CoconutDatabase.framework in CopyFiles */,
 				0518D4312152B7970036E5D5 /* Cobalt.framework in CopyFiles */,
 				0518D42F2152B78E0036E5D5 /* KiwiShell.framework in CopyFiles */,
@@ -210,7 +210,8 @@
 		0523041F202C930C003B1CB9 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		053676E823109BA6001376B1 /* jsh */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsh; sourceTree = BUILT_PRODUCTS_DIR; };
 		053676EA23109BA6001376B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		053676F323109CDE001376B1 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutShell.framework; path = ../../../Library/Frameworks/CoconutShell.framework; sourceTree = "<group>"; };
+		053676F523109EE5001376B1 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoconutShell.framework; sourceTree = "<group>"; };
+		053676F62310A015001376B1 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
 		0580EB812172ED3F00F018F1 /* hello-0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "hello-0.js"; sourceTree = "<group>"; };
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,6 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				053676F82310A195001376B1 /* CoconutData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				053676EA23109BA6001376B1 /* main.swift */,
+				053676F62310A015001376B1 /* JRMain.swift */,
 			);
 			path = jsh;
 			sourceTree = "<group>";
@@ -335,7 +338,6 @@
 		05A42E3A1FE3FD5600321C93 = {
 			isa = PBXGroup;
 			children = (
-				053676F323109CDE001376B1 /* CoconutShell.framework */,
 				05D6F3531FE3FD880070DF5B /* Source */,
 				05D6F3641FE3FE1C0070DF5B /* OSX */,
 				057D2B9520149A780027A52A /* Resources */,
@@ -414,6 +416,7 @@
 		05F29A92214F6FC1005CFF9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				053676F523109EE5001376B1 /* CoconutShell.framework */,
 				0514FBD3217F92C600F70A1B /* KiwiObject.framework */,
 				05AC139E214FB06C00601301 /* CoconutDatabase.framework */,
 				05F29AB2214F73E5005CFF9A /* KiwiShell.framework */,
@@ -674,6 +677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				053676F72310A015001376B1 /* JRMain.swift in Sources */,
 				053676EB23109BA6001376B1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -845,6 +849,10 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALL_PATH = "$(HOME)/tools/jstools";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -860,6 +868,10 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Frameworks",
+				);
 				INSTALL_PATH = "$(HOME)/tools/jstools";
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
