@@ -6,7 +6,7 @@ PROJECT_NAME ?= JSTools
 INSTALL_PATH ?= $(HOME)/Library/Frameworks
 DMG_PATH     ?= $(HOME)/tools/archive
 
-TARGET_LIST  = jsrun jscat jsadb jsgrep
+TARGET_LIST  = jsrun jsh jscat jsadb jsgrep
 
 install: dummy
 	for targ in $(TARGET_LIST) ; do \
@@ -42,4 +42,3 @@ make_dmg_pack: dummy
 	  -srcfolder $(DMG_PATH)/jstools
 
 dummy:
-

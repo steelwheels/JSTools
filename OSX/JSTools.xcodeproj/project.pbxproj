@@ -16,6 +16,8 @@
 		05230417202C8FF7003B1CB9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05230416202C8FF7003B1CB9 /* main.swift */; };
 		0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041D202C90E0003B1CB9 /* JRMain.swift */; };
 		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
+		053676EB23109BA6001376B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676EA23109BA6001376B1 /* main.swift */; };
+		053676F423109CDE001376B1 /* CoconutShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 053676F323109CDE001376B1 /* CoconutShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0580EB822172ED3F00F018F1 /* hello-0.js in Resources */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		0580EB832172ED4900F018F1 /* hello-0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
@@ -50,6 +52,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 05230413202C8FF7003B1CB9;
 			remoteInfo = jsgrep;
+		};
+		053676EF23109BB9001376B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 053676E723109BA6001376B1;
+			remoteInfo = jsh;
+		};
+		053676F123109BCA001376B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05D6F3621FE3FE1C0070DF5B;
+			remoteInfo = JSToolsBundle;
 		};
 		0559B0AB2083003000662C2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -112,6 +128,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		053676E623109BA6001376B1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		055528D9201D57ED00397D3C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,6 +190,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				053676F423109CDE001376B1 /* CoconutShell.framework in CopyFiles */,
 				0518D42E2152B78B0036E5D5 /* CoconutDatabase.framework in CopyFiles */,
 				0518D4312152B7970036E5D5 /* Cobalt.framework in CopyFiles */,
 				0518D42F2152B78E0036E5D5 /* KiwiShell.framework in CopyFiles */,
@@ -182,6 +208,9 @@
 		05230416202C8FF7003B1CB9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0523041D202C90E0003B1CB9 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		0523041F202C930C003B1CB9 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
+		053676E823109BA6001376B1 /* jsh */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsh; sourceTree = BUILT_PRODUCTS_DIR; };
+		053676EA23109BA6001376B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		053676F323109CDE001376B1 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutShell.framework; path = ../../../Library/Frameworks/CoconutShell.framework; sourceTree = "<group>"; };
 		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
 		0580EB812172ED3F00F018F1 /* hello-0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "hello-0.js"; sourceTree = "<group>"; };
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +238,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		05230411202C8FF7003B1CB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		053676E523109BA6001376B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -262,6 +298,14 @@
 			path = jsgrep;
 			sourceTree = "<group>";
 		};
+		053676E923109BA6001376B1 /* jsh */ = {
+			isa = PBXGroup;
+			children = (
+				053676EA23109BA6001376B1 /* main.swift */,
+			);
+			path = jsh;
+			sourceTree = "<group>";
+		};
 		055528D6201D578500397D3C /* Sample */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +335,7 @@
 		05A42E3A1FE3FD5600321C93 = {
 			isa = PBXGroup;
 			children = (
+				053676F323109CDE001376B1 /* CoconutShell.framework */,
 				05D6F3531FE3FD880070DF5B /* Source */,
 				05D6F3641FE3FE1C0070DF5B /* OSX */,
 				057D2B9520149A780027A52A /* Resources */,
@@ -308,6 +353,7 @@
 				05A856D920035B2900DB5E75 /* jscat */,
 				05AC80CF20268EF700165368 /* jsadb */,
 				05230414202C8FF7003B1CB9 /* jsgrep */,
+				053676E823109BA6001376B1 /* jsh */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,6 +394,7 @@
 			children = (
 				05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */,
 				05B8182B2002630A00290480 /* jsrun */,
+				053676E923109BA6001376B1 /* jsh */,
 				05A856DA20035B2A00DB5E75 /* jscat */,
 				05AC80D020268EF700165368 /* jsadb */,
 				05230415202C8FF7003B1CB9 /* jsgrep */,
@@ -404,6 +451,7 @@
 			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = "";
 			dependencies = (
+				053676F023109BB9001376B1 /* PBXTargetDependency */,
 				0523041C202C9067003B1CB9 /* PBXTargetDependency */,
 				05AC80D720268F0100165368 /* PBXTargetDependency */,
 				05A856E320035B4600DB5E75 /* PBXTargetDependency */,
@@ -432,6 +480,24 @@
 			name = jsgrep;
 			productName = jsgrep;
 			productReference = 05230414202C8FF7003B1CB9 /* jsgrep */;
+			productType = "com.apple.product-type.tool";
+		};
+		053676E723109BA6001376B1 /* jsh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 053676EE23109BA6001376B1 /* Build configuration list for PBXNativeTarget "jsh" */;
+			buildPhases = (
+				053676E423109BA6001376B1 /* Sources */,
+				053676E523109BA6001376B1 /* Frameworks */,
+				053676E623109BA6001376B1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				053676F223109BCA001376B1 /* PBXTargetDependency */,
+			);
+			name = jsh;
+			productName = jsh;
+			productReference = 053676E823109BA6001376B1 /* jsh */;
 			productType = "com.apple.product-type.tool";
 		};
 		05A42E421FE3FD5600321C93 /* jsrun */ = {
@@ -514,7 +580,8 @@
 		05A42E3B1FE3FD5600321C93 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Tomoo Hamada";
 				TargetAttributes = {
@@ -525,6 +592,10 @@
 					05230413202C8FF7003B1CB9 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
+					};
+					053676E723109BA6001376B1 = {
+						CreatedOnToolsVersion = 10.3;
 						ProvisioningStyle = Automatic;
 					};
 					05A42E421FE3FD5600321C93 = {
@@ -567,6 +638,7 @@
 			targets = (
 				05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */,
 				05A42E421FE3FD5600321C93 /* jsrun */,
+				053676E723109BA6001376B1 /* jsh */,
 				05A856D820035B2900DB5E75 /* jscat */,
 				05AC80CE20268EF700165368 /* jsadb */,
 				05230413202C8FF7003B1CB9 /* jsgrep */,
@@ -595,6 +667,14 @@
 				05230420202C930C003B1CB9 /* JRConfig.swift in Sources */,
 				0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */,
 				05230417202C8FF7003B1CB9 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		053676E423109BA6001376B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				053676EB23109BA6001376B1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +728,16 @@
 			isa = PBXTargetDependency;
 			target = 05230413202C8FF7003B1CB9 /* jsgrep */;
 			targetProxy = 0523041B202C9067003B1CB9 /* PBXContainerItemProxy */;
+		};
+		053676F023109BB9001376B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 053676E723109BA6001376B1 /* jsh */;
+			targetProxy = 053676EF23109BB9001376B1 /* PBXContainerItemProxy */;
+		};
+		053676F223109BCA001376B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
+			targetProxy = 053676F123109BCA001376B1 /* PBXContainerItemProxy */;
 		};
 		0559B0AC2083003000662C2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -744,6 +834,34 @@
 				INSTALL_PATH = "$(HOME)/tools/jstools";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks ${inherited}";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		053676EC23109BA6001376B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = "$(HOME)/tools/jstools";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		053676ED23109BA6001376B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				INSTALL_PATH = "$(HOME)/tools/jstools";
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1072,6 +1190,15 @@
 			buildConfigurations = (
 				05230418202C8FF7003B1CB9 /* Debug */,
 				05230419202C8FF7003B1CB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		053676EE23109BA6001376B1 /* Build configuration list for PBXNativeTarget "jsh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				053676EC23109BA6001376B1 /* Debug */,
+				053676ED23109BA6001376B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
