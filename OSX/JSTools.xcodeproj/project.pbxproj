@@ -19,6 +19,7 @@
 		053676EB23109BA6001376B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676EA23109BA6001376B1 /* main.swift */; };
 		053676F72310A015001376B1 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676F62310A015001376B1 /* JRMain.swift */; };
 		053676F82310A195001376B1 /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAA214F72C7005CFF9A /* CoconutData.framework */; };
+		0547C08323111B3000AC5395 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B998B2311120A00D9CDF1 /* JRConfig.swift */; };
 		0580EB822172ED3F00F018F1 /* hello-0.js in Resources */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		0580EB832172ED4900F018F1 /* hello-0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
@@ -214,6 +215,7 @@
 		053676F62310A015001376B1 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
 		0580EB812172ED3F00F018F1 /* hello-0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "hello-0.js"; sourceTree = "<group>"; };
+		059B998B2311120A00D9CDF1 /* JRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856D920035B2900DB5E75 /* jscat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jscat; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856DB20035B2A00DB5E75 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -303,8 +305,9 @@
 		053676E923109BA6001376B1 /* jsh */ = {
 			isa = PBXGroup;
 			children = (
-				053676EA23109BA6001376B1 /* main.swift */,
 				053676F62310A015001376B1 /* JRMain.swift */,
+				059B998B2311120A00D9CDF1 /* JRConfig.swift */,
+				053676EA23109BA6001376B1 /* main.swift */,
 			);
 			path = jsh;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0547C08323111B3000AC5395 /* JRConfig.swift in Sources */,
 				053676F72310A015001376B1 /* JRMain.swift in Sources */,
 				053676EB23109BA6001376B1 /* main.swift in Sources */,
 			);

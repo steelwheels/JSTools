@@ -148,13 +148,6 @@ public class JRCommandLineParser
 				return nil
 			}
 		}
-
-		if config.isInteractiveMode || config.scriptFiles.count > 0 {
-			return config
-		} else {
-			mConsole.error(string: "No script files are given\n")
-			printUsage()
-			return nil
-		}
+		return config
 	}
 }
