@@ -17,7 +17,7 @@ public func main(arguments args: Array<String>) -> Int32
 	/* Parse command line arguments */
 	let console = CNFileConsole()
 	let parser  = JRCommandLineParser(console: console)
-	guard let (config, params) = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
+	guard let (config, _) = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
 		return 1
 	}
 
@@ -29,16 +29,37 @@ public func main(arguments args: Array<String>) -> Int32
 	let compconf = KHConfig(kind: .Terminal, hasMainFunction: config.doUseMain, doStrict:true, doVerbose: config.doVerbose)
 	let env      = CNShellEnvironment()
 
-	if params.count == 0 || config.isInteractiveMode {
+	let files = config.scriptFiles
+	if files.count == 0 || config.isInteractiveMode {
 		/* Execute shell */
-		return execute(virtualMachine: vm, scriptFiles: config.scriptFiles, environment: env, console: console, config: compconf)
+		return executeShell(virtualMachine: vm, scriptFiles: files, environment: env, console: console, config: compconf)
 	} else {
 		/* Execute script */
-		return execute(virtualMachine: vm, scriptFiles: config.scriptFiles, environment: env, console: console, config: compconf)
+		return executeScript(virtualMachine: vm, scriptFiles: files, environment: env, console: console, config: compconf)
 	}
 }
 
-private func execute(virtualMachine vm: JSVirtualMachine, scriptFiles files: Array<String>, environment env: CNShellEnvironment, console cons: CNConsole, config conf: KHConfig) -> Int32
+private func executeShell(virtualMachine vm: JSVirtualMachine, scriptFiles files: Array<String>, environment env: CNShellEnvironment, console cons: CNConsole, config conf: KHConfig) -> Int32
+{
+	/* Allocate shell interface */
+	let intf = CNShellInterface()
+	intf.connectWithStandardInput()
+	intf.connectWithStandardOutput()
+	intf.connectWithStandardError()
+
+	let shell = KHShellThread(virtualMachine: vm, shellInterface: intf, environment: env, console: cons, config: conf)
+	shell.start()
+
+	sleep(10)
+
+	/* Wait until finished */
+	while shell.isExecuting {
+
+	}
+	return shell.terminationStatus
+}
+
+private func executeScript(virtualMachine vm: JSVirtualMachine, scriptFiles files: Array<String>, environment env: CNShellEnvironment, console cons: CNConsole, config conf: KHConfig) -> Int32
 {
 	/* Allocate shell interface */
 	let intf = CNShellInterface()
