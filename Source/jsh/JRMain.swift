@@ -17,7 +17,7 @@ public func main(arguments args: Array<String>) -> Int32
 	/* Parse command line arguments */
 	let console = CNFileConsole()
 	let parser  = JRCommandLineParser(console: console)
-	guard let (config, _) = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
+	guard let (config, arguments) = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
 		return 1
 	}
 
@@ -35,7 +35,7 @@ public func main(arguments args: Array<String>) -> Int32
 		return executeShell(virtualMachine: vm, scriptFiles: files, environment: env, console: console, config: compconf)
 	} else {
 		/* Execute script */
-		return executeScript(virtualMachine: vm, scriptFiles: files, environment: env, console: console, config: compconf)
+		return executeScript(virtualMachine: vm, scriptFiles: files, arguments: arguments, environment: env, console: console, config: compconf)
 	}
 }
 
@@ -59,7 +59,7 @@ private func executeShell(virtualMachine vm: JSVirtualMachine, scriptFiles files
 	return shell.terminationStatus
 }
 
-private func executeScript(virtualMachine vm: JSVirtualMachine, scriptFiles files: Array<String>, environment env: CNShellEnvironment, console cons: CNConsole, config conf: KHConfig) -> Int32
+private func executeScript(virtualMachine vm: JSVirtualMachine, scriptFiles files: Array<String>, arguments args: Array<String>, environment env: CNShellEnvironment, console cons: CNConsole, config conf: KHConfig) -> Int32
 {
 	/* Allocate shell interface */
 	let intf = CNShellInterface()
@@ -74,7 +74,7 @@ private func executeScript(virtualMachine vm: JSVirtualMachine, scriptFiles file
 	}
 
 	let thread  = KHScriptThread(virtualMachine: vm, shellInterface: intf, environment: env, console: cons, config: conf)
-	thread.start(userScripts: urls, arguments: [])
+	thread.start(userScripts: urls, arguments: args)
 	sleep(10)
 
 	/* Wait until finished */

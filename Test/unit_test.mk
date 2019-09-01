@@ -3,6 +3,7 @@
 #
 
 jsrun 		= $(HOME)/tools/jstools/jsrun
+jsh 		= $(HOME)/tools/jstools/jsh
 jscat 		= $(HOME)/tools/jstools/jscat
 jsgrep 		= $(HOME)/tools/jstools/jsgrep
 test_dir	= ../Test
@@ -13,15 +14,14 @@ data_dir	= $(test_dir)/data
 expected_dir	= $(test_dir)/expected
 build_dir	= $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 
-all: all_jsrun all_jscat all_jsgrep
+all: all_jsrun all_jsh all_jscat all_jsgrep
 
 #
 # jsrun
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
-	   shell0 shell1 shell2 args main0 main1 files urls operations errors \
+	   main0 main1 files urls operations errors \
 	   math0 
-
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -79,21 +79,6 @@ json0: dummy
 math0: dummy
 	$(jsrun) $(script_dir)/math0.js | tee $(build_dir)/math0.txt
 	diff $(build_dir)/math0.txt $(expected_dir)/math0.txt
-
-shell0: dummy
-	$(jsrun) -i < $(script_dir)/shell0.js
-
-shell1: dummy
-	$(jsrun) $(script_dir)/shell1.js
-
-shell2: dummy
-	$(jsrun) $(script_dir)/shell2.js
-
-args: dummy
-	@echo "*** test: Process.arguments ***"
-	$(jsrun) --use-main $(script_dir)/args.js -- a b c | \
-					tee $(build_dir)/args.txt
-	diff $(build_dir)/args.txt $(expected_dir)/args.txt
 
 main0: dummy
 	@echo "*** test: main0 ***"
@@ -161,6 +146,26 @@ syn_error: dummy
 		echo "Catch expected error" >&2 ; \
 	fi
 	diff $(build_dir)/syn_err0.txt $(expected_dir)/syn_err0.txt
+
+#
+# jsdh
+#
+all_jsh: args0 shell0 shell1 shell2
+
+args0: dummy
+	@echo "*** test: Process.arguments ***"
+	$(jsh) --use-main $(script_dir)/args.js -- a b c | \
+					tee $(build_dir)/args.txt
+	diff $(build_dir)/args.txt $(expected_dir)/args.txt
+
+shell0: dummy
+	$(jsh) -i < $(script_dir)/shell0.js
+
+shell1: dummy
+	$(jsh) $(script_dir)/shell1.js
+
+shell2: dummy
+	$(jsh) $(script_dir)/shell2.js
 
 #
 # jscat
