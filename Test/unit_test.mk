@@ -21,7 +21,7 @@ all: all_jsrun all_jsh all_jscat all_jsgrep
 #
 all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
 	   main0 main1 files urls operations errors \
-	   math0 
+	   math0
 	@echo "*** test: Done ***"
 
 help: dummy
@@ -150,7 +150,7 @@ syn_error: dummy
 #
 # jsdh
 #
-all_jsh: args0 shell0 shell1 shell2
+all_jsh: args0 shell1 shell2 # shell0
 
 args0: dummy
 	@echo "*** test: Process.arguments ***"

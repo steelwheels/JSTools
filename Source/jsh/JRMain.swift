@@ -75,12 +75,7 @@ private func executeScript(virtualMachine vm: JSVirtualMachine, scriptFiles file
 
 	let thread  = KHScriptThread(virtualMachine: vm, shellInterface: intf, environment: env, console: cons, config: conf)
 	thread.start(userScripts: urls, arguments: args)
-	sleep(10)
-
-	/* Wait until finished */
-	while thread.isExecuting {
-
-	}
+	thread.waitUntilExit()
 
 	return 0
 }
