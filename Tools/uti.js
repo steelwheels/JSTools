@@ -5,7 +5,7 @@
 function main(arguments) {
 	for (let arg of arguments){
 		if(isString(arg)){
-			var uti = File.uti(arg) ;
+			var uti = FileManager.uti(arg) ;
 			if(isString(uti)){
 				console.log(uti + "\n") ;
 			} else {

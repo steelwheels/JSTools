@@ -7,11 +7,11 @@ function main(arguments)
     return 1 ;
   }
   const path = arguments[0] ;
-  const type = File.checkFileType(path) ;
+  const type = FileManager.checkFileType(path) ;
   console.log("File: " + path + " -> Type: " + type + " -> ") ;
 
   var result = 1 ;
-  if(type == File.type.File){
+  if(type == FileManager.type.File){
     console.log("OK\n") ;
     result = 0 ;
   } else {

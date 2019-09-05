@@ -1,7 +1,7 @@
 /* cat1.js */
 
 function cat(){
-	var file = File.open("../LICENSE", "r")
+	var file = FileManager.open("../LICENSE", "r")
 	if(file != null){
 		var line
 		console.log("*** File Start\n")
