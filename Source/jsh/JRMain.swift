@@ -15,7 +15,10 @@ import Foundation
 public func main(arguments args: Array<String>) -> Int32
 {
 	/* Parse command line arguments */
-	let console = CNFileConsole()
+	let inhdl   = FileHandle.standardInput
+	let outhdl  = FileHandle.standardOutput
+	let errhdl  = FileHandle.standardError
+	let console = CNFileConsole(input: inhdl, output: outhdl, error: errhdl)
 	let parser  = JRCommandLineParser(console: console)
 	guard let (config, arguments) = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
 		return 1
@@ -32,22 +35,16 @@ public func main(arguments args: Array<String>) -> Int32
 	let files = config.scriptFiles
 	if files.count == 0 || config.isInteractiveMode {
 		/* Execute shell */
-		return executeShell(virtualMachine: vm, scriptFiles: files, environment: env, console: console, config: compconf)
+		return executeShell(virtualMachine: vm, input: inhdl, output: outhdl, error: errhdl, scriptFiles: files, environment: env, config: compconf)
 	} else {
 		/* Execute script */
-		return executeScript(virtualMachine: vm, scriptFiles: files, arguments: arguments, environment: env, console: console, config: compconf)
+		return executeScript(virtualMachine: vm, input: inhdl, output: outhdl, error: errhdl, scriptFiles: files, arguments: arguments, environment: env, config: compconf)
 	}
 }
 
-private func executeShell(virtualMachine vm: JSVirtualMachine, scriptFiles files: Array<String>, environment env: CNShellEnvironment, console cons: CNConsole, config conf: KHConfig) -> Int32
+private func executeShell(virtualMachine vm: JSVirtualMachine, input inhdl: FileHandle, output outhdl: FileHandle, error errhdl: FileHandle, scriptFiles files: Array<String>, environment env: CNShellEnvironment, config conf: KHConfig) -> Int32
 {
-	/* Allocate shell interface */
-	let intf = CNShellInterface()
-	intf.connectWithStandardInput()
-	intf.connectWithStandardOutput()
-	intf.connectWithStandardError()
-
-	let shell = KHShellThread(virtualMachine: vm, shellInterface: intf, environment: env, console: cons, config: conf)
+	let shell = KHShellThread(virtualMachine: vm, input: inhdl, output: outhdl, error: errhdl, environment: env, config: conf)
 	shell.start()
 
 	sleep(10)
@@ -59,21 +56,15 @@ private func executeShell(virtualMachine vm: JSVirtualMachine, scriptFiles files
 	return shell.terminationStatus
 }
 
-private func executeScript(virtualMachine vm: JSVirtualMachine, scriptFiles files: Array<String>, arguments args: Array<String>, environment env: CNShellEnvironment, console cons: CNConsole, config conf: KHConfig) -> Int32
+private func executeScript(virtualMachine vm: JSVirtualMachine, input inhdl: FileHandle, output outhdl: FileHandle, error errhdl: FileHandle, scriptFiles files: Array<String>, arguments args: Array<String>, environment env: CNShellEnvironment, config conf: KHConfig) -> Int32
 {
-	/* Allocate shell interface */
-	let intf = CNShellInterface()
-	intf.connectWithStandardInput()
-	intf.connectWithStandardOutput()
-	intf.connectWithStandardError()
-
 	/* Get URLs for script */
 	var urls: Array<URL> = []
 	for file in files {
 		urls.append(URL(fileURLWithPath: file))
 	}
 
-	let thread  = KHScriptThread(virtualMachine: vm, shellInterface: intf, environment: env, console: cons, config: conf)
+	let thread  = KHScriptThread(virtualMachine: vm, input: inhdl, output: outhdl, error: errhdl, environment: env, config: conf)
 	thread.start(userScripts: urls, arguments: args)
 	thread.waitUntilExit()
 
