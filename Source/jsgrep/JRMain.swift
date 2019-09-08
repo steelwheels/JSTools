@@ -43,7 +43,7 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* write results */
-	let outfile = CNStandardFile(type: .output)
+	let outfile = CNTextFileObject(fileHandle: FileHandle.standardOutput)
 	if let err = CNJSONFile.writeFile(file: outfile, JSONObject: srcinfo) {
 		console.error(string: "[Error] \(err.description)")
 		return 2
@@ -80,7 +80,7 @@ private func openFile(fileName name: String?, console cons: CNConsole) -> CNFile
 			result = nil
 		}
 	} else {
-		result = CNStandardFile(type: .input)
+		result = CNTextFileObject(fileHandle: FileHandle.standardInput)
 	}
 	return result
 }
