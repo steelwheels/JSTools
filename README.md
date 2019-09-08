@@ -36,7 +36,7 @@ See [required software](https://github.com/steelwheels/JSTools/blob/master/Docum
 
 ## User's manual
 ### Command line applications
-* [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md): Execute JavaScript. See [Sample Scripts](https://github.com/steelwheels/JSTools/blob/master/Document/Sample/sample-scripts.md)
+* [`jsh`](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): JavaScript Shell, named `jsh`. The language to describe the script is [JavaScript-Shell](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).
 * [`jscat`](https://github.com/steelwheels/JSTools/blob/master/Document/jscat-man.md): JSON file operation: Concatenate JSON files.
 * [`jsgrep`](https://github.com/steelwheels/JSTools/blob/master/Document/jsgrep-man.md): Select part of object from input JSON file by matching of regular expression.
 * [`jsadb`](https://github.com/steelwheels/JSTools/blob/master/Document/jsadb-man.md): Read, write and update AddressBook database.

@@ -1,5 +1,8 @@
 # Name
-*jsh* - The platform to execute JavaScript program
+*jsh* - The platform to execute JavaScript Shell Program.
+
+This document describes how to use the `jsh` application.
+The syntax of this script is described in [jsh programming language](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).  
 
 # Synopsis
 ````
