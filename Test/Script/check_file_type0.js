@@ -11,7 +11,7 @@ function main(arguments)
   console.log("File: " + path + " -> Type: " + type + " -> ") ;
 
   var result = 1 ;
-  if(type == FileManager.type.File){
+  if(type == FileType.file){
     console.log("OK\n") ;
     result = 0 ;
   } else {
