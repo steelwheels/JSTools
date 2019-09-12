@@ -1,18 +1,18 @@
-# JavaScript-Shell programming language
+# JSH: Extended JavaScript for Shell Scripting
 
 ## Introduction
-This document describes about `JavaScript-Shell` programming language.
-It is used to implement shell script for Unix (or Unix like) systems.
+This document describes about `JSH`. The JSH is small extension of JavaScript language to implement shell script.
 
 The [bourne shell](https://en.wikipedia.org/wiki/Bourne_shell) and [csh](https://en.wikipedia.org/wiki/C_shell)  are popular to implement the shell script. But these syntax are very unique and inconsistent.
-If you use `JavaScript-Shell`, you can implement the script based the JavaScript syntax.
+If you use `JSH`, you can implement the script based the JavaScript syntax.
 
-The shell program which supports `JavaScript-Shell` is `jsh`. For more precise see the manual page [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md).
+The shell program [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md) supports JSH.
 
 ## Features
 This is the feature JavaScript shell:
-* JavaScript based with small extension to mix shell operation.
-* The line which is started by `>` is treated as shell operation. The line will be parsed by pre-processor and converted into JavaScript.
+* Support mixed description JavaScript and shell script.
+* The line started by `>` is treated as the shell script. 
+
 
 ## Samples
 ### 1. Hello, world !!

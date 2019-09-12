@@ -24,6 +24,7 @@ The following options are available:
 |       |--no-strict |-        |Do not use `strict` mode (If you don't give this option, the mode is set before compiling any scripts.)|
 |       |--use-main |-         |Call main function in the script after evaluating scripts. |
 |-i     |--interactive |-      | Set interactive mode. The user can input statements step by step. The interactive mode will be activated after reading all scripts.|
+|-c     |--compile  |-         |Dump the source scripts instead of executing it. If the script is written in [JSH](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md), it is converted into JavaScript and dumped. When you use this compile option, at least one JavaScript file must be given.|
 |       |--         |-          |The arguments follows this will be passed as arguments for JavaScript code. |
 
 By using `--` option, you can pass arguments to be referenced by the JavaScript code.

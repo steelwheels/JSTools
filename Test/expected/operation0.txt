@@ -1,2 +1,2 @@
-input script: ../Test/Script/Operation/op0.js
+input script: ../Test/script/Operation/op0.js
 Hello from UTOperation0.

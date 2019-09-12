@@ -15,11 +15,13 @@ public class JRConfig: KEConfig
 {
 	public var scriptFiles:		Array<String>
 	public var isInteractiveMode:	Bool
+	public var isCompileMode:	Bool
 	public var doUseMain:		Bool
 
 	public init(){
 		scriptFiles		= []
 		isInteractiveMode	= false
+		isCompileMode		= false
 		doUseMain		= false
 		super.init(kind: .Terminal, doStrict: true, doVerbose: false)
 	}
@@ -35,7 +37,8 @@ public class JRCommandLineParser
 		case Verbose		= 2
 		case NoStrictMode	= 3
 		case InteractiveMode	= 4
-		case UseMain		= 5
+		case CompileMode	= 5
+		case UseMain		= 6
 	}
 
 	public init(console cons: CNConsole){
@@ -64,6 +67,10 @@ public class JRCommandLineParser
 				     shortName: "i", longName: "interactive",
 				     parameterNum: 0, parameterType: .VoidType,
 				     helpInfo: "Activate interactive mode"),
+			CBOptionType(optionId: OptionId.CompileMode.rawValue,
+				     shortName: "c", longName: "compile",
+				     parameterNum: 0, parameterType: .VoidType,
+				     helpInfo: "Compile ths source script instead of executing it"),
 			CBOptionType(optionId: OptionId.UseMain.rawValue,
 				     shortName: nil, longName: "use-main",
 				     parameterNum: 0, parameterType: .VoidType,
@@ -86,6 +93,7 @@ public class JRCommandLineParser
 		"    --no-strict            : Do not use strict mode (default: use strict)\n" +
 		"    --use-main             : Call \"main\" function after compilation\n" +
 		"    --interactive, -i      : Activate interactive mode\n" +
+		"    --compile, -c          : Compile & dump the source script insted of executing it" +
 		"    --argument -a <string> : String to be passed as an argument\n"
 		)
 	}
@@ -135,6 +143,8 @@ public class JRCommandLineParser
 						config.doStrict  = false
 					case .InteractiveMode:
 						config.isInteractiveMode = true
+					case .CompileMode:
+						config.isCompileMode = true
 					case .UseMain:
 						config.doUseMain = true
 					}
