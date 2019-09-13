@@ -37,9 +37,59 @@ public func main(arguments args: Array<String>) -> Int32
 		/* Execute shell */
 		return executeShell(virtualMachine: vm, input: inhdl, output: outhdl, error: errhdl, scriptFiles: files, environment: env, config: compconf)
 	} else {
-		/* Execute script */
-		return executeScript(virtualMachine: vm, input: inhdl, output: outhdl, error: errhdl, scriptFiles: files, arguments: arguments, environment: env, config: compconf)
+		/* Read files */
+		guard let stmts = readFiles(fileNames: files, console: console) else {
+			return 1
+		}
+		/* Translate shell script to JavaScript */
+		guard let modstmts = convertShellStatements(statements: stmts, console: console) else {
+			return 1
+		}
+		if config.isCompileMode {
+			/* Dump statement instead */
+			for stmt in modstmts {
+				console.print(string: stmt + "\n")
+			}
+			return 0
+		} else {
+			/* Execute script */
+			return executeScript(virtualMachine: vm, input: inhdl, output: outhdl, error: errhdl, statements: modstmts, arguments: arguments, environment: env, config: compconf)
+		}
 	}
+}
+
+private func readFiles(fileNames files: Array<String>, console cons: CNConsole) -> Array<String>? {
+	var stmts: Array<String> = []
+	for file in files {
+		let url = URL(fileURLWithPath: file)
+		let (scr, err) = url.loadContents()
+		if let scr = scr {
+			/* Split by newline */
+			let sstmts = scr.components(separatedBy: "\n")
+			stmts.append(contentsOf: sstmts)
+		} else {
+			if let err = err {
+				cons.error(string: "[Error] \(err.description)\n")
+			} else {
+				cons.error(string: "[Error] Unknown error\n")
+			}
+			return nil
+		}
+	}
+	return stmts
+}
+
+private func convertShellStatements(statements stmts: Array<String>, console cons: CNConsole) -> Array<String>?
+{
+	var result: Array<String>? = nil
+	let processor = KHShellProcessor()
+	switch processor.convert(statements: stmts) {
+	case .finished(let newstmts):
+		result = newstmts
+	case .error(let err):
+		cons.error(string: "[Error] \(err.descriotion())\n")
+	}
+	return result
 }
 
 private func executeShell(virtualMachine vm: JSVirtualMachine, input inhdl: FileHandle, output outhdl: FileHandle, error errhdl: FileHandle, scriptFiles files: Array<String>, environment env: CNShellEnvironment, config conf: KHConfig) -> Int32
@@ -56,18 +106,11 @@ private func executeShell(virtualMachine vm: JSVirtualMachine, input inhdl: File
 	return shell.terminationStatus
 }
 
-private func executeScript(virtualMachine vm: JSVirtualMachine, input inhdl: FileHandle, output outhdl: FileHandle, error errhdl: FileHandle, scriptFiles files: Array<String>, arguments args: Array<String>, environment env: CNShellEnvironment, config conf: KHConfig) -> Int32
+private func executeScript(virtualMachine vm: JSVirtualMachine, input inhdl: FileHandle, output outhdl: FileHandle, error errhdl: FileHandle, statements stmts: Array<String>, arguments args: Array<String>, environment env: CNShellEnvironment, config conf: KHConfig) -> Int32
 {
-	/* Get URLs for script */
-	var urls: Array<URL> = []
-	for file in files {
-		urls.append(URL(fileURLWithPath: file))
-	}
-
 	let thread  = KHScriptThread(virtualMachine: vm, input: inhdl, output: outhdl, error: errhdl, environment: env, config: conf)
-	thread.start(userScripts: urls, arguments: args)
+	thread.start(statements: stmts, arguments: args)
 	thread.waitUntilExit()
-
 	return 0
 }
 

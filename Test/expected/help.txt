@@ -1,8 +1,9 @@
-usage: jsrun [options] script-file1 script-file2 ...
+usage: jsh [options] script-file1 script-file2 ...
   [options]
     --help, -h             : Print this message
     --version              : Print version
     --no-strict            : Do not use strict mode (default: use strict)
     --use-main             : Call "main" function after compilation
     --interactive, -i      : Activate interactive mode
+    --compile, -c          : Compile only. Do not execute the script
     --argument -a <string> : String to be passed as an argument

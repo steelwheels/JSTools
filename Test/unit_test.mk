@@ -19,15 +19,11 @@ all: all_jsrun all_jsh all_jscat all_jsgrep
 #
 # jsrun
 #
-all_jsrun: help nostrict hello cat0 cat1 exit0 exit1 enum0 json0 \
-	   main0 main1 files urls operations errors \
+all_jsrun: nostrict hello exit0 exit1 enum0 json0 \
+	   files urls operations errors \
 	   math0
 	@echo "*** test: Done ***"
 
-help: dummy
-	@echo "*** test: help ***"
-	$(jsrun) --help 2>&1 | tee $(build_dir)/help.txt
-	diff $(build_dir)/help.txt $(expected_dir)/help.txt
 
 nostrict: dummy
 	@echo "*** test: --no-strict ***"
@@ -39,17 +35,6 @@ hello: dummy
 	@echo "*** test: hello ***"
 	$(jsrun) $(resource_dir)/hello-0.js | tee $(build_dir)/hello-0.txt
 	diff $(build_dir)/hello-0.txt $(expected_dir)/hello-0.txt
-
-cat0: dummy
-	@echo "*** test: cat0 ***"
-	echo "Good morning" | $(jsrun) $(script_dir)/cat0.js | \
-	  tee $(build_dir)/cat0.txt
-	diff $(build_dir)/cat0.txt $(expected_dir)/cat0.txt
-
-cat1: dummy
-	@echo "*** test: cat1 ***"
-	$(jsrun) $(script_dir)/cat1.js | tee $(build_dir)/cat1.txt
-	diff $(build_dir)/cat1.txt $(expected_dir)/cat1.txt
 
 exit0: dummy
 	@echo "*** test: exit0 ***"
@@ -79,18 +64,6 @@ json0: dummy
 math0: dummy
 	$(jsrun) $(script_dir)/math0.js | tee $(build_dir)/math0.txt
 	diff $(build_dir)/math0.txt $(expected_dir)/math0.txt
-
-main0: dummy
-	@echo "*** test: main0 ***"
-	$(jsrun) --use-main $(script_dir)/main0.js | \
-					tee $(build_dir)/main0.txt
-	diff $(build_dir)/main0.txt $(expected_dir)/main0.txt
-
-main1: dummy
-	@echo "*** test: main1 ***"
-	$(jsrun) --use-main $(script_dir)/main0.js -- a b c | \
-					tee $(build_dir)/main1.txt
-	diff $(build_dir)/main1.txt $(expected_dir)/main1.txt
 
 files: filetype
 
@@ -148,9 +121,16 @@ syn_error: dummy
 	diff $(build_dir)/syn_err0.txt $(expected_dir)/syn_err0.txt
 
 #
-# jsdh
+# jsh
 #
-all_jsh: args0 shell1 shell2 # shell0
+all_jsh: help args0 shell1 shell2 \
+	 main0 main1 cat0 cat1 \
+	 script0 # shell0
+
+help: dummy
+	@echo "*** test: help ***"
+	$(jsh) --help 2>&1 | tee $(build_dir)/help.txt
+	diff $(build_dir)/help.txt $(expected_dir)/help.txt
 
 args0: dummy
 	@echo "*** test: Process.arguments ***"
@@ -166,6 +146,34 @@ shell1: dummy
 
 shell2: dummy
 	$(jsh) $(script_dir)/shell2.js
+
+main0: dummy
+	@echo "*** test: main0 ***"
+	$(jsh) --use-main $(script_dir)/main0.js | \
+					tee $(build_dir)/main0.txt
+	diff $(build_dir)/main0.txt $(expected_dir)/main0.txt
+
+main1: dummy
+	@echo "*** test: main1 ***"
+	$(jsh) --use-main $(script_dir)/main0.js -- a b c | \
+					tee $(build_dir)/main1.txt
+	diff $(build_dir)/main1.txt $(expected_dir)/main1.txt
+
+cat0: dummy
+	@echo "*** test: cat0 ***"
+	echo "Good morning" | $(jsh) $(script_dir)/cat0.js | \
+	  tee $(build_dir)/cat0.txt
+	diff $(build_dir)/cat0.txt $(expected_dir)/cat0.txt
+
+cat1: dummy
+	@echo "*** test: cat1 ***"
+	$(jsh) $(script_dir)/cat1.js | tee $(build_dir)/cat1.txt
+	diff $(build_dir)/cat1.txt $(expected_dir)/cat1.txt
+
+script0: dummy
+	@echo "*** test: script0 ***"
+	$(jsh) $(script_dir)/script0.jsh | tee $(build_dir)/script0.txt
+	diff $(build_dir)/script0.txt $(expected_dir)/script0.txt
 
 #
 # jscat

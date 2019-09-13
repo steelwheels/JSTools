@@ -70,7 +70,7 @@ public class JRCommandLineParser
 			CBOptionType(optionId: OptionId.CompileMode.rawValue,
 				     shortName: "c", longName: "compile",
 				     parameterNum: 0, parameterType: .VoidType,
-				     helpInfo: "Compile ths source script instead of executing it"),
+				     helpInfo: "Compile only. Do not execute."),
 			CBOptionType(optionId: OptionId.UseMain.rawValue,
 				     shortName: nil, longName: "use-main",
 				     parameterNum: 0, parameterType: .VoidType,
@@ -82,18 +82,18 @@ public class JRCommandLineParser
 	}
 
 	private func printUsage() {
-		mConsole.print(string: "usage: jsrun [options] script-file1 ... (option \"-h\" for help)\n")
+		mConsole.print(string: "usage: jsh [options] script-file1 ... (option \"-h\" for help)\n")
 	}
 
 	private func printHelpMessage() {
-		mConsole.print(string: "usage: jsrun [options] script-file1 script-file2 ...\n" +
+		mConsole.print(string: "usage: jsh [options] script-file1 script-file2 ...\n" +
 		"  [options]\n" +
 		"    --help, -h             : Print this message\n" +
 		"    --version              : Print version\n" +
 		"    --no-strict            : Do not use strict mode (default: use strict)\n" +
 		"    --use-main             : Call \"main\" function after compilation\n" +
 		"    --interactive, -i      : Activate interactive mode\n" +
-		"    --compile, -c          : Compile & dump the source script insted of executing it" +
+		"    --compile, -c          : Compile only. Do not execute the script\n" +
 		"    --argument -a <string> : String to be passed as an argument\n"
 		)
 	}
