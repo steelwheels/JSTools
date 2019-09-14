@@ -29,12 +29,29 @@ for(var i=0 ; i<3 ; i++){
 
 
 ````
-The execution result is
-
+The execution result is:
 ````
 hello, world 0
 hello, world 1
 hello, world 2
+
+````
+You can use *pipe* and define *multiple statements* depatated by ';'.
+````
+
+for(var i=0 ; i<3 ; i++){
+	> echo "hello, world ${i}" | tr [a-z] [A-Z] ; echo "Good morning"
+}
+
+````
+The execution result is:
+````
+HELLO, WORLD 0
+Good morning
+HELLO, WORLD 1
+Good morning
+HELLO, WORLD 2
+Good morning
 
 ````
 

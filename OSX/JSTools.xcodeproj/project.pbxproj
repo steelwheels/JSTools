@@ -76,6 +76,13 @@
 			remoteGlobalIDString = 05D6F3621FE3FE1C0070DF5B;
 			remoteInfo = JSToolsBundle;
 		};
+		057FBB0A232CB14F00B51B4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0510E6711FE560F300B2C718;
+			remoteInfo = Test;
+		};
 		05A856E020035B3D00DB5E75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
@@ -448,6 +455,21 @@
 			passBuildSettingsInEnvironment = 1;
 			productName = Test;
 		};
+		057FBB06232CB14100B51B4C /* Document */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Document/document.mk";
+			buildConfigurationList = 057FBB09232CB14100B51B4C /* Build configuration list for PBXLegacyTarget "Document" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				057FBB0B232CB14F00B51B4C /* PBXTargetDependency */,
+			);
+			name = Document;
+			passBuildSettingsInEnvironment = 1;
+			productName = Document;
+		};
 		05D6F3701FE406CD0070DF5B /* Install */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "-f ../Script/install_osx.mk install make_dmg";
@@ -604,6 +626,10 @@
 						CreatedOnToolsVersion = 10.3;
 						ProvisioningStyle = Automatic;
 					};
+					057FBB06232CB14100B51B4C = {
+						CreatedOnToolsVersion = 10.3;
+						ProvisioningStyle = Automatic;
+					};
 					05A42E421FE3FD5600321C93 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
@@ -650,6 +676,7 @@
 				05230413202C8FF7003B1CB9 /* jsgrep */,
 				05D6F3701FE406CD0070DF5B /* Install */,
 				0510E6711FE560F300B2C718 /* Test */,
+				057FBB06232CB14100B51B4C /* Document */,
 			);
 		};
 /* End PBXProject section */
@@ -751,6 +778,11 @@
 			isa = PBXTargetDependency;
 			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
 			targetProxy = 0559B0AB2083003000662C2A /* PBXContainerItemProxy */;
+		};
+		057FBB0B232CB14F00B51B4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0510E6711FE560F300B2C718 /* Test */;
+			targetProxy = 057FBB0A232CB14F00B51B4C /* PBXContainerItemProxy */;
 		};
 		05A856E120035B3D00DB5E75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -880,6 +912,38 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		057FBB07232CB14100B51B4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		057FBB08232CB14100B51B4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1215,6 +1279,15 @@
 			buildConfigurations = (
 				053676EC23109BA6001376B1 /* Debug */,
 				053676ED23109BA6001376B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		057FBB09232CB14100B51B4C /* Build configuration list for PBXLegacyTarget "Document" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				057FBB07232CB14100B51B4C /* Debug */,
+				057FBB08232CB14100B51B4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -22,10 +22,17 @@ Here is a sample script to print welcome message.
 ````
 m4_include(hello0.jsh)
 ````
-The execution result is
-
+The execution result is:
 ````
 m4_include(hello0.txt)
+````
+You can use *pipe* and define *multiple statements* depatated by ';'.
+````
+m4_include(hello1.jsh)
+````
+The execution result is:
+````
+m4_include(hello1.txt)
 ````
 
 ## Syntax
