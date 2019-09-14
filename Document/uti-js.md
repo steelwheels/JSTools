@@ -3,13 +3,13 @@
 
 # Synopsis
 ````
-  jsrun --use-main uti.js -- file1 file2 ...
+  jsh --use-main uti.js -- file1 file2 ...
 ````
 
 # Descriptions
 The `uti.js` print UTI of given file names.
 It is JavaScript program
-and implemented to be executed by '[jsrun](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md)' command.
+and implemented to be executed by '[jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md)' command.
 
 # Command line parameters/options
 ## Options

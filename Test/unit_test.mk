@@ -125,7 +125,7 @@ syn_error: dummy
 #
 all_jsh: help args0 shell1 shell2 \
 	 main0 main1 cat0 cat1 \
-	 script0 # shell0
+	 hello0 hello1 # shell0
 
 help: dummy
 	@echo "*** test: help ***"
@@ -170,10 +170,15 @@ cat1: dummy
 	$(jsh) $(script_dir)/cat1.js | tee $(build_dir)/cat1.txt
 	diff $(build_dir)/cat1.txt $(expected_dir)/cat1.txt
 
-script0: dummy
-	@echo "*** test: script0 ***"
-	$(jsh) $(script_dir)/script0.jsh | tee $(build_dir)/script0.txt
-	diff $(build_dir)/script0.txt $(expected_dir)/script0.txt
+hello0: dummy
+	@echo "*** test: hello0 ***"
+	$(jsh) $(script_dir)/hello0.jsh | tee $(build_dir)/hello0.txt
+	diff $(build_dir)/hello0.txt $(expected_dir)/hello0.txt
+
+hello1: dummy
+	@echo "*** test: hello1 ***"
+	$(jsh) $(script_dir)/hello1.jsh | tee $(build_dir)/hello1.txt
+	diff $(build_dir)/hello1.txt $(expected_dir)/hello1.txt
 
 #
 # jscat

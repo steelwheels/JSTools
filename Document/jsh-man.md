@@ -44,9 +44,7 @@ The `arguments` are defined by the command line arguments after `--` option.
 |:---       |:---           |
 |[util.js](https://github.com/steelwheels/JSTools/blob/master/Document/uti-js.md) |Get [UTI Information](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319-CH201-SW1) from file |
 
-# Sample scripts
-See [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/Sample/sample-scripts.md).
-
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
+

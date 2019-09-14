@@ -1,5 +1,3 @@
-
-
 # JSH: Extended JavaScript for Shell Scripting
 
 ## Introduction
@@ -22,20 +20,12 @@ This is the feature JavaScript shell:
 ### 1. Hello, world !!
 Here is a sample script to print welcome message.
 ````
-
-for(var i=0 ; i<3 ; i++){
-	> echo "hello, world ${i}"
-}
-
-
+m4_include(hello0.jsh)
 ````
 The execution result is
 
 ````
-hello, world 0
-hello, world 1
-hello, world 2
-
+m4_include(hello0.txt)
 ````
 
 ## Syntax

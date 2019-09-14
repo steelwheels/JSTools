@@ -2,7 +2,7 @@
 
 ## Introduction
 In usually, there are no `main` function on the JavaScript program.
-But the [`jsrun`](https://github.com/steelwheels/JSTools/blob/master/Document/jsrun-man.md) command supports calling main function.
+But the [`jsh`](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md) command supports calling main function.
 The function will be activated when the '`--arguments`' command line option is given.
 
 ## `main` method
