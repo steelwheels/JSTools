@@ -35,8 +35,15 @@ The execution result is:
 m4_include(hello1.txt)
 ````
 
+### 2. File streams
+You can use [Pipe](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Pipe.md) to connect file stream.
+````
+m4_include(pipe2.js)
+````
+
 ## Syntax
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
+* [Pysh](https://www.yunabe.jp/docs/pysh_overview.html): How to write Pysh script in Japanese.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
