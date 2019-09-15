@@ -124,7 +124,7 @@ syn_error: dummy
 # jsh
 #
 all_jsh: help args0 shell1 \
-	 main0 main1 cat0 cat1 pipe0 \
+	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 \
 	 hello0 hello1 # shell0
 
 help: dummy
@@ -171,6 +171,16 @@ pipe0: dummy
 	@echo "*** test: pipe0 ***"
 	$(jsh) $(script_dir)/pipe0.js | tee $(build_dir)/pipe0.txt
 	diff $(build_dir)/pipe0.txt $(expected_dir)/pipe0.txt
+
+pipe1: dummy
+	@echo "*** test: pipe1 ***"
+	$(jsh) $(script_dir)/pipe1.js | tee $(build_dir)/pipe1.txt
+	diff $(build_dir)/pipe1.txt $(expected_dir)/pipe1.txt
+
+pipe2: dummy
+	@echo "*** test: pipe2 ***"
+	$(jsh) $(script_dir)/pipe2.js | tee $(build_dir)/pipe2.txt
+	diff $(build_dir)/pipe2.txt $(expected_dir)/pipe2.txt
 
 hello0: dummy
 	@echo "*** test: hello0 ***"

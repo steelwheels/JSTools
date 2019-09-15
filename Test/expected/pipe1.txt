@@ -1,0 +1,20 @@
+[allocate process]
+Wait until exit
+[receive] H
+[receive] e
+[receive] l
+[receive] l
+[receive] o
+[receive] ,
+[receive]  
+[receive] w
+[receive] o
+[receive] r
+[receive] l
+[receive] d
+[receive]  
+[receive] !
+[receive] !
+[receive] 
+
+[bye]

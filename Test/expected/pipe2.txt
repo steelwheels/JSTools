@@ -1,0 +1,30 @@
+[allocate process]
+[send input]
+[receive output]
+[receive] I
+[receive] n
+[receive] p
+[receive] u
+[receive] t
+[receive]  
+[receive] f
+[receive] r
+[receive] o
+[receive] m
+[receive]  
+[receive] J
+[receive] a
+[receive] v
+[receive] a
+[receive] S
+[receive] c
+[receive] r
+[receive] i
+[receive] p
+[receive] t
+[receive]  
+[receive] !
+[receive] !
+[receive] 
+
+[bye]
