@@ -123,8 +123,8 @@ syn_error: dummy
 #
 # jsh
 #
-all_jsh: help args0 shell1 shell2 \
-	 main0 main1 cat0 cat1 \
+all_jsh: help args0 shell1 \
+	 main0 main1 cat0 cat1 pipe0 \
 	 hello0 hello1 # shell0
 
 help: dummy
@@ -143,9 +143,6 @@ shell0: dummy
 
 shell1: dummy
 	$(jsh) $(script_dir)/shell1.js
-
-shell2: dummy
-	$(jsh) $(script_dir)/shell2.js
 
 main0: dummy
 	@echo "*** test: main0 ***"
@@ -169,6 +166,11 @@ cat1: dummy
 	@echo "*** test: cat1 ***"
 	$(jsh) $(script_dir)/cat1.js | tee $(build_dir)/cat1.txt
 	diff $(build_dir)/cat1.txt $(expected_dir)/cat1.txt
+
+pipe0: dummy
+	@echo "*** test: pipe0 ***"
+	$(jsh) $(script_dir)/pipe0.js | tee $(build_dir)/pipe0.txt
+	diff $(build_dir)/pipe0.txt $(expected_dir)/pipe0.txt
 
 hello0: dummy
 	@echo "*** test: hello0 ***"
