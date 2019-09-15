@@ -11,22 +11,16 @@ If you use `JSH`, you can implement the script based the JavaScript syntax.
 The shell program [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md) supports JSH.
 
 ## Features
-This is the feature JavaScript shell:
+This is the feature JSH:
 * Support mixed description JavaScript and shell script.
-* The line started by `>` is treated as the shell script.
-* File stream (based on pipe) is used to manage data flow
-* The control flow is described by JavaScript.
+* The data flow is managed by shell script (called as `shell-statement`)
+* The control flow is managed by JavaScript
 
-
-## Samples
-### 1. Hello, world !!
 Here is a sample script to print welcome message.
 ````
-
 for(var i=0 ; i<3 ; i++){
 	> echo "hello, world ${i}"
 }
-
 
 ````
 The execution result is:
@@ -36,9 +30,38 @@ hello, world 1
 hello, world 2
 
 ````
-You can use *pipe* and define *multiple statements* depatated by ';'.
+
+## Syntax
+Following line is recognized as shell statement.
+This is full declaration of shell statement.
+````
+(in, out, err, env) -> exit > ... shell statement ...
 ````
 
+Each parameter has default value. It is used when the parameter value is omitted.
+
+|Name   |Type           |Description                            |
+|:---   |:---           |:---                                   |
+|in     |File           |Input file for shell statement. Default value is `stdin`. |
+|out    |File           |Output file. Default value is `stdout`. |
+|err    |File           |File for error. Default value is `stderr`. |
+|env    |Dictionary     |Set of environment values. Default value is none. |
+|exit   |Int            |Exit code set by execution result. |
+
+Some parameters can be omitted:
+````
+(in, out, err) -> exit      > ... shell statement ...   # 1
+(in, out, err, env) -> exit > ... shell statement ...   # 2
+(in, out, err, env)         > ... shell statement ...   # 3
+(in, out, err)              > ... shell statement ...   # 4
+                            > ... shell statement ...   # 5
+````
+
+## Samples
+### 1. Hello, world !!
+You can use *pipe* and define *multiple statements* separated by ';'.
+The file `stdin`, `stdout` and `stderr` are used.
+````
 for(var i=0 ; i<3 ; i++){
 	> echo "hello, world ${i}" | tr [a-z] [A-Z] ; echo "Good morning"
 }
@@ -107,8 +130,7 @@ console.log("[bye]\n");
 
 ````
 
-## Syntax
-
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
+* [Pysh](https://www.yunabe.jp/docs/pysh_overview.html): How to write Pysh script in Japanese.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
