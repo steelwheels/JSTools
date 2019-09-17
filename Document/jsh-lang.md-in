@@ -27,7 +27,7 @@ m4_include(hello0.txt)
 Following line is recognized as shell statement.
 This is full declaration of shell statement.
 ````
-(in, out, err, env) -> exit > ... shell statement ...
+(in, out, err, env): exit > ... shell statement ...
 ````
 
 Each parameter has default value. It is used when the parameter value is omitted.
@@ -42,11 +42,11 @@ Each parameter has default value. It is used when the parameter value is omitted
 
 Some parameters can be omitted:
 ````
-(in, out, err) -> exit      > ... shell statement ...   # 1
-(in, out, err, env) -> exit > ... shell statement ...   # 2
-(in, out, err, env)         > ... shell statement ...   # 3
-(in, out, err)              > ... shell statement ...   # 4
-                            > ... shell statement ...   # 5
+(in, out, err) : exit      > ... shell statement ...   # 1
+(in, out, err, env) : exit > ... shell statement ...   # 2
+(in, out, err, env)        > ... shell statement ...   # 3
+(in, out, err)             > ... shell statement ...   # 4
+                           > ... shell statement ...   # 5
 ````
 
 ## Samples
