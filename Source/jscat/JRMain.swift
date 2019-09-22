@@ -74,12 +74,11 @@ private func openFile(fileName name: String?, console cons: CNConsole) -> CNFile
 {
 	var result: CNTextFile?
 	if let nm = name {
-		let (file, err) = CNOpenFile(filePath: nm, accessType: .ReadAccess)
-		if  let f = file {
-			result = f
-		} else {
-			let errstr = err!.toString()
-			cons.error(string: "[Error] \(errstr)\n")
+		switch FileManager.default.openFile(filePath: nm, accessType: .ReadAccess) {
+		case .ok(let file):
+			result = file
+		case .error(let err):
+			cons.error(string: "[Error] \(err.toString())\n")
 			result = nil
 		}
 	} else {
