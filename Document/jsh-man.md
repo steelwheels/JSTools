@@ -6,10 +6,13 @@ The syntax of this script is described in [jsh programming language](https://git
 
 # Synopsis
 ````
-jsh [options] script0 script1 ... scriptN -- argument0 ... argumentN
+jsh [options] script0.js script1.js ... scriptN.js [-- argument0 ... argumentM]
+jsh [options] package.jspkg [-- argument0 ... argumentM]
+jsh [options]
 ````
 * options:  command line options for `jsh` command
-* script:   JavaScript files to be loaded
+* script:   JavaScript files to be executed
+* package:  JavaScript package to be executed. For more details, see the following section.
 * argument: Arguments to be passed as a parameter of the `main` function.
 
 # Description
@@ -29,6 +32,10 @@ The following options are available:
 
 By using `--` option, you can pass arguments to be referenced by the JavaScript code.
 
+# JavaScript Package:
+The *JavaScript package* is the bundle of JavaScript files.
+It is a directory whose extension is `.jspkg` and contains multiple JavaScript files. The [manifest file](https://github.com/steelwheels/JSTools/blob/master/Document/manifest-file.md) must be put in the directory to present the file locations.
+
 # Main function
 When the `--use-main` option is given, the function named *main* is called (if it exists).
 ````
@@ -36,7 +43,7 @@ main(arguments: Array<String>) -> Int32
 ````
 The `arguments` are defined by the command line arguments after `--` option.
 
-# Programming manual
+# Programming reference
 * [The standard library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The built-in JavaScript class, function, data structure. They will be always loaded before executing user scripts.
 
 # Tools
@@ -47,4 +54,3 @@ The `arguments` are defined by the command line arguments after `--` option.
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
-

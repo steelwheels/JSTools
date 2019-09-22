@@ -62,18 +62,12 @@ private func readFiles(fileNames files: Array<String>, console cons: CNConsole) 
 	var stmts: Array<String> = []
 	for file in files {
 		let url = URL(fileURLWithPath: file)
-		let (scr, err) = url.loadContents()
-		if let scr = scr {
+		if let scr = url.loadContents() {
 			/* Split by newline */
 			let sstmts = scr.components(separatedBy: "\n")
 			stmts.append(contentsOf: sstmts)
 		} else {
-			if let err = err {
-				cons.error(string: "[Error] \(err.description)\n")
-			} else {
-				cons.error(string: "[Error] Unknown error\n")
-			}
-			return nil
+			cons.error(string: "[Error] File is not found: \(file)\n")
 		}
 	}
 	return stmts
