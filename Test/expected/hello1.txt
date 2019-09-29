@@ -1,6 +1,0 @@
-HELLO, WORLD 0
-Good morning
-HELLO, WORLD 1
-Good morning
-HELLO, WORLD 2
-Good morning

@@ -36,6 +36,22 @@ By using `--` option, you can pass arguments to be referenced by the JavaScript 
 The *JavaScript package* is the bundle of JavaScript files.
 It is a directory whose extension is `.jspkg` and contains multiple JavaScript files. The [manifest file](https://github.com/steelwheels/JSTools/blob/master/Document/manifest-file.md) must be put in the directory to present the file locations.
 
+This is a sample manifest file. You can define multiple scripts for library and application.
+````
+{
+        "libraries": [
+                "library0.js",
+                "library1.js"
+        ],
+        "scripts": {
+                "main": [
+                        "script0.js",
+                        "script1.js"
+                ]
+        }
+}
+````
+
 # Main function
 When the `--use-main` option is given, the function named *main* is called (if it exists).
 ````

@@ -8,9 +8,16 @@
 import CoconutData
 import CoconutShell
 import KiwiShell
+import KiwiLibrary
 import KiwiEngine
 import JavaScriptCore
 import Foundation
+
+enum Package {
+case resource(KEResource)
+case files(Array<String>)
+case error(NSError)
+}
 
 public func main(arguments args: Array<String>) -> Int32
 {
@@ -37,14 +44,33 @@ public func main(arguments args: Array<String>) -> Int32
 		/* Execute shell */
 		return executeShell(virtualMachine: vm, input: inhdl, output: outhdl, error: errhdl, scriptFiles: files, environment: env, config: compconf)
 	} else {
-		/* Read files */
-		guard let stmts = readFiles(fileNames: files, console: console) else {
+		/* Decide packaging */
+		let stmts: Array<String>
+		switch allocatePackage(scriptFiles: files) {
+		case .files(let files):
+			/* Read files */
+			if let ss = readFiles(fileNames: files, console: console) {
+				stmts = ss
+			} else {
+				return 1
+			}
+		case .resource(let resource):
+			/* Read resource */
+			if let ss = readResource(resource: resource, console: console) {
+				stmts = ss
+			} else {
+				return 1
+			}
+		case .error(let err):
+			errhdl.write(string: "[Error] \(err.toString())\n")
 			return 1
 		}
+
 		/* Translate shell script to JavaScript */
 		guard let modstmts = convertShellStatements(statements: stmts, console: console) else {
 			return 1
 		}
+
 		if config.isCompileMode {
 			/* Dump statement instead */
 			for stmt in modstmts {
@@ -58,6 +84,49 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 }
 
+private func allocatePackage(scriptFiles files: Array<String>) -> Package {
+	let result: Package
+	switch files.count {
+	case 0:
+		result = .error(NSError.fileError(message: "No script file"))
+	case 1:
+		/* Accept "*.js" or "*.jspkg" file */
+		let path = NSString(string: files[0])
+		switch path.pathExtension {
+		case "jspkg":
+			result = allocatePackage(file: files[0])
+		default:
+			result = checkFiles(files: files)
+		}
+	default:
+		/* Accept multiple js files */
+		result = checkFiles(files: files)
+	}
+	return result
+}
+
+private func allocatePackage(file fl: String) -> Package {
+	let url    = URL(fileURLWithPath: fl)
+	let res    = KEResource(baseURL: url)
+	let loader = KEManifestLoader()
+	if let err = loader.load(into: res) {
+		return .error(err)
+	} else {
+		return .resource(res)
+	}
+}
+
+private func checkFiles(files fls: Array<String>) -> Package {
+	/* Check extensions */
+	for f in fls {
+		let path = NSString(string: f)
+		if path.pathExtension != "js" {
+			return .error(NSError.fileError(message: "Unexpected file: \(f)"))
+		}
+	}
+	return .files(fls)
+}
+
 private func readFiles(fileNames files: Array<String>, console cons: CNConsole) -> Array<String>? {
 	var stmts: Array<String> = []
 	for file in files {
@@ -68,9 +137,55 @@ private func readFiles(fileNames files: Array<String>, console cons: CNConsole) 
 			stmts.append(contentsOf: sstmts)
 		} else {
 			cons.error(string: "[Error] File is not found: \(file)\n")
+			return nil
 		}
 	}
 	return stmts
+}
+
+private func readResource(resource res: KEResource, console cons: CNConsole) -> Array<String>? {
+	var result: Array<String> = []
+	/* Load library */
+	if let libnum = res.countOfLibraryScripts() {
+		for i in 0..<libnum {
+			if let scr = res.loadLibraryScript(index: i) {
+				/* Split by newline */
+				let stmts = scr.components(separatedBy: "\n")
+				result.append(contentsOf: stmts)
+			} else {
+				let name: String
+				if let n = res.pathStringOfLibrary(index: i) {
+					name = n
+				} else {
+					name = "<unknown>"
+				}
+				cons.error(string: "[Error] Failed to load library: \(name)")
+				return nil
+			}
+		}
+	}
+	/* Load main scripts */
+	let SCRIPT_NAME = "main"
+	if let mainnum = res.countOfScripts(identifier: SCRIPT_NAME) {
+		for i in 0..<mainnum {
+			if let scr = res.loadScript(identifier: SCRIPT_NAME, index: i) {
+				/* Split by newline */
+				let stmts = scr.components(separatedBy: "\n")
+				result.append(contentsOf: stmts)
+			} else {
+				let name: String
+				if let n = res.pathStringOfLibrary(index: i) {
+					name = n
+				} else {
+					name = "<unknown>"
+				}
+				cons.error(string: "[Error] Failed to load script: \(name)")
+				return nil
+			}
+		}
+	}
+
+	return result
 }
 
 private func convertShellStatements(statements stmts: Array<String>, console cons: CNConsole) -> Array<String>?
