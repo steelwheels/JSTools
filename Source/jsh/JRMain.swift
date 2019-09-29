@@ -146,9 +146,9 @@ private func readFiles(fileNames files: Array<String>, console cons: CNConsole) 
 private func readResource(resource res: KEResource, console cons: CNConsole) -> Array<String>? {
 	var result: Array<String> = []
 	/* Load library */
-	if let libnum = res.countOfLibraryScripts() {
+	if let libnum = res.countOfLibraries() {
 		for i in 0..<libnum {
-			if let scr = res.loadLibraryScript(index: i) {
+			if let scr = res.loadLibrary(index: i) {
 				/* Split by newline */
 				let stmts = scr.components(separatedBy: "\n")
 				result.append(contentsOf: stmts)
