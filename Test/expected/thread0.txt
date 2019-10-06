@@ -1,0 +1,3 @@
+Hello from main function
+Hello from thread0
+exit code = 0

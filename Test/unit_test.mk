@@ -125,7 +125,7 @@ syn_error: dummy
 #
 all_jsh: help args0 shell1 \
 	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 \
-	 hello0 hello1 # shell0
+	 hello0 hello1 thread0 # shell0
 
 help: dummy
 	@echo "*** test: help ***"
@@ -191,6 +191,11 @@ hello1: dummy
 	@echo "*** test: hello1 ***"
 	$(jsh) $(script_dir)/hello1.jsh | tee $(build_dir)/hello1.txt
 	diff $(build_dir)/hello1.txt $(expected_dir)/hello1.txt
+
+thread0: dummy
+	@echo "*** test: thread0 ***"
+	$(jsh) --use-main $(script_dir)/thread0.jspkg | tee $(build_dir)/thread0.txt
+	diff $(build_dir)/thread0.txt $(expected_dir)/thread0.txt
 
 #
 # jscat
