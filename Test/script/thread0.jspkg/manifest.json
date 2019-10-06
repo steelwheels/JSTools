@@ -1,0 +1,11 @@
+{
+	"scripts": {
+		"main": [
+			"main.js"
+		],
+		"thread0": [
+			"thread0.js"
+		]
+	}
+}
+
