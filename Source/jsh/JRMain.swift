@@ -96,11 +96,11 @@ private func allocatePackage(scriptFiles files: Array<String>) -> Package {
 		case "jspkg":
 			result = allocatePackage(file: files[0])
 		default:
-			result = checkFiles(files: files)
+			result = allocateFiles(files: files)
 		}
 	default:
 		/* Accept multiple js files */
-		result = checkFiles(files: files)
+		result = allocateFiles(files: files)
 	}
 	return result
 }
@@ -116,8 +116,7 @@ private func allocatePackage(file fl: String) -> Package {
 	}
 }
 
-private func checkFiles(files fls: Array<String>) -> Package {
-	/* Check extensions */
+private func allocateFiles(files fls: Array<String>) -> Package {
 	for f in fls {
 		let path = NSString(string: f)
 		if path.pathExtension != "js" {

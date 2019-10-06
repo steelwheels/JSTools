@@ -21,7 +21,7 @@ public class JRCompiler: KLCompiler
 
 	public func compile(context ctxt: KEContext, console cons: CNConsole, config conf: JRConfig) -> Bool {
 		/* Compile library */
-		guard super.compile(context: ctxt, console: cons, config: conf) else {
+		guard super.compileBase(context: ctxt, console: cons, config: conf) else {
 			return false
 		}
 		/* Compile user source */
