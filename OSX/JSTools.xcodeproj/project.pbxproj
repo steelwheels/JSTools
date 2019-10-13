@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0514FBD4217F92C700F70A1B /* KiwiObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0514FBD3217F92C600F70A1B /* KiwiObject.framework */; };
 		0518D42E2152B78B0036E5D5 /* CoconutDatabase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0518D42F2152B78E0036E5D5 /* KiwiShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB2214F73E5005CFF9A /* KiwiShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0518D4302152B7930036E5D5 /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -25,6 +24,13 @@
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
 		05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; };
 		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
+		05C3779E23532B7B0067A9B6 /* KiwiObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0514FBD3217F92C600F70A1B /* KiwiObject.framework */; };
+		05C3779F23532B7B0067A9B6 /* KiwiObject.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0514FBD3217F92C600F70A1B /* KiwiObject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05C377A123532BDC0067A9B6 /* KiwiEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A023532BDC0067A9B6 /* KiwiEngine.framework */; };
+		05C377A223532DB70067A9B6 /* KiwiEngine.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05C377A023532BDC0067A9B6 /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05C377A423533BFF0067A9B6 /* CoconutShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A323533BFF0067A9B6 /* CoconutShell.framework */; };
+		05C377A623533DFD0067A9B6 /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A523533DFD0067A9B6 /* CoconutData.framework */; };
+		05C377A723533E240067A9B6 /* CoconutShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05C377A323533BFF0067A9B6 /* CoconutShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05C94B852052DACB00C0624A /* color_table.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
 		05D4377F20035C4500320CA4 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4377E20035C4500320CA4 /* JRMain.swift */; };
 		05D437812003713000320CA4 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D437802003713000320CA4 /* JRConfig.swift */; };
@@ -34,7 +40,6 @@
 		05D6F35D1FE3FDAF0070DF5B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3581FE3FDAF0070DF5B /* main.swift */; };
 		05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E62026A70C00EAAE8C /* JRMain.swift */; };
 		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
-		05F29AAB214F72C7005CFF9A /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAA214F72C7005CFF9A /* CoconutData.framework */; };
 		05F29AAE214F737A005CFF9A /* Cobalt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAD214F737A005CFF9A /* Cobalt.framework */; };
 		05F29AB1214F73D1005CFF9A /* KiwiLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */; };
 		05F29AB3214F73E5005CFF9A /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AB2214F73E5005CFF9A /* KiwiShell.framework */; };
@@ -157,15 +162,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		056C6725201627FC003E9485 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Library/Graphics;
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		05A42E411FE3FD5600321C93 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,7 +199,10 @@
 				0518D4312152B7970036E5D5 /* Cobalt.framework in CopyFiles */,
 				0518D42F2152B78E0036E5D5 /* KiwiShell.framework in CopyFiles */,
 				0518D4322152B79A0036E5D5 /* CoconutData.framework in CopyFiles */,
+				05C377A723533E240067A9B6 /* CoconutShell.framework in CopyFiles */,
 				0518D4302152B7930036E5D5 /* KiwiLibrary.framework in CopyFiles */,
+				05C377A223532DB70067A9B6 /* KiwiEngine.framework in CopyFiles */,
+				05C3779F23532B7B0067A9B6 /* KiwiObject.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +228,9 @@
 		05AC139E214FB06C00601301 /* CoconutDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutDatabase.framework; path = ../../../Library/Frameworks/CoconutDatabase.framework; sourceTree = "<group>"; };
 		05AC80CF20268EF700165368 /* jsadb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsadb; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AC80D120268EF700165368 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		05C377A023532BDC0067A9B6 /* KiwiEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiEngine.framework; path = ../../../Library/Frameworks/KiwiEngine.framework; sourceTree = "<group>"; };
+		05C377A323533BFF0067A9B6 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutShell.framework; path = ../../../Library/Frameworks/CoconutShell.framework; sourceTree = "<group>"; };
+		05C377A523533DFD0067A9B6 /* CoconutData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutData.framework; path = ../../../Library/Frameworks/CoconutData.framework; sourceTree = "<group>"; };
 		05D4377E20035C4500320CA4 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		05D437802003713000320CA4 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSTools-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -287,12 +289,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0514FBD4217F92C700F70A1B /* KiwiObject.framework in Frameworks */,
-				05F29AAB214F72C7005CFF9A /* CoconutData.framework in Frameworks */,
 				05F29AB1214F73D1005CFF9A /* KiwiLibrary.framework in Frameworks */,
 				05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */,
+				05C377A623533DFD0067A9B6 /* CoconutData.framework in Frameworks */,
 				05F29AAE214F737A005CFF9A /* Cobalt.framework in Frameworks */,
 				05F29AB3214F73E5005CFF9A /* KiwiShell.framework in Frameworks */,
+				05C377A423533BFF0067A9B6 /* CoconutShell.framework in Frameworks */,
+				05C3779E23532B7B0067A9B6 /* KiwiObject.framework in Frameworks */,
+				05C377A123532BDC0067A9B6 /* KiwiEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +430,9 @@
 		05F29A92214F6FC1005CFF9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05C377A523533DFD0067A9B6 /* CoconutData.framework */,
+				05C377A323533BFF0067A9B6 /* CoconutShell.framework */,
+				05C377A023532BDC0067A9B6 /* KiwiEngine.framework */,
 				053676F523109EE5001376B1 /* CoconutShell.framework */,
 				0514FBD3217F92C600F70A1B /* KiwiObject.framework */,
 				05AC139E214FB06C00601301 /* CoconutDatabase.framework */,
@@ -590,7 +597,6 @@
 				05D6F3601FE3FE1C0070DF5B /* Frameworks */,
 				05D6F3611FE3FE1C0070DF5B /* Resources */,
 				05D6F36B1FE3FF620070DF5B /* CopyFiles */,
-				056C6725201627FC003E9485 /* CopyFiles */,
 				055528D9201D57ED00397D3C /* CopyFiles */,
 			);
 			buildRules = (
@@ -610,7 +616,7 @@
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Tomoo Hamada";
 				TargetAttributes = {
 					0510E6711FE560F300B2C718 = {
@@ -850,6 +856,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
 					"$(HOME)/Library/Frameworks",
@@ -871,6 +878,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				INSTALL_PATH = "$(HOME)/tools/jstools";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks ${inherited}";
@@ -888,12 +896,15 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
+					"$(HOME)/Library/Frameworks",
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INSTALL_PATH = "$(HOME)/tools/jstools";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -909,12 +920,15 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
+					"$(HOME)/Library/Frameworks",
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INSTALL_PATH = "$(HOME)/tools/jstools";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1074,6 +1088,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
 					"$(HOME)/Library/Frameworks",
@@ -1081,7 +1096,7 @@
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks /System/Library/PrivateFrameworks/Swift/ $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1099,11 +1114,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks /System/Library/PrivateFrameworks/Swift/ $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1119,6 +1135,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
 					"$(HOME)/Library/Frameworks",
@@ -1141,6 +1158,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				GCC_OPTIMIZATION_LEVEL = 2;
 				INSTALL_PATH = "$(HOME)/tools/jstools";
@@ -1160,6 +1178,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
 					"$(HOME)/Library/Frameworks",
@@ -1183,6 +1202,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
 				INSTALL_PATH = "$(HOME)/tools/jstools";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
@@ -1198,7 +1218,7 @@
 		05D6F3671FE3FE1C0070DF5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1221,7 +1241,7 @@
 		05D6F3681FE3FE1C0070DF5B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

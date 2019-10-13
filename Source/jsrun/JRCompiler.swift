@@ -19,7 +19,7 @@ public class JRCompiler: KLCompiler
 		super.init()
 	}
 
-	public func compile(context ctxt: KEContext, console cons: CNConsole, config conf: JRConfig) -> Bool {
+	public func compile(context ctxt: KEContext, console cons: CNFileConsole, config conf: JRConfig) -> Bool {
 		/* Compile library */
 		guard super.compileBase(context: ctxt, console: cons, config: conf) else {
 			return false
