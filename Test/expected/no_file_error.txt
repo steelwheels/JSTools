@@ -1,1 +1,1 @@
-[FileError] Can not read "no_file.js"
+[Error] File is not found: no_file.js

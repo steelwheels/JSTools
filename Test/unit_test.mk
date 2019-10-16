@@ -14,129 +14,61 @@ data_dir	= $(test_dir)/data
 expected_dir	= $(test_dir)/expected
 build_dir	= $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 
-all: all_jsrun all_jsh all_jscat all_jsgrep
-
-#
-# jsrun
-#
-all_jsrun: nostrict hello exit0 exit1 enum0 json0 \
-	   files urls operations errors \
-	   math0
-	@echo "*** test: Done ***"
-
-
-nostrict: dummy
-	@echo "*** test: --no-strict ***"
-	$(jsrun) --no-strict $(resource_dir)/hello-0.js | \
-		tee $(build_dir)/hello-0-ns.txt
-	diff $(build_dir)/hello-0-ns.txt $(expected_dir)/hello-0.txt
-
-hello: dummy
-	@echo "*** test: hello ***"
-	$(jsrun) $(resource_dir)/hello-0.js | tee $(build_dir)/hello-0.txt
-	diff $(build_dir)/hello-0.txt $(expected_dir)/hello-0.txt
-
-exit0: dummy
-	@echo "*** test: exit0 ***"
-	$(jsrun) --use-main $(script_dir)/exit0.js -- a b c | \
-					tee $(build_dir)/exit0.txt
-	diff $(build_dir)/exit0.txt $(expected_dir)/exit0.txt
-
-exit1: dummy
-	@echo "*** test: exit1 ***"
-	(if $(jsrun) $(script_dir)/exit1.js ; then \
-		exit 1 ; \
-	 else \
-		exit 0 ; \
-	 fi)
-
-enum0: dummy
-	@echo "*** test: enum0 ***"
-	$(jsrun) $(script_dir)/enum0.js | tee $(build_dir)/enum0.txt
-	diff $(build_dir)/enum0.txt $(expected_dir)/enum0.txt
-
-json0: dummy
-	@echo "*** test: json0 ***"
-	$(jsrun) $(script_dir)/json0.js | tee $(build_dir)/json0.txt
-	mv data0-out.json $(build_dir)
-	diff $(build_dir)/data0-out.json $(expected_dir)/data0-out.json
-
-math0: dummy
-	$(jsrun) $(script_dir)/math0.js | tee $(build_dir)/math0.txt
-	diff $(build_dir)/math0.txt $(expected_dir)/math0.txt
-
-files: filetype
-
-filetype: dummy
-	@echo "*** Check file type 0 ***"
-	touch $(build_dir)/check_file_type0.txt
-	$(jsrun) --use-main \
-		 $(script_dir)/check_file_type0.js \
-		 -- $(build_dir)/check_file_type0.txt
-	rm -f $(build_dir)/check_file_type0.txt
-
-urls: dummy
-	@echo "*** test: url9 ***"
-	$(jsrun) $(script_dir)/url0.js | tee $(build_dir)/url0.txt
-	diff $(build_dir)/url0.txt $(expected_dir)/url0.txt
-
-operations: operation0 operation1
-
-operation0: dummy
-	if $(jsrun) --use-main $(script_dir)/operation0.js -- $(script_dir)/Operation/op0.js 2>&1 | tee $(build_dir)/operation0.txt ; \
-	then \
-		echo "Error expected" >&2 ; \
-	else \
-		echo "Catch expected error" >&2 ; \
-	fi
-	diff $(build_dir)/operation0.txt $(expected_dir)/operation0.txt
-
-operation1: dummy
-	if $(jsrun) --use-main $(script_dir)/operation1.js 2>&1 | tee $(build_dir)/operation1.txt ; \
-	then \
-		echo "Error expected" >&2 ; \
-	else \
-		echo "Catch expected error" >&2 ; \
-	fi
-	diff $(build_dir)/operation1.txt $(expected_dir)/operation1.txt
-
-errors:	no_file_error syn_error
-
-no_file_error: dummy
-	if $(jsrun) no_file.js 2>&1 | tee $(build_dir)/no_file_error.txt ; \
-	then \
-		echo "Error expected" >&2 ; \
-	else \
-		echo "Catch expected error" >&2 ; \
-	fi
-	diff $(build_dir)/no_file_error.txt $(expected_dir)/no_file_error.txt
-
-syn_error: dummy
-	if $(jsrun) $(script_dir)/syn_err0.js 2>&1 | tee $(build_dir)/syn_err0.txt ; \
-	then \
-		echo "Error expected" >&2 ; \
-	else \
-		echo "Catch expected error" >&2 ; \
-	fi
-	diff $(build_dir)/syn_err0.txt $(expected_dir)/syn_err0.txt
+all: all_jsh all_jscat all_jsgrep
 
 #
 # jsh
 #
-all_jsh: help args0 shell1 \
+all_jsh: help nostrict hello exit0 exit1 args0 enum0 math0 shell1 \
 	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 \
-	 hello0 hello1 thread0 # shell0
+	 hello0 hello1 json0 filetype0 url0 \
+	 operation0 operation1 thread0 \
+	 no_file_error syn_error
 
 help: dummy
 	@echo "*** test: help ***"
 	$(jsh) --help 2>&1 | tee $(build_dir)/help.txt
 	diff $(build_dir)/help.txt $(expected_dir)/help.txt
 
+nostrict: dummy
+	@echo "*** test: --no-strict ***"
+	$(jsh) --no-strict $(resource_dir)/hello-0.js | \
+		tee $(build_dir)/hello-0-ns.txt
+	diff $(build_dir)/hello-0-ns.txt $(expected_dir)/hello-0.txt
+
+hello: dummy
+	@echo "*** test: hello ***"
+	$(jsh) $(resource_dir)/hello-0.js | tee $(build_dir)/hello-0.txt
+	diff $(build_dir)/hello-0.txt $(expected_dir)/hello-0.txt
+
+exit0: dummy
+	@echo "*** test: exit0 ***"
+	$(jsh) --use-main $(script_dir)/exit0.js -- a b c | \
+					tee $(build_dir)/exit0.txt
+	diff $(build_dir)/exit0.txt $(expected_dir)/exit0.txt
+
+exit1: dummy
+	@echo "*** test: exit1 ***"
+	(if $(jsh) $(script_dir)/exit1.js ; then \
+		exit 1 ; \
+	 else \
+		exit 0 ; \
+	 fi)
+
 args0: dummy
 	@echo "*** test: Process.arguments ***"
 	$(jsh) --use-main $(script_dir)/args.js -- a b c | \
 					tee $(build_dir)/args.txt
 	diff $(build_dir)/args.txt $(expected_dir)/args.txt
+
+enum0: dummy
+	@echo "*** test: enum0 ***"
+	$(jsh) $(script_dir)/enum0.js | tee $(build_dir)/enum0.txt
+	diff $(build_dir)/enum0.txt $(expected_dir)/enum0.txt
+
+math0: dummy
+	$(jsh) $(script_dir)/math0.js | tee $(build_dir)/math0.txt
+	diff $(build_dir)/math0.txt $(expected_dir)/math0.txt
 
 shell0: dummy
 	$(jsh) -i < $(script_dir)/shell0.js
@@ -192,10 +124,65 @@ hello1: dummy
 	$(jsh) $(script_dir)/hello1.jsh | tee $(build_dir)/hello1.txt
 	diff $(build_dir)/hello1.txt $(expected_dir)/hello1.txt
 
+json0: dummy
+	@echo "*** test: json0 ***"
+	$(jsh) $(script_dir)/json0.js | tee $(build_dir)/json0.txt
+	mv data0-out.json $(build_dir)
+	diff $(build_dir)/data0-out.json $(expected_dir)/data0-out.json
+
+filetype0: dummy
+	@echo "*** Check file type 0 ***"
+	touch $(build_dir)/check_file_type0.txt
+	$(jsh) --use-main \
+		 $(script_dir)/check_file_type0.js \
+		 -- $(build_dir)/check_file_type0.txt
+	rm -f $(build_dir)/check_file_type0.txt
+
+url0: dummy
+	@echo "*** test: url0 ***"
+	$(jsh) $(script_dir)/url0.js | tee $(build_dir)/url0.txt
+	diff $(build_dir)/url0.txt $(expected_dir)/url0.txt
+
+operation0: dummy
+	if $(jsh) --use-main $(script_dir)/operation0.js -- $(script_dir)/Operation/op0.js 2>&1 | tee $(build_dir)/operation0.txt ; \
+	then \
+		echo "Error expected" >&2 ; \
+	else \
+		echo "Catch expected error" >&2 ; \
+	fi
+	diff $(build_dir)/operation0.txt $(expected_dir)/operation0.txt
+
+operation1: dummy
+	if $(jsh) --use-main $(script_dir)/operation1.js 2>&1 | tee $(build_dir)/operation1.txt ; \
+	then \
+		echo "Error expected" >&2 ; \
+	else \
+		echo "Catch expected error" >&2 ; \
+	fi
+	diff $(build_dir)/operation1.txt $(expected_dir)/operation1.txt
+
 thread0: dummy
 	@echo "*** test: thread0 ***"
 	$(jsh) --use-main $(script_dir)/thread0.jspkg | tee $(build_dir)/thread0.txt
 	diff $(build_dir)/thread0.txt $(expected_dir)/thread0.txt
+
+no_file_error: dummy
+	if $(jsh) no_file.js 2>&1 | tee $(build_dir)/no_file_error.txt ; \
+	then \
+		echo "Error expected" >&2 ; \
+	else \
+		echo "Catch expected error" >&2 ; \
+	fi
+	diff $(build_dir)/no_file_error.txt $(expected_dir)/no_file_error.txt
+
+syn_error: dummy
+	if $(jsh) $(script_dir)/syn_err0.js 2>&1 | tee $(build_dir)/syn_err0.txt ; \
+	then \
+		echo "Error expected" >&2 ; \
+	else \
+		echo "Catch expected error" >&2 ; \
+	fi
+	diff $(build_dir)/syn_err0.txt $(expected_dir)/syn_err0.txt
 
 #
 # jscat

@@ -34,10 +34,6 @@
 		05C94B852052DACB00C0624A /* color_table.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
 		05D4377F20035C4500320CA4 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4377E20035C4500320CA4 /* JRMain.swift */; };
 		05D437812003713000320CA4 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D437802003713000320CA4 /* JRConfig.swift */; };
-		05D6F35A1FE3FDAF0070DF5B /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */; };
-		05D6F35B1FE3FDAF0070DF5B /* JRCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */; };
-		05D6F35C1FE3FDAF0070DF5B /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3571FE3FDAF0070DF5B /* JRMain.swift */; };
-		05D6F35D1FE3FDAF0070DF5B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6F3581FE3FDAF0070DF5B /* main.swift */; };
 		05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E62026A70C00EAAE8C /* JRMain.swift */; };
 		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
 		05F29AAE214F737A005CFF9A /* Cobalt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAD214F737A005CFF9A /* Cobalt.framework */; };
@@ -109,20 +105,6 @@
 			remoteGlobalIDString = 05AC80CE20268EF700165368;
 			remoteInfo = jsadb;
 		};
-		05D6F3691FE3FE280070DF5B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05D6F3621FE3FE1C0070DF5B;
-			remoteInfo = JSToolsBundle;
-		};
-		05D6F3741FE406EB0070DF5B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05A42E421FE3FD5600321C93;
-			remoteInfo = jsrun;
-		};
 		05DACDA420274E87001C4283 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
@@ -161,15 +143,6 @@
 				05C94B852052DACB00C0624A /* color_table.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05A42E411FE3FD5600321C93 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
 		};
 		05A856D720035B2900DB5E75 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -222,7 +195,6 @@
 		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
 		0580EB812172ED3F00F018F1 /* hello-0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "hello-0.js"; sourceTree = "<group>"; };
 		059B998B2311120A00D9CDF1 /* JRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
-		05A42E431FE3FD5600321C93 /* jsrun */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsrun; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856D920035B2900DB5E75 /* jscat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jscat; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856DB20035B2A00DB5E75 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05AC139E214FB06C00601301 /* CoconutDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutDatabase.framework; path = ../../../Library/Frameworks/CoconutDatabase.framework; sourceTree = "<group>"; };
@@ -234,10 +206,6 @@
 		05D4377E20035C4500320CA4 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		05D437802003713000320CA4 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSTools-Bridging-Header.h"; sourceTree = "<group>"; };
-		05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
-		05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRCompiler.swift; sourceTree = "<group>"; };
-		05D6F3571FE3FDAF0070DF5B /* JRMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
-		05D6F3581FE3FDAF0070DF5B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05D6F3631FE3FE1C0070DF5B /* jstools.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jstools.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D6F3651FE3FE1C0070DF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05DAD1E62026A70C00EAAE8C /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
@@ -261,13 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				053676F82310A195001376B1 /* CoconutData.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05A42E401FE3FD5600321C93 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +325,6 @@
 		05A42E441FE3FD5600321C93 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05A42E431FE3FD5600321C93 /* jsrun */,
 				05D6F3631FE3FE1C0070DF5B /* jstools.bundle */,
 				05A856D920035B2900DB5E75 /* jscat */,
 				05AC80CF20268EF700165368 /* jsadb */,
@@ -394,22 +354,10 @@
 			path = jsadb;
 			sourceTree = "<group>";
 		};
-		05B8182B2002630A00290480 /* jsrun */ = {
-			isa = PBXGroup;
-			children = (
-				05D6F3571FE3FDAF0070DF5B /* JRMain.swift */,
-				05D6F3561FE3FDAF0070DF5B /* JRCompiler.swift */,
-				05D6F3551FE3FDAF0070DF5B /* JRConfig.swift */,
-				05D6F3581FE3FDAF0070DF5B /* main.swift */,
-			);
-			path = jsrun;
-			sourceTree = "<group>";
-		};
 		05D6F3531FE3FD880070DF5B /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */,
-				05B8182B2002630A00290480 /* jsrun */,
 				053676E923109BA6001376B1 /* jsh */,
 				05A856DA20035B2A00DB5E75 /* jscat */,
 				05AC80D020268EF700165368 /* jsadb */,
@@ -490,7 +438,6 @@
 				0523041C202C9067003B1CB9 /* PBXTargetDependency */,
 				05AC80D720268F0100165368 /* PBXTargetDependency */,
 				05A856E320035B4600DB5E75 /* PBXTargetDependency */,
-				05D6F3751FE406EB0070DF5B /* PBXTargetDependency */,
 			);
 			name = Install;
 			passBuildSettingsInEnvironment = 1;
@@ -533,24 +480,6 @@
 			name = jsh;
 			productName = jsh;
 			productReference = 053676E823109BA6001376B1 /* jsh */;
-			productType = "com.apple.product-type.tool";
-		};
-		05A42E421FE3FD5600321C93 /* jsrun */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 05A42E4A1FE3FD5600321C93 /* Build configuration list for PBXNativeTarget "jsrun" */;
-			buildPhases = (
-				05A42E3F1FE3FD5600321C93 /* Sources */,
-				05A42E401FE3FD5600321C93 /* Frameworks */,
-				05A42E411FE3FD5600321C93 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				05D6F36A1FE3FE280070DF5B /* PBXTargetDependency */,
-			);
-			name = jsrun;
-			productName = JSTools;
-			productReference = 05A42E431FE3FD5600321C93 /* jsrun */;
 			productType = "com.apple.product-type.tool";
 		};
 		05A856D820035B2900DB5E75 /* jscat */ = {
@@ -636,11 +565,6 @@
 						CreatedOnToolsVersion = 10.3;
 						ProvisioningStyle = Automatic;
 					};
-					05A42E421FE3FD5600321C93 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-					};
 					05A856D820035B2900DB5E75 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
@@ -675,7 +599,6 @@
 			projectRoot = "";
 			targets = (
 				05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */,
-				05A42E421FE3FD5600321C93 /* jsrun */,
 				053676E723109BA6001376B1 /* jsh */,
 				05A856D820035B2900DB5E75 /* jscat */,
 				05AC80CE20268EF700165368 /* jsadb */,
@@ -716,17 +639,6 @@
 				0547C08323111B3000AC5395 /* JRConfig.swift in Sources */,
 				053676F72310A015001376B1 /* JRMain.swift in Sources */,
 				053676EB23109BA6001376B1 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05A42E3F1FE3FD5600321C93 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05D6F35C1FE3FDAF0070DF5B /* JRMain.swift in Sources */,
-				05D6F35B1FE3FDAF0070DF5B /* JRCompiler.swift in Sources */,
-				05D6F35D1FE3FDAF0070DF5B /* main.swift in Sources */,
-				05D6F35A1FE3FDAF0070DF5B /* JRConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,16 +716,6 @@
 			isa = PBXTargetDependency;
 			target = 05AC80CE20268EF700165368 /* jsadb */;
 			targetProxy = 05AC80D620268F0100165368 /* PBXContainerItemProxy */;
-		};
-		05D6F36A1FE3FE280070DF5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
-			targetProxy = 05D6F3691FE3FE280070DF5B /* PBXContainerItemProxy */;
-		};
-		05D6F3751FE406EB0070DF5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05A42E421FE3FD5600321C93 /* jsrun */;
-			targetProxy = 05D6F3741FE406EB0070DF5B /* PBXContainerItemProxy */;
 		};
 		05DACDA520274E87001C4283 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1081,54 +983,6 @@
 			};
 			name = Release;
 		};
-		05A42E4B1FE3FD5600321C93 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TR2DNF3P93;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
-					"$(HOME)/Library/Frameworks",
-				);
-				GCC_OPTIMIZATION_LEVEL = 2;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
-				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		05A42E4C1FE3FD5600321C93 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TR2DNF3P93;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				GCC_OPTIMIZATION_LEVEL = 2;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
-				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		05A856DD20035B2A00DB5E75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1332,15 +1186,6 @@
 			buildConfigurations = (
 				05A42E481FE3FD5600321C93 /* Debug */,
 				05A42E491FE3FD5600321C93 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		05A42E4A1FE3FD5600321C93 /* Build configuration list for PBXNativeTarget "jsrun" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				05A42E4B1FE3FD5600321C93 /* Debug */,
-				05A42E4C1FE3FD5600321C93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
