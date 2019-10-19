@@ -4,8 +4,7 @@ function main(args)
 
 	let thread = Thread("thread0", stdin, stdout, stderr) ;
 	thread.start(["a", "b"]) ;
-	thread.waitUntilExit() ;
-	let ecode = thread.exitCode() ;
+	let ecode = thread.waitUntilExit() ;
 	console.log("exit code = " + ecode + "\n") ;
 }
 

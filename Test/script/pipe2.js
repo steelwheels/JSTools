@@ -28,6 +28,12 @@ pipe0.writing.put("Input from JavaScript !!\n") ;
 pipe0.writing.close() ;
 
 /*
+ * Wait the cat process finished
+ */
+process.waitUntilExit() ;
+pipe1.writing.close() ;
+
+/*
  * receive output data from pipe1
  */
 console.log("[receive output]\n") ;
@@ -36,11 +42,6 @@ while(c != null){
 	console.log(`[receive] ${c}\n`) ;
 	c = pipe1.reading.getc() ;
 }
-
-/*
- * Wait the cat process finished
- */
-process.waitUntilExit() ;
 
 console.log("[bye]\n");
 

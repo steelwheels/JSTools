@@ -1,15 +1,16 @@
-# JSH: Extended JavaScript for Shell Scripting
+# jsh: Extended JavaScript for Shell Scripting
 
 ## Introduction
-This document describes about `JSH`. The JSH is small extension of JavaScript language to implement shell script easily.
+This document describes about `jsh`. The jsh is small extension of JavaScript language to implement shell script easily.
 
 The [bourne shell](https://en.wikipedia.org/wiki/Bourne_shell) and [csh](https://en.wikipedia.org/wiki/C_shell)  are popular to implement the shell script. But these syntax are very unique and inconsistent.
-If you use `JSH`, you can implement the script based the JavaScript syntax.
+If you use `jsh`, you can implement the script based the JavaScript syntax.
 
-The shell program [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md) supports JSH.
+The shell program [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md)
+supports this language.
 
 ## Features
-This is the feature JSH:
+This is the feature jsh:
 * Support mixed description JavaScript and shell script.
 * The data flow is managed by shell script (called as `shell-statement`)
 * The control flow is managed by JavaScript
@@ -47,6 +48,28 @@ Some parameters can be omitted:
 (in, out, err, env)        > ... shell statement ...   # 3
 (in, out, err)             > ... shell statement ...   # 4
                            > ... shell statement ...   # 5
+````
+
+## Pipeline programming
+### Process and Thread
+This section describes about how to implement pipeline by JavaScript
+(without extended syntax).
+There are some built in functions to generate process and thread:
+* [system](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Function/System.md):
+Execute the shell script on the other process
+* [thread](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Function/Thread.md):
+Execute the java script on the other thread
+
+The [pipe](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Pipe.md)
+object is used to connect the data stream between process and threads.
+Here is an example to execute 2 processes that they are connect by pipe.
+````
+/* The "pipe" variables used to connect 2 processes */
+let pipe     = Pipe() ;
+let process0 = system("ls", stdin, pipe.writing, stderr) ;
+let process1 = system("wc -l", pipe.reading, stdout, stderr) ;
+process0.waitUntilExit() ;
+process1.waitUntilExit() ;
 ````
 
 ## Samples

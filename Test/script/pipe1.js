@@ -15,13 +15,10 @@ if(process == null){
 
 console.log("Wait until exit\n") ;
 process.waitUntilExit() ;
-
-//console.log("Close write pipe\n") ;
-//pipe.writing.close() ;
+pipe.writing.close() ;
 
 /* receive output */
 let reader = pipe.reading ;
-//console.log("[receive output] " + reader + "\n") ;
 let c = reader.getc() ;
 while(c != null){
 	console.log(`[receive] ${c}\n`) ;

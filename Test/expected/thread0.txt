@@ -1,3 +1,4 @@
 Hello from main function
 Hello from thread0
+args: a,b
 exit code = 0

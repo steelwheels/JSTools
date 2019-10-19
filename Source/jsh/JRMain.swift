@@ -225,7 +225,6 @@ private func executeScript(virtualMachine vm: JSVirtualMachine, resource res: KE
 {
 	let thread  = KHScriptThread(virtualMachine: vm, resource: res, input: inhdl, output: outhdl, error: errhdl, environment: env, config: conf)
 	thread.start(statements: stmts, arguments: args)
-	thread.waitUntilExit()
-	return 0
+	return thread.waitUntilExit()
 }
 
