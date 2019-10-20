@@ -1,5 +1,7 @@
 [allocate process]
-Wait until exit
+Wait until exit ... begin
+Wait until exit ... done
+Receive output... begin
 [receive] H
 [receive] e
 [receive] l
@@ -17,4 +19,5 @@ Wait until exit
 [receive] !
 [receive] 
 
+Receive output... done
 [bye]
