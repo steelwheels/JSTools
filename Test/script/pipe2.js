@@ -14,7 +14,7 @@ let pipe1 = Pipe() ;
  *   - The pipe1 object is connected with output
  */
 console.log("[allocate process]\n") ;
-let process = system("/bin/cat", pipe0.reading, pipe1.writing, stderr) ;
+let process = system("/bin/cat", pipe0, pipe1, stderr) ;
 if(process == null){
 	console.log("[Error] Could not launch command\n") ;
 	exit(1) ;
@@ -31,7 +31,6 @@ pipe0.writing.close() ;
  * Wait the cat process finished
  */
 process.waitUntilExit() ;
-pipe1.writing.close() ;
 
 /*
  * receive output data from pipe1

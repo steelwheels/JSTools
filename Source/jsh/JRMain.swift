@@ -1,6 +1,6 @@
 /**
  * @file	JRMain.swift
- * @brief	Define main function for JSH
+ * @brief	Define main function for jsh
  * @par Copyright
  *   Copyright (C) 2019 Steel Wheels Project
  */
@@ -22,10 +22,10 @@ case error(NSError)
 public func main(arguments args: Array<String>) -> Int32
 {
 	/* Parse command line arguments */
-	let inhdl   = FileHandle.standardInput
-	let outhdl  = FileHandle.standardOutput
-	let errhdl  = FileHandle.standardError
-	let console = CNFileConsole(input: inhdl, output: outhdl, error: errhdl)
+	let instrm  : CNFileStream = .fileHandle(FileHandle.standardInput)
+	let outstrm : CNFileStream = .fileHandle(FileHandle.standardOutput)
+	let errstrm : CNFileStream = .fileHandle(FileHandle.standardError)
+	let console = CNFileConsole(input: FileHandle.standardInput, output: FileHandle.standardOutput, error: FileHandle.standardError)
 	let parser  = JRCommandLineParser(console: console)
 	guard let (config, arguments) = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
 		return 1
@@ -43,7 +43,7 @@ public func main(arguments args: Array<String>) -> Int32
 	if files.count == 0 || config.isInteractiveMode {
 		/* Execute shell */
 		let emptyres = KEResource(baseURL: Bundle.main.bundleURL)
-		return executeShell(virtualMachine: vm, resource: emptyres, input: inhdl, output: outhdl, error: errhdl, scriptFiles: files, environment: env, config: compconf)
+		return executeShell(virtualMachine: vm, resource: emptyres, input: instrm, output: outstrm, error: errstrm, scriptFiles: files, environment: env, config: compconf)
 	} else {
 		/* Decide packaging */
 		var resource: KEResource? = nil
@@ -65,7 +65,7 @@ public func main(arguments args: Array<String>) -> Int32
 			}
 			resource = res
 		case .error(let err):
-			errhdl.write(string: "[Error] \(err.toString())\n")
+			console.error(string: "\(err.toString())\n")
 			return 1
 		}
 
@@ -86,7 +86,7 @@ public func main(arguments args: Array<String>) -> Int32
 				resource = KEResource(baseURL: Bundle.main.bundleURL)
 			}
 			/* Execute script */
-			return executeScript(virtualMachine: vm, resource: resource!, input: inhdl, output: outhdl, error: errhdl, statements: modstmts, arguments: arguments, environment: env, config: compconf)
+			return executeScript(virtualMachine: vm, resource: resource!, input: instrm, output: outstrm, error: errstrm, statements: modstmts, arguments: arguments, environment: env, config: compconf)
 		}
 	}
 }
@@ -126,7 +126,8 @@ private func allocatePackage(file fl: String) -> Package {
 private func allocateFiles(files fls: Array<String>) -> Package {
 	for f in fls {
 		let path = NSString(string: f)
-		if path.pathExtension != "js" {
+		let ext  = path.pathExtension
+		if ext != "js" && ext != "jsh" {
 			return .error(NSError.fileError(message: "Unexpected file: \(f)"))
 		}
 	}
@@ -207,9 +208,9 @@ private func convertShellStatements(statements stmts: Array<String>, console con
 	return result
 }
 
-private func executeShell(virtualMachine vm: JSVirtualMachine, resource res: KEResource, input inhdl: FileHandle, output outhdl: FileHandle, error errhdl: FileHandle, scriptFiles files: Array<String>, environment env: CNShellEnvironment, config conf: KHConfig) -> Int32
+private func executeShell(virtualMachine vm: JSVirtualMachine, resource res: KEResource, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, environment env: CNShellEnvironment, config conf: KHConfig) -> Int32
 {
-	let shell = KHShellThread(virtualMachine: vm, resource: res, input: inhdl, output: outhdl, error: errhdl, environment: env, config: conf)
+	let shell = KHShellThread(virtualMachine: vm, resource: res, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
 	shell.start()
 
 	sleep(10)
@@ -221,9 +222,9 @@ private func executeShell(virtualMachine vm: JSVirtualMachine, resource res: KER
 	return shell.terminationStatus
 }
 
-private func executeScript(virtualMachine vm: JSVirtualMachine, resource res: KEResource, input inhdl: FileHandle, output outhdl: FileHandle, error errhdl: FileHandle, statements stmts: Array<String>, arguments args: Array<String>, environment env: CNShellEnvironment, config conf: KHConfig) -> Int32
+private func executeScript(virtualMachine vm: JSVirtualMachine, resource res: KEResource, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, statements stmts: Array<String>, arguments args: Array<String>, environment env: CNShellEnvironment, config conf: KHConfig) -> Int32
 {
-	let thread  = KHScriptThread(virtualMachine: vm, resource: res, input: inhdl, output: outhdl, error: errhdl, environment: env, config: conf)
+	let thread  = KHScriptThread(virtualMachine: vm, resource: res, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
 	thread.start(statements: stmts, arguments: args)
 	return thread.waitUntilExit()
 }

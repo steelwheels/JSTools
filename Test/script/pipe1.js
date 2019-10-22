@@ -6,7 +6,7 @@ let pipe = Pipe() ;
 
 console.log("[allocate process]\n") ;
 let process = system("/bin/echo \"Hello, world !!\"",
-					stdin, pipe.writing, stderr) ;
+					stdin, pipe, stderr) ;
 
 if(process == null){
 	console.log("[Error] Could not launch command\n") ;
@@ -15,7 +15,6 @@ if(process == null){
 
 console.log("Wait until exit ... begin\n") ;
 process.waitUntilExit() ;
-pipe.writing.close() ;
 console.log("Wait until exit ... done\n") ;
 
 /* receive output */
