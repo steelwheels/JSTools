@@ -29,6 +29,7 @@ The following options are available:
 |-i     |--interactive |-      | Set interactive mode. The user can input statements step by step. The interactive mode will be activated after reading all scripts.|
 |-c     |--compile  |-         |Dump the source scripts instead of executing it. If the script is written in [JSH](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md), it is converted into JavaScript and dumped. When you use this compile option, at least one JavaScript file must be given.|
 |       |--         |-          |The arguments follows this will be passed as arguments for JavaScript code. |
+|       |--log      |string     |Define debug log level. The default level is *normal*. Select 1 item from following levels: "normal", "flow", "detail" |
 
 By using `--` option, you can pass arguments to be referenced by the JavaScript code.
 

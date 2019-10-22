@@ -34,7 +34,7 @@ public class JRCommandLineParser
 	private enum OptionId: Int {
 		case Help		= 0
 		case Version		= 1
-		case Verbose		= 2
+		case Log		= 2
 		case NoStrictMode	= 3
 		case InteractiveMode	= 4
 		case CompileMode	= 5
@@ -55,9 +55,9 @@ public class JRCommandLineParser
 				     shortName: nil, longName: "version",
 				     parameterNum: 0, parameterType: .VoidType,
 				     helpInfo: "Print version information"),
-			CBOptionType(optionId: OptionId.Verbose.rawValue,
-				     shortName: nil, longName: "verbose",
-				     parameterNum: 0, parameterType: .VoidType,
+			CBOptionType(optionId: OptionId.Log.rawValue,
+				     shortName: nil, longName: "log",
+				     parameterNum: 1, parameterType: .StringType,
 				     helpInfo: "Print vebose information for debugging"),
 			CBOptionType(optionId: OptionId.NoStrictMode.rawValue,
 				     shortName: nil, longName: "no-strict",
@@ -94,7 +94,8 @@ public class JRCommandLineParser
 		"    --use-main             : Call \"main\" function after compilation\n" +
 		"    --interactive, -i      : Activate interactive mode\n" +
 		"    --compile, -c          : Compile only. Do not execute the script\n" +
-		"    --argument -a <string> : String to be passed as an argument\n"
+		"    --argument -a <string> : String to be passed as an argument\n" +
+		"    --log <string>         : Define debug log level (default: normal)\n"
 		)
 	}
 
@@ -137,7 +138,8 @@ public class JRCommandLineParser
 					case .Version:
 						printVersionMessage()
 						return nil
-					case .Verbose:
+					case .Log:
+						let _ = decodeLogLevel(parameters: opt.parameters)
 						config.doVerbose = true
 					case .NoStrictMode:
 						config.doStrict  = false
@@ -159,5 +161,16 @@ public class JRCommandLineParser
 			}
 		}
 		return config
+	}
+
+	private func decodeLogLevel(parameters params: Array<CNValue>) -> Bool {
+		for param in params {
+			if let paramstr = param.stringValue {
+				NSLog("Log level: \(paramstr)")
+			} else {
+				NSLog("[Error] Unknown parameter: \(param.description)")
+			}
+		}
+		return true
 	}
 }

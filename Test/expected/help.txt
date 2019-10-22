@@ -7,3 +7,4 @@ usage: jsh [options] script-file1 script-file2 ...
     --interactive, -i      : Activate interactive mode
     --compile, -c          : Compile only. Do not execute the script
     --argument -a <string> : String to be passed as an argument
+    --log <string>         : Define debug log level (default: normal)
