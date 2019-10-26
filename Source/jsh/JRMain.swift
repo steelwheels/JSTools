@@ -36,7 +36,7 @@ public func main(arguments args: Array<String>) -> Int32
 		console.error(string: "Failed to allocate VM\n")
 		return 1
 	}
-	let compconf = KHConfig(kind: .Terminal, hasMainFunction: config.doUseMain, doStrict:true, doVerbose: config.doVerbose)
+	let compconf = KHConfig(kind: .Terminal, hasMainFunction: config.doUseMain, doStrict: config.doStrict, logLevel: config.logLevel)
 	let env      = CNShellEnvironment()
 
 	let files = config.scriptFiles
@@ -197,13 +197,15 @@ private func readResource(resource res: KEResource, console cons: CNConsole) -> 
 
 private func convertShellStatements(statements stmts: Array<String>, console cons: CNConsole) -> Array<String>?
 {
-	var result: Array<String>? = nil
-	let processor = KHShellProcessor()
-	switch processor.convert(statements: stmts) {
-	case .finished(let newstmts):
-		result = newstmts
+	let result: Array<String>?
+	let translator = KHShellTranslator()
+	switch translator.translate(lines: stmts) {
+	case .ok(let lines):
+		result = lines
 	case .error(let err):
-		cons.error(string: "[Error] \(err.descriotion())\n")
+		let errobj = err as NSError
+		cons.error(string: "[Error] " + errobj.toString() + "\n")
+		result = nil
 	}
 	return result
 }

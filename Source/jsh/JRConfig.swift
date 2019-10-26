@@ -23,7 +23,7 @@ public class JRConfig: KEConfig
 		isInteractiveMode	= false
 		isCompileMode		= false
 		doUseMain		= false
-		super.init(kind: .Terminal, doStrict: true, doVerbose: false)
+		super.init(kind: .Terminal, doStrict: true, logLevel: CNConfig.LogLevel.defaultLevel)
 	}
 }
 
@@ -139,8 +139,9 @@ public class JRCommandLineParser
 						printVersionMessage()
 						return nil
 					case .Log:
-						let _ = decodeLogLevel(parameters: opt.parameters)
-						config.doVerbose = true
+						if let level = decodeLogLevel(parameters: opt.parameters) {
+							config.logLevel = level
+						}
 					case .NoStrictMode:
 						config.doStrict  = false
 					case .InteractiveMode:
@@ -163,14 +164,14 @@ public class JRCommandLineParser
 		return config
 	}
 
-	private func decodeLogLevel(parameters params: Array<CNValue>) -> Bool {
+	private func decodeLogLevel(parameters params: Array<CNValue>) -> CNConfig.LogLevel? {
 		for param in params {
 			if let paramstr = param.stringValue {
-				NSLog("Log level: \(paramstr)")
+				return CNConfig.LogLevel.decode(string: paramstr)
 			} else {
-				NSLog("[Error] Unknown parameter: \(param.description)")
+				mConsole.error(string: "Unknown parameter: \(param.description)")
 			}
 		}
-		return true
+		return nil
 	}
 }

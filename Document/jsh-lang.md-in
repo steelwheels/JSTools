@@ -1,96 +1,41 @@
-# jsh: Extended JavaScript for Shell Scripting
+# jsh: JavaScript for Shell Scripting
 
 ## Introduction
-This document describes about `jsh`. The jsh is small extension of JavaScript language to implement shell script easily.
+This document describes about `jsh`. The jsh is extended JavaScript to make shell scripting easier.
+You can mix the [bourne shell](https://en.wikipedia.org/wiki/Bourne_shell) script and JavaScript.
 
-The [bourne shell](https://en.wikipedia.org/wiki/Bourne_shell) and [csh](https://en.wikipedia.org/wiki/C_shell)  are popular to implement the shell script. But these syntax are very unique and inconsistent.
-If you use `jsh`, you can implement the script based the JavaScript syntax.
-
-The shell program [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md)
-supports this language.
-
-## Features
-This is the feature jsh:
-* Support mixed description JavaScript and shell script.
-* The data flow is managed by shell script (called as `shell-statement`)
-* The control flow is managed by JavaScript
-
-Here is a sample script to print welcome message.
+This is an simple example of `jsh` script:
 ````
-m4_include(hello0.jsh)
+for(let i=0 ; i<10 ; i++){
+  > echo "Hello, world ${i}"
+}
 ````
-The execution result is:
+
+## Examples
+### Hello, world
+This usual examples but message is written in capital letters:
 ````
-m4_include(hello0.txt)
+> echo "Hello, world" | tr [a-z] [A-Z]
+````
+Multiple lines which started by `>` are treated as single shell script.
+````
+> echo "Hello, world"
+>  | tr [a-z] [A-Z]
 ````
 
 ## Syntax
-Following line is recognized as shell statement.
-This is full declaration of shell statement.
-````
-(in, out, err, env): exit > ... shell statement ...
-````
+* Support mixed description JavaScript and shell script.
+The shell script is started by `>`.
+* You can use the value of variable in JavaScript.
+The value is declared as `${varname}`
 
-Each parameter has default value. It is used when the parameter value is omitted.
-
-|Name   |Type           |Description                            |
-|:---   |:---           |:---                                   |
-|in     |File           |Input file for shell statement. Default value is `stdin`. |
-|out    |File           |Output file. Default value is `stdout`. |
-|err    |File           |File for error. Default value is `stderr`. |
-|env    |Dictionary     |Set of environment values. Default value is none. |
-|exit   |Int            |Exit code set by execution result. |
-
-Some parameters can be omitted:
+Here is the BNF of shell script part.
 ````
-(in, out, err) : exit      > ... shell statement ...   # 1
-(in, out, err, env) : exit > ... shell statement ...   # 2
-(in, out, err, env)        > ... shell statement ...   # 3
-(in, out, err)             > ... shell statement ...   # 4
-                           > ... shell statement ...   # 5
-````
-
-## Pipeline programming
-### Process and Thread
-This section describes about how to implement pipeline by JavaScript
-(without extended syntax).
-There are some built in functions to generate process and thread:
-* [system](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Function/System.md):
-Execute the shell script on the other process
-* [thread](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Function/Thread.md):
-Execute the java script on the other thread
-
-The [pipe](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Pipe.md)
-object is used to connect the data stream between process and threads.
-Here is an example to execute 2 processes that they are connect by pipe.
-````
-/* The "pipe" variables used to connect 2 processes */
-let pipe     = Pipe() ;
-let process0 = system("ls", stdin, pipe.writing, stderr) ;
-let process1 = system("wc -l", pipe.reading, stdout, stderr) ;
-process0.waitUntilExit() ;
-process1.waitUntilExit() ;
-````
-
-## Samples
-### 1. Hello, world !!
-You can use *pipe* and define *multiple statements* separated by ';'.
-The file `stdin`, `stdout` and `stderr` are used.
-````
-m4_include(hello1.jsh)
-````
-The execution result is:
-````
-m4_include(hello1.txt)
-````
-
-### 2. File streams
-You can use [Pipe](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Pipe.md) to connect file stream.
-````
-m4_include(pipe2.js)
+shell_script    ::= shell_line { <ret> shell_line }
+shell_line      ::= '>' shell_statement { '|' shell_statement }
+shell_statement ::= <shell-command-call>
 ````
 
 # Related document
-* [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
-* [Pysh](https://www.yunabe.jp/docs/pysh_overview.html): How to write Pysh script in Japanese.
+* [Pysh](https://www.yunabe.jp/docs/pysh_overview.html): The rule to use `>` symbol is imported from this language.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
