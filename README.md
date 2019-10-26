@@ -6,37 +6,24 @@
 *JSTools* contains command line applications to execute JavaScript on the shell.
 These applications are designed based on [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy).
 
-There are 3 kind of applications in this tools:
-1. The command to execute JavaScript on the shell. The built-in library supports pipeline programming with the standard-input and standard-output.
-2. The command to generate, expand and edit the JSON data stream. The usual data conversion can be done by these command without coding custom script.
-3. The wrapper command to give options and arguments by JSON data instead of command line.
-It generalized the syntax of option and argument for different commands.
-
-The most important thing: This is open source product. You can add/improve libraries by yourself.
-
-This tool uses *JavaScriptCore* in the [WebKit](https://en.wikipedia.org/wiki/WebKit) for macOS.
-
 ## Copyright
 This software is produced by [Steel Wheels Project](http://steelwheels.github.io) and distributed under
 [GNU GENERAL PUBLIC LICENSE Version 2.1](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC1). You can download the source code from the [repository on GitHub](https://github.com/steelwheels/JSRunner).
 
 ## Target
-* OS: macOS High Sierra (10.13.2) or later
+* OS: macOS 10.15 or later
 
 ## Development environment
-* Tool: Xcode 9 or later
+* Tool: Xcode 11 or later
 * Programming language: Swift
 
 ## Download and Install
-### Binary file
-The binary package can be downloaded from [Open Source Developer Network](https://osdn.net) (OSDN). Visit [download page](https://osdn.net/projects/jstools/releases/).
-
 ### Build from the source
 See [required software](https://github.com/steelwheels/JSTools/blob/master/Document/software.md) page.
 
 ## User's manual
 ### Command line applications
-* [`jsh`](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): JavaScript Shell, named `jsh`. The language to describe the script is [JSH](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) (Extended JavaScript for shell scripting).
+* [`jsh`](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): JavaScript Shell. Is is called as `jsh-app`. The language specification is defined at  [jsh-lang](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) (JavaScript for Shell Scripting).
 * [`jscat`](https://github.com/steelwheels/JSTools/blob/master/Document/jscat-man.md): JSON file operation: Concatenate JSON files.
 * [`jsgrep`](https://github.com/steelwheels/JSTools/blob/master/Document/jsgrep-man.md): Select part of object from input JSON file by matching of regular expression.
 * [`jsadb`](https://github.com/steelwheels/JSTools/blob/master/Document/jsadb-man.md): Read, write and update AddressBook database.
