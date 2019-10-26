@@ -31,11 +31,11 @@ The shell script is started by `>`.
 * You can use the value of variable in JavaScript.
 The value is declared as `${varname}`
 
-Here is the BNF of shell script part.
+Here is the pseudo BNF of shell script part.
 ````
-shell_script    ::= shell_line { <ret> shell_line }
-shell_line      ::= '>' shell_statement { '|' shell_statement }
-shell_statement ::= <shell-command-call>
+shell_script    ::= `>` shell_statement { ';' shell_statement }
+shell_statement ::= '>' shell_command { '|' shell_command }
+shell_command   ::= command [options] [parameters]
 ````
 
 # Related document
