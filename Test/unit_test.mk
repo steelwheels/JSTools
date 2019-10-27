@@ -19,7 +19,7 @@ all: all_jsh all_jscat all_jsgrep
 #
 # jsh
 #
-all_jsh: help nostrict hello exit0 exit1 args0 enum0 math0 shell1 shell2 \
+all_jsh: help nostrict hello exit0 exit1 args0 enum0 math0 shell1 if0 \
 	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 \
 	 hello0 hello1 json0 filetype0 url0 \
 	 operation0 operation1 thread0 \
@@ -76,9 +76,9 @@ shell0: dummy
 shell1: dummy
 	$(jsh) $(script_dir)/shell1.js
 
-shell2: dummy
-	$(jsh) $(script_dir)/shell2.jsh | tee $(build_dir)/shell2.txt
-	diff $(build_dir)/shell2.txt $(expected_dir)/shell2.txt
+if0: dummy
+	$(jsh) $(script_dir)/if0.jsh | tee $(build_dir)/if0.txt
+	diff $(build_dir)/if0.txt $(expected_dir)/if0.txt
 
 main0: dummy
 	@echo "*** test: main0 ***"
