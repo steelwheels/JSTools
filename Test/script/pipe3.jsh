@@ -1,11 +1,13 @@
 /* pipe3.jsh */
 
-let pipe = Pipe() ;
+let outpipe = Pipe() ;
+> echo "Hello, world !!" | tr [a-z] [A-Z] > @outpipe
 
-/* Send input */
-pipe.writing.put("Hello, world !!\n") ;
-pipe.writing.close() ;
+let file = outpipe.reading ;
 
-/* Execute thread */
-(pipe, stdout, stderr) > tr [a-z] [A-Z]
+let line = file.getl() ;
+while(line != null){
+	stdout.put(line) ;
+	line = file.getl() ;
+}
 
