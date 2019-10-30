@@ -34,6 +34,15 @@ for(let i=0 ; i<10 ; i++){
 }
 ````
 
+### Pipeline between JavaScript and Shell script
+You can use the pipe in the shell script which is defined in the JavaScript.
+The identifier which is started by `@` is treated as the pipe name.
+````
+let pipe = Pipe() ;
+> echo "Hello, world" > @Pipe
+dump(pipe) ;
+````
+
 ## Syntax
 The `jsh` supports mixed description JavaScript and shell script.
 The shell script is started by `>`.
@@ -41,10 +50,13 @@ You can use the value of variable in JavaScript.
 The value is declared as
 
 Here is the pseudo BNF of shell script part.
+It assume the prefix symbol ('>') has been removed.
+
 ````
-shell_script    ::= `>` shell_statement { ';' shell_statement } <newline>
-shell_statement ::= shell_command { '|' shell_command }
-shell_command   ::= command [options] [parameters]
+shell_script    ::= { shell_statement }+
+shell_statement ::= shell_process { '|' shell_process }*
+shell_process   ::= shell_command { ';' shell_command }* {';'}?
+shell_command   ::= command { options }* { parameters }*
 ````
 
 ## Command
