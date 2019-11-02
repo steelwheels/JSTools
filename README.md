@@ -1,38 +1,36 @@
-# JSTools
+# JSTools: JavaScript for shell scripting
 
 ![JSTools Image](https://github.com/steelwheels/JSTools/blob/master/Document/images/JSTools-ScreenShot-1.png)
 
 ## Introduction
-*JSTools* contains command line applications to execute JavaScript on the shell.
-These applications are designed based on [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy).
+*JSTools* provides command line applications for shell scripting.
+The [jsh](#jsh) is a shell program based on the JavaScript. [jscat](#jscat), [jsgrep](#jsgrep), [jsadb](#jsadb) is similar to usual unix commands but it operate [JSON data](https://www.json.org) instead of plain text file.
 
 ## Copyright
-This software is produced by [Steel Wheels Project](http://steelwheels.github.io) and distributed under
-[GNU GENERAL PUBLIC LICENSE Version 2.1](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC1). You can download the source code from the [repository on GitHub](https://github.com/steelwheels/JSRunner).
+This software is produced by [Steel Wheels Project](http://steelwheels.github.io). The software is distributed under
+[GNU GENERAL PUBLIC LICENSE Version 2.1](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC1) and the document is [GNU Free Documentation License](https://www.gnu.org/licenses/fdl-1.3.en.html).
 
 ## Target
+### Supported OS
 * OS: macOS 10.15 or later
 
-## Development environment
+### Development environment
 * Tool: Xcode 11 or later
 * Programming language: Swift
 
-## Download and Install
-### Build from the source
-See [required software](https://github.com/steelwheels/JSTools/blob/master/Document/software.md) page.
+## Application software
+### jsh
+The shell program based on JavaScript. The programming language which extend JavaScript for shell scripting is also called `jsh`.
+See [manual pages]((https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md) and [language specification](ttps://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).
 
-## User's manual
-### Command line applications
-* [`jsh`](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): JavaScript Shell. Is is called as `jsh-app`. The language specification is defined at  [jsh-lang](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md) (JavaScript for Shell Scripting).
-* [`jscat`](https://github.com/steelwheels/JSTools/blob/master/Document/jscat-man.md): JSON file operation: Concatenate JSON files.
-* [`jsgrep`](https://github.com/steelwheels/JSTools/blob/master/Document/jsgrep-man.md): Select part of object from input JSON file by matching of regular expression.
-* [`jsadb`](https://github.com/steelwheels/JSTools/blob/master/Document/jsadb-man.md): Read, write and update AddressBook database.
+### jscat
+[`jscat`](https://github.com/steelwheels/JSTools/blob/master/Document/jscat-man.md) is used to concatenate JSON data files.
+
+### jsgrep
+[`jsgrep`](https://github.com/steelwheels/JSTools/blob/master/Document/jsgrep-man.md) selects part of object from input JSON file by matching of regular expression.
+
+### jsadb
+[`jsadb`](https://github.com/steelwheels/JSTools/blob/master/Document/jsadb-man.md) reads, writes and updates the AddressBook database.
 
 ## Related Links
 * [Steel Wheels Project Web Page](http://steelwheels.github.io): Steel Wheels Project: Main Web Page
-
-<hr/>
-This project is managed by [OSDN](https://osdn.net/).
-<a href="https://osdn.net/">
-  <img src="https://osdn.net/sflogo.php?group_id=10809&type=1" width="96" height="29" border="0" alt="OSDN" />
-</a>
