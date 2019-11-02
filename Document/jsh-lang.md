@@ -15,7 +15,8 @@ for(let i=0 ; i<10 ; i++){
 }
 ````
 
-## Examples
+## Features
+This section describes the feature of this software by real examples.
 ### Hello, world
 This usual examples but message is written in capital letters:
 ````
@@ -36,7 +37,7 @@ for(let i=0 ; i<10 ; i++){
 }
 ````
 
-### Pipeline between JavaScript and Shell script
+### Pipeline to connect JavaScript and Shell script
 You can use the pipe in the shell script which is defined in the JavaScript.
 The identifier which is started by `@` is treated as the pipe name.
 ````
@@ -56,6 +57,26 @@ if(ecode == 0){
 } else {
   console.log("not matched\n") ;
 }
+````
+
+
+## JavaScript package
+The 'jsh' supports file package called `jspkg`.
+The user can define multi scripts, library in the package.
+The `manifest.json` file defines the location of scripts.
+````
+{
+	"scripts": {
+		"main": [
+			"main.js"
+		],
+		"thread0": [
+			"thread0.js"
+		]
+	}
+}
+
+
 ````
 
 ## Syntax
