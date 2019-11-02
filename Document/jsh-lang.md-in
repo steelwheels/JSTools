@@ -57,13 +57,20 @@ if(ecode == 0){
 }
 ````
 
-
-## JavaScript package
+### JavaScript package
 The 'jsh' supports file package called `jspkg`.
 The user can define multi scripts, library in the package.
 The `manifest.json` file defines the location of scripts.
 ````
 m4_include(thread0.jspkg/manifest.json)
+````
+
+### Thread
+The `Thread` function is used to generate thread to execute
+the user defined JavaScript.
+The script must be placed in the package.
+````
+m4_include(thread0.jspkg/main.js)
 ````
 
 ## Syntax

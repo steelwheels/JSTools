@@ -59,8 +59,7 @@ if(ecode == 0){
 }
 ````
 
-
-## JavaScript package
+### JavaScript package
 The 'jsh' supports file package called `jspkg`.
 The user can define multi scripts, library in the package.
 The `manifest.json` file defines the location of scripts.
@@ -74,6 +73,23 @@ The `manifest.json` file defines the location of scripts.
 			"thread0.js"
 		]
 	}
+}
+
+````
+
+### Thread
+The `Thread` function is used to generate thread to execute
+the user defined JavaScript.
+The script must be placed in the package.
+````
+function main(args)
+{
+	console.log("Hello from main function\n") ;
+
+	let thread = Thread("thread0", stdin, stdout, stderr) ;
+	thread.start(["a", "b"]) ;
+	let ecode = thread.waitUntilExit() ;
+	console.log("exit code = " + ecode + "\n") ;
 }
 
 

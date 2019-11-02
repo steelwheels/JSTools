@@ -7,4 +7,3 @@ function main(args)
 	let ecode = thread.waitUntilExit() ;
 	console.log("exit code = " + ecode + "\n") ;
 }
-
