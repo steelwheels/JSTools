@@ -21,7 +21,7 @@ This software is produced by [Steel Wheels Project](http://steelwheels.github.io
 ## Application software
 ### jsh
 The shell program based on JavaScript. The programming language which extend JavaScript for shell scripting is also called `jsh`.
-See [manual pages]((https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md) and [language specification](ttps://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).
+See [manual pages](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md) and [language specification](ttps://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).
 
 ### jscat
 [`jscat`](https://github.com/steelwheels/JSTools/blob/master/Document/jscat-man.md) is used to concatenate JSON data files.
