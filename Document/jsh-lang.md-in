@@ -1,8 +1,10 @@
-# jsh: JavaScript for Shell Scripting
+# jsh: Extended JavaScript for Shell Scripting
 
 ## Introduction
 This document describes about `jsh`. The jsh is extended JavaScript to make shell scripting easier.
 You can mix the [bourne shell](https://en.wikipedia.org/wiki/Bourne_shell) script and JavaScript.
+The shell script part is translated into JavaScript code before
+executing by JavaScript engine.
 
 This is an simple example of `jsh` script:
 ````
@@ -41,32 +43,35 @@ let pipe = Pipe() ;
 dump(pipe) ;
 ````
 
+### Pass exit code from shell process to caller JavaScript
+If you put `-> var` at the last of shell script.
+The variable will have exit code of it.
+````
+let ecode = 0 ;
+> grep "a" ~/tmp_dir/a -> ecode
+if(ecode == 0){
+  console.log("matched\n") ;
+} else {
+  console.log("not matched\n") ;
+}
+````
+
 ## Syntax
 The `jsh` supports mixed description JavaScript and shell script.
 The shell script is started by `>`.
-You can use the value of variable in JavaScript.
-The value is declared as
 
 Here is the pseudo BNF of shell script part.
 It assume the prefix symbol ('>') has been removed.
 
 ````
-shell_script    ::= { shell_statement }+
+shell_script    ::= { shell_statement }+ {`->` varname}
 shell_statement ::= shell_process { '|' shell_process }*
 shell_process   ::= shell_command { ';' shell_command }* {';'}?
 shell_command   ::= command { options }* { parameters }*
 ````
 
-## Command
-### Kind of commands
-The command searching started from 1.
-1. Built-in command
-2. Internal command
-3. External command
-
-## Built-in command
-* `return`: Feedback the values in shell script into the caller JavaScript
-
 # Related document
+* [README](https://github.com/steelwheels/JSTools/blob/master/README.md): Summary of this repository
+* [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): Shell program to execute `jsh` language.
 * [Pysh](https://www.yunabe.jp/docs/pysh_overview.html): The rule to use `>` symbol is imported from this language.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.

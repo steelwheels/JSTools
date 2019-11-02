@@ -19,7 +19,7 @@ all: all_jsh all_jscat all_jsgrep
 #
 # jsh
 #
-all_jsh: help nostrict hello exit0 exit1 args0 enum0 math0 shell1 if0 \
+all_jsh: help nostrict hello exit0 exit1 exit2 args0 enum0 math0 shell1 if0 \
 	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 pipe3 \
 	 hello0 hello1 json0 filetype0 url0 \
 	 operation0 operation1 thread0 \
@@ -54,6 +54,11 @@ exit1: dummy
 	 else \
 		exit 0 ; \
 	 fi)
+
+exit2: dummy
+	@echo "*** test: exit2 ***"
+	$(jsh) $(script_dir)/exit2.jsh | tee $(build_dir)/exit2.txt
+	diff $(build_dir)/exit2.txt $(expected_dir)/exit2.txt
 
 args0: dummy
 	@echo "*** test: Process.arguments ***"
