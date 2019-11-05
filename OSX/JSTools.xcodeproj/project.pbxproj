@@ -17,7 +17,6 @@
 		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
 		053676EB23109BA6001376B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676EA23109BA6001376B1 /* main.swift */; };
 		053676F72310A015001376B1 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676F62310A015001376B1 /* JRMain.swift */; };
-		053676F82310A195001376B1 /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAA214F72C7005CFF9A /* CoconutData.framework */; };
 		0547C08323111B3000AC5395 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B998B2311120A00D9CDF1 /* JRConfig.swift */; };
 		0580EB822172ED3F00F018F1 /* hello-0.js in Resources */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		0580EB832172ED4900F018F1 /* hello-0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
@@ -228,7 +227,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				053676F82310A195001376B1 /* CoconutData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

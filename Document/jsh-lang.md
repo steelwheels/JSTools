@@ -79,8 +79,8 @@ The `manifest.json` file defines the location of scripts.
 
 ### Thread
 The `Thread` function is used to generate thread to execute
-the user defined JavaScript.
-The script must be placed in the package.
+the user defined script.
+The script is placed in the package and referred by it's identifier,
 ````
 function main(args)
 {
