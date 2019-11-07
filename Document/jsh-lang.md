@@ -14,6 +14,9 @@ for(let i=0 ; i<10 ; i++){
   > echo "Hello, world ${i}"
 }
 ````
+Following page contains some
+[sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sample.md)
+for `jsh`.
 
 ## Features
 This section describes the feature of this software by real examples.
@@ -79,8 +82,8 @@ The `manifest.json` file defines the location of scripts.
 
 ### Thread
 The `Thread` function is used to generate thread to execute
-the user defined script.
-The script is placed in the package and referred by it's identifier,
+the user defined JavaScript.
+The script must be placed in the package.
 ````
 function main(args)
 {
@@ -91,7 +94,6 @@ function main(args)
 	let ecode = thread.waitUntilExit() ;
 	console.log("exit code = " + ecode + "\n") ;
 }
-
 
 ````
 
@@ -109,8 +111,9 @@ shell_process   ::= shell_command { ';' shell_command }* {';'}?
 shell_command   ::= command { options }* { parameters }*
 ````
 
-# Related document
+## Related document
 * [README](https://github.com/steelwheels/JSTools/blob/master/README.md): Summary of this repository
 * [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): Shell program to execute `jsh` language.
+* [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sample.md): Sample scripts for `jsh`.
 * [Pysh](https://www.yunabe.jp/docs/pysh_overview.html): The rule to use `>` symbol is imported from this language.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
