@@ -1,4 +1,4 @@
 /* exit(1) */
-console.log("Before exit\n") ;
+console.log("Before exit") ;
 exit(1) ;
-console.log("After exit\n") ;
+console.log("After exit") ;

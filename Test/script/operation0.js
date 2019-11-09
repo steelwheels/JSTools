@@ -7,7 +7,7 @@ function main(args)
 	let opfile = null ;
 	if(isArray(args) && args.length == 1) {
 		opfile = args[0] ;
-		console.log("input script: " + opfile + "\n") ;
+		console.log("input script: " + opfile) ;
 	} else {
 		console.error("Invalid parameter\n") ;
 		console.dump(args) ;
@@ -22,7 +22,7 @@ function main(args)
 
 	let queue0 = OperationQueue() ;
 	if(!queue0.execute(op0)){
-		console.log("[Error] Could not execute op0\n") ;
+		console.error("[Error] Could not execute op0\n") ;
 		return false ;
 	}
 	queue0.waitOperations() ;

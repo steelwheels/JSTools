@@ -8,15 +8,16 @@ function main(arguments)
   }
   const path = arguments[0] ;
   const type = FileManager.checkFileType(path) ;
-  console.log("File: " + path + " -> Type: " + type + " -> ") ;
+  console.print("File: " + path + " -> Type: " + type + " -> ") ;
 
   var result = 1 ;
   if(type == FileType.file){
-    console.log("OK\n") ;
+    console.log("OK") ;
     result = 0 ;
   } else {
-    console.log("NG\n") ;
+    console.log("NG") ;
     result = 1 ;
   }
   return result ;
 }
+

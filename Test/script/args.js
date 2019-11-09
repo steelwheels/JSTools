@@ -1,6 +1,6 @@
 function main(arguments)
 {
-	console.log("*** Test of arguments\n") ;
-	console.log("args = " + arguments + "\n") ;
+	console.log("*** Test of arguments") ;
+	console.log("args = " + arguments) ;
 }
 

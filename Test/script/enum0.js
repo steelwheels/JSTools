@@ -8,11 +8,11 @@ const red    = Color.green ;
 
 const authorized = Authorize.autorized ;
 
-console.log("leading   = " + leading + "\n") ;
-console.log("trailing  = " + trailing + "\n") ;
-console.log("center    = " + center + "\n") ;
+console.log("leading   = " + leading) ;
+console.log("trailing  = " + trailing) ;
+console.log("center    = " + center) ;
 
-console.log("red    = " + red + "\n") ;
+console.log("red    = " + red) ;
 
-console.log("authorized = " + authorized + "\n") ;
+console.log("authorized = " + authorized) ;
 

@@ -1,5 +1,5 @@
 a = 10 + 20 ;
-console.log("a = " + a + "\n") ;
-console.log("Bye\n") ;
+console.log("a = " + a) ;
+console.log("Bye") ;
 exit(0) ;
 

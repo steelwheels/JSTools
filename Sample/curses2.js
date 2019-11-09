@@ -1,4 +1,4 @@
-console.log("setup curses start\n") ;
+console.log("setup curses start") ;
 
 Curses.mode(true) ; // screen mode
 
@@ -12,12 +12,12 @@ Curses.moveTo(0, 1) ; Curses.put("height = " + height) ;
 Curses.moveTo(0, 2) ; Curses.put("orgx   = " + orgx) ;
 Curses.moveTo(0, 3) ; Curses.put("orgy   = " + orgy) ;
 
-//console.log("Press \"q\" to quit\n") ;
+//console.log("Press \"q\" to quit") ;
 
 while(Curses.getKey() == null){
 }
 
 Curses.mode(false) ; // console mode
 
-console.log("Bye\n") ;
+console.log("Bye") ;
 

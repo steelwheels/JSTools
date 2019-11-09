@@ -1,4 +1,4 @@
-console.log("setup curses start\n") ;
+console.log("setup curses start") ;
 
 let gr    = require('Graphics/Primitives') ;
 let gcons = require('Graphics/Console') ;
@@ -9,7 +9,7 @@ console.doEcho	      = false ;
 console.setScreenMode(true) ;
 console.setColor(Color.White, Color.Blue) ;
 
-console.log("Press \"q\" to quit\n") ;
+console.log("Press \"q\" to quit") ;
 
 let origin = new gr.Point(5, 10) ;
 let size   = new gr.Size(40, 40) ;
@@ -19,11 +19,11 @@ let label  = new gcons.Label(frame) ;
 let key = 0 ;
 while((key = console.getKey()) != null){
 	let c = String.fromCharCode(key) ;
-	console.log("Key : " + c + "\n") ;
+	console.log("Key : " + c) ;
 	if(c == "q"){
 		break ;
 	}
 }
 
-console.log("Bye\n") ;
+console.log("Bye") ;
 

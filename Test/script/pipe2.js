@@ -13,17 +13,17 @@ let pipe1 = Pipe() ;
  *   - The pipe0 object is connected with input
  *   - The pipe1 object is connected with output
  */
-console.log("[allocate process]\n") ;
+console.log("[allocate process]") ;
 let process = system("/bin/cat", pipe0, pipe1, stderr) ;
 if(process == null){
-	console.log("[Error] Could not launch command\n") ;
+	console.log("[Error] Could not launch command") ;
 	exit(1) ;
 }
 
 /*
  * send input data into pipe0 
  */
-console.log("[send input]\n") ;
+console.log("[send input]") ;
 pipe0.writing.put("Input from JavaScript !!\n") ;
 pipe0.writing.close() ;
 
@@ -35,12 +35,12 @@ process.waitUntilExit() ;
 /*
  * receive output data from pipe1
  */
-console.log("[receive output]\n") ;
+console.log("[receive output]") ;
 let c = pipe1.reading.getc() ;
 while(c != null){
-	console.log(`[receive] ${c}\n`) ;
+	console.log(`[receive] ${c}`) ;
 	c = pipe1.reading.getc() ;
 }
 
-console.log("[bye]\n");
+console.log("[bye]");
 

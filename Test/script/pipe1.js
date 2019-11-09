@@ -4,28 +4,28 @@
 
 let pipe = Pipe() ;
 
-console.log("[allocate process]\n") ;
+console.log("[allocate process]") ;
 let process = system("/bin/echo \"Hello, world !!\"",
 					stdin, pipe, stderr) ;
 
 if(process == null){
-	console.log("[Error] Could not launch command\n") ;
+	console.error("[Error] Could not launch command\n") ;
 	exit(1) ;
 }
 
-console.log("Wait until exit ... begin\n") ;
+console.log("Wait until exit ... begin") ;
 process.waitUntilExit() ;
-console.log("Wait until exit ... done\n") ;
+console.log("Wait until exit ... done") ;
 
 /* receive output */
-console.log("Receive output... begin\n") ;
+console.log("Receive output... begin") ;
 let reader = pipe.reading ;
 let c = reader.getc() ;
 while(c != null){
-	console.log(`[receive] ${c}\n`) ;
+	console.log(`[receive] ${c}`) ;
 	c = reader.getc() ;
 }
-console.log("Receive output... done\n") ;
+console.log("Receive output... done") ;
 
-console.log("[bye]\n");
+console.log("[bye]");
 

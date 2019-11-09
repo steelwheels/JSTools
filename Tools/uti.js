@@ -7,7 +7,7 @@ function main(arguments) {
 		if(isString(arg)){
 			var uti = FileManager.uti(arg) ;
 			if(isString(uti)){
-				console.log(uti + "\n") ;
+				console.log(uti) ;
 			} else {
 				console.error("[Error] Can not get uti: "
 				  + arg + "\n") ;

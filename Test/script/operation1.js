@@ -19,11 +19,11 @@ function main()
 
 	let queue0 = OperationQueue() ;
 	if(!queue0.execute(op0)){
-		console.log("[Error] Could not execute op0\n") ;
+		console.error("[Error] Could not execute op0\n") ;
 		return false ;
 	}
 	if(!queue0.execute(op1)){
-		console.log("[Error] Could not execute op1\n") ;
+		console.error("[Error] Could not execute op1\n") ;
 		return false ;
 	}
 	queue0.waitOperations() ;

@@ -12,8 +12,8 @@ if(process != null){
 
 	process.waitUntilExit() ;
 } else {
-	console.log("[Error] Could not launch command\n") ;
+	console.error("[Error] Could not launch command\n") ;
 }
 
-console.log("[bye]\n");
+console.log("[bye]");
 

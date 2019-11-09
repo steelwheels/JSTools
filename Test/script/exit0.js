@@ -1,8 +1,8 @@
 
 function main(args)
 {
-	console.log("Before exit: " + args + "\n") ;
+	console.log("Before exit: " + args) ;
 	exit(0) ;
-	console.log("After exit\n") ;
+	console.log("After exit") ;
 }
 

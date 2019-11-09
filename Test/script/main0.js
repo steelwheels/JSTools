@@ -1,5 +1,5 @@
 function main(arguments)
 {
-	console.log("arguments = " + arguments + "\n") ;
+	console.log("arguments = " + arguments) ;
 }
 

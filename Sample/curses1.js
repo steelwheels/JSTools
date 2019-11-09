@@ -23,5 +23,5 @@ while(docont){
 }
 
 Curses.mode(false) ;
-console.log("Bye\n") ;
+console.log("Bye") ;
 

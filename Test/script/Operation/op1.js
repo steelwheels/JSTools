@@ -8,9 +8,9 @@ class UTOperation1 extends Operation
 		let b = this.parameter("b") ;
 		let c = this.parameter("c") ;
                 if(a + b == c){
-                        console.log("Hello from UTOperation1 ... OK\n") ;
+                        console.log("Hello from UTOperation1 ... OK") ;
                 } else {
-                        console.log("Hello from UTOperation1 ... NG\n") ;
+                        console.log("Hello from UTOperation1 ... NG") ;
                 }
         }
 }

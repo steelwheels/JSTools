@@ -3,7 +3,7 @@
 class UTOperation0 extends Operation
 {
         execute(){
-                console.log("Hello from UTOperation0.\n") ;
+                console.log("Hello from UTOperation0.") ;
         }
 }
 

@@ -8,5 +8,5 @@ if(process != null){
 } else {
 	console.print("[Error] Failed to allocate process\n") ;
 }
-console.log("[Bye]\n") ;
+console.log("[Bye]") ;
 

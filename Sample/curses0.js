@@ -1,8 +1,8 @@
-console.log("setup curses start\n") ;
+console.log("setup curses start") ;
 
 Curses.mode(true) ;
 Curses.put("Hello, world\n") ;
 Curses.mode(false) ;
 
-console.log("Good bye, world\n") ;
+console.log("Good bye, world") ;
 

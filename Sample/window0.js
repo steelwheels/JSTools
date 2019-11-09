@@ -1,4 +1,4 @@
-console.log("setup curses start\n") ;
+console.log("setup curses start") ;
 
 Curses.mode(true) ;
 Curses.put("Press \"q\" to quit\n") ;
@@ -21,5 +21,5 @@ while(docont){
 window.put("Good bye") ;
 
 Curses.mode(false) ;
-console.log("Bye\n") ;
+console.log("Bye") ;
 

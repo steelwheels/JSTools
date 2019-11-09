@@ -1,10 +1,10 @@
-console.log("setup curses start\n") ;
+console.log("setup curses start") ;
 
 prim	= require('Graphics/Primitives') ;
 gtcons 	= require('Graphics/Console') ;
 
 if(gtcons == null){
-	console.log("[Error] Can not read Graphics/Console") ;
+	console.error("[Error] Can not read Graphics/Console") ;
 }
 
 console.setScreenMode(true) ;
@@ -20,15 +20,15 @@ view.drawRect(1, 1, 30, 3, "Hello", Align.Center) ;
 
 console.moveTo(30, 7) ;
 console.setColor(Color.White, Color.Black) ;
-console.log("Press \"q\" to quit\n") ;
+console.log("Press \"q\" to quit") ;
 let key = 0 ;
 while((key = console.getKey()) != null){
 	let c = String.fromCharCode(key) ;
-	console.log("Key : " + c + "\n") ;
+	console.log("Key : " + c) ;
 	if(c == "q"){
 		break ;
 	}
 }
 
-console.log("Bye\n") ;
+console.log("Bye") ;
 

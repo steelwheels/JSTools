@@ -1,7 +1,8 @@
 function main(args)
 {
-	console.log("Hello from thread0\n") ;
+	console.log("Hello from thread0") ;
 	//for(arg in args){
-		console.log("args: " + args + "\n") ;
+		console.log("args: " + args) ;
 	//}
 }
+
