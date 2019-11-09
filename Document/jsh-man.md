@@ -32,6 +32,14 @@ The following options are available:
 |       |--log      |string     |Define debug log level. The default level is *normal*. Select 1 item from following levels: "normal", "flow", "detail" |
 
 By using `--` option, you can pass arguments to be referenced by the JavaScript code.
+If you don't give any script file names, the `jsh` boots with interactive mode.
+
+# Main function
+When the `--use-main` option is given, the function named *main* is called (if it exists).
+````
+main(arguments: Array<String>) -> Int32
+````
+The `arguments` are defined by the command line arguments after `--` option.
 
 # JavaScript Package:
 The *JavaScript package* is the bundle of JavaScript files.
@@ -53,20 +61,21 @@ This is a sample manifest file. You can define multiple scripts for library and 
 }
 ````
 
-# Main function
-When the `--use-main` option is given, the function named *main* is called (if it exists).
-````
-main(arguments: Array<String>) -> Int32
-````
-The `arguments` are defined by the command line arguments after `--` option.
+# Interactive mode
+The last symbol of the prompt string presents the *input mode*.
+It defines the kind of default script at the command line.
 
-# Programming reference
-* [The standard library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The built-in JavaScript class, function, data structure. They will be always loaded before executing user scripts.
+|Symbol |Mode named             |Acceptable script      |
+|:---   |:---                   |:---                   |
+|`>`    |Shell script mode      |Shell script           |
+|`%`    |JavaScript mode        |JavaScript             |
 
-# Tools
-|Tool name  |Description    |
-|:---       |:---           |
-|[util.js](https://github.com/steelwheels/JSTools/blob/master/Document/uti-js.md) |Get [UTI Information](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319-CH201-SW1) from file |
+For example, the prompt `jsh>` presents shell script mode, `jsh%` is JavaScript mode. You can use `>` or `%` prefix to select mode manually.
+````
+jsh% > echo "Hello"
+jsh> % let a = 10 ;
+````
+You can switch the mode. When you press `>` and enter key, the mode is switched into shell script mode. The `%` is used for JavaScript mode.
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.

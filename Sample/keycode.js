@@ -23,6 +23,7 @@ function printCode(code)
 	if(name == null){
 		name = "?" ;
 	}
-	stdout.put(name + ":" + code + "\n") ;
+	let hexcode = "0x" + code.toString(16) ;
+	stdout.put(name + ":" + hexcode + "\n") ;
 }
 

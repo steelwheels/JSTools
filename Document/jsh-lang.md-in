@@ -90,6 +90,14 @@ shell_process   ::= shell_command { ';' shell_command }* {';'}?
 shell_command   ::= command { options }* { parameters }*
 ````
 
+## Library
+* [The standard library](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Library.md): The built-in JavaScript class, function, data structure. They will be always loaded before executing user scripts.
+
+# Sample scripts
+|Tool name  |Description    |
+|:---       |:---           |
+|[util.js](https://github.com/steelwheels/JSTools/blob/master/Document/uti-js.md) |Get [UTI Information](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319-CH201-SW1) from file |
+
 ## Related document
 * [README](https://github.com/steelwheels/JSTools/blob/master/README.md): Summary of this repository
 * [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): Shell program to execute `jsh` language.
