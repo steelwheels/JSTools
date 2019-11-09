@@ -18,8 +18,6 @@
 		053676EB23109BA6001376B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676EA23109BA6001376B1 /* main.swift */; };
 		053676F72310A015001376B1 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676F62310A015001376B1 /* JRMain.swift */; };
 		0547C08323111B3000AC5395 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B998B2311120A00D9CDF1 /* JRConfig.swift */; };
-		0580EB822172ED3F00F018F1 /* hello-0.js in Resources */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
-		0580EB832172ED4900F018F1 /* hello-0.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0580EB812172ED3F00F018F1 /* hello-0.js */; };
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
 		05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; };
 		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
@@ -30,7 +28,6 @@
 		05C377A423533BFF0067A9B6 /* CoconutShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A323533BFF0067A9B6 /* CoconutShell.framework */; };
 		05C377A623533DFD0067A9B6 /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A523533DFD0067A9B6 /* CoconutData.framework */; };
 		05C377A723533E240067A9B6 /* CoconutShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05C377A323533BFF0067A9B6 /* CoconutShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05C94B852052DACB00C0624A /* color_table.js in CopyFiles */ = {isa = PBXBuildFile; fileRef = 055528DB201D59EC00397D3C /* color_table.js */; };
 		05D4377F20035C4500320CA4 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4377E20035C4500320CA4 /* JRMain.swift */; };
 		05D437812003713000320CA4 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D437802003713000320CA4 /* JRConfig.swift */; };
 		05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E62026A70C00EAAE8C /* JRMain.swift */; };
@@ -138,8 +135,6 @@
 			dstPath = Sample;
 			dstSubfolderSpec = 7;
 			files = (
-				0580EB832172ED4900F018F1 /* hello-0.js in CopyFiles */,
-				05C94B852052DACB00C0624A /* color_table.js in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,8 +186,6 @@
 		053676EA23109BA6001376B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		053676F523109EE5001376B1 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoconutShell.framework; sourceTree = "<group>"; };
 		053676F62310A015001376B1 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
-		055528DB201D59EC00397D3C /* color_table.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = color_table.js; sourceTree = "<group>"; };
-		0580EB812172ED3F00F018F1 /* hello-0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "hello-0.js"; sourceTree = "<group>"; };
 		059B998B2311120A00D9CDF1 /* JRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05A856D920035B2900DB5E75 /* jscat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jscat; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A856DB20035B2A00DB5E75 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -282,27 +275,9 @@
 			path = jsh;
 			sourceTree = "<group>";
 		};
-		055528D6201D578500397D3C /* Sample */ = {
-			isa = PBXGroup;
-			children = (
-				0580EB812172ED3F00F018F1 /* hello-0.js */,
-				055528DB201D59EC00397D3C /* color_table.js */,
-			);
-			path = Sample;
-			sourceTree = "<group>";
-		};
-		056C6723201626F4003E9485 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
 		057D2B9520149A780027A52A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				056C6723201626F4003E9485 /* Library */,
-				055528D6201D578500397D3C /* Sample */,
 			);
 			name = Resources;
 			path = ../Resource;
@@ -613,7 +588,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0580EB822172ED3F00F018F1 /* hello-0.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

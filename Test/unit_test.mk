@@ -9,7 +9,6 @@ jsgrep 		= $(HOME)/tools/jstools/jsgrep
 test_dir	= ../Test
 script_dir	= ../Test/script
 sample_dir	= ../Sample
-resource_dir	= ../Resource/Sample
 data_dir	= $(test_dir)/data
 expected_dir	= $(test_dir)/expected
 build_dir	= $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
@@ -32,13 +31,13 @@ help: dummy
 
 nostrict: dummy
 	@echo "*** test: --no-strict ***"
-	$(jsh) --no-strict $(resource_dir)/hello-0.js | \
+	$(jsh) --no-strict $(script_dir)/hello0.js | \
 		tee $(build_dir)/hello-0-ns.txt
 	diff $(build_dir)/hello-0-ns.txt $(expected_dir)/hello-0.txt
 
 hello: dummy
 	@echo "*** test: hello ***"
-	$(jsh) $(resource_dir)/hello-0.js | tee $(build_dir)/hello-0.txt
+	$(jsh) $(script_dir)/hello0.js | tee $(build_dir)/hello-0.txt
 	diff $(build_dir)/hello-0.txt $(expected_dir)/hello-0.txt
 
 exit0: dummy
