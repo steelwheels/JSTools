@@ -1,1 +1,2 @@
-[Error] File is not found: no_file.js
+[31m[Error] File is not found: no_file.js
+[0m

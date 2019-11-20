@@ -36,5 +36,10 @@ Following software is used to build this package:
 * [Coconut Framework](https://github.com/steelwheels/Coconut): Define general purpose data structure
 * [Cobalt](https://github.com/steelwheels/Cobalt): Command line parser
 
+## Misc
+### UTI definitions
+* [.jspkg](https://github.com/steelwheels/JSTools/blob/master/Document/UTI-jspkg.txt): JavaScript package files
+
+
 ## Related Links
 * [Steel Wheels Project Web Page](http://steelwheels.github.io): Steel Wheels Project: Main Web Page

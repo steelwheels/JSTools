@@ -1,0 +1,6 @@
+
+Type identifier:        com.github.steelwheels.jstools.script-package
+Type reference URL:     https://github.com/steelwheels/JSTools/blob/master/Document/UTI-jspkg.txt
+Type definition:        JavaScript package
+Conforms-to:            com.apple.package
+File-Extension:         jspkg
