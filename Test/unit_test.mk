@@ -21,7 +21,7 @@ all: all_jsh all_jscat all_jsgrep
 all_jsh: help nostrict hello exit0 exit1 exit2 args0 enum0 math0 shell1 if0 \
 	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 pipe3 \
 	 hello0 hello1 json0 filetype0 url0 \
-	 operation0 operation1 thread0 \
+	 operation0 operation1 thread0 run0 \
 	 no_file_error syn_error
 
 help: dummy
@@ -178,6 +178,11 @@ thread0: dummy
 	@echo "*** test: thread0 ***"
 	$(jsh) --use-main $(script_dir)/thread0.jspkg | tee $(build_dir)/thread0.txt
 	diff $(build_dir)/thread0.txt $(expected_dir)/thread0.txt
+
+run0: dummy
+	@echo "*** test: run0 ***"
+	$(jsh) --use-main $(script_dir)/run0.js | tee $(build_dir)/run0.txt
+	diff $(build_dir)/run0.txt $(expected_dir)/run0.txt
 
 no_file_error: dummy
 	if $(jsh) no_file.js 2>&1 | tee $(build_dir)/no_file_error.txt ; \
