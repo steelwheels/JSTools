@@ -12,7 +12,7 @@ jsh [options]
 ````
 * options:  command line options for `jsh` command
 * script:   JavaScript files to be executed
-* package:  JavaScript package to be executed. For more details, see the following section.
+* package:  JavaScript package to be executed. For more details, see [JavaScrip package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md).
 * argument: Arguments to be passed as a parameter of the `main` function.
 
 # Description
@@ -28,8 +28,8 @@ The following options are available:
 |       |--use-main |-         |Call main function in the script after evaluating scripts. |
 |-i     |--interactive |-      | Set interactive mode. The user can input statements step by step. The interactive mode will be activated after reading all scripts.|
 |-c     |--compile  |-         |Dump the source scripts instead of executing it. If the script is written in [JSH](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md), it is converted into JavaScript and dumped. When you use this compile option, at least one JavaScript file must be given.|
-|       |--         |-          |The arguments follows this will be passed as arguments for JavaScript code. |
 |       |--log      |string     |Define debug log level. The default level is *normal*. Select 1 item from following levels: "normal", "flow", "detail" |
+|       |--         |-          |The arguments follows this will be passed as arguments for JavaScript code. |
 
 By using `--` option, you can pass arguments to be referenced by the JavaScript code.
 If you don't give any script file names, the `jsh` boots with interactive mode.
@@ -40,26 +40,6 @@ When the `--use-main` option is given, the function named *main* is called (if i
 main(arguments: Array<String>) -> Int32
 ````
 The `arguments` are defined by the command line arguments after `--` option.
-
-# JavaScript Package:
-The *JavaScript package* is the bundle of JavaScript files.
-It is a directory whose extension is `.jspkg` and contains multiple JavaScript files. The [manifest file](https://github.com/steelwheels/JSTools/blob/master/Document/manifest-file.md) must be put in the directory to present the file locations.
-
-This is a sample manifest file. You can define multiple scripts for library and application.
-````
-{
-        "libraries": [
-                "library0.js",
-                "library1.js"
-        ],
-        "scripts": {
-                "main": [
-                        "script0.js",
-                        "script1.js"
-                ]
-        }
-}
-````
 
 # Interactive mode
 The last symbol of the prompt string presents the *input mode*.

@@ -62,24 +62,6 @@ if(ecode == 0){
 }
 ````
 
-### JavaScript package
-The 'jsh' supports file package called `jspkg`.
-The user can define multi scripts, library in the package.
-The `manifest.json` file defines the location of scripts.
-````
-{
-	"scripts": {
-		"main": [
-			"main.js"
-		],
-		"thread0": [
-			"thread0.js"
-		]
-	}
-}
-
-````
-
 ### Thread
 The `Thread` function is used to generate thread to execute
 the user defined JavaScript.
@@ -87,13 +69,19 @@ The script must be placed in the package.
 ````
 function main(args)
 {
-	console.log("Hello from main function\n") ;
+	console.log("Hello from main function") ;
 
-	let thread = Thread("thread0", stdin, stdout, stderr) ;
-	thread.start(["a", "b"]) ;
-	let ecode = thread.waitUntilExit() ;
-	console.log("exit code = " + ecode + "\n") ;
+	let thread0 = Thread("thread0", stdin, stdout, stderr) ;
+	if(thread0 != null){
+		thread0.start(["a", "b"]) ;
+		let ecode = thread0.waitUntilExit() ;
+		console.log("exit code = " + ecode) ;
+	} else {
+		console.log("thread = nil") ;
+		console.error("Failed to allocate thread\n") ;
+	}
 }
+
 
 ````
 

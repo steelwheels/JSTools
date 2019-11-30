@@ -15,7 +15,9 @@ m4_cmd	= m4 --prefix-builtins \
 %.md: %.md-in
 	$(m4_cmd) $< > $@
 
-all: $(doc_dir)/jsh-lang.md $(doc_dir)/jsh-sample.md
+all: $(doc_dir)/jsh-lang.md \
+     $(doc_dir)/jsh-sample.md \
+     $(doc_dir)/jspkg.md
 
 clean:
 	rm -f $(doc_dir)/jsh-lang.md
