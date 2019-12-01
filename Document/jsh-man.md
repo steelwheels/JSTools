@@ -59,4 +59,5 @@ You can switch the mode. When you press `>` and enter key, the mode is switched 
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
+* [Environment variables](https://github.com/steelwheels/JSTools/blob/master/Document/env-var.md): Pre-defined environment variables 
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
