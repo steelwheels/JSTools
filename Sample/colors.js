@@ -6,8 +6,8 @@ function main(args)
 		for(let bg=Color.min ; bg<=Color.max ; bg++){
 			let fname = colorName(fg) ;
 			let bname = colorName(bg) ;
-			let fesc  = escapeCode.color(1, fg) ;
-			let besc  = escapeCode.color(0, bg) ;
+			let fesc  = EscapeCode.color(1, fg) ;
+			let besc  = EscapeCode.color(0, bg) ;
 			console.print(`${fesc}${besc}${fname}/${bname} `) ;
 		}
 	}
