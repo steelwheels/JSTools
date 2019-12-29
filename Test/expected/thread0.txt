@@ -1,4 +1,6 @@
 Hello from main function
+start: thread0
+start: wait until exit
 Hello from thread0
 args: a,b
 exit code = 0
