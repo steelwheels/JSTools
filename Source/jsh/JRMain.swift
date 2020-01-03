@@ -200,7 +200,7 @@ private func readResource(resource res: KEResource, console cons: CNConsole) -> 
 private func convertShellStatements(statements stmts: Array<String>, console cons: CNConsole) -> Array<String>?
 {
 	let result: Array<String>?
-	let translator = KHShellTranslator()
+	let translator = KHShellTranslator(readline: nil)
 	switch translator.translate(lines: stmts) {
 	case .ok(let lines):
 		result = lines
