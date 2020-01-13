@@ -76,10 +76,9 @@ Here is the pseudo BNF of shell script part.
 It assume the prefix symbol ('>') has been removed.
 
 ````
-shell_script    ::= { shell_statement }+ {`->` varname}
-shell_statement ::= shell_process { '|' shell_process }*
-shell_process   ::= shell_command { ';' shell_command }* {';'}?
-shell_command   ::= command { options }* { parameters }*
+shell_script      ::= multi_statements  ['->' varname]
+multi_statements  ::= pipe_statement { ';' pipe_statement }*
+pipe_statement    ::= shell_statement { '|' shell_statement }*
 ````
 
 ## Library

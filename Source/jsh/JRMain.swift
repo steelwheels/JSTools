@@ -200,10 +200,11 @@ private func readResource(resource res: KEResource, console cons: CNConsole) -> 
 private func convertShellStatements(statements stmts: Array<String>, console cons: CNConsole) -> Array<String>?
 {
 	let result: Array<String>?
-	let translator = KHShellTranslator(readline: nil)
-	switch translator.translate(lines: stmts) {
-	case .ok(let lines):
-		result = lines
+	let parser = KHShellParser()
+	switch parser.parse(lines: stmts) {
+	case .ok(let stmt1):
+		let stmt2 = KHCompileShellStatement(statements: stmt1, readline: nil)
+		result = KHGenerateScript(from: stmt2)
 	case .error(let err):
 		let errobj = err as NSError
 		cons.error(string: "[Error] " + errobj.toString() + "\n")
