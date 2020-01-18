@@ -1,5 +1,5 @@
 # Name
-*jsh* - The platform to execute JavaScript Shell Program.
+*jsh* - JavaScript Shell
 
 This document describes how to use the `jsh` application.
 The syntax of this script is described in [jsh programming language](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).  
@@ -57,7 +57,37 @@ jsh> % let a = 10 ;
 ````
 You can switch the mode. When you press `>` and enter key, the mode is switched into shell script mode. The `%` is used for JavaScript mode.
 
+# Built-in Shell Commands
+## `cd` command
+Change the current directory.
+````
+jsh> pwd
+/private/tmp/powerlog
+jsh> cd ..
+jsh> pwd
+/private/tmp
+````
+
+## `history` command
+You can use `history` command to see the commands that you has been executed. The `!<num>` command can be used to replay it.
+
+````
+jsh> history
+1 echo a
+2 echo b
+3 echo c
+jsh> !1
+a
+````
+
+## `run` command
+Execute JavaScript program by shell-command.
+````
+> run script-file
+````
+
+
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
-* [Environment variables](https://github.com/steelwheels/JSTools/blob/master/Document/env-var.md): Pre-defined environment variables 
+* [Environment variables](https://github.com/steelwheels/JSTools/blob/master/Document/env-var.md): Pre-defined environment variables
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
