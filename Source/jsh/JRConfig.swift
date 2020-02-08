@@ -13,17 +13,22 @@ import Foundation
 
 public class JRConfig: KEConfig
 {
-	public var scriptFiles:		Array<String>
-	public var isInteractiveMode:	Bool
-	public var isCompileMode:	Bool
-	public var doUseMain:		Bool
+	private var mScriptFiles:		Array<String>
+	private var mDoUseMain:			Bool
+	private var mIsInteractiveMode:		Bool
+	private var mIsCompileMode:		Bool
 
-	public init(){
-		scriptFiles		= []
-		isInteractiveMode	= false
-		isCompileMode		= false
-		doUseMain		= false
-		super.init(kind: .Terminal, doStrict: true, logLevel: CNConfig.LogLevel.defaultLevel)
+	public var scriptFiles: 	Array<String>	{ get { return mScriptFiles		}}
+	public var doUseMain:		Bool		{ get { return mDoUseMain		}}
+	public var isInteractiveMode:	Bool		{ get { return mIsInteractiveMode	}}
+	public var isCompileMode:	Bool		{ get { return mIsCompileMode		}}
+
+	public init(scriptFiles files: Array<String>, doStrict strict: Bool, doUseMain usemain: Bool, isInteractiveMode imode: Bool, isCompileMode cmode: Bool, logLevel level: CNConfig.LogLevel){
+		mScriptFiles		= files
+		mDoUseMain		= usemain
+		mIsInteractiveMode	= imode
+		mIsCompileMode		= cmode
+		super.init(applicationType: .terminal, doStrict: strict, logLevel: level)
 	}
 }
 
@@ -126,8 +131,15 @@ public class JRCommandLineParser
 	}
 
 	private func parseOptions(arguments args: Array<CBArgument>) -> JRConfig? {
-		let config   = JRConfig()
 		let stream   = CNArrayStream(source: args)
+
+		var files:		Array<String>		= []
+		var doStrict:		Bool			= true
+		var doUseMain:		Bool			= false
+		var isInteractiveMode:	Bool			= false
+		var isCompileMode:	Bool			= false
+		var logLevel:		CNConfig.LogLevel	= .defaultLevel
+
 		while let arg = stream.get() {
 			if let opt = arg as? CBOptionArgument {
 				if let optid = OptionId(rawValue: opt.optionType.optionId) {
@@ -140,28 +152,28 @@ public class JRCommandLineParser
 						return nil
 					case .Log:
 						if let level = decodeLogLevel(parameters: opt.parameters) {
-							config.logLevel = level
+							logLevel = level
 						}
 					case .NoStrictMode:
-						config.doStrict  = false
+						doStrict  = false
 					case .InteractiveMode:
-						config.isInteractiveMode = true
+						isInteractiveMode = true
 					case .CompileMode:
-						config.isCompileMode = true
+						isCompileMode = true
 					case .UseMain:
-						config.doUseMain = true
+						doUseMain = true
 					}
 				} else {
 					NSLog("[Internal error] Unknown option id")
 				}
 			} else if let param = arg as? CBNormalArgument {
-				config.scriptFiles.append(param.argument)
+				files.append(param.argument)
 			} else {
 				NSLog("[Internal error] Unknown object: \(arg)")
 				return nil
 			}
 		}
-		return config
+		return JRConfig(scriptFiles: files, doStrict: doStrict, doUseMain: doUseMain, isInteractiveMode: isInteractiveMode, isCompileMode: isCompileMode, logLevel: logLevel)
 	}
 
 	private func decodeLogLevel(parameters params: Array<CNValue>) -> CNConfig.LogLevel? {

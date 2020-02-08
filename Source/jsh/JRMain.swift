@@ -36,7 +36,7 @@ public func main(arguments args: Array<String>) -> Int32
 		console.error(string: "Failed to allocate VM\n")
 		return 1
 	}
-	let compconf = KHConfig(kind: .Terminal, hasMainFunction: config.doUseMain, doStrict: config.doStrict, logLevel: config.logLevel)
+	let compconf = KHConfig(applicationType: .terminal, hasMainFunction: config.doUseMain, doStrict: config.doStrict, logLevel: config.logLevel)
 
 	/* Prepare dispatch queue */
 	let queue = DispatchQueue(label: "jsh", qos: .default, attributes: .concurrent)
