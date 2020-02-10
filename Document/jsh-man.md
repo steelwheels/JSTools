@@ -86,6 +86,8 @@ Execute JavaScript program by shell-command.
 > run script-file
 ````
 
+## other commands
+* [fonts](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/fonts-main.md) command: get information about fonts.
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
