@@ -15,7 +15,7 @@ for(let i=0 ; i<10 ; i++){
 }
 ````
 Following page contains some
-[sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sample.md)
+[sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md)
 for `jsh`.
 
 ## Features
