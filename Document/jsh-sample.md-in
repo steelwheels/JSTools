@@ -1,7 +1,0 @@
-# Sample scripts for JSH
-
-## `keycode.js` : 
-````
-m4_include(keycode.js)
-````
-

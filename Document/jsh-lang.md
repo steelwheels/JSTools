@@ -72,14 +72,19 @@ function main(args)
 	console.log("Hello from main function") ;
 
 	let thread0 = Thread("thread0", stdin, stdout, stderr) ;
+	let result  = -1 ;
 	if(thread0 != null){
+		console.log("start: thread0") ;
 		thread0.start(["a", "b"]) ;
+		console.log("start: wait until exit") ;
 		let ecode = thread0.waitUntilExit() ;
 		console.log("exit code = " + ecode) ;
+		result = ecode ;
 	} else {
-		console.log("thread = nil") ;
+		console.log("start: FAILED") ;
 		console.error("Failed to allocate thread\n") ;
 	}
+	return result ;
 }
 
 
@@ -93,10 +98,9 @@ Here is the pseudo BNF of shell script part.
 It assume the prefix symbol ('>') has been removed.
 
 ````
-shell_script    ::= { shell_statement }+ {`->` varname}
-shell_statement ::= shell_process { '|' shell_process }*
-shell_process   ::= shell_command { ';' shell_command }* {';'}?
-shell_command   ::= command { options }* { parameters }*
+shell_script      ::= multi_statements  ['->' varname]
+multi_statements  ::= pipe_statement { ';' pipe_statement }*
+pipe_statement    ::= shell_statement { '|' shell_statement }*
 ````
 
 ## Library
@@ -110,6 +114,6 @@ shell_command   ::= command { options }* { parameters }*
 ## Related document
 * [README](https://github.com/steelwheels/JSTools/blob/master/README.md): Summary of this repository
 * [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): Shell program to execute `jsh` language.
-* [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sample.md): Sample scripts for `jsh`.
+* [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md): Sample scripts for `jsh`.
 * [Pysh](https://www.yunabe.jp/docs/pysh_overview.html): The rule to use `>` symbol is imported from this language.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.

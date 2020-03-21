@@ -1,0 +1,16 @@
+# Samples
+
+## Terminal control
+### Color
+Display colored messages on terminal.
+[EscapeCode class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/EscapeCode.md) is used to generate escape code for coloring.
+
+````
+m4_include(colors.js)
+````
+
+### Key code
+````
+m4_include(keycode.js)
+````
+

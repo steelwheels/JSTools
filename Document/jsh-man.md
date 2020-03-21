@@ -3,6 +3,7 @@
 
 This document describes how to use the `jsh` application.
 The syntax of this script is described in [jsh programming language](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).  
+See [samples][https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md] for some sample scripts.
 
 # Synopsis
 ````
