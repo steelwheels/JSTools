@@ -1,10 +1,25 @@
 # Samples
 
+## File control
+### Keycode
+
+#### Screen shot
+![colors](keycode2.png)
+
+#### Source code
+````
+m4_include(keycode.js)
+````
+
 ## Terminal control
 ### Color
 Display colored messages on terminal.
 [EscapeCode class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/EscapeCode.md) is used to generate escape code for coloring.
 
+#### Screen shot
+![colors](colors.png)
+
+#### Source code
 ````
 m4_include(colors.js)
 ````
@@ -14,3 +29,6 @@ m4_include(colors.js)
 m4_include(keycode.js)
 ````
 
+## Related links
+* [JSTerminal](https://github.com/steelwheels/JSTerminal): The terminal application to execute [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).
+* [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): Shell program.
