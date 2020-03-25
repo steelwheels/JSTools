@@ -30,7 +30,7 @@ public func main(arguments args: Array<String>) -> Int32
 		let merger = CNNativeValueMerger()
 		for i in 1..<infiles.count {
 			if let file = openFile(fileName: infiles[i], console: console) {
-				let (infop, error) = CNJSONFile.readFile(file: file)
+				let (infop, error) = CNJSONFile.readFile(fileHandle: file.fileHandle)
 				if let info = infop {
 					if let resinfo = merger.merge(firstinfo, info) {
 						firstinfo = resinfo
@@ -46,8 +46,8 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* output merged file */
-	let outfile = CNTextFileObject(fileHandle: FileHandle.standardOutput)
-	if let err = CNJSONFile.writeFile(file: outfile, JSONObject: firstinfo) {
+	let outfile = CNTextFile(fileHandle: FileHandle.standardOutput)
+	if let err = CNJSONFile.writeFile(fileHandle: outfile.fileHandle, JSONObject: firstinfo) {
 		console.error(string: "[Error] \(err.description)")
 		return 2
 	} else {
@@ -58,7 +58,7 @@ public func main(arguments args: Array<String>) -> Int32
 public func readFile(fileName name: String?, console cons: CNConsole) -> CNNativeValue?
 {
 	if let file = openFile(fileName: name, console: cons) {
-		let (json, error) = CNJSONFile.readFile(file: file)
+		let (json, error) = CNJSONFile.readFile(fileHandle: file.fileHandle)
 		if let val = json {
 			return val
 		} else {
@@ -70,7 +70,7 @@ public func readFile(fileName name: String?, console cons: CNConsole) -> CNNativ
 	}
 }
 
-private func openFile(fileName name: String?, console cons: CNConsole) -> CNFile?
+private func openFile(fileName name: String?, console cons: CNConsole) -> CNTextFile?
 {
 	var result: CNTextFile?
 	if let nm = name {
@@ -82,7 +82,7 @@ private func openFile(fileName name: String?, console cons: CNConsole) -> CNFile
 			result = nil
 		}
 	} else {
-		result = CNTextFileObject(fileHandle: FileHandle.standardInput)
+		result = CNTextFile(fileHandle: FileHandle.standardInput)
 	}
 	return result
 }

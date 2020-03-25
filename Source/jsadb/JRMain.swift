@@ -51,8 +51,8 @@ public func main(arguments args: Array<String>) -> Int32
 private func dump(addressBook adb: CNAddressBook, console cons: CNConsole)
 {
 	if let contacts = adb.contacts() {
-		let outfile = CNTextFileObject(fileHandle: FileHandle.standardOutput)
-		if let err = CNJSONFile.writeFile(file: outfile, JSONObject: contacts) {
+		let outfile = CNTextFile(fileHandle: FileHandle.standardOutput)
+		if let err = CNJSONFile.writeFile(fileHandle: outfile.fileHandle, JSONObject: contacts) {
 			cons.error(string: "[Error] " + err.toString() + "\n")
 		}
 	}

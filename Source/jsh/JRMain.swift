@@ -87,8 +87,10 @@ public func main(arguments args: Array<String>) -> Int32
 			if resource == nil {
 				resource = KEResource(baseURL: Bundle.main.bundleURL)
 			}
+			/* Allocate script */
+			let modscr = modstmts.joined(separator: "\n")
 			/* Execute script */
-			return executeScript(virtualMachine: vm, queue: queue, resource: resource!, input: instrm, output: outstrm, error: errstrm, statements: modstmts, arguments: arguments, config: compconf)
+			return executeScript(virtualMachine: vm, queue: queue, resource: resource!, input: instrm, output: outstrm, error: errstrm, script: modscr, arguments: arguments, config: compconf)
 		}
 	}
 }
@@ -220,10 +222,9 @@ private func executeShell(virtualMachine vm: JSVirtualMachine, queue disque: Dis
 	return shell.waitUntilExit()
 }
 
-private func executeScript(virtualMachine vm: JSVirtualMachine, queue disque: DispatchQueue, resource res: KEResource, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, statements stmts: Array<String>, arguments args: Array<String>, config conf: KHConfig) -> Int32
+private func executeScript(virtualMachine vm: JSVirtualMachine, queue disque: DispatchQueue, resource res: KEResource, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, config conf: KHConfig) -> Int32
 {
-	let thread  = KHScriptThread(virtualMachine: vm, queue: disque, resource: res, input: instrm, output: outstrm, error: errstrm, config: conf)
-	thread.setScript(script: .statements(stmts))
+	let thread  = KHScriptThread(virtualMachine: vm, script: .script(scr), queue: disque, resource: res, input: instrm, output: outstrm, error: errstrm, config: conf)
 
 	/* Convert argument */
 	var nargs: Array<CNNativeValue> = []
