@@ -83,9 +83,7 @@ a
 
 ## `run` command
 Execute JavaScript program by shell-command.
-````
-> run script-file
-````
+See [run command](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/run-man.md)
 
 ## other commands
 * [fonts](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/fonts-man.md) command: get information about fonts.
