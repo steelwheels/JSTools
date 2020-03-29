@@ -6,6 +6,8 @@
 ### Keycode
 
 #### Screen shot
+This is screen shot of `JSTerminal` application.
+It contains how to execute the script and result of the execution.
 ![colors](keycode2.png)
 
 #### Source code
