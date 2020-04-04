@@ -1,2 +1,3 @@
 [31mSyntaxError: Unexpected identifier 'hoge'. Expected ';' after variable declaration.
-[0m[31mFailed to compile  user scripts[0m
+[0m[31mTypeError: undefined is not an object
+[0m
