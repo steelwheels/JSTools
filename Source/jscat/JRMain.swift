@@ -74,7 +74,10 @@ private func openFile(fileName name: String?, console cons: CNConsole) -> CNText
 {
 	var result: CNTextFile?
 	if let nm = name {
-		switch FileManager.default.openFile(filePath: nm, accessType: .ReadAccess) {
+		let fmanager = FileManager.default
+		let curdir   = fmanager.currentDirectoryPath
+		let path     = fmanager.fullPathURL(relativePath: nm, baseDirectory: curdir)
+		switch fmanager.openFile(URL: path, accessType: .ReadAccess) {
 		case .ok(let file):
 			result = file
 		case .error(let err):
@@ -86,49 +89,4 @@ private func openFile(fileName name: String?, console cons: CNConsole) -> CNText
 	}
 	return result
 }
-
-/*
-private func openFirstFile(config conf: JRConfig, console cons: CNConsole) -> CNTextFile?
-{
-	var result: CNTextFile?
-	let infiles = conf.inputFiles
-	if infiles.count >= 1 {
-		result = openFile(fileName: infiles[0], console: cons)
-	} else {
-		/* Read standard input */
-		result = CNStandardFile(type: .input)
-	}
-	return result
-}
-
-private func openFile(fileName name: String, console cons: CNConsole) -> CNTextFile?
-{
-	var result: CNTextFile?
-	let (file, err) = CNOpenFile(filePath: name, accessType: .ReadAccess)
-	if  let f = file {
-		result = f
-	} else {
-		let errstr = err!.toString()
-		cons.error(string: "[Error] \(errstr)\n")
-		result = nil
-	}
-	return result
-}
-
-private func unserializeString(file f: CNTextFile, console cons: CNConsole) -> CNJSONObject?
-{
-	var result: CNJSONObject? = nil
-	if let content = f.getAll() {
-		let (jdata, err) = CNJSONFile.unserialize(string: content)
-		if let d = jdata {
-			result = d
-		} else {
-			let errstr = err!.toString()
-			cons.error(string: "[Error] \(errstr)\n")
-		}
-	}
-	return result
-}
-*/
-
 

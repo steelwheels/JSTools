@@ -71,7 +71,10 @@ private func openFile(fileName name: String?, console cons: CNConsole) -> CNText
 {
 	var result: CNTextFile?
 	if let nm = name {
-		switch FileManager.default.openFile(filePath: nm, accessType: .ReadAccess) {
+		let fmanager = FileManager.default
+		let curdir   = fmanager.currentDirectoryPath
+		let path     = fmanager.fullPathURL(relativePath: nm, baseDirectory: curdir)
+		switch fmanager.openFile(URL: path, accessType: .ReadAccess) {
 		case .ok(let file):
 			result = file
 		case .error(let err):
