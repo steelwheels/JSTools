@@ -72,8 +72,8 @@ private func openFile(fileName name: String?, console cons: CNConsole) -> CNText
 	var result: CNTextFile?
 	if let nm = name {
 		let fmanager = FileManager.default
-		let curdir   = fmanager.currentDirectoryPath
-		let path     = fmanager.fullPathURL(relativePath: nm, baseDirectory: curdir)
+		let curdir   = URL(fileURLWithPath: fmanager.currentDirectoryPath)
+		let path     = fmanager.fullPath(pathString: nm, baseURL: curdir)
 		switch fmanager.openFile(URL: path, accessType: .ReadAccess) {
 		case .ok(let file):
 			result = file
