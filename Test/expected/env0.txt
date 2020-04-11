@@ -1,0 +1,4 @@
+pwd is string => true
+A = 1234
+curdir is URL: true
+tmpdir is URL: true
