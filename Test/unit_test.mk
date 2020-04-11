@@ -19,7 +19,7 @@ all: all_jsh all_jscat all_jsgrep
 # jsh
 #
 all_jsh: help nostrict hello exit0 exit1 exit2 args0 enum0 math0 shell1 if0 \
-	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 pipe3 \
+	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 pipe3 fmgr0 \
 	 hello0 hello1 json0 filetype0 url0 \
 	 operation0 operation1 thread0 process0 run0 run1 env0 \
 	 no_file_error syn_error
@@ -126,6 +126,11 @@ pipe3: dummy
 	@echo "*** test: pipe3 ***"
 	$(jsh) $(script_dir)/pipe3.jsh | tee $(build_dir)/pipe3.txt
 	diff $(build_dir)/pipe3.txt $(expected_dir)/pipe3.txt
+
+fmgr0: dummy
+	@echo "*** test: fmgr0 ***"
+	$(jsh) --use-main $(script_dir)/fmgr0.js | tee $(build_dir)/fmgr0.txt
+	diff $(build_dir)/fmgr0.txt $(expected_dir)/fmgr0.txt
 
 hello0: dummy
 	@echo "*** test: hello0 ***"
