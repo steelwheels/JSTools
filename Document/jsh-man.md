@@ -63,12 +63,12 @@ You can switch the mode. When you press `>` and enter key, the mode is switched 
 # Built-in shell commands
 |command                |Description                            |
 |:--                    |:--                                    |
-|[cd](cd.md)            |Change current directory               |
-|[fonts](fonts.md)      |Print list of fonts                    |
-|[getenv](getenv.md)    |Print the value of environment variable by it's name |
-|[history](history.md)  |Print the commands that already executed.      |
-|[run](run.md)          |Execute script                         |
-|[setenv](setenv.md)    |Set environment value by it's name and value |
+|[cd](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/cd.md)            |Change current directory               |
+|[fonts](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/fonts.md)      |Print list of fonts                    |
+|[getenv](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/getenv.md)    |Print the value of environment variable by it's name |
+|[history](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/history.md)  |Print the commands that already executed.      |
+|[run](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/run.md)          |Execute script                         |
+|[setenv](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/setenv.md)    |Set environment value by it's name and value |
 
 
 # Related document
