@@ -16,6 +16,7 @@ m4_cmd	= m4 --prefix-builtins \
 	$(m4_cmd) $< > $@
 
 all: $(doc_dir)/jsh-lang.md \
+     $(doc_dir)/jsh-man.md \
      $(doc_dir)/jspkg.md \
      $(doc_dir)/samples/sample.md
 
@@ -24,6 +25,7 @@ $(doc_dir)/samples/sample.md: dummy
 
 clean:
 	rm -f $(doc_dir)/jsh-lang.md
+	rm -f $(doc_dir)/jsh-man.md
 	(cd samples ; make -f document.mk clean)
 
 dummy:

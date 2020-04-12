@@ -1,5 +1,3 @@
-
-
 # Name
 *jsh* - JavaScript Shell
 
@@ -61,15 +59,7 @@ jsh> % let a = 10 ;
 You can switch the mode. When you press `>` and enter key, the mode is switched into shell script mode. The `%` is used for JavaScript mode.
 
 # Built-in shell commands
-|command                |Description                            |
-|:--                    |:--                                    |
-|[cd](cd.md)            |Change current directory               |
-|[fonts](fonts.md)      |Print list of fonts                    |
-|[getenv](getenv.md)    |Print the value of environment variable by it's name |
-|[history](history.md)  |Print the commands that already executed.      |
-|[run](run.md)          |Execute script                         |
-|[setenv](setenv.md)    |Set environment value by it's name and value |
-
+m4_include(builtins/builtin-commands.md)
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
