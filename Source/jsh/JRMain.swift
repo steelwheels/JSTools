@@ -38,9 +38,6 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 	let compconf = KHConfig(applicationType: .terminal, hasMainFunction: config.doUseMain, doStrict: config.doStrict, logLevel: config.logLevel)
 
-	/* Prepare dispatch queue */
-	let queue = DispatchQueue(label: "jsh", qos: .default, attributes: .concurrent)
-
 	/* Prepare environment variable */
 	let environment = CNEnvironment()
 
@@ -48,8 +45,11 @@ public func main(arguments args: Array<String>) -> Int32
 	if files.count == 0 || config.isInteractiveMode {
 		/* Execute shell */
 		let emptyres = KEResource(baseURL: Bundle.main.bundleURL)
-		return executeShell(virtualMachine: vm, queue: queue, input: instrm, output: outstrm, error: errstrm, scriptFiles: files, environment: environment, resource: emptyres, config: compconf)
+		return executeShell(virtualMachine: vm, input: instrm, output: outstrm, error: errstrm, scriptFiles: files, environment: environment, resource: emptyres, config: compconf)
 	} else {
+		/* Prepare dispatch queue */
+		let queue = DispatchQueue(label: "jsh", qos: .default, attributes: .concurrent)
+
 		/* Decide packaging */
 		var resource: KEResource? = nil
 		let stmts: Array<String>
@@ -218,9 +218,9 @@ private func convertShellStatements(statements stmts: Array<String>, console con
 	return result
 }
 
-private func executeShell(virtualMachine vm: JSVirtualMachine, queue disque: DispatchQueue,  input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, environment env: CNEnvironment, resource res: KEResource, config conf: KHConfig) -> Int32
+private func executeShell(virtualMachine vm: JSVirtualMachine,  input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, environment env: CNEnvironment, resource res: KEResource, config conf: KHConfig) -> Int32
 {
-	let shell = KHShellThread(virtualMachine: vm, queue: disque, input: instrm, output: outstrm, error: errstrm, environment: env, resource: res, config: conf)
+	let shell = KHShellThread(virtualMachine: vm, input: instrm, output: outstrm, error: errstrm, environment: env, resource: res, config: conf)
 	shell.start()
 	return shell.waitUntilExit()
 }
