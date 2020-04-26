@@ -71,6 +71,19 @@ You can switch the mode. When you press `>` and enter key, the mode is switched 
 |[setenv](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/setenv-man.md)    |Set environment value by it's name and value |
 
 
+# File System
+This is the default file system:
+
+## Directories
+There are following directories under the home directory.
+* `Documents/Script`: The directory to put sample scripts
+* `tmp`: Temporary directory
+
+## Reference
+* [File System Basics](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html): File system programming guide published by Apple.
+
+
+
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
 * [Environment variables](https://github.com/steelwheels/JSTools/blob/master/Document/env-var.md): Pre-defined environment variables

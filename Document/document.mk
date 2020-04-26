@@ -23,6 +23,8 @@ all: $(doc_dir)/jsh-lang.md \
 $(doc_dir)/samples/sample.md: dummy
 	(cd samples ; make -f document.mk)
 
+$(doc_dir)/jsh-man.md-in: system/file-system.md
+
 clean:
 	rm -f $(doc_dir)/jsh-lang.md
 	rm -f $(doc_dir)/jsh-man.md
