@@ -211,7 +211,7 @@ private func convertShellStatements(statements stmts: Array<String>, console con
 	let parser = KHShellParser()
 	switch parser.parse(lines: stmts) {
 	case .ok(let stmt1):
-		let stmt2 = KHCompileShellStatement(statements: stmt1, readline: nil)
+		let stmt2 = KHCompileShellStatement(statements: stmt1)
 		result = KHGenerateScript(from: stmt2)
 	case .error(let err):
 		let errobj = err as NSError
@@ -224,7 +224,7 @@ private func convertShellStatements(statements stmts: Array<String>, console con
 private func executeShell(virtualMachine vm: JSVirtualMachine, processManager procmgr: CNProcessManager, queue disque: DispatchQueue, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, environment env: CNEnvironment, resource res: KEResource, config conf: KHConfig) -> Int32
 {
 	let shell = KHShellThreadObject(virtualMachine: vm, processManager: procmgr, queue: disque, input: instrm, output: outstrm, error: errstrm, environment: env, resource: res, config: conf)
-	shell.start(arguments: [])
+	shell.start(argument: .nullValue)
 	return shell.waitUntilExit()
 }
 
@@ -237,7 +237,7 @@ private func executeScript(virtualMachine vm: JSVirtualMachine, processManager p
 	for arg in args {
 		nargs.append(.stringValue(arg))
 	}
-	thread.start(arguments: nargs)
+	thread.start(argument: .arrayValue(nargs))
 	return thread.waitUntilExit()
 }
 

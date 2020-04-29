@@ -1,4 +1,5 @@
-This is the default file system:
+See the source reference
+[File System Basics](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) published by Apple.
 
 ## Directories
 There are following directories under the home directory.
@@ -6,5 +7,4 @@ There are following directories under the home directory.
 * `tmp`: Temporary directory
 
 ## Reference
-* [File System Basics](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html): File system programming guide published by Apple.
 

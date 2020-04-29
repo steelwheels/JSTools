@@ -21,7 +21,7 @@ all: all_jsh all_jscat all_jsgrep
 all_jsh: help nostrict hello exit0 exit1 exit2 args0 enum0 math0 shell1 if0 \
 	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 pipe3 fmgr0 \
 	 hello0 hello1 json0 filetype0 url0 \
-	 operation0 operation1 thread0 process0 run0 run1 env0 sleep \
+	 operation0 operation1 thread0 process0 run0 run1 run4 env0 sleep \
 	 no_file_error syn_error
 
 help: dummy
@@ -198,6 +198,11 @@ run1: dummy
 	@echo "*** test: run1 ***"
 	$(jsh) $(script_dir)/run1.jsh | tee $(build_dir)/run1.txt
 	diff $(build_dir)/run1.txt $(expected_dir)/run1.txt
+
+run4: dummy
+	@echo "*** test: run4 ***"
+	$(jsh) $(script_dir)/run4.jsh | tee $(build_dir)/run4.txt
+	diff $(build_dir)/run4.txt $(expected_dir)/run4.txt
 
 env0: dummy
 	@echo "*** test: env0 ***"
