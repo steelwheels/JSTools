@@ -6,3 +6,4 @@
 |[history](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/history-man.md)  |Print the commands that already executed.      |
 |[run](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/run-man.md)          |Execute script                         |
 |[setenv](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/setenv-man.md)    |Set environment value by it's name and value |
+|[setup](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/setup-man.md)    |Setup user's environment |
