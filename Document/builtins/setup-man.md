@@ -11,8 +11,9 @@ Please _check the path of home directory_ . These operations are
 executed based on the home directory.
 
 1. Make default directories. Following directories are made:
-`Document`,`Document/Script`, `Library`. About these directories,
+`Documents`, `Library`. About these directories,
 see [file system](https://github.com/steelwheels/JSTools/blob/master/Document/system/file-system.md).
+2. Copy pre-defined scripts in the application into directories. Some sample scripts are copied into `Documents/Sample`.
 
 
 ## Related links
