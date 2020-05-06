@@ -2,10 +2,13 @@
 
 ## Pre-defined environment variables
 
-|Name           |Description            |Related function       |
-|:---           |:---                   |                       |
-|`TMPDIR`       |User's temporary directory |[temporaryDirectory](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/FileManager.md) |
+You can check these values by [getenv](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/getenv-man.md) command.
 
+|Name           |Description            |Related JavaScript function       |
+|:---           |:---                   |                       |
+|`JSH_VERSION`  |Shell version          |                       |
+|`PWD`          |Current working directory |                    |
+|`TMPDIR`       |User's temporary directory |[temporaryDirectory](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/FileManager.md) |
 
 ## Reference
 ### macOS environment
