@@ -1,23 +1,18 @@
-console.log("setup curses start") ;
 
-Curses.mode(true) ; // screen mode
+function main()
+{
+	console.log("setup curses start\n") ;
 
-const width  = Curses.screenWidth ;
-const height = Curses.screenHeight ;
-const orgx   = Curses.cursorX
-const orgy   = Curses.cursorY
+	Curses.start() ;
 
-Curses.moveTo(0, 0) ; Curses.put("width  = " + width) ;
-Curses.moveTo(0, 1) ; Curses.put("height = " + height) ;
-Curses.moveTo(0, 2) ; Curses.put("orgx   = " + orgx) ;
-Curses.moveTo(0, 3) ; Curses.put("orgy   = " + orgy) ;
+	Curses.moveTo(10, 10) ;
+	console.log("Hello, world !!");
 
-//console.log("Press \"q\" to quit") ;
+	sleep(2) ;
+	Curses.end() ;
 
-while(Curses.getKey() == null){
+	return 0 ;
 }
 
-Curses.mode(false) ; // console mode
 
-console.log("Bye") ;
 

@@ -1,27 +1,18 @@
-console.log("setup curses start\n") ;
 
-Curses.mode(true) ;
-Curses.put("Press \"q\" to quit\n") ;
+function main()
+{
+	console.log("setup curses start\n") ;
 
+	Curses.start() ;
 
-let docont = true ;
-let x = 0 ;
-let y = 0 ;
-while(docont){
-	let key = Curses.getKey() ;
-	if(key != null){
-		let c = String.fromCharCode(key) ;
-		Curses.moveTo(x, y) ;
-		Curses.put("Key : " + c + "\n") ;
-		if(c == "q"){
-			break ;
-		} else {
-			//x += 1 ;
-			y += 1 ;
-		}
-	}
+	Curses.end() ;
+
+	let cols  = Curses.columns ;
+	let lines = Curses.lines ;
+	console.log("cols=" + cols + ", lines=" + lines + "\n") ;
+
+	return 0 ;
 }
 
-Curses.mode(false) ;
-console.log("Bye") ;
+
 
