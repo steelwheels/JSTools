@@ -7,12 +7,10 @@ function main()
 
 	Curses.end() ;
 
-	let cols  = Curses.columns ;
-	let lines = Curses.lines ;
-	console.log("cols=" + cols + ", lines=" + lines + "\n") ;
+	let width  = Curses.width ;
+	let height = Curses.height ;
+	console.log("width=" + width + ", height=" + height + "\n") ;
 
 	return 0 ;
 }
-
-
 

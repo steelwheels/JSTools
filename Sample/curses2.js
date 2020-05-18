@@ -5,14 +5,24 @@ function main()
 
 	Curses.start() ;
 
-	Curses.moveTo(10, 10) ;
-	console.log("Hello, world !!");
+	let width  = Curses.width ;
+	let height = Curses.height ;
 
-	sleep(2) ;
+	Curses.moveTo(10, 10) ;
+	console.log("Hello, world !!: " + width + "x" + height);
+
+	Curses.moveTo(12, 12) ;
+	console.log("Press any key\n") ;
+
+	while(true){
+		let c = stdin.getc() ;
+		if(c != null){
+			break ;
+		}
+	}
+
 	Curses.end() ;
 
 	return 0 ;
 }
-
-
 
