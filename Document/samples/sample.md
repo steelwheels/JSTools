@@ -3,47 +3,6 @@
 # Samples
 
 ## File control
-### Keycode
-
-#### Screen shot
-This is screen shot of `JSTerminal` application.
-It contains how to execute the script and result of the execution.
-![colors](keycode2.png)
-
-#### Source code
-````
-
-function main(args)
-{
-	let c     = "?" ;
-	let prevc = "-" ;
-	stdout.put("Press `q` to quit\n") ;
-	while(c != "q"){
-		c = stdin.getc() ;
-		if(c != null && c != prevc){
-			let len = c.length ;
-			for(let i=0 ; i<len ; i++){
-				let code = c.charCodeAt(i) ;
-				printCode(code) ;
-			}
-			prevc = c ;
-		}
-	}
-	return 0 ;
-}
-
-function printCode(code)
-{
-	let name = asciiCodeName(code) ;
-	if(name == null){
-		name = "?" ;
-	}
-	let hexcode = "0x" + code.toString(16) ;
-	stdout.put(name + ":" + hexcode + "\n") ;
-}
-
-
-````
 
 ## Terminal control
 ### Color
@@ -89,7 +48,79 @@ function colorName(code)
 
 ````
 
-### Key code
+### Curses
+The [Curses class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md)
+supports character based graphics on terminal.
+
+#### Screen shot
+![curses3](curses3.png)
+
+#### Source code
+````
+
+function main()
+{
+	console.log("setup curses start\n") ;
+
+	Curses.start() ;
+
+	let width  = Curses.width ;
+	let height = Curses.height ;
+
+	/* Left: top -> bottom */
+	for(i=0 ; i<height ; i++){
+		Curses.moveTo(0, i) ;
+		console.print(i % 10) ;
+	}
+	/* Right: top -> bottom */
+	for(i=0 ; i<height ; i++){
+		Curses.moveTo(width-1, i) ;
+		console.print(i % 10) ;
+	}
+
+	/* Top: left -> right */
+	for(i=0 ; i<width ; i++){
+		Curses.moveTo(i, 0) ;
+		console.print(i % 10) ;
+	}
+	/* Bottom: left -> right */
+	for(i=0 ; i<width ; i++){
+		Curses.moveTo(i, height-1) ;
+		console.print(i % 10) ;
+	}
+
+	/* Cross */
+	for(i=0 ; i<width ; i++){
+		let y0 = Math.floor(i * height / width) ;
+		Curses.moveTo(i, y0) ;
+		console.print(i % 10) ;
+
+		let y1 = height - 1 - y0 ;
+		Curses.moveTo(i, y1) ;
+		console.print(i % 10) ;
+	}
+
+	/* Wait any key is pressed */
+	while(Curses.inkey() == null){
+		sleep(0.1) ;
+	}
+
+	Curses.end() ;
+
+	return 0 ;
+}
+
+
+````
+
+### Keycode
+
+#### Screen shot
+This is screen shot of `JSTerminal` application.
+It contains how to execute the script and result of the execution.
+![colors](keycode2.png)
+
+#### Source code
 ````
 
 function main(args)

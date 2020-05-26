@@ -1,17 +1,6 @@
 # Samples
 
 ## File control
-### Keycode
-
-#### Screen shot
-This is screen shot of `JSTerminal` application.
-It contains how to execute the script and result of the execution.
-![colors](keycode2.png)
-
-#### Source code
-````
-m4_include(keycode.js)
-````
 
 ## Terminal control
 ### Color
@@ -26,7 +15,26 @@ Display colored messages on terminal.
 m4_include(colors.js)
 ````
 
-### Key code
+### Curses
+The [Curses class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md)
+supports character based graphics on terminal.
+
+#### Screen shot
+![curses3](curses3.png)
+
+#### Source code
+````
+m4_include(curses3.js)
+````
+
+### Keycode
+
+#### Screen shot
+This is screen shot of `JSTerminal` application.
+It contains how to execute the script and result of the execution.
+![colors](keycode2.png)
+
+#### Source code
 ````
 m4_include(keycode.js)
 ````
