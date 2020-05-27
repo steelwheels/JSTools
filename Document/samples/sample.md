@@ -52,10 +52,10 @@ function colorName(code)
 The [Curses class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md)
 supports character based graphics on terminal.
 
-#### Screen shot
+#### Screen shot (1/2)
 ![curses3](curses3.png)
 
-#### Source code
+#### Source code (1/2)
 ````
 
 function main()
@@ -101,6 +101,42 @@ function main()
 	}
 
 	/* Wait any key is pressed */
+	while(Curses.inkey() == null){
+		sleep(0.1) ;
+	}
+
+	Curses.end() ;
+
+	return 0 ;
+}
+
+
+````
+
+### Screen shot (2/2)
+![colorbar](colorbar.png)
+
+#### Source code (2/2)
+````
+
+function main()
+{
+	Curses.start() ;
+
+	const width  = Curses.width ;
+	const height = Curses.height ;
+	const colnum = Color.max - Color.min + 1;
+	const diff   = width / colnum ;
+
+	let   xpos  = 0 ;
+	for(let col=Color.min ; col<=Color.max ; col++){
+		Curses.foregroundColor = Color.white
+		Curses.backgroundColor = col ;
+
+		Curses.fill(xpos, 0, diff, height, " ") ;
+		xpos += diff ;
+	}
+
 	while(Curses.inkey() == null){
 		sleep(0.1) ;
 	}

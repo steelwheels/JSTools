@@ -19,12 +19,20 @@ m4_include(colors.js)
 The [Curses class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Curses.md)
 supports character based graphics on terminal.
 
-#### Screen shot
+#### Screen shot (1/2)
 ![curses3](curses3.png)
 
-#### Source code
+#### Source code (1/2)
 ````
 m4_include(curses3.js)
+````
+
+### Screen shot (2/2)
+![colorbar](colorbar.png)
+
+#### Source code (2/2)
+````
+m4_include(colorbar.js)
 ````
 
 ### Keycode
