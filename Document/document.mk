@@ -17,7 +17,6 @@ m4_cmd	= m4 --prefix-builtins \
 
 all: $(doc_dir)/jsh-lang.md \
      $(doc_dir)/jsh-man.md \
-     $(doc_dir)/jspkg.md \
      $(doc_dir)/samples/sample.md
 
 $(doc_dir)/samples/sample.md: dummy
