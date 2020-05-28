@@ -1,10 +1,7 @@
 {
-	"scripts": {
-		"main": [
-			"main.js"
-		],
-		"thread0": [
-			"thread0.js"
-		]
+	"application":	"main.js",
+	"threads": {
+		"thread0": "thread0.js"
 	}
 }
+

@@ -174,24 +174,13 @@ private func readResource(resource res: KEResource, console cons: CNConsole) -> 
 		}
 	}
 	/* Load main scripts */
-	let SCRIPT_NAME = "main"
-	if let mainnum = res.countOfScripts(identifier: SCRIPT_NAME) {
-		for i in 0..<mainnum {
-			if let scr = res.loadScript(identifier: SCRIPT_NAME, index: i) {
-				/* Split by newline */
-				let stmts = scr.components(separatedBy: "\n")
-				result.append(contentsOf: stmts)
-			} else {
-				let name: String
-				if let n = res.pathStringOfLibrary(index: i) {
-					name = n
-				} else {
-					name = "<unknown>"
-				}
-				cons.error(string: "[Error] Failed to load script: \(name)")
-				return nil
-			}
-		}
+	if let mainscr = res.loadApplication() {
+		/* Split by newline */
+		let stmts = mainscr.components(separatedBy: "\n")
+		result.append(contentsOf: stmts)
+	} else {
+		cons.error(string: "[Error] Failed to load application script")
+		return nil
 	}
 
 	return result

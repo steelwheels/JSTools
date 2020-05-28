@@ -1,8 +1,4 @@
 {
-	"scripts": {
-		"main": [
-			"main.js"
-		]
-	}
+	"application": "main.js"
 }
 
