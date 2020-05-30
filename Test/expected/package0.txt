@@ -1,0 +1,6 @@
+This is main function
+ call lib_a from main ... This is lib_a
+ call lib_b from main ... This is lib_b
+ call lib_a from lib_b ... This is lib_a
+ run thread_a by main ... This is thread_a
+ run thread_b by main ... This is thread_b

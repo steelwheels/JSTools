@@ -20,7 +20,7 @@ all: all_jsh all_jscat all_jsgrep
 #
 all_jsh: help nostrict hello exit0 exit1 exit2 args0 enum0 math0 shell1 if0 \
 	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 pipe3 fmgr0 \
-	 hello0 hello1 json0 filetype0 url0 \
+	 hello0 hello1 json0 filetype0 url0 package0 \
 	 operation0 operation1 thread0 process0 run0 run1 run4 env0 sleep \
 	 no_file_error syn_error
 
@@ -160,6 +160,11 @@ url0: dummy
 	@echo "*** test: url0 ***"
 	$(jsh) $(script_dir)/url0.js | tee $(build_dir)/url0.txt
 	diff $(build_dir)/url0.txt $(expected_dir)/url0.txt
+
+package0: dummy
+	@echo "*** test: package0 ***"
+	$(jsh) --use-main $(script_dir)/package0.jspkg | tee $(build_dir)/package0.txt
+	diff $(build_dir)/package0.txt $(expected_dir)/package0.txt
 
 operation0: dummy
 	if $(jsh) --use-main $(script_dir)/operation0.js -- $(script_dir)/Operation/op0.js 2>&1 | tee $(build_dir)/operation0.txt ; \

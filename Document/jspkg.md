@@ -18,7 +18,7 @@ Here is a sample description of manifest file.
 ````
 {
 	"application": 		"main.js",
-	"libraries" [
+	"libraries": [
 		"lib_a.js",
 		"lib_b.js"
 	],
