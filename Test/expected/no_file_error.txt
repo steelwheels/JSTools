@@ -1,2 +1,2 @@
-[31m[Error] File is not found: no_file.js
+[31m[Error] Failed to read no_file.js
 [0m

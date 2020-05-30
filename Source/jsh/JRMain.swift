@@ -13,12 +13,6 @@ import KiwiEngine
 import JavaScriptCore
 import Foundation
 
-enum Package {
-case resource(KEResource)
-case files(Array<String>)
-case error(NSError)
-}
-
 public func main(arguments args: Array<String>) -> Int32
 {
 	/* Parse command line arguments */
@@ -44,146 +38,50 @@ public func main(arguments args: Array<String>) -> Int32
 		/* Execute shell */
 		let emptyres = KEResource(baseURL: Bundle.main.bundleURL)
 		return executeShell(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, scriptFiles: files, environment: environment, resource: emptyres, config: compconf)
-	} else {
-		/* Decide packaging */
-		var resource: KEResource? = nil
-		let stmts: Array<String>
-		switch allocatePackage(scriptFiles: files) {
-		case .files(let files):
-			/* Read files */
-			if let ss = readFiles(fileNames: files, console: console) {
-				stmts = ss
-			} else {
-				return 1
-			}
-		case .resource(let res):
-			/* Read resource */
-			if let ss = readResource(resource: res, console: console) {
-				stmts = ss
-			} else {
-				return 1
-			}
-			resource = res
+	} else if files.count == 1 {
+		/* Get source file */
+		let fileurl = URL(fileURLWithPath: files[0])
+		let srcfile: KEResource
+		switch KEResource.allocateResource(from: fileurl) {
+		case .ok(let res):
+			srcfile = res
 		case .error(let err):
-			console.error(string: "\(err.toString())\n")
+			console.error(string: "[Error] \(err.description)\n")
 			return 1
 		}
-
-		/* Translate shell script to JavaScript */
-		guard let modstmts = convertShellStatements(statements: stmts, console: console) else {
-			return 1
-		}
-
-		if config.isCompileMode {
-			/* Dump statement instead */
-			for stmt in modstmts {
-				console.print(string: stmt + "\n")
+		if let stmts = readMainScript(sourceFile: srcfile) {
+			/* Translate shell script to JavaScript */
+			guard let modstmts = convertShellStatements(statements: stmts, console: console) else {
+				return 1
 			}
-			return 0
-		} else {
-			/* Get resource */
-			if resource == nil {
-				resource = KEResource(baseURL: Bundle.main.bundleURL)
-			}
-			/* Allocate script */
-			let modscr = modstmts.joined(separator: "\n")
-			/* Execute script */
-			return executeScript(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, script: modscr, arguments: arguments, environment: environment, resource: resource!, config: compconf)
-		}
-	}
-}
-
-private func allocatePackage(scriptFiles files: Array<String>) -> Package {
-	let result: Package
-	switch files.count {
-	case 0:
-		result = .error(NSError.fileError(message: "No script file"))
-	case 1:
-		/* Accept "*.js" or "*.jspkg" file */
-		let path = NSString(string: files[0])
-		switch path.pathExtension {
-		case "jspkg":
-			result = allocatePackage(file: files[0])
-		default:
-			result = allocateFiles(files: files)
-		}
-	default:
-		/* Accept multiple js files */
-		result = allocateFiles(files: files)
-	}
-	return result
-}
-
-private func allocatePackage(file fl: String) -> Package {
-	let url    = URL(fileURLWithPath: fl)
-	let res    = KEResource(baseURL: url)
-	let loader = KEManifestLoader()
-	if let err = loader.load(into: res) {
-		return .error(err)
-	} else {
-		return .resource(res)
-	}
-}
-
-private func allocateFiles(files fls: Array<String>) -> Package {
-	for f in fls {
-		let path = NSString(string: f)
-		let ext  = path.pathExtension
-		if ext != "js" && ext != "jsh" {
-			return .error(NSError.fileError(message: "Unexpected file: \(f)"))
-		}
-	}
-	return .files(fls)
-}
-
-private func readFiles(fileNames files: Array<String>, console cons: CNConsole) -> Array<String>? {
-	var stmts: Array<String> = []
-	for file in files {
-		let url = URL(fileURLWithPath: file)
-		if let scr = url.loadContents() {
-			/* Split by newline */
-			let sstmts = scr.components(separatedBy: "\n")
-			stmts.append(contentsOf: sstmts)
-		} else {
-			cons.error(string: "[Error] File is not found: \(file)\n")
-			return nil
-		}
-	}
-	return stmts
-}
-
-private func readResource(resource res: KEResource, console cons: CNConsole) -> Array<String>? {
-	var result: Array<String> = []
-	/* Load library */
-	if let libnum = res.countOfLibraries() {
-		for i in 0..<libnum {
-			if let scr = res.loadLibrary(index: i) {
-				/* Split by newline */
-				let stmts = scr.components(separatedBy: "\n")
-				result.append(contentsOf: stmts)
-			} else {
-				let name: String
-				if let n = res.pathStringOfLibrary(index: i) {
-					name = n
-				} else {
-					name = "<unknown>"
+			if config.isCompileMode {
+				/* Dump statement instead */
+				for stmt in modstmts {
+					console.print(string: stmt + "\n")
 				}
-				cons.error(string: "[Error] Failed to load library: \(name)")
-				return nil
+				return 0
+			} else {
+				/* Allocate script */
+				let modscr = modstmts.joined(separator: "\n")
+				srcfile.storeAppilication(script: modscr)
+				/* Execute script */
+				return executeScript(sourceFile: srcfile, processManager: procmgr, input: instrm, output: outstrm, error: errstrm, script: modscr, arguments: arguments, environment: environment, config: compconf)
 			}
+		} else {
+			console.error(string: "[Error] Failed to read \(files[0])\n")
 		}
-	}
-	/* Load main scripts */
-	if let mainscr = res.loadApplication() {
-		/* Split by newline */
-		let stmts = mainscr.components(separatedBy: "\n")
-		result.append(contentsOf: stmts)
 	} else {
-		cons.error(string: "[Error] Failed to load application script")
+		console.error(string: "[Error] Too many source files\n")
+	}
+	return 1
+}
+
+private func readMainScript(sourceFile file: KEResource) -> Array<String>? {
+	if let script = file.loadApplication() {
+		return script.components(separatedBy: "\n")
+	} else {
 		return nil
 	}
-
-	return result
 }
 
 private func convertShellStatements(statements stmts: Array<String>, console cons: CNConsole) -> Array<String>?
@@ -209,9 +107,9 @@ private func executeShell(processManager procmgr: CNProcessManager, input instrm
 	return shell.waitUntilExit()
 }
 
-private func executeScript(processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, environment env: CNEnvironment, resource res: KEResource, config conf: KHConfig) -> Int32
+private func executeScript(sourceFile srcfile: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, environment env: CNEnvironment, config conf: KHConfig) -> Int32
 {
-	let thread  = KHScriptThreadObject(script: .script(scr), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: env, resource: res, config: conf)
+	let thread  = KHScriptThreadObject(sourceFile: .resource(srcfile), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
 
 	/* Convert argument */
 	var nargs: Array<CNNativeValue> = []

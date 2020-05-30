@@ -71,13 +71,9 @@ You can switch the mode. When you press `>` and enter key, the mode is switched 
 |[setenv](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/setenv-man.md)    |Set environment value by it's name and value |
 
 
-# File System
-This is the default file system:
+## File format
+You can use the file bundle named _JavaScript Package_ instead of simple text file. The bundle is a directory whose extension is `*.jspkg`. The _manifest file_ defines the content of the package. For more precise, see [JavaScript package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md). 
 
-## Directories
-There are following directories under the home directory.
-* `Documents/Script`: The directory to put sample scripts
-* `tmp`: Temporary directory
 
 ## Reference
 * [File System Basics](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html): File system programming guide published by Apple.
