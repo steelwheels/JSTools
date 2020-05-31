@@ -21,8 +21,6 @@
 		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
 		05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; };
 		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
-		05C3779E23532B7B0067A9B6 /* KiwiObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0514FBD3217F92C600F70A1B /* KiwiObject.framework */; };
-		05C3779F23532B7B0067A9B6 /* KiwiObject.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0514FBD3217F92C600F70A1B /* KiwiObject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05C377A123532BDC0067A9B6 /* KiwiEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A023532BDC0067A9B6 /* KiwiEngine.framework */; };
 		05C377A223532DB70067A9B6 /* KiwiEngine.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05C377A023532BDC0067A9B6 /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05C377A423533BFF0067A9B6 /* CoconutShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A323533BFF0067A9B6 /* CoconutShell.framework */; };
@@ -169,7 +167,6 @@
 				05C377A723533E240067A9B6 /* CoconutShell.framework in CopyFiles */,
 				0518D4302152B7930036E5D5 /* KiwiLibrary.framework in CopyFiles */,
 				05C377A223532DB70067A9B6 /* KiwiEngine.framework in CopyFiles */,
-				05C3779F23532B7B0067A9B6 /* KiwiObject.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +174,6 @@
 
 /* Begin PBXFileReference section */
 		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
-		0514FBD3217F92C600F70A1B /* KiwiObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiObject.framework; path = ../../../Library/Frameworks/KiwiObject.framework; sourceTree = "<group>"; };
 		05230414202C8FF7003B1CB9 /* jsgrep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsgrep; sourceTree = BUILT_PRODUCTS_DIR; };
 		05230416202C8FF7003B1CB9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0523041D202C90E0003B1CB9 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
@@ -247,7 +243,6 @@
 				05F29AAE214F737A005CFF9A /* Cobalt.framework in Frameworks */,
 				05F29AB3214F73E5005CFF9A /* KiwiShell.framework in Frameworks */,
 				05C377A423533BFF0067A9B6 /* CoconutShell.framework in Frameworks */,
-				05C3779E23532B7B0067A9B6 /* KiwiObject.framework in Frameworks */,
 				05C377A123532BDC0067A9B6 /* KiwiEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +350,6 @@
 				05C377A323533BFF0067A9B6 /* CoconutShell.framework */,
 				05C377A023532BDC0067A9B6 /* KiwiEngine.framework */,
 				053676F523109EE5001376B1 /* CoconutShell.framework */,
-				0514FBD3217F92C600F70A1B /* KiwiObject.framework */,
 				05AC139E214FB06C00601301 /* CoconutDatabase.framework */,
 				05F29AB2214F73E5005CFF9A /* KiwiShell.framework */,
 				05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */,
