@@ -3,62 +3,64 @@
  */
 
 class Tower {
-	constructor(towernum, disknum, toweridx){
-		this.tower_num		= towernum ;
+	constructor(toweridx, towernum, disknum){
+		this.disks		= [null, null, null, null] ;
 		this.tower_index	= toweridx ;
+		this.tower_num		= towernum ;
 		this.disk_num		= disknum ;
-		this.tower_width	= int(Curses.width / towernum) ;
+	}
 
-		/* Init disk state */
-		this.disk_status = Array(disknum) ;
-		for(let i=0 ; i<disknum ; i++){
-			this.disk_status[i] = false ;
-		}
-
-		/* Calc disk width */
-		this.disk_width = Array(disknum) ;
-		let width = this.tower_width ;
-		for(let i=disknum-1 ; i>=0 ; i--){
-			width = int(width * 2 / 3) ;
-			this.disk_width[i] = width ;
+	set_disk(idx, disk){
+		this.disks[idx] = disk ;
+		if(disk != null){
+			let diff = int(Curses.width / this.tower_num) ;
+			let x    = diff * this.tower_index ;
+			let y    = idx * Disk.height ;
+			disk.draw(x, y) ;
 		}
 	}
 
-	get_status(level) { // -> Bool
-		return this.disk_status[level] ;
+	get_disk(idx){
+		let result = this.disks[idx] ;
+		if(result != null){
+			let diff = int(Curses.width / this.tower_num) ;
+			let x    = diff * this.tower_index ;
+			let y    = idx * Disk.height ;
+			result.erace(x, y) ;
+			this.disks[idx] = null ;
+		}
+		return result ;
 	}
 
-	set_status(level, status) {
-		this.disk_status[level] = status ;
+	push_disk(disk){
+		for(let i=this.disk_num-1 ; i>=0 ; i--){
+			if(this.disks[i] == null){
+				this.set_disk(i, disk) ;
+				break ;
+			}
+		}
+	}
+
+	pop_disk(){
+		for(let i=0 ; i<this.disk_num ; i++){
+			if(this.disks[i] != null){
+				return this.get_disk(i) ;
+			}
+		}
+		return null ;
 	}
 
 	draw(){
-		let width = this.tower_width ;
-		let left  = width * this.tower_index ;
-		let y     = 0 ;
+		let diff = int(Curses.width / this.tower_num) ;
+		let x    = diff * this.tower_index ;
+		let y    = 0 ;
 		for(let i=0 ; i<this.disk_num ; i++){
-			let col = this.disk_color(i) ;
-			Curses.foregroundColor = col ;
-			Curses.backgroundColor = col ;
-
-			let w = this.disk_width[i] ;
-			let x = left + int((width - w) / 2) ;
-			Curses.fill(x, y, w, 4, "*") ;
-			y += 4 ;
+			let disk = this.disks[i] ;
+			if(disk != null){
+				disk.draw(x, y) ;
+			}
+			y += Disk.height ;
 		}
-	}
-
-	disk_color(lvl){
-		let result = Color.white ;
-		switch(lvl){
-		  case 0:	result = Color.red ;		break ;
-		  case 1:	result = Color.green ;		break ;
-		  case 2:	result = Color.blue ;		break ;
-		  case 3:	result = Color.yellow ;		break ;
-		  case 4:	result = Color.cyan ;		break ;
-		  case 5:	result = Color.magenta ;	break ;
-		}
-		return result ;
 	}
 }
 
