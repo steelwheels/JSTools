@@ -12,24 +12,15 @@
 		0518D4302152B7930036E5D5 /* KiwiLibrary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0518D4312152B7970036E5D5 /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AAD214F737A005CFF9A /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0518D4322152B79A0036E5D5 /* CoconutData.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F29AAA214F72C7005CFF9A /* CoconutData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05230417202C8FF7003B1CB9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05230416202C8FF7003B1CB9 /* main.swift */; };
-		0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041D202C90E0003B1CB9 /* JRMain.swift */; };
-		05230420202C930C003B1CB9 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523041F202C930C003B1CB9 /* JRConfig.swift */; };
 		053676EB23109BA6001376B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676EA23109BA6001376B1 /* main.swift */; };
 		053676F72310A015001376B1 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053676F62310A015001376B1 /* JRMain.swift */; };
 		0547C08323111B3000AC5395 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B998B2311120A00D9CDF1 /* JRConfig.swift */; };
-		05A856DC20035B2A00DB5E75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A856DB20035B2A00DB5E75 /* main.swift */; };
 		05AC139F214FB06C00601301 /* CoconutDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AC139E214FB06C00601301 /* CoconutDatabase.framework */; };
-		05AC80D220268EF700165368 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC80D120268EF700165368 /* main.swift */; };
 		05C377A123532BDC0067A9B6 /* KiwiEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A023532BDC0067A9B6 /* KiwiEngine.framework */; };
 		05C377A223532DB70067A9B6 /* KiwiEngine.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05C377A023532BDC0067A9B6 /* KiwiEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05C377A423533BFF0067A9B6 /* CoconutShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A323533BFF0067A9B6 /* CoconutShell.framework */; };
 		05C377A623533DFD0067A9B6 /* CoconutData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C377A523533DFD0067A9B6 /* CoconutData.framework */; };
 		05C377A723533E240067A9B6 /* CoconutShell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05C377A323533BFF0067A9B6 /* CoconutShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05D4377F20035C4500320CA4 /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4377E20035C4500320CA4 /* JRMain.swift */; };
-		05D437812003713000320CA4 /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D437802003713000320CA4 /* JRConfig.swift */; };
-		05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E62026A70C00EAAE8C /* JRMain.swift */; };
-		05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAD1E82026A7C500EAAE8C /* JRConfig.swift */; };
 		05F29AAE214F737A005CFF9A /* Cobalt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AAD214F737A005CFF9A /* Cobalt.framework */; };
 		05F29AB1214F73D1005CFF9A /* KiwiLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */; };
 		05F29AB3214F73E5005CFF9A /* KiwiShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F29AB2214F73E5005CFF9A /* KiwiShell.framework */; };
@@ -42,13 +33,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 05D6F3701FE406CD0070DF5B;
 			remoteInfo = Install;
-		};
-		0523041B202C9067003B1CB9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05230413202C8FF7003B1CB9;
-			remoteInfo = jsgrep;
 		};
 		053676EF23109BB9001376B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -64,13 +48,6 @@
 			remoteGlobalIDString = 05D6F3621FE3FE1C0070DF5B;
 			remoteInfo = JSToolsBundle;
 		};
-		0559B0AB2083003000662C2A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05D6F3621FE3FE1C0070DF5B;
-			remoteInfo = JSToolsBundle;
-		};
 		057FBB0A232CB14F00B51B4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
@@ -78,46 +55,9 @@
 			remoteGlobalIDString = 0510E6711FE560F300B2C718;
 			remoteInfo = Test;
 		};
-		05A856E020035B3D00DB5E75 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05D6F3621FE3FE1C0070DF5B;
-			remoteInfo = JSToolsBundle;
-		};
-		05A856E220035B4600DB5E75 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05A856D820035B2900DB5E75;
-			remoteInfo = jscat;
-		};
-		05AC80D620268F0100165368 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05AC80CE20268EF700165368;
-			remoteInfo = jsadb;
-		};
-		05DACDA420274E87001C4283 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05A42E3B1FE3FD5600321C93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05D6F3621FE3FE1C0070DF5B;
-			remoteInfo = JSToolsBundle;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		05230412202C8FF7003B1CB9 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		053676E623109BA6001376B1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,24 +75,6 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05A856D720035B2900DB5E75 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		05AC80CD20268EF700165368 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
 		};
 		05D6F36B1FE3FF620070DF5B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -174,30 +96,18 @@
 
 /* Begin PBXFileReference section */
 		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
-		05230414202C8FF7003B1CB9 /* jsgrep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsgrep; sourceTree = BUILT_PRODUCTS_DIR; };
-		05230416202C8FF7003B1CB9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		0523041D202C90E0003B1CB9 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
-		0523041F202C930C003B1CB9 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		053676E823109BA6001376B1 /* jsh */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsh; sourceTree = BUILT_PRODUCTS_DIR; };
 		053676EA23109BA6001376B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		053676F523109EE5001376B1 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoconutShell.framework; sourceTree = "<group>"; };
 		053676F62310A015001376B1 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		059B998B2311120A00D9CDF1 /* JRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
-		05A856D920035B2900DB5E75 /* jscat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jscat; sourceTree = BUILT_PRODUCTS_DIR; };
-		05A856DB20035B2A00DB5E75 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05AC139E214FB06C00601301 /* CoconutDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutDatabase.framework; path = ../../../Library/Frameworks/CoconutDatabase.framework; sourceTree = "<group>"; };
-		05AC80CF20268EF700165368 /* jsadb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsadb; sourceTree = BUILT_PRODUCTS_DIR; };
-		05AC80D120268EF700165368 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05C377A023532BDC0067A9B6 /* KiwiEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiEngine.framework; path = ../../../Library/Frameworks/KiwiEngine.framework; sourceTree = "<group>"; };
 		05C377A323533BFF0067A9B6 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutShell.framework; path = ../../../Library/Frameworks/CoconutShell.framework; sourceTree = "<group>"; };
 		05C377A523533DFD0067A9B6 /* CoconutData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutData.framework; path = ../../../Library/Frameworks/CoconutData.framework; sourceTree = "<group>"; };
-		05D4377E20035C4500320CA4 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
-		05D437802003713000320CA4 /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSTools-Bridging-Header.h"; sourceTree = "<group>"; };
 		05D6F3631FE3FE1C0070DF5B /* jstools.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jstools.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D6F3651FE3FE1C0070DF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		05DAD1E62026A70C00EAAE8C /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
-		05DAD1E82026A7C500EAAE8C /* JRConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05F29AAA214F72C7005CFF9A /* CoconutData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutData.framework; path = ../../../Library/Frameworks/CoconutData.framework; sourceTree = "<group>"; };
 		05F29AAD214F737A005CFF9A /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
 		05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiwiLibrary.framework; path = ../../../Library/Frameworks/KiwiLibrary.framework; sourceTree = "<group>"; };
@@ -205,28 +115,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		05230411202C8FF7003B1CB9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		053676E523109BA6001376B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05A856D620035B2900DB5E75 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05AC80CC20268EF700165368 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -250,16 +139,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05230415202C8FF7003B1CB9 /* jsgrep */ = {
-			isa = PBXGroup;
-			children = (
-				0523041D202C90E0003B1CB9 /* JRMain.swift */,
-				0523041F202C930C003B1CB9 /* JRConfig.swift */,
-				05230416202C8FF7003B1CB9 /* main.swift */,
-			);
-			path = jsgrep;
-			sourceTree = "<group>";
-		};
 		053676E923109BA6001376B1 /* jsh */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,32 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				05D6F3631FE3FE1C0070DF5B /* jstools.bundle */,
-				05A856D920035B2900DB5E75 /* jscat */,
-				05AC80CF20268EF700165368 /* jsadb */,
-				05230414202C8FF7003B1CB9 /* jsgrep */,
 				053676E823109BA6001376B1 /* jsh */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		05A856DA20035B2A00DB5E75 /* jscat */ = {
-			isa = PBXGroup;
-			children = (
-				05D4377E20035C4500320CA4 /* JRMain.swift */,
-				05D437802003713000320CA4 /* JRConfig.swift */,
-				05A856DB20035B2A00DB5E75 /* main.swift */,
-			);
-			path = jscat;
-			sourceTree = "<group>";
-		};
-		05AC80D020268EF700165368 /* jsadb */ = {
-			isa = PBXGroup;
-			children = (
-				05DAD1E62026A70C00EAAE8C /* JRMain.swift */,
-				05DAD1E82026A7C500EAAE8C /* JRConfig.swift */,
-				05AC80D120268EF700165368 /* main.swift */,
-			);
-			path = jsadb;
 			sourceTree = "<group>";
 		};
 		05D6F3531FE3FD880070DF5B /* Source */ = {
@@ -327,9 +183,6 @@
 			children = (
 				05D6F3541FE3FDAF0070DF5B /* JSTools-Bridging-Header.h */,
 				053676E923109BA6001376B1 /* jsh */,
-				05A856DA20035B2A00DB5E75 /* jscat */,
-				05AC80D020268EF700165368 /* jsadb */,
-				05230415202C8FF7003B1CB9 /* jsgrep */,
 			);
 			name = Source;
 			path = ../Source;
@@ -402,9 +255,6 @@
 			buildWorkingDirectory = "";
 			dependencies = (
 				053676F023109BB9001376B1 /* PBXTargetDependency */,
-				0523041C202C9067003B1CB9 /* PBXTargetDependency */,
-				05AC80D720268F0100165368 /* PBXTargetDependency */,
-				05A856E320035B4600DB5E75 /* PBXTargetDependency */,
 			);
 			name = Install;
 			passBuildSettingsInEnvironment = 1;
@@ -413,24 +263,6 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		05230413202C8FF7003B1CB9 /* jsgrep */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0523041A202C8FF7003B1CB9 /* Build configuration list for PBXNativeTarget "jsgrep" */;
-			buildPhases = (
-				05230410202C8FF7003B1CB9 /* Sources */,
-				05230411202C8FF7003B1CB9 /* Frameworks */,
-				05230412202C8FF7003B1CB9 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0559B0AC2083003000662C2A /* PBXTargetDependency */,
-			);
-			name = jsgrep;
-			productName = jsgrep;
-			productReference = 05230414202C8FF7003B1CB9 /* jsgrep */;
-			productType = "com.apple.product-type.tool";
-		};
 		053676E723109BA6001376B1 /* jsh */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 053676EE23109BA6001376B1 /* Build configuration list for PBXNativeTarget "jsh" */;
@@ -447,42 +279,6 @@
 			name = jsh;
 			productName = jsh;
 			productReference = 053676E823109BA6001376B1 /* jsh */;
-			productType = "com.apple.product-type.tool";
-		};
-		05A856D820035B2900DB5E75 /* jscat */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 05A856DF20035B2A00DB5E75 /* Build configuration list for PBXNativeTarget "jscat" */;
-			buildPhases = (
-				05A856D520035B2900DB5E75 /* Sources */,
-				05A856D620035B2900DB5E75 /* Frameworks */,
-				05A856D720035B2900DB5E75 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				05A856E120035B3D00DB5E75 /* PBXTargetDependency */,
-			);
-			name = jscat;
-			productName = jscat;
-			productReference = 05A856D920035B2900DB5E75 /* jscat */;
-			productType = "com.apple.product-type.tool";
-		};
-		05AC80CE20268EF700165368 /* jsadb */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 05AC80D520268EF700165368 /* Build configuration list for PBXNativeTarget "jsadb" */;
-			buildPhases = (
-				05AC80CB20268EF700165368 /* Sources */,
-				05AC80CC20268EF700165368 /* Frameworks */,
-				05AC80CD20268EF700165368 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				05DACDA520274E87001C4283 /* PBXTargetDependency */,
-			);
-			name = jsadb;
-			productName = jsadb;
-			productReference = 05AC80CF20268EF700165368 /* jsadb */;
 			productType = "com.apple.product-type.tool";
 		};
 		05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */ = {
@@ -519,27 +315,12 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
-					05230413202C8FF7003B1CB9 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-					};
 					053676E723109BA6001376B1 = {
 						CreatedOnToolsVersion = 10.3;
 						ProvisioningStyle = Automatic;
 					};
 					057FBB06232CB14100B51B4C = {
 						CreatedOnToolsVersion = 10.3;
-						ProvisioningStyle = Automatic;
-					};
-					05A856D820035B2900DB5E75 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-					};
-					05AC80CE20268EF700165368 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					05D6F3621FE3FE1C0070DF5B = {
@@ -567,9 +348,6 @@
 			targets = (
 				05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */,
 				053676E723109BA6001376B1 /* jsh */,
-				05A856D820035B2900DB5E75 /* jscat */,
-				05AC80CE20268EF700165368 /* jsadb */,
-				05230413202C8FF7003B1CB9 /* jsgrep */,
 				05D6F3701FE406CD0070DF5B /* Install */,
 				0510E6711FE560F300B2C718 /* Test */,
 				057FBB06232CB14100B51B4C /* Document */,
@@ -588,16 +366,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		05230410202C8FF7003B1CB9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05230420202C930C003B1CB9 /* JRConfig.swift in Sources */,
-				0523041E202C90E0003B1CB9 /* JRMain.swift in Sources */,
-				05230417202C8FF7003B1CB9 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		053676E423109BA6001376B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -605,26 +373,6 @@
 				0547C08323111B3000AC5395 /* JRConfig.swift in Sources */,
 				053676F72310A015001376B1 /* JRMain.swift in Sources */,
 				053676EB23109BA6001376B1 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05A856D520035B2900DB5E75 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05D437812003713000320CA4 /* JRConfig.swift in Sources */,
-				05D4377F20035C4500320CA4 /* JRMain.swift in Sources */,
-				05A856DC20035B2A00DB5E75 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05AC80CB20268EF700165368 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05DAD1E92026A7C500EAAE8C /* JRConfig.swift in Sources */,
-				05DAD1E72026A70C00EAAE8C /* JRMain.swift in Sources */,
-				05AC80D220268EF700165368 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,11 +391,6 @@
 			target = 05D6F3701FE406CD0070DF5B /* Install */;
 			targetProxy = 0510E6751FE560FD00B2C718 /* PBXContainerItemProxy */;
 		};
-		0523041C202C9067003B1CB9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05230413202C8FF7003B1CB9 /* jsgrep */;
-			targetProxy = 0523041B202C9067003B1CB9 /* PBXContainerItemProxy */;
-		};
 		053676F023109BB9001376B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 053676E723109BA6001376B1 /* jsh */;
@@ -658,35 +401,10 @@
 			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
 			targetProxy = 053676F123109BCA001376B1 /* PBXContainerItemProxy */;
 		};
-		0559B0AC2083003000662C2A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
-			targetProxy = 0559B0AB2083003000662C2A /* PBXContainerItemProxy */;
-		};
 		057FBB0B232CB14F00B51B4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0510E6711FE560F300B2C718 /* Test */;
 			targetProxy = 057FBB0A232CB14F00B51B4C /* PBXContainerItemProxy */;
-		};
-		05A856E120035B3D00DB5E75 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
-			targetProxy = 05A856E020035B3D00DB5E75 /* PBXContainerItemProxy */;
-		};
-		05A856E320035B4600DB5E75 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05A856D820035B2900DB5E75 /* jscat */;
-			targetProxy = 05A856E220035B4600DB5E75 /* PBXContainerItemProxy */;
-		};
-		05AC80D720268F0100165368 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05AC80CE20268EF700165368 /* jsadb */;
-			targetProxy = 05AC80D620268F0100165368 /* PBXContainerItemProxy */;
-		};
-		05DACDA520274E87001C4283 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05D6F3621FE3FE1C0070DF5B /* JSToolsBundle */;
-			targetProxy = 05DACDA420274E87001C4283 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -715,45 +433,6 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		05230418202C8FF7003B1CB9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TR2DNF3P93;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
-					"$(HOME)/Library/Frameworks",
-				);
-				GCC_OPTIMIZATION_LEVEL = 2;
-				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks ${inherited}";
-				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		05230419202C8FF7003B1CB9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TR2DNF3P93;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks ${inherited}";
-				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -949,92 +628,6 @@
 			};
 			name = Release;
 		};
-		05A856DD20035B2A00DB5E75 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TR2DNF3P93;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
-					"$(HOME)/Library/Frameworks",
-				);
-				GCC_OPTIMIZATION_LEVEL = 2;
-				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
-				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		05A856DE20035B2A00DB5E75 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TR2DNF3P93;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				GCC_OPTIMIZATION_LEVEL = 2;
-				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
-				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		05AC80D320268EF700165368 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TR2DNF3P93;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks",
-					"$(HOME)/Library/Frameworks",
-				);
-				GCC_OPTIMIZATION_LEVEL = 2;
-				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
-				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				STRIP_INSTALLED_PRODUCT = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		05AC80D420268EF700165368 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TR2DNF3P93;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				INSTALL_PATH = "$(HOME)/tools/jstools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/jstools.bundle/Contents/Frameworks $(inherited)";
-				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/jstools.bundle/Contents/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				STRIP_INSTALLED_PRODUCT = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "../Source/JSTools-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		05D6F3671FE3FE1C0070DF5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1120,15 +713,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0523041A202C8FF7003B1CB9 /* Build configuration list for PBXNativeTarget "jsgrep" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				05230418202C8FF7003B1CB9 /* Debug */,
-				05230419202C8FF7003B1CB9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		053676EE23109BA6001376B1 /* Build configuration list for PBXNativeTarget "jsh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1152,24 +736,6 @@
 			buildConfigurations = (
 				05A42E481FE3FD5600321C93 /* Debug */,
 				05A42E491FE3FD5600321C93 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		05A856DF20035B2A00DB5E75 /* Build configuration list for PBXNativeTarget "jscat" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				05A856DD20035B2A00DB5E75 /* Debug */,
-				05A856DE20035B2A00DB5E75 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		05AC80D520268EF700165368 /* Build configuration list for PBXNativeTarget "jsadb" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				05AC80D320268EF700165368 /* Debug */,
-				05AC80D420268EF700165368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -2,10 +2,7 @@
 # unit_test.mk
 #
 
-jsrun 		= $(HOME)/tools/jstools/jsrun
 jsh 		= $(HOME)/tools/jstools/jsh
-jscat 		= $(HOME)/tools/jstools/jscat
-jsgrep 		= $(HOME)/tools/jstools/jsgrep
 test_dir	= ../Test
 script_dir	= ../Test/script
 sample_dir	= ../Sample
@@ -13,7 +10,7 @@ data_dir	= $(test_dir)/data
 expected_dir	= $(test_dir)/expected
 build_dir	= $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 
-all: all_jsh all_jscat all_jsgrep
+all: all_jsh
 
 #
 # jsh
@@ -237,47 +234,5 @@ syn_error: dummy
 	fi
 	diff $(build_dir)/syn_err0.txt $(expected_dir)/syn_err0.txt
 
-#
-# jscat
-#
-all_jscat: jscat0 jscat1
-
-jscat0: dummy
-	$(jscat) < $(data_dir)/json-empty.json > $(build_dir)/json-empty.json.out
-	diff  $(build_dir)/json-empty.json.out $(expected_dir)/json-empty.json.OK
-
-jscat1: dummy
-	$(jscat) $(data_dir)/json-1data-0.json $(data_dir)/json-1data-1.json \
-	  > $(build_dir)/json-1data-0_1.json
-	diff $(build_dir)/json-1data-0_1.json $(expected_dir)/json-1data-0_1.json.OK
-
-#
-# jsgrep
-#
-all_jsgrep: jsgrep0 jsgrep1 jsgrep2 jsgrep3 jsgrep4
-
-jsgrep0: dummy
-	$(jsgrep) --help 2>&1 | tee $(build_dir)/jsgrep-help.txt
-	diff $(build_dir)/jsgrep-help.txt $(expected_dir)/jsgrep-help.txt.OK
-
-jsgrep1: dummy
-	$(jsgrep) -k data0 $(data_dir)/json-2data-0.json \
-	  | tee $(build_dir)/jsgrep-2data-0.json
-	diff -wB $(build_dir)/jsgrep-2data-0.json $(data_dir)/json-2data-0.json
-
-jsgrep2: dummy
-	$(jsgrep) -v hello $(data_dir)/json-2data-0.json \
-	  | tee $(build_dir)/jsgrep-2data-2.json
-	diff -wB $(build_dir)/jsgrep-2data-2.json $(data_dir)/json-2data-0.json
-
-jsgrep3: dummy
-	$(jsgrep) -p data1 hello $(data_dir)/json-2data-0.json \
-	  | tee $(build_dir)/jsgrep-2data-3.json
-	diff -wB $(build_dir)/jsgrep-2data-3.json $(data_dir)/json-2data-0.json
-
-jsgrep4: dummy
-	$(jsgrep) -p data0 hello $(data_dir)/json-2data-0.json \
-	  | tee $(build_dir)/jsgrep-2data-4.json
-	diff -wB $(build_dir)/jsgrep-2data-4.json $(expected_dir)/empty.txt.OK
-
 dummy:
+
