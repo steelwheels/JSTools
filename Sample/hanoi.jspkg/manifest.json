@@ -1,6 +1,6 @@
 {
-	"application": "main.js",
-	"libraries": [
+	application: "main.js",
+	libraries: [
 		"disk.js",
 		"tower.js"
 	]

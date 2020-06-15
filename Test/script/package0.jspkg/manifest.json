@@ -1,12 +1,12 @@
 {
-	"application":	"main.js",
-	"libraries": [
+	application:	"main.js",
+	libraries: [
 		"lib_a.js",
 		"lib_b.js"
 	],
-	"threads": {
-		"thread_a": "thread_a.js",
-		"thread_b": "thread_b.js"
+	threads: {
+		thread_a: "thread_a.js",
+		thread_b: "thread_b.js"
 	}
 }
 

@@ -7,19 +7,21 @@ The [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md
 The manifest file is put in the top directory in the `jspkg` bundle.
 
 ## File format
-The manifest file defines the location of the files by JSON format.
+The manifest file defines the location of the files by
+[extended JSON](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/object-notation.md)
+format.
 ````
 {
-         "libraries": [
+         libraries: [
                 "<path for JavaScript library 0>",
                 "<path for JavaScript library 1>",
                 ...
         ],
-        "scripts": {
-                "section-name-0": ["<path for JavaScript file0-0>",
+        scripts: {
+                section-name-0: ["<path for JavaScript file0-0>",
                                    "<path for JavaScript file0-1>",
                                    ...],
-                "section-name-1": ["<path for JavaScript file1-0>",
+                section-name-1: ["<path for JavaScript file1-0>",
                                    "<path for JavaScript file1-1>",
                                    ...],
                 ...
@@ -42,5 +44,6 @@ Each threads will have independent items.
 The section name `main` is used for main thread.
 
 # Related document
+* [extended JSON](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/object-notation.md): Extended JSON format to describe object as text
 * [JSTools](https://github.com/steelwheels/JSTools): Command line JavaScript tools.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
