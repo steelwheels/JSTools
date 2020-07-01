@@ -34,7 +34,7 @@ public func main(arguments args: Array<String>) -> Int32
 	let procmgr = CNProcessManager()
 
 	/* Setup external compiler */
-	let extcomp: KHExternalCompiler? = nil
+	let extcomp: KLExternalCompiler? = nil
 
 	let files = config.scriptFiles
 	if files.count == 0 || config.isInteractiveMode {
@@ -103,14 +103,14 @@ private func convertShellStatements(statements stmts: Array<String>, console con
 	return result
 }
 
-private func executeShell(processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, externalCompiler extcomp: KHExternalCompiler?, environment env: CNEnvironment, resource res: KEResource, config conf: KHConfig) -> Int32
+private func executeShell(processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, externalCompiler extcomp: KLExternalCompiler?, environment env: CNEnvironment, resource res: KEResource, config conf: KHConfig) -> Int32
 {
 	let shell = KHShellThreadObject(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, externalCompiler: extcomp, environment: env, resource: res, config: conf)
 	shell.start(argument: .nullValue)
 	return shell.waitUntilExit()
 }
 
-private func executeScript(sourceFile srcfile: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, externalCompiler extcomp: KHExternalCompiler?, environment env: CNEnvironment, config conf: KHConfig) -> Int32
+private func executeScript(sourceFile srcfile: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, externalCompiler extcomp: KLExternalCompiler?, environment env: CNEnvironment, config conf: KHConfig) -> Int32
 {
 	let thread  = KHScriptThreadObject(sourceFile: .resource(srcfile), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, externalCompiler: extcomp, environment: env, config: conf)
 
