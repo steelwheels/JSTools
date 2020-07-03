@@ -1,12 +1,12 @@
-
-
-# jsh: Extended JavaScript for Shell Scripting
+# jsh: Language Manual
 
 ## Introduction
-This document describes about `jsh`. The jsh is extended JavaScript to make shell scripting easier.
+ The `jsh` is extended JavaScript to make shell scripting easier. It is supported by [JSTerminal](https://github.com/steelwheels/JSTerminal/blob/master/README.md) and [JSTools](https://github.com/steelwheels/JSTools/blob/master/README.md).
+
+This document describes about the syntax of `jsh`.
 You can mix the [bourne shell](https://en.wikipedia.org/wiki/Bourne_shell) script and JavaScript.
 The shell script part is translated into JavaScript code before
-executing by JavaScript engine.
+executing by JavaScript engine. And this document does not describe about programming environment. If you want know about it, see [jsh system](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-sys.md).
 
 This is an simple example of `jsh` script:
 ````
@@ -113,7 +113,7 @@ pipe_statement    ::= shell_statement { '|' shell_statement }*
 
 ## Related document
 * [README](https://github.com/steelwheels/JSTools/blob/master/README.md): Summary of this repository
-* [jsh](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): Shell program to execute `jsh` language.
+* [jsh command](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md): `jsh` command line application.
 * [sample scripts](https://github.com/steelwheels/JSTools/blob/master/Document/samples/sample.md): Sample scripts for `jsh`.
 * [Pysh](https://www.yunabe.jp/docs/pysh_overview.html): The rule to use `>` symbol is imported from this language.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
