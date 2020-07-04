@@ -18,8 +18,8 @@ all: all_jsh
 all_jsh: help nostrict hello exit0 exit1 exit2 args0 enum0 math0 shell1 if0 \
 	 main0 main1 cat0 cat1 pipe0 pipe1 pipe2 pipe3 fmgr0 \
 	 hello0 hello1 json0 filetype0 url0 package0 \
-	 operation0 operation1 thread0 process0 run0 run1 run4 env0 sleep \
-	 no_file_error syn_error
+	 operation0 operation1 thread0 process0 run0 run1 run4 env0 pref0 \
+	 sleep no_file_error syn_error
 
 help: dummy
 	@echo "*** test: help ***"
@@ -210,6 +210,11 @@ env0: dummy
 	@echo "*** test: env0 ***"
 	$(jsh) --use-main $(script_dir)/env0.js | tee $(build_dir)/env0.txt
 	diff $(build_dir)/env0.txt $(expected_dir)/env0.txt
+
+pref0: dummy
+	@echo "*** test: pref0 ***"
+	$(jsh) --use-main $(script_dir)/pref0.js | tee $(build_dir)/pref0.txt
+	diff $(build_dir)/pref0.txt $(expected_dir)/pref0.txt
 
 sleep: dummy
 	@echo "*** test: sleep ***"
