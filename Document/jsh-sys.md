@@ -7,6 +7,7 @@ This document describes about programming environment of `jsh`. There are many b
 
 ## Contents
 * [Job control](#Job_Control)
+* [Boot](#Boot)
 * [Environment](#Environment)
 
 ## Job control
@@ -29,7 +30,17 @@ You can switch these mode by `'>'` and `'%'`.
 * _For jsh commandline_: You can stop the process in the current window by choosing
 _Stop menu item_ at Edit menu or pressing COMMAND-. key (`period` key + `command` key).
 
+## Boot
+### Run command file
+If you put `.jshrc` JavScript file on your home directory, the file is parsed at the boot time (before outputting 1st prompt).
+
+This file is used to customize the shell setting. The [Preference](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Preference.md) object supports to setup custom parameters for the shell.
+Even if you want to common library for your application, do not define in this file. Use [JavaScript package (`.jspkg`)](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md) instead of this file.
+
 ## Environment
+### Preference
+The Preference object has parameter and attributes of the system. You can access them by [Preference class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Preference.md).
+
 ### Environment variables
 See [Environment class](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Class/Environment.md) to access them by JavaScript.
 They will be shared beyond the processes.
