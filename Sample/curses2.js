@@ -9,10 +9,10 @@ function main()
 	let height = Curses.height ;
 
 	Curses.moveTo(10, 10) ;
-	console.log("Hello, world !!: " + width + "x" + height);
+	console.print("Hello, world !!: " + width + "x" + height);
 
 	Curses.moveTo(12, 12) ;
-	console.log("Press any key\n") ;
+	console.print("Press any key") ;
 
 	while(true){
 		let c = stdin.getc() ;

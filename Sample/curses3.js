@@ -13,6 +13,7 @@ function main()
 		Curses.moveTo(0, i) ;
 		console.print(i % 10) ;
 	}
+
 	/* Right: top -> bottom */
 	for(i=0 ; i<height ; i++){
 		Curses.moveTo(width-1, i) ;
