@@ -23,7 +23,7 @@ The mode can be distinguished by the prompt character.
 And the script mode accepts JavaScript code.
 You can switch these mode by `'>'` and `'%'`.
 
-![Two modes](Images/mode2.png)
+![Two modes](images/mode2.png)
 
 ### Stop the process
 * _For JSTerminal_: You can stop the process by pressing CTRL-C key.
