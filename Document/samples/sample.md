@@ -149,6 +149,13 @@ function main()
 
 ````
 
+### Games
+
+#### Breakout 
+This is sample game script to play breakout. You can control the bar by `h` and `l' key.
+
+![breakout](breakout.png)
+
 ### Keycode
 
 #### Screen shot
