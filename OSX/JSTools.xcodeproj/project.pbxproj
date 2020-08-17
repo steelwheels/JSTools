@@ -98,7 +98,6 @@
 		0510E6701FE55E9500B2C718 /* install_osx.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = install_osx.mk; path = ../Script/install_osx.mk; sourceTree = "<group>"; };
 		053676E823109BA6001376B1 /* jsh */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsh; sourceTree = BUILT_PRODUCTS_DIR; };
 		053676EA23109BA6001376B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		053676F523109EE5001376B1 /* CoconutShell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoconutShell.framework; sourceTree = "<group>"; };
 		053676F62310A015001376B1 /* JRMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
 		059B998B2311120A00D9CDF1 /* JRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
 		05AC139E214FB06C00601301 /* CoconutDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoconutDatabase.framework; path = ../../../Library/Frameworks/CoconutDatabase.framework; sourceTree = "<group>"; };
@@ -149,20 +148,11 @@
 			path = jsh;
 			sourceTree = "<group>";
 		};
-		057D2B9520149A780027A52A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			path = ../Resource;
-			sourceTree = SOURCE_ROOT;
-		};
 		05A42E3A1FE3FD5600321C93 = {
 			isa = PBXGroup;
 			children = (
 				05D6F3531FE3FD880070DF5B /* Source */,
 				05D6F3641FE3FE1C0070DF5B /* OSX */,
-				057D2B9520149A780027A52A /* Resources */,
 				05A42E441FE3FD5600321C93 /* Products */,
 				05F29A92214F6FC1005CFF9A /* Frameworks */,
 				0510E6701FE55E9500B2C718 /* install_osx.mk */,
@@ -202,7 +192,6 @@
 				05C377A523533DFD0067A9B6 /* CoconutData.framework */,
 				05C377A323533BFF0067A9B6 /* CoconutShell.framework */,
 				05C377A023532BDC0067A9B6 /* KiwiEngine.framework */,
-				053676F523109EE5001376B1 /* CoconutShell.framework */,
 				05AC139E214FB06C00601301 /* CoconutDatabase.framework */,
 				05F29AB2214F73E5005CFF9A /* KiwiShell.framework */,
 				05F29AB0214F73D1005CFF9A /* KiwiLibrary.framework */,
@@ -306,8 +295,8 @@
 		05A42E3B1FE3FD5600321C93 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				DefaultBuildSystemTypeForWorkspace = Original;
-				LastSwiftUpdateCheck = 1030;
+				DefaultBuildSystemTypeForWorkspace = Latest;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Tomoo Hamada";
 				TargetAttributes = {
