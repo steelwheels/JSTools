@@ -51,6 +51,9 @@ public func main(arguments args: Array<String>) -> Int32
 		case .error(let err):
 			console.error(string: "[Error] \(err.description)\n")
 			return 1
+		@unknown default:
+			console.error(string: "[Error] Unknown allocation result\n")
+			return 1
 		}
 		if let stmts = readMainScript(sourceFile: srcfile) {
 			/* Translate shell script to JavaScript */
@@ -98,6 +101,9 @@ private func convertShellStatements(statements stmts: Array<String>, console con
 	case .error(let err):
 		let errobj = err as NSError
 		cons.error(string: "[Error] " + errobj.toString() + "\n")
+		result = nil
+	@unknown default:
+		cons.error(string: "[Error] Unknown parse result\n")
 		result = nil
 	}
 	return result
