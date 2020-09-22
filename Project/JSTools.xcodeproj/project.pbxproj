@@ -10,19 +10,38 @@
 		05B5814925186C5D0055850B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814625186C5D0055850B /* main.swift */; };
 		05B5814A25186C5D0055850B /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814725186C5D0055850B /* JRMain.swift */; };
 		05B5814B25186C5D0055850B /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814825186C5D0055850B /* JRConfig.swift */; };
-		05B5815025186C820055850B /* CoconutData.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5814F25186C820055850B /* CoconutData.xcframework */; };
-		05B5815125186C820055850B /* CoconutData.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5814F25186C820055850B /* CoconutData.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05B5815425186C9B0055850B /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815325186C9B0055850B /* CoconutShell.xcframework */; };
-		05B5815525186C9B0055850B /* CoconutShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815325186C9B0055850B /* CoconutShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05B5815925186CB90055850B /* KiwiLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815625186CB90055850B /* KiwiLibrary.xcframework */; };
-		05B5815A25186CB90055850B /* KiwiLibrary.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815625186CB90055850B /* KiwiLibrary.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05B5815B25186CB90055850B /* KiwiEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815725186CB90055850B /* KiwiEngine.xcframework */; };
-		05B5815C25186CB90055850B /* KiwiEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815725186CB90055850B /* KiwiEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05B5815D25186CB90055850B /* KiwiShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815825186CB90055850B /* KiwiShell.xcframework */; };
-		05B5815E25186CB90055850B /* KiwiShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815825186CB90055850B /* KiwiShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05B5816025186CD20055850B /* Cobalt.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815F25186CD20055850B /* Cobalt.xcframework */; };
-		05B5816125186CD20055850B /* Cobalt.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815F25186CD20055850B /* Cobalt.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05CDC3322518E74A0084251A /* Cobalt.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815F25186CD20055850B /* Cobalt.xcframework */; };
+		05CDC3332518E74A0084251A /* Cobalt.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815F25186CD20055850B /* Cobalt.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05CDC3342518E74A0084251A /* CoconutData.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5814F25186C820055850B /* CoconutData.xcframework */; };
+		05CDC3352518E74A0084251A /* CoconutData.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5814F25186C820055850B /* CoconutData.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05CDC3362518E74A0084251A /* CoconutDatabase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CDC30C2518E11F0084251A /* CoconutDatabase.xcframework */; };
+		05CDC3372518E74A0084251A /* CoconutDatabase.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05CDC30C2518E11F0084251A /* CoconutDatabase.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05CDC3382518E74A0084251A /* CoconutShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815325186C9B0055850B /* CoconutShell.xcframework */; };
+		05CDC3392518E74A0084251A /* CoconutShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815325186C9B0055850B /* CoconutShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05CDC33C2518E75E0084251A /* KiwiEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815725186CB90055850B /* KiwiEngine.xcframework */; };
+		05CDC33D2518E75E0084251A /* KiwiEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815725186CB90055850B /* KiwiEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05CDC33E2518E75E0084251A /* KiwiLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815625186CB90055850B /* KiwiLibrary.xcframework */; };
+		05CDC33F2518E75E0084251A /* KiwiLibrary.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815625186CB90055850B /* KiwiLibrary.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05CDC3402518E75E0084251A /* KiwiShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815825186CB90055850B /* KiwiShell.xcframework */; };
+		05CDC3412518E75E0084251A /* KiwiShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815825186CB90055850B /* KiwiShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05CDC3022518DFF90084251A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05B5813125186BF70055850B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05B5813A25186C220055850B;
+			remoteInfo = jsh;
+		};
+		05CDC3302518E72A0084251A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05B5813125186BF70055850B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05CDC3252518E71C0084251A;
+			remoteInfo = JSToolsBundle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		05B5813925186C220055850B /* CopyFiles */ = {
@@ -34,18 +53,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
-		05B5815225186C820055850B /* Embed Frameworks */ = {
+		05CDC33A2518E74A0084251A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				05B5815A25186CB90055850B /* KiwiLibrary.xcframework in Embed Frameworks */,
-				05B5815525186C9B0055850B /* CoconutShell.xcframework in Embed Frameworks */,
-				05B5816125186CD20055850B /* Cobalt.xcframework in Embed Frameworks */,
-				05B5815125186C820055850B /* CoconutData.xcframework in Embed Frameworks */,
-				05B5815E25186CB90055850B /* KiwiShell.xcframework in Embed Frameworks */,
-				05B5815C25186CB90055850B /* KiwiEngine.xcframework in Embed Frameworks */,
+				05CDC33D2518E75E0084251A /* KiwiEngine.xcframework in Embed Frameworks */,
+				05CDC3372518E74A0084251A /* CoconutDatabase.xcframework in Embed Frameworks */,
+				05CDC3332518E74A0084251A /* Cobalt.xcframework in Embed Frameworks */,
+				05CDC33F2518E75E0084251A /* KiwiLibrary.xcframework in Embed Frameworks */,
+				05CDC3392518E74A0084251A /* CoconutShell.xcframework in Embed Frameworks */,
+				05CDC3352518E74A0084251A /* CoconutData.xcframework in Embed Frameworks */,
+				05CDC3412518E75E0084251A /* KiwiShell.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +83,9 @@
 		05B5815725186CB90055850B /* KiwiEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiEngine.xcframework; path = ../../../Library/Frameworks/KiwiEngine.xcframework; sourceTree = "<group>"; };
 		05B5815825186CB90055850B /* KiwiShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiShell.xcframework; path = ../../../Library/Frameworks/KiwiShell.xcframework; sourceTree = "<group>"; };
 		05B5815F25186CD20055850B /* Cobalt.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Cobalt.xcframework; path = ../../../Library/Frameworks/Cobalt.xcframework; sourceTree = "<group>"; };
+		05CDC30C2518E11F0084251A /* CoconutDatabase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutDatabase.xcframework; path = ../../../Library/Frameworks/CoconutDatabase.xcframework; sourceTree = "<group>"; };
+		05CDC3262518E71C0084251A /* JSTools.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSTools.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		05CDC3282518E71C0084251A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +93,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B5815925186CB90055850B /* KiwiLibrary.xcframework in Frameworks */,
-				05B5815425186C9B0055850B /* CoconutShell.xcframework in Frameworks */,
-				05B5816025186CD20055850B /* Cobalt.xcframework in Frameworks */,
-				05B5815025186C820055850B /* CoconutData.xcframework in Frameworks */,
-				05B5815D25186CB90055850B /* KiwiShell.xcframework in Frameworks */,
-				05B5815B25186CB90055850B /* KiwiEngine.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05CDC3232518E71C0084251A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05CDC33C2518E75E0084251A /* KiwiEngine.xcframework in Frameworks */,
+				05CDC3362518E74A0084251A /* CoconutDatabase.xcframework in Frameworks */,
+				05CDC3322518E74A0084251A /* Cobalt.xcframework in Frameworks */,
+				05CDC33E2518E75E0084251A /* KiwiLibrary.xcframework in Frameworks */,
+				05CDC3382518E74A0084251A /* CoconutShell.xcframework in Frameworks */,
+				05CDC3342518E74A0084251A /* CoconutData.xcframework in Frameworks */,
+				05CDC3402518E75E0084251A /* KiwiShell.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +118,7 @@
 			children = (
 				05B5814425186C380055850B /* Source */,
 				05B5813D25186C220055850B /* jsh */,
+				05CDC3272518E71C0084251A /* JSToolsBundle */,
 				05B5813C25186C220055850B /* Products */,
 				05B5814E25186C820055850B /* Frameworks */,
 			);
@@ -96,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				05B5813B25186C220055850B /* jsh */,
+				05CDC3262518E71C0084251A /* JSTools.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +162,7 @@
 		05B5814E25186C820055850B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05CDC30C2518E11F0084251A /* CoconutDatabase.xcframework */,
 				05B5815F25186CD20055850B /* Cobalt.xcframework */,
 				05B5815725186CB90055850B /* KiwiEngine.xcframework */,
 				05B5815625186CB90055850B /* KiwiLibrary.xcframework */,
@@ -139,7 +173,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		05CDC3272518E71C0084251A /* JSToolsBundle */ = {
+			isa = PBXGroup;
+			children = (
+				05CDC3282518E71C0084251A /* Info.plist */,
+			);
+			path = JSToolsBundle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		05CDC2FE2518DFF10084251A /* Install */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Script/install_osx.mk";
+			buildConfigurationList = 05CDC3012518DFF10084251A /* Build configuration list for PBXLegacyTarget "Install" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				05CDC3032518DFF90084251A /* PBXTargetDependency */,
+			);
+			name = Install;
+			passBuildSettingsInEnvironment = 1;
+			productName = Install;
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		05B5813A25186C220055850B /* jsh */ = {
@@ -149,16 +209,34 @@
 				05B5813725186C220055850B /* Sources */,
 				05B5813825186C220055850B /* Frameworks */,
 				05B5813925186C220055850B /* CopyFiles */,
-				05B5815225186C820055850B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				05CDC3312518E72A0084251A /* PBXTargetDependency */,
 			);
 			name = jsh;
 			productName = jsh;
 			productReference = 05B5813B25186C220055850B /* jsh */;
 			productType = "com.apple.product-type.tool";
+		};
+		05CDC3252518E71C0084251A /* JSToolsBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05CDC3292518E71C0084251A /* Build configuration list for PBXNativeTarget "JSToolsBundle" */;
+			buildPhases = (
+				05CDC3222518E71C0084251A /* Sources */,
+				05CDC3232518E71C0084251A /* Frameworks */,
+				05CDC3242518E71C0084251A /* Resources */,
+				05CDC33A2518E74A0084251A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSToolsBundle;
+			productName = JSToolsBundle;
+			productReference = 05CDC3262518E71C0084251A /* JSTools.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -170,6 +248,12 @@
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					05B5813A25186C220055850B = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					05CDC2FE2518DFF10084251A = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					05CDC3252518E71C0084251A = {
 						CreatedOnToolsVersion = 12.0;
 					};
 				};
@@ -187,10 +271,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				05CDC3252518E71C0084251A /* JSToolsBundle */,
 				05B5813A25186C220055850B /* jsh */,
+				05CDC2FE2518DFF10084251A /* Install */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05CDC3242518E71C0084251A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05B5813725186C220055850B /* Sources */ = {
@@ -203,7 +299,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05CDC3222518E71C0084251A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05CDC3032518DFF90084251A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05B5813A25186C220055850B /* jsh */;
+			targetProxy = 05CDC3022518DFF90084251A /* PBXContainerItemProxy */;
+		};
+		05CDC3312518E72A0084251A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05CDC3252518E71C0084251A /* JSToolsBundle */;
+			targetProxy = 05CDC3302518E72A0084251A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		05B5813525186BF70055850B /* Debug */ = {
@@ -258,10 +374,11 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -272,14 +389,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(HOME)/tools/bin";
+				LD_RUNPATH_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REEXPORTED_LIBRARY_PATHS = "";
 				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -324,6 +445,134 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(HOME)/tools/bin";
+				LD_RUNPATH_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REEXPORTED_LIBRARY_PATHS = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		05CDC2FF2518DFF10084251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05CDC3002518DFF10084251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -332,14 +581,140 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		05CDC32A2518E71C0084251A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = JSToolsBundle/Info.plist;
+				INSTALL_PATH = "$(HOME)/tools/bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSToolsBundle;
+				PRODUCT_NAME = JSTools;
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		05CDC32B2518E71C0084251A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = JSToolsBundle/Info.plist;
+				INSTALL_PATH = "$(HOME)/tools/bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = github.com.steelwheels.JSToolsBundle;
+				PRODUCT_NAME = JSTools;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -360,6 +735,24 @@
 			buildConfigurations = (
 				05B5814125186C220055850B /* Debug */,
 				05B5814225186C220055850B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05CDC3012518DFF10084251A /* Build configuration list for PBXLegacyTarget "Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05CDC2FF2518DFF10084251A /* Debug */,
+				05CDC3002518DFF10084251A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05CDC3292518E71C0084251A /* Build configuration list for PBXNativeTarget "JSToolsBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05CDC32A2518E71C0084251A /* Debug */,
+				05CDC32B2518E71C0084251A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
