@@ -115,7 +115,7 @@ private func executeShell(processManager procmgr: CNProcessManager, input instrm
 
 private func executeScript(resource res: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, environment env: CNEnvironment, config conf: KHConfig) -> Int32
 {
-	let thread  = KHScriptThread(threadName: nil, resource: res, processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
+	let thread  = KHScriptThread(source: .application(res), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
 
 	/* Convert argument */
 	var nargs: Array<CNNativeValue> = []
