@@ -20,5 +20,9 @@ This software is produced by [Steel Wheels Project](http://steelwheels.github.io
 The shell program based on JavaScript. The programming language which extend JavaScript for shell scripting is also called `jsh`.
 About the the command and language, see [manual page](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-man.md) and [language specification](https://github.com/steelwheels/JSTools/blob/master/Document/jsh-lang.md).
 
+### amb
+The command line application to execute the script written by [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md).
+See [manual page](https://github.com/steelwheels/JSTools/blob/master/Document/amb-man.md).
+
 ## Related Links
 * [Steel Wheels Project Web Page](http://steelwheels.github.io): Steel Wheels Project: Main Web Page
