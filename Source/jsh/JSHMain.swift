@@ -1,5 +1,5 @@
 /**
- * @file	JRMain.swift
+ * @file	JSHMain.swift
  * @brief	Define main function for jsh
  * @par Copyright
  *   Copyright (C) 2019 Steel Wheels Project

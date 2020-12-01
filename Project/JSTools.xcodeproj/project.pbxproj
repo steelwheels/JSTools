@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05432B9D2576237500091EC8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05432B9C2576237500091EC8 /* main.swift */; };
+		05432BA6257623A700091EC8 /* Amber.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05432BA5257623A700091EC8 /* Amber.xcframework */; };
+		05432BAA257623CE00091EC8 /* Amber.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05432BA9257623CE00091EC8 /* Amber.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05432BB62576254200091EC8 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05432BB52576254200091EC8 /* Config.swift */; };
+		05432BCC2576294F00091EC8 /* AMBMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05432BCB2576294F00091EC8 /* AMBMain.swift */; };
 		05B5814925186C5D0055850B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814625186C5D0055850B /* main.swift */; };
-		05B5814A25186C5D0055850B /* JRMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814725186C5D0055850B /* JRMain.swift */; };
-		05B5814B25186C5D0055850B /* JRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814825186C5D0055850B /* JRConfig.swift */; };
+		05B5814A25186C5D0055850B /* JSHMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814725186C5D0055850B /* JSHMain.swift */; };
+		05B5814B25186C5D0055850B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814825186C5D0055850B /* Config.swift */; };
 		05CDC3322518E74A0084251A /* Cobalt.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815F25186CD20055850B /* Cobalt.xcframework */; };
 		05CDC3332518E74A0084251A /* Cobalt.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815F25186CD20055850B /* Cobalt.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05CDC3342518E74A0084251A /* CoconutData.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5814F25186C820055850B /* CoconutData.xcframework */; };
@@ -27,6 +32,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		05432BC7257626F600091EC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05B5813125186BF70055850B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05CDC3252518E71C0084251A;
+			remoteInfo = JSToolsBundle;
+		};
+		05432BD12576496100091EC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05B5813125186BF70055850B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05432B992576237500091EC8;
+			remoteInfo = amb;
+		};
 		05CDC3022518DFF90084251A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05B5813125186BF70055850B /* Project object */;
@@ -44,6 +63,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		05432B982576237500091EC8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		05B5813925186C220055850B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,6 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				05432BAA257623CE00091EC8 /* Amber.xcframework in Embed Frameworks */,
 				05CDC33D2518E75E0084251A /* KiwiEngine.xcframework in Embed Frameworks */,
 				05CDC3372518E74A0084251A /* CoconutDatabase.xcframework in Embed Frameworks */,
 				05CDC3332518E74A0084251A /* Cobalt.xcframework in Embed Frameworks */,
@@ -73,10 +102,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05432B9A2576237500091EC8 /* amb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = amb; sourceTree = BUILT_PRODUCTS_DIR; };
+		05432B9C2576237500091EC8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		05432BA5257623A700091EC8 /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
+		05432BA9257623CE00091EC8 /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
+		05432BB52576254200091EC8 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		05432BCB2576294F00091EC8 /* AMBMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMBMain.swift; sourceTree = "<group>"; };
 		05B5813B25186C220055850B /* jsh */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsh; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B5814625186C5D0055850B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		05B5814725186C5D0055850B /* JRMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMain.swift; sourceTree = "<group>"; };
-		05B5814825186C5D0055850B /* JRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRConfig.swift; sourceTree = "<group>"; };
+		05B5814725186C5D0055850B /* JSHMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSHMain.swift; sourceTree = "<group>"; };
+		05B5814825186C5D0055850B /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		05B5814F25186C820055850B /* CoconutData.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutData.xcframework; path = ../../../Library/Frameworks/CoconutData.xcframework; sourceTree = "<group>"; };
 		05B5815325186C9B0055850B /* CoconutShell.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CoconutShell.xcframework; path = ../../../Library/Frameworks/CoconutShell.xcframework; sourceTree = "<group>"; };
 		05B5815625186CB90055850B /* KiwiLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = KiwiLibrary.xcframework; path = ../../../Library/Frameworks/KiwiLibrary.xcframework; sourceTree = "<group>"; };
@@ -89,6 +124,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		05432B972576237500091EC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05B5813825186C220055850B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05432BA6257623A700091EC8 /* Amber.xcframework in Frameworks */,
 				05CDC33C2518E75E0084251A /* KiwiEngine.xcframework in Frameworks */,
 				05CDC3362518E74A0084251A /* CoconutDatabase.xcframework in Frameworks */,
 				05CDC3322518E74A0084251A /* Cobalt.xcframework in Frameworks */,
@@ -113,11 +156,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05432B952576234B00091EC8 /* amb */ = {
+			isa = PBXGroup;
+			children = (
+				05432BB52576254200091EC8 /* Config.swift */,
+				05432BCB2576294F00091EC8 /* AMBMain.swift */,
+				05432B9C2576237500091EC8 /* main.swift */,
+			);
+			path = amb;
+			sourceTree = "<group>";
+		};
 		05B5813025186BF70055850B = {
 			isa = PBXGroup;
 			children = (
+				05432BA9257623CE00091EC8 /* Amber.xcframework */,
 				05B5814425186C380055850B /* Source */,
-				05B5813D25186C220055850B /* jsh */,
 				05CDC3272518E71C0084251A /* JSToolsBundle */,
 				05B5813C25186C220055850B /* Products */,
 				05B5814E25186C820055850B /* Frameworks */,
@@ -129,21 +182,16 @@
 			children = (
 				05B5813B25186C220055850B /* jsh */,
 				05CDC3262518E71C0084251A /* JSTools.bundle */,
+				05432B9A2576237500091EC8 /* amb */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		05B5813D25186C220055850B /* jsh */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = jsh;
 			sourceTree = "<group>";
 		};
 		05B5814425186C380055850B /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				05B5814525186C490055850B /* jsh */,
+				05432B952576234B00091EC8 /* amb */,
 			);
 			name = Source;
 			path = ../Source;
@@ -152,8 +200,8 @@
 		05B5814525186C490055850B /* jsh */ = {
 			isa = PBXGroup;
 			children = (
-				05B5814825186C5D0055850B /* JRConfig.swift */,
-				05B5814725186C5D0055850B /* JRMain.swift */,
+				05B5814825186C5D0055850B /* Config.swift */,
+				05B5814725186C5D0055850B /* JSHMain.swift */,
 				05B5814625186C5D0055850B /* main.swift */,
 			);
 			path = jsh;
@@ -162,6 +210,7 @@
 		05B5814E25186C820055850B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05432BA5257623A700091EC8 /* Amber.xcframework */,
 				05CDC30C2518E11F0084251A /* CoconutDatabase.xcframework */,
 				05B5815F25186CD20055850B /* Cobalt.xcframework */,
 				05B5815725186CB90055850B /* KiwiEngine.xcframework */,
@@ -193,6 +242,7 @@
 			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = "";
 			dependencies = (
+				05432BD22576496100091EC8 /* PBXTargetDependency */,
 				05CDC3032518DFF90084251A /* PBXTargetDependency */,
 			);
 			name = Install;
@@ -202,6 +252,24 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
+		05432B992576237500091EC8 /* amb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05432B9E2576237500091EC8 /* Build configuration list for PBXNativeTarget "amb" */;
+			buildPhases = (
+				05432B962576237500091EC8 /* Sources */,
+				05432B972576237500091EC8 /* Frameworks */,
+				05432B982576237500091EC8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05432BC8257626F600091EC8 /* PBXTargetDependency */,
+			);
+			name = amb;
+			productName = amb;
+			productReference = 05432B9A2576237500091EC8 /* amb */;
+			productType = "com.apple.product-type.tool";
+		};
 		05B5813A25186C220055850B /* jsh */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05B5814025186C220055850B /* Build configuration list for PBXNativeTarget "jsh" */;
@@ -244,9 +312,12 @@
 		05B5813125186BF70055850B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
+					05432B992576237500091EC8 = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					05B5813A25186C220055850B = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -273,6 +344,7 @@
 			targets = (
 				05CDC3252518E71C0084251A /* JSToolsBundle */,
 				05B5813A25186C220055850B /* jsh */,
+				05432B992576237500091EC8 /* amb */,
 				05CDC2FE2518DFF10084251A /* Install */,
 			);
 		};
@@ -289,13 +361,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		05432B962576237500091EC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05432BCC2576294F00091EC8 /* AMBMain.swift in Sources */,
+				05432B9D2576237500091EC8 /* main.swift in Sources */,
+				05432BB62576254200091EC8 /* Config.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05B5813725186C220055850B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B5814A25186C5D0055850B /* JRMain.swift in Sources */,
+				05B5814A25186C5D0055850B /* JSHMain.swift in Sources */,
 				05B5814925186C5D0055850B /* main.swift in Sources */,
-				05B5814B25186C5D0055850B /* JRConfig.swift in Sources */,
+				05B5814B25186C5D0055850B /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +391,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		05432BC8257626F600091EC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05CDC3252518E71C0084251A /* JSToolsBundle */;
+			targetProxy = 05432BC7257626F600091EC8 /* PBXContainerItemProxy */;
+		};
+		05432BD22576496100091EC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05432B992576237500091EC8 /* amb */;
+			targetProxy = 05432BD12576496100091EC8 /* PBXContainerItemProxy */;
+		};
 		05CDC3032518DFF90084251A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 05B5813A25186C220055850B /* jsh */;
@@ -322,6 +414,89 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		05432B9F2576237500091EC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INSTALL_PATH = "$(HOME)/tools/bin";
+				LD_RUNPATH_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		05432BA02576237500091EC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INSTALL_PATH = "$(HOME)/tools/bin";
+				LD_RUNPATH_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		05B5813525186BF70055850B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -780,6 +955,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		05432B9E2576237500091EC8 /* Build configuration list for PBXNativeTarget "amb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05432B9F2576237500091EC8 /* Debug */,
+				05432BA02576237500091EC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		05B5813425186BF70055850B /* Build configuration list for PBXProject "JSTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

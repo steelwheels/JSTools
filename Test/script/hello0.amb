@@ -1,0 +1,7 @@
+hello: Object {
+	init: Init %{
+		console.print("Hello, world !!\n") ;
+		exit("Bye.") ;
+	%}
+} 
+

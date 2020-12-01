@@ -1,6 +1,6 @@
 /**
- * @file	JRConfig.swift
- * @brief	Define JRConfig class
+ * @file	Config.swift
+ * @brief	Define Config class
  * @par Copyright
  *   Copyright (C) 2017 Steel Wheels Project
  */
@@ -11,7 +11,7 @@ import KiwiEngine
 import KiwiLibrary
 import Foundation
 
-public class JRConfig: KEConfig
+public class Config: KEConfig
 {
 	private var mScriptFiles:		Array<String>
 	private var mDoUseMain:			Bool
@@ -115,8 +115,8 @@ public class JRCommandLineParser
 		mConsole.print(string: "\(version)\n")
 	}
 
-	public func parseArguments(arguments args: Array<String>) -> (JRConfig, Array<String>)? {
-		var config : JRConfig? = nil
+	public func parseArguments(arguments args: Array<String>) -> (Config, Array<String>)? {
+		var config : Config? = nil
 		let (err, _, rets, subargs) = CBParseArguments(parserConfig: parserConfig(), arguments: args)
 		if let e = err {
 			mConsole.error(string: "Error: \(e.description)\n")
@@ -130,7 +130,7 @@ public class JRCommandLineParser
 		}
 	}
 
-	private func parseOptions(arguments args: Array<CBArgument>) -> JRConfig? {
+	private func parseOptions(arguments args: Array<CBArgument>) -> Config? {
 		let stream   = CNArrayStream(source: args)
 
 		var files:		Array<String>		= []
@@ -173,7 +173,7 @@ public class JRCommandLineParser
 				return nil
 			}
 		}
-		return JRConfig(scriptFiles: files, doStrict: doStrict, doUseMain: doUseMain, isInteractiveMode: isInteractiveMode, isCompileMode: isCompileMode, logLevel: logLevel)
+		return Config(scriptFiles: files, doStrict: doStrict, doUseMain: doUseMain, isInteractiveMode: isInteractiveMode, isCompileMode: isCompileMode, logLevel: logLevel)
 	}
 
 	private func decodeLogLevel(parameters params: Array<CNValue>) -> CNConfig.LogLevel? {
