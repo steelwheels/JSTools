@@ -6,6 +6,7 @@
  */
 
 import Amber
+import KiwiEngine
 import CoconutData
 import Foundation
 
@@ -25,7 +26,7 @@ public func main(arguments args: Array<String>) -> Int32
 	}
 
 	/* Execute the script */
-	let ecode = execute(source: source, console: console)
+	let ecode = execute(source: source, config: config, console: console)
 
 	if config.logLevel == .detail {
 		console.print(string: "exit-code: \(ecode)\n")
@@ -51,14 +52,14 @@ private func getSource(config conf: Config, console cons: CNConsole) -> URL? {
 	return nil
 }
 
-private func execute(source src: URL, console cons: CNFileConsole) -> Int32 {
+private func execute(source src: URL, config conf: KEConfig, console cons: CNFileConsole) -> Int32 {
 	let instrm:  CNFileStream	= .fileHandle(cons.inputHandle)
 	let outstrm: CNFileStream	= .fileHandle(cons.outputHandle)
 	let errstrm: CNFileStream	= .fileHandle(cons.errorHandle)
 	let pmgr			= CNProcessManager()
 	let env				= CNEnvironment()
 
-	let thread = AMBThread(source: .script(src), processManager: pmgr, input: instrm, output: outstrm, error: errstrm, environment: env)
+	let thread = AMBThread(source: .script(src), processManager: pmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
 	thread.start(argument: .nullValue)
 	let ecode  = thread.waitUntilExit()
 

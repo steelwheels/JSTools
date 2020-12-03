@@ -1,0 +1,15 @@
+obj: Object {
+	a: Int	1
+	b: Int	2
+	sum: Int Listner(a:self.a, b:self.b) %{ 
+		let c = a + b ;
+		console.print("a = " + a + "\n") ;
+		console.print("b = " + b + "\n") ;
+		console.print("c = a + b = " + c + "\n") ;
+		return c ;
+	%}
+	init: Init %{
+		exit("bye.") ;	
+	%}
+}
+

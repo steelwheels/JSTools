@@ -1,0 +1,44 @@
+source file: "file:///Users/tomoo/Project/JSTools/Test/script/listner0.amb"
+[Frame dump]
+obj: Object {
+  a : Int 1
+  b : Int 2
+  sum : Int Int Listner(a: self.a, b: self.b) %{
+     
+		let c = a + b ;
+		console.print("a = " + a + "\n") ;
+		console.print("b = " + b + "\n") ;
+		console.print("c = a + b = " + c + "\n") ;
+		return c ;
+	
+  %}
+  Init%{
+    
+		exit("bye.") ;	
+	
+  %}
+}
+a = 1
+b = 2
+c = a + b = 3
+[Component dump]
+obj: Object {
+  a: Int 1
+  b: Int 2
+  sum: Int function (self, a, b) {
+ 
+		let c = a + b ;
+		console.print("a = " + a + "\n") ;
+		console.print("b = " + b + "\n") ;
+		console.print("c = a + b = " + c + "\n") ;
+		return c ;
+	
+}
+  init: Init function (self) {
+
+		exit("bye.") ;	
+	
+}
+}
+bye.
+exit-code: 0
