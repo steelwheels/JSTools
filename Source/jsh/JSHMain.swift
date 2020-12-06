@@ -66,7 +66,7 @@ public func main(arguments args: Array<String>) -> Int32
 			} else {
 				/* Allocate script */
 				let modscr = modstmts.joined(separator: "\n")
-				srcfile.storeAppilication(script: modscr)
+				srcfile.storeApplication(script: modscr)
 				/* Execute script */
 				return executeScript(resource: srcfile, processManager: procmgr, input: instrm, output: outstrm, error: errstrm, script: modscr, arguments: arguments, environment: environment, config: compconf)
 			}
