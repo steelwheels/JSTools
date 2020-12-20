@@ -1,0 +1,15 @@
+hello: Object {
+	a:	Int	1
+	b:	Int	20
+	init: Init %{
+		console.print("Hello, world !!\n") ;
+
+		self.a = 10 ;
+		self.b = 200 ;
+		let sum = self.a + self.b ;
+		console.log("10 + 200 = " + sum) ;
+
+		exit("Bye.") ;
+	%}
+} 
+
