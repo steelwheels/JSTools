@@ -28,6 +28,10 @@ Here is a sample description of manifest file.
 	"subviews": {
 		"subview_a": "subview_a.amb",
 		"subview_b": "subview_b.amb"
+	},
+	"images": {
+		"image_a": "image_a.jpg",
+		"image_b": "image_b.png"
 	}
 }
 ````
@@ -53,7 +57,9 @@ You can allocate thread in the main process (or the other threads) by the [threa
 
 ### Subviews section
 The `subviews` section contains file names of the subview.
-See [Component libraries](https://github.com/steelwheels/KiwiCompnents/blob/master/Document/Library.md) about components.
+
+### Images section
+The `images` section contains file names of image data.
 
 # Related document
 * [README](https://github.com/steelwheels/JSTools/blob/master/README.md): Summary of this repository
