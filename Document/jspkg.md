@@ -61,6 +61,9 @@ The `subviews` section contains file names of the subview.
 ### Images section
 The `images` section contains file names of image data.
 
+# Implementation
+The parser of manifest file is implement in [KiwiEngine](https://github.com/steelwheels/KiwiScript/tree/master/KiwiEngine) framework. See [KEManifest.swift](https://github.com/steelwheels/KiwiScript/blob/master/KiwiEngine/Source/KEManifest.swift).
+
 # Related document
 * [README](https://github.com/steelwheels/JSTools/blob/master/README.md): Summary of this repository
 * [Object notation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/object-notation.md): The syntax rule for this package description.
