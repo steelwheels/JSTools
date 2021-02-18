@@ -29,6 +29,10 @@ Here is a sample description of manifest file.
 		"subview_a": "subview_a.amb",
 		"subview_b": "subview_b.amb"
 	},
+	"data": {
+		"data_a": "data_a.amb",
+		"data_b": "data_b.amb"
+	}
 	"images": {
 		"image_a": "image_a.jpg",
 		"image_b": "image_b.png"
@@ -58,8 +62,13 @@ You can allocate thread in the main process (or the other threads) by the [threa
 ### Subviews section
 The `subviews` section contains file names of the subview.
 
+### Data section
+The `data` section contains file names of the [object notation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/object-notation.md).
+It is written by the plain text and converted into JavaScript data in the source script.
+
 ### Images section
-The `images` section contains file names of image data.
+The `images` section contains file names of image data such as [Portable Network Graphics (*.png)](http://www.libpng.org/pub/png/),
+[JPEG](https://jpeg.org/jpeg/) etc...
 
 # Implementation
 The parser of manifest file is implement in [KiwiEngine](https://github.com/steelwheels/KiwiScript/tree/master/KiwiEngine) framework. See [KEManifest.swift](https://github.com/steelwheels/KiwiScript/blob/master/KiwiEngine/Source/KEManifest.swift).
