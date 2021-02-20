@@ -4,7 +4,7 @@
 JavaScript package is a bundle of files for a JavaScript application.
 The package can have multiple scripts, libraries and the other files.
 
-## Structure
+## Manifest file
 The top structure is a directory with `.jspkg` extension. You have to put the manifest file named `manifest.json` under the top directory to define the location of scripts.
 
 The manifest file defines the reference of the other files for each sections. Now, the following sections are defined:
