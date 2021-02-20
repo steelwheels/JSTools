@@ -11,6 +11,9 @@ The manifest file defines the reference of the other files for each sections. No
 * application
 * libraries
 * threads
+* subviews
+* data
+* images
 
 Here is a sample description of manifest file.
 ````
@@ -70,10 +73,8 @@ It is written by the plain text and converted into JavaScript data in the source
 The `images` section contains file names of image data such as [Portable Network Graphics (*.png)](http://www.libpng.org/pub/png/),
 [JPEG](https://jpeg.org/jpeg/) etc...
 
-# Implementation
-The parser of manifest file is implement in [KiwiEngine](https://github.com/steelwheels/KiwiScript/tree/master/KiwiEngine) framework. See [KEManifest.swift](https://github.com/steelwheels/KiwiScript/blob/master/KiwiEngine/Source/KEManifest.swift).
-
 # Related document
 * [README](https://github.com/steelwheels/JSTools/blob/master/README.md): Summary of this repository
 * [Object notation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/object-notation.md): The syntax rule for this package description.
+* [KEManifest.swift](https://github.com/steelwheels/KiwiScript/blob/master/KiwiEngine/Source/KEManifest.swift): The parser of manifest file is implement in [KiwiEngine](https://github.com/steelwheels/KiwiScript/tree/master/KiwiEngine) framework.
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
