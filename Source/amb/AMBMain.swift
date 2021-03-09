@@ -61,7 +61,11 @@ private func execute(source src: URL, config conf: KEConfig, console cons: CNFil
 
 	let thread = AMBThread(source: .script(src), processManager: pmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
 	thread.start(argument: .nullValue)
-	let ecode  = thread.waitUntilExit()
+
+	while !thread.status.isRunning {
+		/* wait until exit */
+	}
+	let ecode = thread.terminationStatus
 
 	let retval = thread.returnValue
 	if let retstr = retval.toString() {

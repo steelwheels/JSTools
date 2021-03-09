@@ -110,7 +110,10 @@ private func executeShell(processManager procmgr: CNProcessManager, input instrm
 {
 	let shell = KHShellThread(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
 	shell.start(argument: .nullValue)
-	return shell.waitUntilExit()
+	while !shell.status.isRunning {
+		/* wait until exit */
+	}
+	return shell.terminationStatus
 }
 
 private func executeScript(resource res: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, environment env: CNEnvironment, config conf: KHConfig) -> Int32
@@ -123,6 +126,9 @@ private func executeScript(resource res: KEResource, processManager procmgr: CNP
 		nargs.append(.stringValue(arg))
 	}
 	thread.start(argument: .arrayValue(nargs))
-	return thread.waitUntilExit()
+	while !thread.status.isRunning {
+		/* wait until exit */
+	}
+	return thread.terminationStatus
 }
 
