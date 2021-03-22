@@ -10,10 +10,14 @@ function main()
 
 	let vpos = (curses.screenHeight - 8) / 2 ;
 	let hpos = (curses.screenWidth  - maxlen*8) / 2 ;
-	for(let fcol=Color.min ; fcol<=Color.max ; fcol++){
+
+	const mincol = EscapeCode.minColor ;
+	const maxcol = EscapeCode.maxColor ;
+
+	for(let fcol=mincol ; fcol<=maxcol ; fcol++){
 		curses.moveTo(hpos, vpos) ;
 		let label = makeLabel(colorName(fcol), maxlen) ;
-		for(let bcol=Color.min ; bcol<=Color.max ; bcol++){
+		for(let bcol=mincol ; bcol<=maxcol ; bcol++){
 			curses.setColor(fcol, bcol) ;
 			curses.put(label) ;
 		}
@@ -34,8 +38,11 @@ function main()
 
 function maxNameLength()
 {
+	const mincol = EscapeCode.minColor ;
+	const maxcol = EscapeCode.maxColor ;
+
 	let maxlen = 0 ;
-	for(let col=Color.min ; col<=Color.max ; col++){
+	for(let col=mincol ; col<=maxcol ; col++){
 		let name    = colorName(col) ;
 		let namelen = name.length ;
 		if(namelen > maxlen){

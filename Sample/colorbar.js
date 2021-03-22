@@ -5,11 +5,11 @@ function main()
 
 	const width  = Curses.width ;
 	const height = Curses.height ;
-	const colnum = Color.max - Color.min + 1;
+	const colnum = EscapeCode.maxColor - EscapeCode.minColor + 1 ;
 	const diff   = width / colnum ;
 
 	let   xpos  = 0 ;
-	for(let col=Color.min ; col<=Color.max ; col++){
+	for(let col=EscapeCode.minColor ; col<=EscapeCode.maxColor ; col++){
 		Curses.foregroundColor = Color.white
 		Curses.backgroundColor = col ;
 
