@@ -36,15 +36,15 @@ class Disk {
 	}
 
 	disk_color(lvl){
-		let result = Color.white ;
+		let result = Curses.white ;
 		switch(lvl){
-		  case 0:	result = Color.black ;		break ;
-		  case 1:	result = Color.red ;		break ;
-		  case 2:	result = Color.green ;		break ;
-		  case 3:	result = Color.blue ;		break ;
-		  case 4:	result = Color.yellow ;		break ;
-		  case 5:	result = Color.cyan ;		break ;
-		  case 6:	result = Color.magenta ;	break ;
+		  case 0:	result = Curses.black ;		break ;
+		  case 1:	result = Curses.red ;		break ;
+		  case 2:	result = Curses.green ;		break ;
+		  case 3:	result = Curses.blue ;		break ;
+		  case 4:	result = Curses.yellow ;	break ;
+		  case 5:	result = Curses.cyan ;		break ;
+		  case 6:	result = Curses.magenta ;	break ;
 		}
 		return result ;
 	}

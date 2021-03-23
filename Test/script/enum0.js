@@ -4,7 +4,7 @@ const leading  = Alignment.leading ;
 const trailing = Alignment.trailing ;
 const center   = Alignment.center ;
 
-const red    = Color.green ;
+const red    = Curses.green ;
 
 const authorized = Authorize.autorized ;
 

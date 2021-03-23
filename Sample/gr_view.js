@@ -14,12 +14,12 @@ const size   = new prim.Size(40, 3) ;
 const frame  = new prim.Rect(origin.x, origin.y, size.width, size.height) ;
 
 const view   = new prim.View(frame) ;
-view.foregroundColor = Color.Yellow ;
-view.backgroundColor = Color.Blue ;
+view.foregroundColor = Curses.Yellow ;
+view.backgroundColor = Curses.Blue ;
 view.drawRect(1, 1, 30, 3, "Hello", Align.Center) ;
 
 console.moveTo(30, 7) ;
-console.setColor(Color.White, Color.Black) ;
+console.setColor(Curses.White, Curses.Black) ;
 console.log("Press \"q\" to quit") ;
 let key = 0 ;
 while((key = console.getKey()) != null){

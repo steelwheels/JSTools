@@ -11,8 +11,8 @@ function main()
 	let vpos = (curses.screenHeight - 8) / 2 ;
 	let hpos = (curses.screenWidth  - maxlen*8) / 2 ;
 
-	const mincol = EscapeCode.minColor ;
-	const maxcol = EscapeCode.maxColor ;
+	const mincol = Curses.minColor ;
+	const maxcol = Curses.maxColor ;
 
 	for(let fcol=mincol ; fcol<=maxcol ; fcol++){
 		curses.moveTo(hpos, vpos) ;
@@ -24,7 +24,7 @@ function main()
 		vpos += 1 ;
 	}
 
-	curses.setColor(Color.black, Color.white) ;
+	curses.setColor(Curses.black, Curses.white) ;
 	centering( 2, "J S T o o l s") ;
 	centering(22, "Press any key to quit") ;
 
@@ -38,8 +38,8 @@ function main()
 
 function maxNameLength()
 {
-	const mincol = EscapeCode.minColor ;
-	const maxcol = EscapeCode.maxColor ;
+	const mincol = Curses.minColor ;
+	const maxcol = Curses.maxColor ;
 
 	let maxlen = 0 ;
 	for(let col=mincol ; col<=maxcol ; col++){
@@ -71,14 +71,14 @@ function centering(vpos, label)
 function colorName(color) {
 	var result = "unknown" ;
 	switch (color) {
-	  case Color.black:	result = "black" ;	break ;
-	  case Color.red:	result = "red" ;	break ;
-	  case Color.green:	result = "green" ;	break ;
-	  case Color.yellow:	result = "yellow" ;	break ;
-	  case Color.blue:	result = "blue" ;	break ;
-	  case Color.magenta:	result = "magenta" ;	break ;
-	  case Color.cyan:	result = "cyan" ;	break ;
-	  case Color.white:	result = "white" ;	break ;
+	  case Curses.black:	result = "black" ;	break ;
+	  case Curses.red:	result = "red" ;	break ;
+	  case Curses.green:	result = "green" ;	break ;
+	  case Curses.yellow:	result = "yellow" ;	break ;
+	  case Curses.blue:	result = "blue" ;	break ;
+	  case Curses.magenta:	result = "magenta" ;	break ;
+	  case Curses.cyan:	result = "cyan" ;	break ;
+	  case Curses.white:	result = "white" ;	break ;
 	  default:		result = "unknown" ;	break ;
 	}
 	return result ;

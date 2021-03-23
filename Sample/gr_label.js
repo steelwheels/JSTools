@@ -7,7 +7,7 @@ console.visiblePrompt = false ;
 console.doBuffering   = false ;
 console.doEcho	      = false ;
 console.setScreenMode(true) ;
-console.setColor(Color.White, Color.Blue) ;
+console.setColor(Curses.White, Curses.Blue) ;
 
 console.log("Press \"q\" to quit") ;
 
