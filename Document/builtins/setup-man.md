@@ -1,20 +1,12 @@
-# *setup* command
+# *install* command
 
 ## Synopsis
 ````
-setup
+install
 ````
 
 ## Description
-Setup the initial environment. Following operations are executed.
-Please _check the path of home directory_ . These operations are
-executed based on the home directory.
-
-1. Make default directories. Following directories are made:
-`Documents`, `Library`. About these directories,
-see [file system](https://github.com/steelwheels/JSTools/blob/master/Document/system/file-system.md).
-2. Copy pre-defined scripts in the application into directories. Some sample scripts are copied into `Documents/Sample`.
-
+Install built-in resource files into home directories.
 
 ## Related links
 * [Built-in commands](https://github.com/steelwheels/JSTools/blob/master/Document/builtins/builtin-commands.md): Built-in shell commands
