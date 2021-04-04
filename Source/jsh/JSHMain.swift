@@ -25,7 +25,7 @@ public func main(arguments args: Array<String>) -> Int32
 		return 1
 	}
 
-	let compconf = KHConfig(applicationType: .terminal, hasMainFunction: config.doUseMain, doStrict: config.doStrict, logLevel: config.logLevel)
+	let compconf = KEConfig(applicationType: .terminal, doStrict: config.doStrict, logLevel: config.logLevel)
 
 	/* Prepare environment variable */
 	let environment = CNEnvironment()
@@ -54,7 +54,7 @@ public func main(arguments args: Array<String>) -> Int32
 		}
 		if let stmts = readMainScript(sourceFile: srcfile) {
 			/* Translate shell script to JavaScript */
-			guard let modstmts = convertShellStatements(statements: stmts, console: console) else {
+			guard let modstmts = convertShellStatements(statements: stmts, environment: environment, console: console) else {
 				return 1
 			}
 			if config.isCompileMode {
@@ -87,11 +87,11 @@ private func readMainScript(sourceFile file: KEResource) -> Array<String>? {
 	}
 }
 
-private func convertShellStatements(statements stmts: Array<String>, console cons: CNConsole) -> Array<String>?
+private func convertShellStatements(statements stmts: Array<String>, environment env: CNEnvironment, console cons: CNConsole) -> Array<String>?
 {
 	let result: Array<String>?
 	let parser = KHShellParser()
-	switch parser.parse(lines: stmts) {
+	switch parser.parse(lines: stmts, environment: env) {
 	case .ok(let stmt1):
 		let stmt2 = KHCompileShellStatement(statements: stmt1)
 		result = KHGenerateScript(from: stmt2)
@@ -106,7 +106,7 @@ private func convertShellStatements(statements stmts: Array<String>, console con
 	return result
 }
 
-private func executeShell(processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, environment env: CNEnvironment, resource res: KEResource, config conf: KHConfig) -> Int32
+private func executeShell(processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, environment env: CNEnvironment, resource res: KEResource, config conf: KEConfig) -> Int32
 {
 	let shell = KHShellThread(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
 	shell.start(argument: .nullValue)
@@ -116,7 +116,7 @@ private func executeShell(processManager procmgr: CNProcessManager, input instrm
 	return shell.terminationStatus
 }
 
-private func executeScript(resource res: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, environment env: CNEnvironment, config conf: KHConfig) -> Int32
+private func executeScript(resource res: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, environment env: CNEnvironment, config conf: KEConfig) -> Int32
 {
 	let thread  = KHScriptThread(source: .application(res), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
 
