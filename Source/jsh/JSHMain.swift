@@ -33,11 +33,14 @@ public func main(arguments args: Array<String>) -> Int32
 	/* Prepare process manager */
 	let procmgr = CNProcessManager()
 
+	/* Prepare terminal information */
+	let terminfo = CNTerminalInfo(width: 80, height: 20)
+
 	let files = config.scriptFiles
 	if files.count == 0 || config.isInteractiveMode {
 		/* Execute shell */
 		let emptyres = KEResource(baseURL: Bundle.main.bundleURL)
-		return executeShell(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, scriptFiles: files, environment: environment, resource: emptyres, config: compconf)
+		return executeShell(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, scriptFiles: files, terminalInfo: terminfo, environment: environment, resource: emptyres, config: compconf)
 	} else if files.count == 1 {
 		/* Get source file */
 		let fileurl = URL(fileURLWithPath: files[0])
@@ -68,7 +71,7 @@ public func main(arguments args: Array<String>) -> Int32
 				let modscr = modstmts.joined(separator: "\n")
 				srcfile.storeApplication(script: modscr)
 				/* Execute script */
-				return executeScript(resource: srcfile, processManager: procmgr, input: instrm, output: outstrm, error: errstrm, script: modscr, arguments: arguments, environment: environment, config: compconf)
+				return executeScript(resource: srcfile, processManager: procmgr, input: instrm, output: outstrm, error: errstrm, script: modscr, arguments: arguments, terminalInfo: terminfo, environment: environment, config: compconf)
 			}
 		} else {
 			console.error(string: "[Error] Failed to read \(files[0])\n")
@@ -106,9 +109,9 @@ private func convertShellStatements(statements stmts: Array<String>, environment
 	return result
 }
 
-private func executeShell(processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, environment env: CNEnvironment, resource res: KEResource, config conf: KEConfig) -> Int32
+private func executeShell(processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, terminalInfo terminfo: CNTerminalInfo, environment env: CNEnvironment, resource res: KEResource, config conf: KEConfig) -> Int32
 {
-	let shell = KHShellThread(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
+	let shell = KHShellThread(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, terminalInfo: terminfo, environment: env, config: conf)
 	shell.start(argument: .nullValue)
 	while !shell.status.isRunning {
 		/* wait until exit */
@@ -116,9 +119,9 @@ private func executeShell(processManager procmgr: CNProcessManager, input instrm
 	return shell.terminationStatus
 }
 
-private func executeScript(resource res: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, environment env: CNEnvironment, config conf: KEConfig) -> Int32
+private func executeScript(resource res: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, terminalInfo terminfo: CNTerminalInfo, environment env: CNEnvironment, config conf: KEConfig) -> Int32
 {
-	let thread  = KHScriptThread(source: .application(res), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
+	let thread  = KHScriptThread(source: .application(res), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, terminalInfo: terminfo, environment: env, config: conf)
 
 	/* Convert argument */
 	var nargs: Array<CNNativeValue> = []
