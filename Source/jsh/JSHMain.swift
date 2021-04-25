@@ -16,10 +16,8 @@ import Foundation
 public func main(arguments args: Array<String>) -> Int32
 {
 	/* Parse command line arguments */
-	let instrm  : CNFileStream = .fileHandle(FileHandle.standardInput)
-	let outstrm : CNFileStream = .fileHandle(FileHandle.standardOutput)
-	let errstrm : CNFileStream = .fileHandle(FileHandle.standardError)
-	let console = CNFileConsole(input: FileHandle.standardInput, output: FileHandle.standardOutput, error: FileHandle.standardError)
+	let stdfile = CNStandardFiles.shared
+	let console = CNFileConsole(input: stdfile.input, output: stdfile.output, error: stdfile.error)
 	let parser  = JRCommandLineParser(console: console)
 	guard let (config, arguments) = parser.parseArguments(arguments: Array(args.dropFirst())) else { // drop application name
 		return 1
@@ -40,7 +38,7 @@ public func main(arguments args: Array<String>) -> Int32
 	if files.count == 0 || config.isInteractiveMode {
 		/* Execute shell */
 		let emptyres = KEResource(baseURL: Bundle.main.bundleURL)
-		return executeShell(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, scriptFiles: files, terminalInfo: terminfo, environment: environment, resource: emptyres, config: compconf)
+		return executeShell(processManager: procmgr, input: console.inputFile, output: console.outputFile, error: console.errorFile, scriptFiles: files, terminalInfo: terminfo, environment: environment, resource: emptyres, config: compconf)
 	} else if files.count == 1 {
 		/* Get source file */
 		let fileurl = URL(fileURLWithPath: files[0])
@@ -71,7 +69,7 @@ public func main(arguments args: Array<String>) -> Int32
 				let modscr = modstmts.joined(separator: "\n")
 				srcfile.storeApplication(script: modscr)
 				/* Execute script */
-				return executeScript(resource: srcfile, processManager: procmgr, input: instrm, output: outstrm, error: errstrm, script: modscr, arguments: arguments, terminalInfo: terminfo, environment: environment, config: compconf)
+				return executeScript(resource: srcfile, processManager: procmgr, input: console.inputFile, output: console.outputFile, error: console.errorFile, script: modscr, arguments: arguments, terminalInfo: terminfo, environment: environment, config: compconf)
 			}
 		} else {
 			console.error(string: "[Error] Failed to read \(files[0])\n")
@@ -109,9 +107,9 @@ private func convertShellStatements(statements stmts: Array<String>, environment
 	return result
 }
 
-private func executeShell(processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, scriptFiles files: Array<String>, terminalInfo terminfo: CNTerminalInfo, environment env: CNEnvironment, resource res: KEResource, config conf: KEConfig) -> Int32
+private func executeShell(processManager procmgr: CNProcessManager, input ifile: CNFile, output ofile: CNFile, error efile: CNFile, scriptFiles files: Array<String>, terminalInfo terminfo: CNTerminalInfo, environment env: CNEnvironment, resource res: KEResource, config conf: KEConfig) -> Int32
 {
-	let shell = KHShellThread(processManager: procmgr, input: instrm, output: outstrm, error: errstrm, terminalInfo: terminfo, environment: env, config: conf)
+	let shell = KHShellThread(processManager: procmgr, input: ifile, output: ofile, error: efile, terminalInfo: terminfo, environment: env, config: conf)
 	shell.start(argument: .nullValue)
 	while !shell.status.isRunning {
 		/* wait until exit */
@@ -119,9 +117,9 @@ private func executeShell(processManager procmgr: CNProcessManager, input instrm
 	return shell.terminationStatus
 }
 
-private func executeScript(resource res: KEResource, processManager procmgr: CNProcessManager, input instrm: CNFileStream, output outstrm: CNFileStream, error errstrm: CNFileStream, script scr: String, arguments args: Array<String>, terminalInfo terminfo: CNTerminalInfo, environment env: CNEnvironment, config conf: KEConfig) -> Int32
+private func executeScript(resource res: KEResource, processManager procmgr: CNProcessManager, input ifile: CNFile, output ofile: CNFile, error efile: CNFile, script scr: String, arguments args: Array<String>, terminalInfo terminfo: CNTerminalInfo, environment env: CNEnvironment, config conf: KEConfig) -> Int32
 {
-	let thread  = KHScriptThread(source: .application(res), processManager: procmgr, input: instrm, output: outstrm, error: errstrm, terminalInfo: terminfo, environment: env, config: conf)
+	let thread  = KHScriptThread(source: .application(res), processManager: procmgr, input: ifile, output: ofile, error: efile, terminalInfo: terminfo, environment: env, config: conf)
 
 	/* Convert argument */
 	var nargs: Array<CNNativeValue> = []

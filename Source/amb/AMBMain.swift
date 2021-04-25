@@ -53,13 +53,10 @@ private func getSource(config conf: Config, console cons: CNConsole) -> URL? {
 }
 
 private func execute(source src: URL, config conf: KEConfig, console cons: CNFileConsole) -> Int32 {
-	let instrm:  CNFileStream	= .fileHandle(cons.inputHandle)
-	let outstrm: CNFileStream	= .fileHandle(cons.outputHandle)
-	let errstrm: CNFileStream	= .fileHandle(cons.errorHandle)
 	let pmgr			= CNProcessManager()
 	let env				= CNEnvironment()
 
-	let thread = AMBThread(source: .script(src), processManager: pmgr, input: instrm, output: outstrm, error: errstrm, environment: env, config: conf)
+	let thread = AMBThread(source: .script(src), processManager: pmgr, input: cons.inputFile, output: cons.outputFile, error: cons.errorFile, environment: env, config: conf)
 	thread.start(argument: .nullValue)
 
 	while !thread.status.isRunning {
