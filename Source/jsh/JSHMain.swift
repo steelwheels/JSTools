@@ -122,7 +122,7 @@ private func executeScript(resource res: KEResource, processManager procmgr: CNP
 	let thread  = KHScriptThread(source: .application(res), processManager: procmgr, input: ifile, output: ofile, error: efile, terminalInfo: terminfo, environment: env, config: conf)
 
 	/* Convert argument */
-	var nargs: Array<CNNativeValue> = []
+	var nargs: Array<CNValue> = []
 	for arg in args {
 		nargs.append(.stringValue(arg))
 	}

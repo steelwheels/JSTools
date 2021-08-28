@@ -54,31 +54,31 @@ public class JRCommandLineParser
 		let opttypes: Array<CBOptionType> = [
 			CBOptionType(optionId: OptionId.Help.rawValue,
 				     shortName: "h", longName: "help",
-				     parameterNum: 0, parameterType: .VoidType,
+				     parameterNum: 0, parameterType: .voidType,
 				     helpInfo: "Print help message and exit program"),
 			CBOptionType(optionId: OptionId.Version.rawValue,
 				     shortName: nil, longName: "version",
-				     parameterNum: 0, parameterType: .VoidType,
+				     parameterNum: 0, parameterType: .voidType,
 				     helpInfo: "Print version information"),
 			CBOptionType(optionId: OptionId.Log.rawValue,
 				     shortName: nil, longName: "log",
-				     parameterNum: 1, parameterType: .StringType,
+				     parameterNum: 1, parameterType: .stringType,
 				     helpInfo: "Print vebose information for debugging"),
 			CBOptionType(optionId: OptionId.NoStrictMode.rawValue,
 				     shortName: nil, longName: "no-strict",
-				     parameterNum: 0, parameterType: .VoidType,
+				     parameterNum: 0, parameterType: .voidType,
 				     helpInfo: "Do not use strict mode"),
 			CBOptionType(optionId: OptionId.InteractiveMode.rawValue,
 				     shortName: "i", longName: "interactive",
-				     parameterNum: 0, parameterType: .VoidType,
+				     parameterNum: 0, parameterType: .voidType,
 				     helpInfo: "Activate interactive mode"),
 			CBOptionType(optionId: OptionId.CompileMode.rawValue,
 				     shortName: "c", longName: "compile",
-				     parameterNum: 0, parameterType: .VoidType,
+				     parameterNum: 0, parameterType: .voidType,
 				     helpInfo: "Compile only. Do not execute."),
 			CBOptionType(optionId: OptionId.UseMain.rawValue,
 				     shortName: nil, longName: "use-main",
-				     parameterNum: 0, parameterType: .VoidType,
+				     parameterNum: 0, parameterType: .voidType,
 				     helpInfo: "Use \"main\" function"),
 		]
 		let config = CBParserConfig(hasSubCommand: false)
@@ -176,13 +176,12 @@ public class JRCommandLineParser
 		return Config(scriptFiles: files, doStrict: doStrict, doUseMain: doUseMain, isInteractiveMode: isInteractiveMode, isCompileMode: isCompileMode, logLevel: logLevel)
 	}
 
-	private func decodeLogLevel(parameters params: Array<CNValue>) -> CNConfig.LogLevel? {
-		for param in params {
-			if let paramstr = param.stringValue {
-				return CNConfig.LogLevel.decode(string: paramstr)
-			} else {
-				mConsole.error(string: "Unknown parameter: \(param.description)")
-			}
+	private func decodeLogLevel(parameters params: Array<CBValue>) -> CNConfig.LogLevel? {
+		if params.count == 1 {
+			let paramstr = params[0].description
+			return CNConfig.LogLevel.decode(string: paramstr)
+		} else {
+			mConsole.error(string: "One parameter for log level is required")
 		}
 		return nil
 	}

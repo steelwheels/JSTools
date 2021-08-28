@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		05432B9D2576237500091EC8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05432B9C2576237500091EC8 /* main.swift */; };
 		05432BA6257623A700091EC8 /* Amber.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05432BA5257623A700091EC8 /* Amber.xcframework */; };
-		05432BAA257623CE00091EC8 /* Amber.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05432BA9257623CE00091EC8 /* Amber.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05432BB62576254200091EC8 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05432BB52576254200091EC8 /* Config.swift */; };
 		05432BCC2576294F00091EC8 /* AMBMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05432BCB2576294F00091EC8 /* AMBMain.swift */; };
 		05B5814925186C5D0055850B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814625186C5D0055850B /* main.swift */; };
@@ -87,7 +86,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				05432BAA257623CE00091EC8 /* Amber.xcframework in Embed Frameworks */,
 				05CDC33D2518E75E0084251A /* KiwiEngine.xcframework in Embed Frameworks */,
 				05CDC3372518E74A0084251A /* CoconutDatabase.xcframework in Embed Frameworks */,
 				05CDC3332518E74A0084251A /* Cobalt.xcframework in Embed Frameworks */,
@@ -105,7 +103,6 @@
 		05432B9A2576237500091EC8 /* amb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = amb; sourceTree = BUILT_PRODUCTS_DIR; };
 		05432B9C2576237500091EC8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05432BA5257623A700091EC8 /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
-		05432BA9257623CE00091EC8 /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
 		05432BB52576254200091EC8 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		05432BCB2576294F00091EC8 /* AMBMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMBMain.swift; sourceTree = "<group>"; };
 		05B5813B25186C220055850B /* jsh */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsh; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,7 +166,6 @@
 		05B5813025186BF70055850B = {
 			isa = PBXGroup;
 			children = (
-				05432BA9257623CE00091EC8 /* Amber.xcframework */,
 				05B5814425186C380055850B /* Source */,
 				05CDC3272518E71C0084251A /* JSToolsBundle */,
 				05B5813C25186C220055850B /* Products */,
