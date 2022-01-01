@@ -13,33 +13,38 @@ The manifest file defines the reference of the other files for each sections. No
 * threads
 * subviews
 * data
+* storages
 * images
 
 Here is a sample description of manifest file.
 ````
 {
-	"application": 		"main.js",
-	"view":				"main.amb",
-	"libraries": [
-		"lib_a.js",
-		"lib_b.js"
-	],
-	"threads": {
-		"thread_a":	"thread_a.js",
-		"thread_b":	"thread_b.js"
-	},
-	"subviews": {
-		"subview_a": "subview_a.amb",
-		"subview_b": "subview_b.amb"
-	},
-	"data": {
-		"data_a": "data_a.amb",
-		"data_b": "data_b.amb"
-	}
-	"images": {
-		"image_a": "image_a.jpg",
-		"image_b": "image_b.png"
-	}
+  application:  "main.js",
+  view:		"main.amb",
+  libraries: [
+    "lib_a.js",
+    "lib_b.js"
+  ],
+  threads: {
+    thread_a:  "thread_a.js",
+    thread_b:  "thread_b.js"
+  },
+  subviews: {
+    subview_a: "subview_a.amb",
+    subview_b: "subview_b.amb"
+  },
+  data: {
+    data_a: "data_a.amb",
+    data_b: "data_b.amb"
+  },
+  storages: {
+    storage_a: "storage_a.json",
+    storage_b: "storage_b.json"
+  },
+  images: {
+    image_a: "image_a.jpg",
+    image_b: "image_b.png"
+  }
 }
 ````
 
@@ -68,6 +73,10 @@ The `subviews` section contains file names of the subview.
 ### Data section
 The `data` section contains file names of the [object notation](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/object-notation.md).
 It is written by the plain text and converted into JavaScript data in the source script.
+
+### Storages section
+The `storages` section contains non-volatile data. The context of the data is loaded and stored into the files.
+These files are invisible from user and the data is used in the application. 
 
 ### Images section
 The `images` section contains file names of image data such as [Portable Network Graphics (*.png)](http://www.libpng.org/pub/png/),
