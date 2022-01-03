@@ -37,7 +37,7 @@ public func main(arguments args: Array<String>) -> Int32
 	let files = config.scriptFiles
 	if files.count == 0 || config.isInteractiveMode {
 		/* Execute shell */
-		let emptyres = KEResource(baseURL: Bundle.main.bundleURL)
+		let emptyres = KEResource(directoryURL: Bundle.main.bundleURL)
 		return executeShell(processManager: procmgr, input: console.inputFile, output: console.outputFile, error: console.errorFile, scriptFiles: files, terminalInfo: terminfo, environment: environment, resource: emptyres, config: compconf)
 	} else if files.count == 1 {
 		/* Get source file */
