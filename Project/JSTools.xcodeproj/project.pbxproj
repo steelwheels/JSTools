@@ -28,6 +28,7 @@
 		05CDC33F2518E75E0084251A /* KiwiLibrary.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815625186CB90055850B /* KiwiLibrary.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05CDC3402518E75E0084251A /* KiwiShell.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815825186CB90055850B /* KiwiShell.xcframework */; };
 		05CDC3412518E75E0084251A /* KiwiShell.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05B5815825186CB90055850B /* KiwiShell.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05EF97F3278434D6005FD771 /* Amber.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05432BA5257623A700091EC8 /* Amber.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				05EF97F3278434D6005FD771 /* Amber.xcframework in Embed Frameworks */,
 				05CDC33D2518E75E0084251A /* KiwiEngine.xcframework in Embed Frameworks */,
 				05CDC3372518E74A0084251A /* CoconutDatabase.xcframework in Embed Frameworks */,
 				05CDC3332518E74A0084251A /* Cobalt.xcframework in Embed Frameworks */,
