@@ -3,7 +3,6 @@
 
 This document describes how to use the `amb` application.
 The syntax of this script is described in [Amber Programming Languate](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md).
-See [example](https://github.com/steelwheels/Amber/blob/master/Document/amber-example.md) for some sample scripts.
 
 # Synopsis
 ````
@@ -27,5 +26,4 @@ The following options are available:
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
 * [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md): The language specification
-* [Amber Program Examples](https://github.com/steelwheels/Amber/blob/master/Document/amber-example.md): Sample programs 
 * [Steel Wheels Project](http://steelwheels.github.io): Web site of developer.
