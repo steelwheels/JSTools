@@ -60,7 +60,7 @@ supports character based graphics on terminal.
 
 function main()
 {
-	console.log("setup curses start\n") ;
+	console.print("setup curses start\n") ;
 
 	Curses.start() ;
 

@@ -56,9 +56,9 @@ The variable will have exit code of it.
 let ecode = 0 ;
 > grep "a" ~/tmp_dir/a -> ecode
 if(ecode == 0){
-  console.log("matched\n") ;
+  console.print("matched\n") ;
 } else {
-  console.log("not matched\n") ;
+  console.print("not matched\n") ;
 }
 ````
 
@@ -69,19 +69,19 @@ The script must be placed in the package.
 ````
 function main(args)
 {
-	console.log("Hello from main function") ;
+	console.print("Hello from main function\n") ;
 
 	let thread0 = Thread("thread0", stdin, stdout, stderr) ;
 	let result  = -1 ;
 	if(thread0 != null){
-		console.log("start: thread0") ;
+		console.print("start: thread0\n") ;
 		thread0.start(["a", "b"]) ;
-		console.log("start: wait until exit") ;
+		console.print("start: wait until exit\n") ;
 		let ecode = thread0.waitUntilExit() ;
-		console.log("exit code = " + ecode) ;
+		console.print("exit code = " + ecode + "\n") ;
 		result = ecode ;
 	} else {
-		console.log("start: FAILED") ;
+		console.print("start: FAILED\n") ;
 		console.error("Failed to allocate thread\n") ;
 	}
 	return result ;
