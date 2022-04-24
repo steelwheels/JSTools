@@ -1,6 +1,7 @@
 |command                |Description                            |
 |:--                    |:--                                    |
 |[cd](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/cd-man.md)            |Change current directory               |
+|[clean](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/clean-man.md)            |Clean cache file of given script               |
 |[fonts](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/fonts-man.md)      |Print list of fonts                    |
 |[getenv](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/getenv-man.md)    |Print the value of environment variable by it's name |
 |[history](https://github.com/steelwheels/JSTools/tree/master/Document/builtins/history-man.md)  |Print the commands that already executed.      |
