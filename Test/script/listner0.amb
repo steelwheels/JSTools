@@ -1,7 +1,7 @@
 obj: Object {
 	a: Int	1
 	b: Int	2
-	sum: Int Listner(a:self.a, b:self.b) %{ 
+	sum: Int Listner(a:self.a, b:self.b) %{
 		let c = a + b ;
 		console.print("a = " + a + "\n") ;
 		console.print("b = " + b + "\n") ;
@@ -9,7 +9,7 @@ obj: Object {
 		return c ;
 	%}
 	init: Init %{
-		exit("bye.") ;	
+		exit("bye.") ;
 	%}
 }
 

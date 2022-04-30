@@ -3,5 +3,5 @@ hello: Object {
 		console.print("Hello, world !!\n") ;
 		exit("Bye.") ;
 	%}
-} 
+}
 
