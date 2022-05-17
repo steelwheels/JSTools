@@ -71,7 +71,7 @@ You can allocate thread in the main process (or the other threads) by the [threa
 The `subviews` section contains file names of the subview.
 
 ### Data section
-The `data` section contains the [extented JSON](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Data/eJSON.md) file.
+The `data` section contains the [extented JSON](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Format/eJSONFormat.md) file.
 It is written by the plain text and converted into JavaScript data in the source script.
 
 ### Storages section
