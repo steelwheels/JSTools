@@ -33,10 +33,10 @@ Here is a sample description of manifest file.
     subview_a: "subview_a.amb",
     subview_b: "subview_b.amb"
   },
-  data: {
-    data_a: "data_a.amb",
-    data_b: "data_b.amb"
-  },
+  definition: [
+    "type_a.json",
+    "type_b.json"
+  ],
   storages: {
     storage_a: "storage_a.json",
     storage_b: "storage_b.json"
@@ -70,9 +70,13 @@ You can allocate thread in the main process (or the other threads) by the [threa
 ### Subviews section
 The `subviews` section contains file names of the subview.
 
-### Data section
-The `data` section contains the [extented JSON](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Format/eJSONFormat.md) file.
-It is written by the plain text and converted into JavaScript data in the source script.
+### Definition section
+The `definition` section contains file names. Each files are used to define following data type and macro:
+* [Enum data type](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Format/EnumFormat.md)
+* macro: Constant macro
+
+The file format is  the [extented JSON](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Format/eJSONFormat.md) format.
+The data type and macro can be refered by the user script and the [storage file](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Format/StorageFormat.md).
 
 ### Storages section
 The `storages` section contains non-volatile data. The context of the data is loaded and stored into the files.
