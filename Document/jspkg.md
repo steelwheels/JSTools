@@ -33,7 +33,7 @@ Here is a sample description of manifest file.
     subview_a: "subview_a.amb",
     subview_b: "subview_b.amb"
   },
-  definition: [
+  definitions: [
     "type_a.json",
     "type_b.json"
   ],
@@ -71,7 +71,7 @@ You can allocate thread in the main process (or the other threads) by the [threa
 The `subviews` section contains file names of the subview.
 
 ### Definition section
-The `definition` section contains file names. Each files are used to define following data type and macro:
+The `definitions` section contains file names. Each files are used to define following data type and macro:
 * [Enum data type](https://github.com/steelwheels/KiwiScript/blob/master/KiwiLibrary/Document/Format/EnumFormat.md)
 * macro: Constant macro
 
