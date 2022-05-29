@@ -2,7 +2,7 @@
  * @file	Config.swift
  * @brief	Define Config class
  * @par Copyright
- *   Copyright (C) 2017 Steel Wheels Project
+ *   Copyright (C) 2022 Steel Wheels Project
  */
 
 import CoconutData
@@ -13,26 +13,20 @@ import Foundation
 
 public class Config: KEConfig
 {
-	private var mScriptFiles:		Array<String>
-	private var mDoUseMain:			Bool
-	private var mIsInteractiveMode:		Bool
-	private var mIsCompileMode:		Bool
+	private var mPackageDirectory:		String
+	private var mIsBuiltinMode:		Bool
 
-	public var scriptFiles: 	Array<String>	{ get { return mScriptFiles		}}
-	public var doUseMain:		Bool		{ get { return mDoUseMain		}}
-	public var isInteractiveMode:	Bool		{ get { return mIsInteractiveMode	}}
-	public var isCompileMode:	Bool		{ get { return mIsCompileMode		}}
+	public var packageDirectory: 	String		{ get { return mPackageDirectory	}}
+	public var isBuiltinMode:	Bool		{ get { return mIsBuiltinMode		}}
 
-	public init(scriptFiles files: Array<String>, doStrict strict: Bool, doUseMain usemain: Bool, isInteractiveMode imode: Bool, isCompileMode cmode: Bool, logLevel level: CNConfig.LogLevel){
-		mScriptFiles		= files
-		mDoUseMain		= usemain
-		mIsInteractiveMode	= imode
-		mIsCompileMode		= cmode
-		super.init(applicationType: .terminal, doStrict: strict, logLevel: level)
+	public init(packageDirectory pack: String, isBuiltinMode bmode: Bool, logLevel level: CNConfig.LogLevel){
+		mPackageDirectory	= pack
+		mIsBuiltinMode		= bmode
+		super.init(applicationType: .terminal, doStrict: true, logLevel: level)
 	}
 }
 
-public class JRCommandLineParser
+public class CommandLineParser
 {
 	private var mConsole:	CNConsole
 
@@ -40,10 +34,7 @@ public class JRCommandLineParser
 		case Help		= 0
 		case Version		= 1
 		case Log		= 2
-		case NoStrictMode	= 3
-		case InteractiveMode	= 4
-		case CompileMode	= 5
-		case UseMain		= 6
+		case BuiltinMode	= 3
 	}
 
 	public init(console cons: CNConsole){
@@ -64,22 +55,10 @@ public class JRCommandLineParser
 				     shortName: nil, longName: "log",
 				     parameterNum: 1, parameterType: .stringType,
 				     helpInfo: "Print vebose information for debugging"),
-			CBOptionType(optionId: OptionId.NoStrictMode.rawValue,
-				     shortName: nil, longName: "no-strict",
+			CBOptionType(optionId: OptionId.BuiltinMode.rawValue,
+				     shortName: "b", longName: "builtin",
 				     parameterNum: 0, parameterType: .voidType,
-				     helpInfo: "Do not use strict mode"),
-			CBOptionType(optionId: OptionId.InteractiveMode.rawValue,
-				     shortName: "i", longName: "interactive",
-				     parameterNum: 0, parameterType: .voidType,
-				     helpInfo: "Activate interactive mode"),
-			CBOptionType(optionId: OptionId.CompileMode.rawValue,
-				     shortName: "c", longName: "compile",
-				     parameterNum: 0, parameterType: .voidType,
-				     helpInfo: "Compile only. Do not execute."),
-			CBOptionType(optionId: OptionId.UseMain.rawValue,
-				     shortName: nil, longName: "use-main",
-				     parameterNum: 0, parameterType: .voidType,
-				     helpInfo: "Use \"main\" function"),
+				     helpInfo: "Dump for built-in setting instead of given package")
 		]
 		let config = CBParserConfig(hasSubCommand: false)
 		config.setDefaultOptions(optionTypes: opttypes)
@@ -95,12 +74,7 @@ public class JRCommandLineParser
 		"  [options]\n" +
 		"    --help, -h             : Print this message\n" +
 		"    --version              : Print version\n" +
-		"    --no-strict            : Do not use strict mode (default: use strict)\n" +
-		"    --use-main             : Call \"main\" function after compilation\n" +
-		"    --interactive, -i      : Activate interactive mode\n" +
-		"    --compile, -c          : Compile only. Do not execute the script\n" +
-		"    --argument -a <string> : String to be passed as an argument\n" +
-		"    --log <string>         : Define debug log level (default: normal)\n"
+		"    --builtin              : Dump for built-in setting instead of given package\n"
 		)
 	}
 
@@ -134,10 +108,7 @@ public class JRCommandLineParser
 		let stream   = CNArrayStream(source: args)
 
 		var files:		Array<String>		= []
-		var doStrict:		Bool			= true
-		var doUseMain:		Bool			= false
-		var isInteractiveMode:	Bool			= false
-		var isCompileMode:	Bool			= false
+		var isBuiltinMode:	Bool			= false
 		var logLevel:		CNConfig.LogLevel	= .defaultLevel
 
 		while let arg = stream.get() {
@@ -154,26 +125,37 @@ public class JRCommandLineParser
 						if let level = decodeLogLevel(parameters: opt.parameters) {
 							logLevel = level
 						}
-					case .NoStrictMode:
-						doStrict  = false
-					case .InteractiveMode:
-						isInteractiveMode = true
-					case .CompileMode:
-						isCompileMode = true
-					case .UseMain:
-						doUseMain = true
+					case .BuiltinMode:
+						isBuiltinMode = true
 					}
 				} else {
-					mConsole.error(string: "[Error] Unknown command line option ids")
+					mConsole.error(string: "[Error] Unknown command line option id\n")
 				}
 			} else if let param = arg as? CBNormalArgument {
 				files.append(param.argument)
 			} else {
-				mConsole.error(string: "[Error] Unknown command line parameter: \(arg)")
+				mConsole.error(string: "[Error] Unknown command line parameter: \(arg)\n")
 				return nil
 			}
 		}
-		return Config(scriptFiles: files, doStrict: doStrict, doUseMain: doUseMain, isInteractiveMode: isInteractiveMode, isCompileMode: isCompileMode, logLevel: logLevel)
+		if isBuiltinMode {
+			if files.count > 0 {
+				mConsole.print(string: "[Error] The parameter is not required for builtin mode\n")
+			}
+		} else {
+			switch files.count {
+			case 0:
+				mConsole.error(string: "[Error] The path for package directory is required\n")
+				return nil
+			case 1:
+				break // expected
+			default:
+				mConsole.error(string: "[Error] Only one parameter for package directory is expected\n")
+				return nil
+			}
+		}
+		let packdir = files.count > 0 ? files[0] : ""
+		return Config(packageDirectory: packdir, isBuiltinMode: isBuiltinMode, logLevel: logLevel)
 	}
 
 	private func decodeLogLevel(parameters params: Array<CBValue>) -> CNConfig.LogLevel? {
@@ -181,7 +163,7 @@ public class JRCommandLineParser
 			let paramstr = params[0].description
 			return CNConfig.LogLevel.decode(string: paramstr)
 		} else {
-			mConsole.error(string: "[Error] One parameter for log level is required")
+			mConsole.error(string: "[Error] One parameter for log level is required\n")
 		}
 		return nil
 	}

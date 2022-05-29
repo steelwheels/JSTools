@@ -86,7 +86,7 @@ public class AMBCommandLineParser
 		var config : Config? = nil
 		let (err, _, rets, subargs) = CBParseArguments(parserConfig: parserConfig(), arguments: args)
 		if let e = err {
-			mConsole.error(string: "Error: \(e.description)\n")
+			mConsole.error(string: "[Error] \(e.description)\n")
 		} else {
 			config = parseOptions(arguments: rets)
 		}
@@ -119,12 +119,12 @@ public class AMBCommandLineParser
 						}
 					}
 				} else {
-					NSLog("[Internal error] Unknown option id")
+					mConsole.error(string: "[Error] Unknown command line option id")
 				}
 			} else if let param = arg as? CBNormalArgument {
 				files.append(param.argument)
 			} else {
-				NSLog("[Internal error] Unknown object: \(arg)")
+				mConsole.error(string: "[Error] Unknown command line parameter: \(arg)")
 				return nil
 			}
 		}
@@ -136,7 +136,7 @@ public class AMBCommandLineParser
 			let paramstr = params[0].description
 			return CNConfig.LogLevel.decode(string: paramstr)
 		} else {
-			mConsole.error(string: "One parameter for log level is required")
+			mConsole.error(string: "[Error] One parameter for log level is required")
 		}
 		return nil
 	}

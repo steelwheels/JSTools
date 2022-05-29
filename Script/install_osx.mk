@@ -8,28 +8,42 @@ DMG_PATH     ?= $(HOME)/tools/archive
 
 TARGET_LIST  = jsh
 
-install: install_bundle install_jsh install_amb
+all: bundle jsh amb jsdecl # install
 
-install_bundle: dummy
+bundle: dummy
 	xcodebuild install -target JSToolsBundle \
 	  -project $(PROJECT_NAME).xcodeproj \
 	  -configuration Release \
 	   DSTROOT=/ \
 	   ONLY_ACTIVE_ARCH=NO 
 
-install_jsh: dummy
+jsh: dummy
 	xcodebuild install -target jsh \
 	  -project $(PROJECT_NAME).xcodeproj \
 	  -configuration Release \
 	   DSTROOT=/ \
 	   ONLY_ACTIVE_ARCH=NO 
 
-install_amb: dummy
+amb: dummy
 	xcodebuild install -target amb \
 	  -project $(PROJECT_NAME).xcodeproj \
 	  -configuration Release \
 	   DSTROOT=/ \
 	   ONLY_ACTIVE_ARCH=NO 
+
+jsdecl: dummy
+	xcodebuild install -target jsdecl \
+	  -project $(PROJECT_NAME).xcodeproj \
+	  -configuration Release \
+	   DSTROOT=/ \
+	   ONLY_ACTIVE_ARCH=NO 
+
+#install: dummy
+#	xcodebuild install -target Install \
+#	  -project $(PROJECT_NAME).xcodeproj \
+#	  -configuration Release \
+#	   DSTROOT=/ \
+#	  ONLY_ACTIVE_ARCH=NO 
 
 make_dmg: make_dmg_dir make_dmg_binary make_dmg_tool make_dmg_doc make_dmg_pack
 
