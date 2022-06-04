@@ -11,9 +11,13 @@
 		05432BA6257623A700091EC8 /* Amber.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05432BA5257623A700091EC8 /* Amber.xcframework */; };
 		05432BB62576254200091EC8 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05432BB52576254200091EC8 /* Config.swift */; };
 		05432BCC2576294F00091EC8 /* AMBMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05432BCB2576294F00091EC8 /* AMBMain.swift */; };
-		0591B7A7284221AF0092CBBD /* JSDMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591B7A5284221AE0092CBBD /* JSDMain.swift */; };
+		055998F22847A6140005C58C /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055998F12847A6140005C58C /* config.swift */; };
+		055999372847B40A0005C58C /* jsstorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055999112847B2990005C58C /* jsstorage.swift */; };
+		0591B7A7284221AF0092CBBD /* jsdecl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591B7A5284221AE0092CBBD /* jsdecl.swift */; };
 		0591B7C5284223200092CBBD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591B7B1284222810092CBBD /* main.swift */; };
-		0591B7D5284241340092CBBD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591B7D4284241340092CBBD /* Config.swift */; };
+		0591B7D5284241340092CBBD /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0591B7D4284241340092CBBD /* config.swift */; };
+		059B00B32848E8E800F43DDA /* resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B00B22848E8E800F43DDA /* resource.swift */; };
+		059B00F82848F6C500F43DDA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055998FF2847B1470005C58C /* main.swift */; };
 		05B5814925186C5D0055850B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814625186C5D0055850B /* main.swift */; };
 		05B5814A25186C5D0055850B /* JSHMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814725186C5D0055850B /* JSHMain.swift */; };
 		05B5814B25186C5D0055850B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5814825186C5D0055850B /* Config.swift */; };
@@ -49,6 +53,20 @@
 			remoteGlobalIDString = 05432B992576237500091EC8;
 			remoteInfo = amb;
 		};
+		055998F72847A77B0005C58C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05B5813125186BF70055850B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05CDC3252518E71C0084251A;
+			remoteInfo = JSToolsBundle;
+		};
+		055998F92847A7850005C58C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05B5813125186BF70055850B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 055998E12847A5B20005C58C;
+			remoteInfo = jsstorage;
+		};
 		0591B7A12842212B0092CBBD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05B5813125186BF70055850B /* Project object */;
@@ -81,6 +99,15 @@
 
 /* Begin PBXCopyFilesBuildPhase section */
 		05432B982576237500091EC8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		055998E02847A5B20005C58C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -133,11 +160,15 @@
 		05432BA5257623A700091EC8 /* Amber.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Amber.xcframework; path = ../../../Library/Frameworks/Amber.xcframework; sourceTree = "<group>"; };
 		05432BB52576254200091EC8 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		05432BCB2576294F00091EC8 /* AMBMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMBMain.swift; sourceTree = "<group>"; };
+		055998E22847A5B20005C58C /* jsstorage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsstorage; sourceTree = BUILT_PRODUCTS_DIR; };
+		055998F12847A6140005C58C /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		055998FF2847B1470005C58C /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		055999112847B2990005C58C /* jsstorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsstorage.swift; sourceTree = "<group>"; };
 		0591B794284221180092CBBD /* jsdecl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsdecl; sourceTree = BUILT_PRODUCTS_DIR; };
-		0591B796284221180092CBBD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		0591B7A5284221AE0092CBBD /* JSDMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSDMain.swift; sourceTree = "<group>"; };
+		0591B7A5284221AE0092CBBD /* jsdecl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsdecl.swift; sourceTree = "<group>"; };
 		0591B7B1284222810092CBBD /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		0591B7D4284241340092CBBD /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		0591B7D4284241340092CBBD /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		059B00B22848E8E800F43DDA /* resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resource.swift; sourceTree = "<group>"; };
 		05B5813B25186C220055850B /* jsh */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jsh; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B5814625186C5D0055850B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		05B5814725186C5D0055850B /* JSHMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSHMain.swift; sourceTree = "<group>"; };
@@ -155,6 +186,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		05432B972576237500091EC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055998DF2847A5B20005C58C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -203,22 +241,32 @@
 			path = amb;
 			sourceTree = "<group>";
 		};
-		0591B795284221180092CBBD /* jsdecl */ = {
+		055998DD2847A54A0005C58C /* jsstorage */ = {
 			isa = PBXGroup;
 			children = (
-				0591B796284221180092CBBD /* main.swift */,
+				055998F12847A6140005C58C /* config.swift */,
+				055999112847B2990005C58C /* jsstorage.swift */,
+				055998FF2847B1470005C58C /* main.swift */,
 			);
-			path = jsdecl;
+			path = jsstorage;
 			sourceTree = "<group>";
 		};
 		0591B7A4284221850092CBBD /* jsdecl */ = {
 			isa = PBXGroup;
 			children = (
-				0591B7D4284241340092CBBD /* Config.swift */,
+				0591B7D4284241340092CBBD /* config.swift */,
+				0591B7A5284221AE0092CBBD /* jsdecl.swift */,
 				0591B7B1284222810092CBBD /* main.swift */,
-				0591B7A5284221AE0092CBBD /* JSDMain.swift */,
 			);
 			path = jsdecl;
+			sourceTree = "<group>";
+		};
+		059B00B12848E76900F43DDA /* common */ = {
+			isa = PBXGroup;
+			children = (
+				059B00B22848E8E800F43DDA /* resource.swift */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 		05B5813025186BF70055850B = {
@@ -226,7 +274,6 @@
 			children = (
 				05B5814425186C380055850B /* Source */,
 				05CDC3272518E71C0084251A /* JSToolsBundle */,
-				0591B795284221180092CBBD /* jsdecl */,
 				05B5813C25186C220055850B /* Products */,
 				05B5814E25186C820055850B /* Frameworks */,
 			);
@@ -239,6 +286,7 @@
 				05CDC3262518E71C0084251A /* JSTools.bundle */,
 				05432B9A2576237500091EC8 /* amb */,
 				0591B794284221180092CBBD /* jsdecl */,
+				055998E22847A5B20005C58C /* jsstorage */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,7 +296,9 @@
 			children = (
 				05B5814525186C490055850B /* jsh */,
 				0591B7A4284221850092CBBD /* jsdecl */,
+				055998DD2847A54A0005C58C /* jsstorage */,
 				05432B952576234B00091EC8 /* amb */,
+				059B00B12848E76900F43DDA /* common */,
 			);
 			name = Source;
 			path = ../Source;
@@ -299,6 +349,7 @@
 			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = "";
 			dependencies = (
+				055998FA2847A7850005C58C /* PBXTargetDependency */,
 				0591B7CA284223550092CBBD /* PBXTargetDependency */,
 				05432BD22576496100091EC8 /* PBXTargetDependency */,
 				05CDC3032518DFF90084251A /* PBXTargetDependency */,
@@ -326,6 +377,24 @@
 			name = amb;
 			productName = amb;
 			productReference = 05432B9A2576237500091EC8 /* amb */;
+			productType = "com.apple.product-type.tool";
+		};
+		055998E12847A5B20005C58C /* jsstorage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055998E62847A5B20005C58C /* Build configuration list for PBXNativeTarget "jsstorage" */;
+			buildPhases = (
+				055998DE2847A5B20005C58C /* Sources */,
+				055998DF2847A5B20005C58C /* Frameworks */,
+				055998E02847A5B20005C58C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				055998F82847A77B0005C58C /* PBXTargetDependency */,
+			);
+			name = jsstorage;
+			productName = jsstorage;
+			productReference = 055998E22847A5B20005C58C /* jsstorage */;
 			productType = "com.apple.product-type.tool";
 		};
 		0591B793284221180092CBBD /* jsdecl */ = {
@@ -394,6 +463,9 @@
 					05432B992576237500091EC8 = {
 						CreatedOnToolsVersion = 12.2;
 					};
+					055998E12847A5B20005C58C = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					0591B793284221180092CBBD = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -425,6 +497,7 @@
 				05CDC3252518E71C0084251A /* JSToolsBundle */,
 				05B5813A25186C220055850B /* jsh */,
 				0591B793284221180092CBBD /* jsdecl */,
+				055998E12847A5B20005C58C /* jsstorage */,
 				05432B992576237500091EC8 /* amb */,
 				05CDC2FE2518DFF10084251A /* Install */,
 			);
@@ -452,13 +525,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		055998DE2847A5B20005C58C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059B00F82848F6C500F43DDA /* main.swift in Sources */,
+				055998F22847A6140005C58C /* config.swift in Sources */,
+				055999372847B40A0005C58C /* jsstorage.swift in Sources */,
+				059B00B32848E8E800F43DDA /* resource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0591B790284221180092CBBD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0591B7C5284223200092CBBD /* main.swift in Sources */,
-				0591B7A7284221AF0092CBBD /* JSDMain.swift in Sources */,
-				0591B7D5284241340092CBBD /* Config.swift in Sources */,
+				0591B7A7284221AF0092CBBD /* jsdecl.swift in Sources */,
+				0591B7D5284241340092CBBD /* config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +575,16 @@
 			isa = PBXTargetDependency;
 			target = 05432B992576237500091EC8 /* amb */;
 			targetProxy = 05432BD12576496100091EC8 /* PBXContainerItemProxy */;
+		};
+		055998F82847A77B0005C58C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05CDC3252518E71C0084251A /* JSToolsBundle */;
+			targetProxy = 055998F72847A77B0005C58C /* PBXContainerItemProxy */;
+		};
+		055998FA2847A7850005C58C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 055998E12847A5B20005C58C /* jsstorage */;
+			targetProxy = 055998F92847A7850005C58C /* PBXContainerItemProxy */;
 		};
 		0591B7A22842212B0092CBBD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -598,6 +692,87 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		055998E72847A5B20005C58C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INSTALL_PATH = "$(HOME)/tools/bin";
+				LD_RUNPATH_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		055998E82847A5B20005C58C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INSTALL_PATH = "$(HOME)/tools/bin";
+				LD_RUNPATH_SEARCH_PATHS = "$(HOME)/tools/bundles/JSTools.bundle/Contents/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -1163,6 +1338,15 @@
 			buildConfigurations = (
 				05432B9F2576237500091EC8 /* Debug */,
 				05432BA02576237500091EC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055998E62847A5B20005C58C /* Build configuration list for PBXNativeTarget "jsstorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055998E72847A5B20005C58C /* Debug */,
+				055998E82847A5B20005C58C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

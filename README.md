@@ -23,6 +23,7 @@ About the the command and language, see [manual page](https://github.com/steelwh
 
 ### jsdecl
 This command is used to generate type declaration file (`*.d.ts`) for TypeScript. The input of this command is [manifest file](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md) for JSTerminal.
+For more details, see [manual page](https://github.com/steelwheels/JSTools/blob/master/Document/jsdecl-man.md)).
 
 ### amb
 The command line application to execute the script written by [Amber Programming Language](https://github.com/steelwheels/Amber/blob/master/Document/amber-language.md).

@@ -1,5 +1,5 @@
 /**
- * @file	JSDMain.swift
+ * @file jsdecl_main.swift
  * @brief	Define main function for jsdecl
  * @par Copyright
  *   Copyright (C) 2022 Steel Wheels Project
@@ -14,7 +14,7 @@ import KiwiLibrary
 import JavaScriptCore
 import Foundation
 
-public func main(arguments args: Array<String>) -> Int32
+public func jsdecl_main(arguments args: Array<String>) -> Int32
 {
 	/* Parse command line arguments */
 	let stdfile = CNStandardFiles.shared

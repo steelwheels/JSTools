@@ -8,7 +8,7 @@ DMG_PATH     ?= $(HOME)/tools/archive
 
 TARGET_LIST  = jsh
 
-all: bundle jsh amb jsdecl # install
+all: bundle jsh amb jsdecl jsstorage # install
 
 bundle: dummy
 	xcodebuild install -target JSToolsBundle \
@@ -33,6 +33,13 @@ amb: dummy
 
 jsdecl: dummy
 	xcodebuild install -target jsdecl \
+	  -project $(PROJECT_NAME).xcodeproj \
+	  -configuration Release \
+	   DSTROOT=/ \
+	   ONLY_ACTIVE_ARCH=NO 
+
+jsstorage: dummy
+	xcodebuild install -target jsstorage \
 	  -project $(PROJECT_NAME).xcodeproj \
 	  -configuration Release \
 	   DSTROOT=/ \
