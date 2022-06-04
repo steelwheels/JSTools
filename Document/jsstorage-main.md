@@ -1,18 +1,17 @@
 
 
 # Name
-*jsdecl* - Generate declaration file (*.d.ts) for JSTerminal
+*storage* - Dump contents of storage in JavaScript package
 
 # Synopsis
 ````
-jsdecl [options] [package-dir]
-jsdecl -b | --builtin
+jsstorage [options] [package-dir]
 ````
 * options:  command line options 
 * package-dir: The JavaScript package directory
 
 # Description
-The *jsdecl* command is used to generate TypeScript declaration file (`*.d.ts` file) from the [JavaScript package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md). The package is used to implement application script for [JSTerminal](https://github.com/steelwheels/JSTerminal#readme). 
+The *jsstorage* command dumps the contents of all storage files in the [JavaScript package](https://github.com/steelwheels/JSTools/blob/master/Document/jspkg.md) package.
 
 The following options are available:
 
@@ -20,7 +19,6 @@ The following options are available:
 |:---   |:---       |:---      |:---                   |
 |-h     |--help     |-         |Print help message     |
 |       |--version  |-         |Print version information |
-|-b     |--builtin  |-         |Generate declaration of built-in data type |
 
 # Related document
 * [README.md](https://github.com/steelwheels/JSRunner/blob/master/README.md): Top level document of this application.
